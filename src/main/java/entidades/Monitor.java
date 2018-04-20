@@ -15,7 +15,7 @@ public class Monitor {
     private String apellido;
     private int telefono;
     private String carrera;
-<<<<<<< HEAD
+
 
     public int getId() {
         return id;
@@ -56,6 +56,4 @@ public class Monitor {
     public void setCarrera(String carrera) {
         this.carrera = carrera;
     }
-=======
->>>>>>> 68d7fb11e2cf46cef5e83688ae9ab187b7dd6478
 }
