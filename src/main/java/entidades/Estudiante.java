@@ -13,7 +13,7 @@ public class Estudiante {
     private int id;
     private String nombre;
     private String apellido;
-<<<<<<< HEAD
+    private Grupo grupo;
 
     public int getId() {
         return id;
@@ -46,7 +46,4 @@ public class Estudiante {
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-=======
->>>>>>> 68d7fb11e2cf46cef5e83688ae9ab187b7dd6478
-    private Grupo grupo;
 }

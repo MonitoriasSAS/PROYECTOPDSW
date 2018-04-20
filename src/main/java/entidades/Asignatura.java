@@ -12,7 +12,6 @@ package entidades;
 public class Asignatura {
     private int id;
     private String nombre;
-<<<<<<< HEAD
 
     public int getId() {
         return id;
@@ -29,6 +28,4 @@ public class Asignatura {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-=======
->>>>>>> 68d7fb11e2cf46cef5e83688ae9ab187b7dd6478
 }
