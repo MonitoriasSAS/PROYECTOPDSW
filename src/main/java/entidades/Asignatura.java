@@ -12,10 +12,7 @@ package entidades;
 public class Asignatura {
     private int id;
     private String nombre;
-<<<<<<< HEAD
-=======
 
->>>>>>> 2d0d1f0f02f66152d205fa179e5edc4f5326b527
 
     public int getId() {
         return id;

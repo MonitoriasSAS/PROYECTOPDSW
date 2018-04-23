@@ -47,9 +47,5 @@ public class Profesor {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-<<<<<<< HEAD
-=======
-    
 
->>>>>>> 2d0d1f0f02f66152d205fa179e5edc4f5326b527
 }

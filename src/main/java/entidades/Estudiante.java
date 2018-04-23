@@ -46,8 +46,5 @@ public class Estudiante {
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> 2d0d1f0f02f66152d205fa179e5edc4f5326b527
+
 }

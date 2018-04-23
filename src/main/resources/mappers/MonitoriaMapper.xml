@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="dao.MonitoriaDao">
+     <resultMap type= 'Monitoria' id='monitoriaResult'>
+         <id property='id' column='id_Monitoria'/>
+         <result property='ip' column='ip' />
+         <result property='observaciones' column='observaciones' />
+         <result property='tema' column='tema' />
+         <association property='franja' javaType='FranjaHorario' resultmap='franjaResult'/>
+     </resultMap>
+     <resultMap type= 'FranjaHoraio' id='franjaResult'>
+         <id property='id' column='id_Franja_Horario'/>
+          <result property='dia_mon' column='dia_mon' />
+           <result property='hora' column='hora' />
+     </resultMap>
+     <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
+     select *   
+     from Monitoria 
+     where id_monitoria=#{}
+     </select> 
+     <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
+     select *
+     from Franja_Horairio, Monitoria
+     where id_monitoria=#{}
+     </select> 
+ </mapper>
