@@ -8,12 +8,13 @@
          <result property='ip' column='ip' />
          <result property='observaciones' column='observaciones' />
          <result property='tema' column='tema' />
-         <association property='franja' javaType='FranjaHorario' resultmap='franjaResult'/>
+       <result property='fecha' column='fecha' />
+         <association property='franja' javaType='FranjaId' resultmap='franjaResult'/>
      </resultMap>
      <resultMap type= 'FranjaHoraio' id='franjaResult'>
          <id property='id' column='id_Franja_Horario'/>
           <result property='dia_mon' column='dia_mon' />
-           <result property='hora' column='hora' />
+          <result property='hora' column='hora' />
      </resultMap>
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
      select *   
