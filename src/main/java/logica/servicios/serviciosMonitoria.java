@@ -5,6 +5,7 @@
  */
 package logica.servicios;
 
+import entidades.Monitoria;
 import java.util.Date;
 
 /**
@@ -20,4 +21,16 @@ public interface serviciosMonitoria {
      * @throws ExcepcionServiciosMonitoria si hay error de persistencia-
      **/
     public void registrarMonitoria(int id,String ip,Date fecha);
+    /**
+     * Agrega las observaciones que el monitor desee de la sesion
+     * @param observaciones comentarios de el monitor
+     */
+    public void agregarObservaciones(String observaciones);
+    /**
+     * Retorna una monitoria en especifico con su id correspondiente
+     * @param id identificador de la monitoria
+     * @return la monitoria con el id dado
+     * @Throws ExcepcionServiciosMonitoria si no existe dicha monitoria
+     */
+    public Monitoria consulatarMonitoria(int id);
 }

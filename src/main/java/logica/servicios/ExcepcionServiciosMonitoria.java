@@ -10,5 +10,15 @@ package logica.servicios;
  * @author 2112076
  */
 public class ExcepcionServiciosMonitoria extends Exception{
-    
+    public ExcepcionServiciosMonitoria(){
+    }
+    public ExcepcionServiciosMonitoria(String message){
+        super(message);
+    }
+    public ExcepcionServiciosMonitoria(String message, Throwable cause){
+        super(message,cause);
+    }
+    public ExcepcionServiciosMonitoria(Throwable cause){
+        super(cause);
+    }
 }

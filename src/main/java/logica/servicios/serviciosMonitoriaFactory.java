@@ -5,10 +5,27 @@
  */
 package logica.servicios;
 
+import com.google.inject.Injector;
+import org.mybatis.guice.XMLMyBatisModule;
+import org.mybatis.guice.datasource.helper.JdbcHelper;
+import static com.google.inject.Guice.createInjector;
 /**
  *
  * @author 2112076
  */
 public class serviciosMonitoriaFactory {
-    
+    private static serviciosMonitoriaFactory instance = new serviciosMonitoriaFactory();
+    private static Injector injector;
+    private static Injector testInjector;
+    public serviciosMonitoriaFactory(){
+        injector = createInjector(new XMLMyBatisModule() {
+
+            @Override
+            protected void initialize() {
+                install(JdbcHelper.MySQL);              
+                setClassPathResource("mybatis-config.xml");
+            }
+        }
+        );
+    }
 }
