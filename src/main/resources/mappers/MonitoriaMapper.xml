@@ -3,27 +3,38 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="dao.MonitoriaDao">
-     <resultMap type= 'Monitoria' id='monitoriaResult'>
-         <id property='id' column='id_Monitoria'/>
-         <result property='ip' column='ip' />
-         <result property='observaciones' column='observaciones' />
-         <result property='tema' column='tema' />
-       <result property='fecha' column='fecha' />
-         <association property='franja' javaType='FranjaId' resultmap='franjaResult'/>
+    <resultMap type= 'Monitoria' id='monitoriaResult'>
+        <id property='id' column='id_Monitoria'/>
+        <result property='ip' column='ip' />
+        <result property='observaciones' column='observaciones' />
+        <result property='fecha' column='fecha' />
+        <association property='franja' javaType='FranjaId' resultmap='franjaResult'/>
+     </resultMap>
+     <resultMap type='Tema' id='estudianteResult'>
+         <id property='id' column='TemaID'/>
+         <result poperty='descripcion' column='descripcion'/>
+     </resultMap>
+     <resultMap>
+         <id property='id' column='id_Carnet'/>
+         <result property='nombre' column='nombre_Es'/>
+         <result property='apellido' column='apellido_Es'/>
      </resultMap>
      <resultMap type= 'FranjaHoraio' id='franjaResult'>
-         <id property='id' column='id_Franja_Horario'/>
-          <result property='dia_mon' column='dia_mon' />
-          <result property='hora' column='hora' />
+        <id property='id' column='id_Franja_Horario'/>
+        <result property='dia_mon' column='dia_mon' />
+        <result property='hora' column='hora' />
      </resultMap>
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
-     select *   
-     from Monitoria 
-     where id_monitoria=#{}
+        select *    
+        from Monitoria 
+        where id_monitoria=#{idmo}
      </select> 
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
-     select *
-     from Franja_Horairio, Monitoria
-     where id_monitoria=#{}
+        select *
+        from Franja_Horairio, Monitoria
      </select> 
+     <insert id='agregarMonitoria'>
+         insert into monitoria
+         Values(#{ip},#{obsv})
+     </insert>
  </mapper>
