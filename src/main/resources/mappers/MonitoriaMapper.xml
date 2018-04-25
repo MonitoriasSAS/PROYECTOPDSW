@@ -35,6 +35,8 @@
      </select> 
      <insert id='agregarMonitoria'>
          insert into monitoria
-         Values(#{ip},#{obsv})
+         values(#{ip},#{obsv})
+         insert into estudiante
+         values(#{idcar},#{name},#{last})
      </insert>
  </mapper>
