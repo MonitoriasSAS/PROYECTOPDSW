@@ -27,10 +27,14 @@
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
         select *    
         from Monitoria 
-        where id_monitoria=#{}
+        where id_monitoria=#{idmo}
      </select> 
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
         select *
         from Franja_Horairio, Monitoria
      </select> 
+     <insert id='agregarMonitoria'>
+         insert into monitoria
+         Values(#{ip},#{obsv})
+     </insert>
  </mapper>
