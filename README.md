@@ -42,4 +42,4 @@ Modelo de Bases de Datos:
   
 
 ## *URL Heroku:*
-https://git.heroku.com/monitoriassas.git
+https://monitoriassas.herokuapp.com/
