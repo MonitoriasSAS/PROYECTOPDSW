@@ -5,6 +5,8 @@
  */
 package entidades;
 
+import java.util.Date;
+
 /**
  *
  * @author Andres
@@ -13,7 +15,7 @@ public class Monitoria {
     private int id;
     private String ip;
     private String observaciones;
-    private String tema;
+    private Date fecha;
 
     public void setId(int id) {
         this.id = id;
@@ -27,8 +29,8 @@ public class Monitoria {
         this.observaciones = observaciones;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public int getId() {
@@ -43,8 +45,8 @@ public class Monitoria {
         return observaciones;
     }
 
-    public String getTema() {
-        return tema;
+    public Date getFecha() {
+        return fecha;
     }
     
 }
