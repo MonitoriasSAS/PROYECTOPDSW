@@ -16,8 +16,8 @@ import java.io.Serializable;
  *
  * @author CARLOS
  */
-
-
+@ManagedBean(name = "beanLogin")
+@SessionScoped
  public class LoginBeans implements Serializable {
     private String usuario;
     private String contrasena;
