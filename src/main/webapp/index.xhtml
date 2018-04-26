@@ -23,13 +23,13 @@
                     <p:fieldset legend="Iniciar Sesión" style="width: 80%; margin: 6% auto; font-family: Verdana;">
                         <p:outputLabel value="Usuario:" for="username" style="font-family: Trebuchet MS; font-size: 17pt; font-weight: bold; color: gray; margin-left: 8%;"/>
                         <br/> 
-                        <p:inputText id="username" required="true" value="#{loginBean.username}" style="font-size: 12pt; background: white; margin-left: 2%;"/>
+                        <p:inputText id="username" style="font-size: 12pt; background: white; margin-left: 2%;"/>
                         <br/>
                         <p:outputLabel value="Contraseña:" for="password"  style="font-family: Trebuchet MS; font-size: 17pt;font-weight: bold; color: gray; margin-left: 8%;"/>
                         <br/>
-                        <p:password id="password" required="true" value="#{loginBean.password}" style="font-size: 12pt; background: white; margin-left: 2%;"/>
+                        <p:password id="password" style="font-size: 12pt; background: white; margin-left: 2%;"/>
                         <br/>
-                        <p:commandButton value="Ingresar" action="#{loginBean.doLogin}" style="font-weight: bold; margin-left: 15%;" />
+                        <p:button outcome="RegistroMonitoria" value="Ingresar" style="font-weight: bold; margin-left: 15%;" icon="ui-icon-check"/>
                         <br/> 
                     </p:fieldset>
                 </DIV>
