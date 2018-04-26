@@ -15,6 +15,8 @@ import javax.faces.bean.SessionScoped;
  *
  * @author 2110540
  */
+@ManagedBean(name = "beanAsistencia")
+@SessionScoped
 public class AsistenciaBean {
     
 }

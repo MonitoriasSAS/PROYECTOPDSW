@@ -15,7 +15,7 @@ import javax.faces.bean.SessionScoped;
  *
  * @author 2110540
  */
-@ManagedBean(name = "mb")
+@ManagedBean(name = "beanMonitoria")
 @SessionScoped
 public class MonitoriaBean {
     
