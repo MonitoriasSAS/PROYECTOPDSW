@@ -9,6 +9,10 @@ Integrantes:
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
   * Sergio Alejandro Peña Pinto
+  
+Profesor:
+  -------
+  ##### Francisco Chavez
     
 Modelo de Bases de Datos:
   -------
