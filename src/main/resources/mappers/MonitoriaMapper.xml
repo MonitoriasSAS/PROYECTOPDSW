@@ -36,5 +36,7 @@
          values(#{idcar},#{name},#{last},null,null)
          insert into Asistencia 
          values(#{idcar},SELECT max(id_Mon) FROM monitoria,#{tem})
+         insert into Tema
+         values(#{tem},#{descp})
      </insert>
  </mapper>

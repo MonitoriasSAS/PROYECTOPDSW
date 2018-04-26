@@ -7,8 +7,34 @@ Integrantes:
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
   * Sergio Alejandro Peña Pinto
-  * Andrés Rodriguez del Toro
-  * Alejandro Rodriguez del Toro
+  * Andrés Rodríguez del Toro
+  * Alejandro Rodríguez del Toro
+  
+Profesor:
+  -------
+  ##### Francisco Jose Chavez Alonso
+  
+****Información General:****
+======
+ 
+  *Roles:*
+  -------
+  #### ****Stakeholder:****
+  ##### Wilmer Edicson Garzón Alfonso
+  
+  #### ****Dueño de producto:****
+  ##### Francisco Jose Chavez Alonso
+    
+  #### ****Scrum Master:****
+  #####  Carlos Andres Castañeda Lozano - c.castañeda 
+    
+  #### ****Team:****
+ 
+  + Carlos Andres Castañeda Lozano - c.castañeda
+  + Nicolas Patiño Parra - n.patiño
+  + Sergio Alejandro Peña Pinto - s.peña
+  + Andres Rodriguez del Toro - a.rodriguez
+  + Alejandro Rodriguez del Toro - a.toro
     
 Modelo de Bases de Datos:
   -------
