@@ -22,12 +22,7 @@ public interface serviciosMonitoria {
      * @param apellido apellido del estudiante que esta en la monitoria
      * @throws ExcepcionServiciosMonitoria si hay error de persistencia-
      **/
-    public void registrarMonitoria(String ip,int id,String nombre,String apellido) throws ExcepcionServiciosMonitoria;
-    /**
-     * Agrega las observaciones que el monitor desee de la sesion
-     * @param observaciones comentarios de el monitor
-     */
-    public void agregarObservaciones(int id,String observaciones) throws ExcepcionServiciosMonitoria;
+    public void registrarMonitoria(String ip,int id,String nombre,String apellido,String observaciones) throws ExcepcionServiciosMonitoria;
     /**
      * Retorna una monitoria en especifico con su id correspondiente
      * @param id identificador de la monitoria
