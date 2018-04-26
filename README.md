@@ -45,5 +45,6 @@ Modelo de Bases de Datos:
 https://monitoriassas.herokuapp.com/
 
  ## *Retrospectiva:*
-[1]: https://github.com/MonitoriasSAS/PROYECTOPDSW/blob/master/src/main/webapp/Imagenes/retros.jpeg "wow!"
+ ![alt text][1]
+   [1]: https://github.com/MonitoriasSAS/PROYECTOPDSW/blob/master/src/main/webapp/Imagenes/retros.jpeg "wow!"
  
