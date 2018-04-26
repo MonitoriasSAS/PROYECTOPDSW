@@ -12,7 +12,7 @@ Integrantes:
   
 Profesor:
   -------
-  ##### Francisco Chavez
+  ##### Francisco Jose Chavez Alonso
   
 ****Información General:****
 ======
@@ -23,7 +23,7 @@ Profesor:
   ##### Wilmer Edicson Garzón Alfonso
   
   #### ****Dueño de producto:****
-  #####  Francisco Chavez
+  ##### Francisco Jose Chavez Alonso
     
   #### ****Scrum Master:****
   #####  Carlos Andres Castañeda Lozano - c.castañeda 
