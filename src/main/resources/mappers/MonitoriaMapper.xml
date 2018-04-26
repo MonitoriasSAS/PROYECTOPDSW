@@ -34,9 +34,12 @@
         from Franja_Horairio, Monitoria
      </select> 
      <insert id='agregarMonitoria'>
-         insert into monitoria
-         values(#{ip},#{obsv})
+         insert into monitoria(ip,observaciones,Fanja_id)
+         values(#{ip},null,null)
          insert into estudiante
-         values(#{idcar},#{name},#{last})
+         values(#{idcar},#{name},#{last},null,null)
      </insert>
+     <update id ='agregarObservaciones'>
+         UPDATE monitoria SET observaciones=#{obsv} WHERE id={idmon} 
+     </update>
  </mapper>

@@ -15,6 +15,7 @@ import org.apache.ibatis.annotations.Param;
 public interface MonitoriaMapper{
     public Monitoria loadMonitoria(@Param("idmo") int id);
     public void agregarMonitoria(@Param("ip") String ip, 
-            @Param("obvs") String obvservaciones,@Param("idcar") int id ,
-            @Param("name") String nombre, @Param("last") String apellido);
+            @Param("idcar") int id ,@Param("name") String nombre,
+            @Param("last") String apellido);
+    public void agregarObservaciones(@Param("idmon") int id,@Param("obvs") String obvservaciones);
 }

@@ -21,7 +21,7 @@ public class SimpleTest {
     @Test
     public void deberiaAgregarUnaMonitoria() {
         //serviciosMonitoria serv= serviciosMonitoriaFactory.getInstance();
-        //serv.registrarMonitoria();
+        //serv.registrarMonitoria(2112108, "10.155.3.1",'santiago','ramirez');
         //assertEquals();
     }
 }

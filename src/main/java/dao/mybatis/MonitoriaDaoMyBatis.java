@@ -21,23 +21,42 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      @Inject
     MonitoriaMapper monmap; 
 
+   
+
     @Override
-    public void agregarMonitoria(String ip, String obvservaciones, int id, String nombre, String apellido) {
-         try{
-            monmap.agregarMonitoria(ip, obvservaciones, id, nombre, apellido);
-        }catch(Exception e){
-             try {
-                 throw new PersistenceException("Error al agregar monitoria"+e.getLocalizedMessage(), e);
-             } catch (PersistenceException ex) {
-                 Logger.getLogger(MonitoriaDaoMyBatis.class.getName()).log(Level.SEVERE, null, ex);
-             }
+    public Monitoria ConsultarMonitoria(int id) throws PersistenceException{
+        try {
+            Monitoria monitoria = monmap.loadMonitoria(id);
+            return monitoria;
+        }catch (Exception e){
+            throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
         }
     }
 
     @Override
-    public Monitoria ConsultarMonitoria(int id) {
-        Monitoria monitoria = monmap.loadMonitoria(id);
-        return monitoria;
+    public void agregarMonitoria(String ip, int id, String nombre, String apellido) throws PersistenceException {
+        try{
+            monmap.agregarMonitoria(ip, id, nombre, apellido);
+        } catch(Exception e){
+            throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
+          
+        }
+    }
+
+    /**
+     *
+     * @param id
+     * @param obvservaciones
+     * @throws PersistenceException
+     */
+    @Override
+    public void agregarObservaciones(int id, String obvservaciones) throws PersistenceException {
+        try{
+            monmap.agregarObservaciones(id, obvservaciones);
+        } catch(Exception e){
+            throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
+          
+        }
     }
      
 }
