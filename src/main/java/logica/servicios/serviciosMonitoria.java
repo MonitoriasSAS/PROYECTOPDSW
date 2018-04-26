@@ -27,7 +27,7 @@ public interface serviciosMonitoria {
      * Agrega las observaciones que el monitor desee de la sesion
      * @param observaciones comentarios de el monitor
      */
-    public void agregarObservaciones(String observaciones) throws ExcepcionServiciosMonitoria;
+    public void agregarObservaciones(int id,String observaciones) throws ExcepcionServiciosMonitoria;
     /**
      * Retorna una monitoria en especifico con su id correspondiente
      * @param id identificador de la monitoria

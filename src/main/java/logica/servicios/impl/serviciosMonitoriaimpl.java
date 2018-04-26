@@ -21,7 +21,7 @@ import javax.persistence.PersistenceException;
  */
 public class serviciosMonitoriaimpl implements serviciosMonitoria {
     
-     @Inject
+    @Inject
     private MonitoriaDAO daoMon;
      
     @Override
@@ -38,7 +38,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     @Override
     public void registrarMonitoria(String ip, int id, String nombre, String apellido)  {
        try{
-           daoMon.agregarMonitoria(ip, apellido, id, nombre, apellido);
+           daoMon.agregarMonitoria(ip, id, nombre, apellido);
        } catch(PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -46,8 +46,8 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void agregarObservaciones(String observaciones) throws ExcepcionServiciosMonitoria {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void agregarObservaciones(int id,String observaciones) throws ExcepcionServiciosMonitoria {
+        daoMon.agregarObservaciones(id, observaciones);
     }
     
 }
