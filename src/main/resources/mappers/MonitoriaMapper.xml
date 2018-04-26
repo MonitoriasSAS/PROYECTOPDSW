@@ -25,14 +25,16 @@
         <result property='hora' column='hora' />
      </resultMap>
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
-        select id_Monitoria, ip,observaciones,fecha,id_Carnet,nombre_Es,apellido_Es    
-        from Monitoria, Estudiante,Asistencia
-        where id_monitoria=#{idmo} and id_Carnet=Estudiante_id_Carnet and Monitoria_id_Monitoria=id_Monitoria
+        select id_Monitoria, ip,observaciones,fecha,id_Carnet,nombre_Es,apellido_Es,TemaID 
+        from Monitoria, Estudiante,Asistencia,Tema
+        where id_monitoria=#{idmo} and id_Carnet=Estudiante_id_Carnet and Monitoria_id_Monitoria=id_Monitoria and TemaID=Tema_TemaID
      </select> 
      <insert id='agregarMonitoria'>
          insert into Monitoria(ip,observaciones,Fanja_id)
          values(#{ip},#{obsv},null)
          insert into Estudiante
          values(#{idcar},#{name},#{last},null,null)
+         insert into Asistencia 
+         values(#{idcar},SELECT max(id_Mon) FROM monitoria,#{tem})
      </insert>
  </mapper>
