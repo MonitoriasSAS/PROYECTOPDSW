@@ -6,6 +6,7 @@
 
 package seguridad.bean;
 import entidades.Estudiante;
+import java.io.IOException;
 import logica.servicios.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,17 +17,18 @@ import java.io.Serializable;
 import java.util.logging.Logger;
 import javax.faces.context.FacesContext;
 import javax.security.auth.Subject;
-import org.apache.log4j.spi.LoggerFactory;
+//import org.apache.log4j.spi.LoggerFactory;
 import org.primefaces.util.SecurityUtils;
-import org.slf4j.Logger;
+//Simport org.slf4j.Logger;
 /**
  *
  * @author nicolas
  */
+
 @ManagedBean(name = "beanLogin", eager = true)
 @SessionScoped
  public class LoginBean implements Serializable {
-    private static final Logger log = LoggerFactory.getLogger(LoginBean.class);
+    //private static final Logger log = LoggerFactory.getLogger(LoginBean.class);
     
 
     private String usuario;
@@ -34,9 +36,6 @@ import org.slf4j.Logger;
     
     public LoginBean() {
         
-    }
-    public Subject getSubject() {
-        return SecurityUtils.getSubject();
     }
     public String getUsuario() {
         return usuario;
@@ -53,8 +52,8 @@ import org.slf4j.Logger;
     public void setContrasena(String cos) {
         this.contrasena = cos;
     }
-    public void doLogin() {
-        Subject subject = SecurityUtils.getSubject();
+    public void doLogin() throws Exception {
+        /*Subject subject = SecurityUtils.getSubject();
 
         UsernamePasswordToken token = new UsernamePasswordToken(getUsername(), getPassword(), getRememberMe());
 
@@ -73,5 +72,8 @@ import org.slf4j.Logger;
             else {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("unauthorized.xhtml");
             }
-        }
+        } catch(Exception ex){
+            throw  ex;
+        }*/
+    }
 }
