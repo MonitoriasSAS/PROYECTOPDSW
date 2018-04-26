@@ -43,3 +43,7 @@ Modelo de Bases de Datos:
 
 ## *URL Heroku:*
 https://monitoriassas.herokuapp.com/
+
+ ## *Retrospectiva:*
+ holi
+ 
