@@ -7,8 +7,8 @@ Integrantes:
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
   * Sergio Alejandro Peña Pinto
-  * Andres Rodriguez del Toro
-  * Alejandro Rodriguez del Toro
+  * Andrés Rodríguez del Toro
+  * Alejandro Rodríguez del Toro
   
 Profesor:
   -------
