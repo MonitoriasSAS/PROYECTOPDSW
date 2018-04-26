@@ -4,15 +4,37 @@
 
 Integrantes:
   -------
-  * Andres Rodriguez del Toro
-  * Alejandro Rodriguez del Toro
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
   * Sergio Alejandro Peña Pinto
+  * Andres Rodriguez del Toro
+  * Alejandro Rodriguez del Toro
   
 Profesor:
   -------
   ##### Francisco Chavez
+  
+****Información General:****
+======
+ 
+  *Roles:*
+  -------
+  #### ****Stakeholder:****
+  ##### Wilmer
+  
+  #### ****Dueño de producto:****
+  #####  Francisco Chavez
+    
+  #### ****Scrum Master:****
+  #####  Carlos Andres Castañeda Lozano - c.castañeda 
+    
+  #### ****Team:****
+ 
+  + Carlos Andres Castañeda Lozano - c.castañeda
+  + Nicolas Patiño Parra - n.patiño
+  + Sergio Alejandro Peña Pinto - s.peña
+  + Andres Rodriguez del Toro - a.rodriguez
+  + Alejandro Rodriguez del Toro - a.toro
     
 Modelo de Bases de Datos:
   -------
