@@ -7,7 +7,7 @@ package dao.mybatis;
 
 import com.google.inject.Inject;
 import dao.MonitoriaDAO;
-import dao.PersistenceException;
+
 import dao.mybatis.mappers.MonitoriaMapper;
 import entidades.Monitoria;
 import java.util.logging.Level;
@@ -28,7 +28,7 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      * @throws PersistenceException
      */
     @Override
-    public Monitoria ConsultarMonitoria(int id) throws PersistenceException{
+    public Monitoria ConsultarMonitoria(int id) {
         try {
             Monitoria monitoria = monmap.loadMonitoria(id);
             return monitoria;
@@ -46,7 +46,7 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      * @throws PersistenceException
      */
     @Override
-    public void agregarMonitoria(String ip, int id, String nombre, String apellido) throws PersistenceException {
+    public void agregarMonitoria(String ip, int id, String nombre, String apellido) {
         try{
             monmap.agregarMonitoria(ip, id, nombre, apellido);
         } catch(Exception e){
@@ -62,7 +62,7 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      * @throws PersistenceException
      */
     @Override
-    public void agregarObservaciones(int id, String obvservaciones) throws PersistenceException {
+    public void agregarObservaciones(int id, String obvservaciones) {
         try{
             monmap.agregarObservaciones(id, obvservaciones);
         } catch(Exception e){
