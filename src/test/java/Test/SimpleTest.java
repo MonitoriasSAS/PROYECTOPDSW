@@ -20,8 +20,8 @@ public class SimpleTest {
     }
     @Test
     public void deberiaAgregarUnaMonitoria() {
-        //serviciosMonitoria serv= serviciosMonitoriaFactory.getInstance();
-        //serv.registrarMonitoria(2112108, "10.155.3.1",'santiago','ramirez');
+        serviciosMonitoria serv= serviciosMonitoriaFactory.getInstance().getTestingServiciosMonitoria();
+        //serv.registrarMonitoria('10.253.9.64', 2112108,'santiago','ramirez', 'el estudiante fue muy aspero-aspeto', 'recurrencia');
         //assertEquals();
     }
 }
