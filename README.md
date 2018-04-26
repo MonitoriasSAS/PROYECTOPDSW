@@ -7,7 +7,7 @@ Integrantes:
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
   * Sergio Alejandro Peña Pinto
-  * Andrés Rodriguez del Toro
+  * Andres Rodriguez del Toro
   * Alejandro Rodriguez del Toro
     
 Modelo de Bases de Datos:
