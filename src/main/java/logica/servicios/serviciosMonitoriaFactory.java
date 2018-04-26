@@ -9,6 +9,9 @@ import com.google.inject.Injector;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 import static com.google.inject.Guice.createInjector;
+import dao.MonitoriaDAO;
+import dao.mybatis.MonitoriaDaoMyBatis;
+import logica.servicios.impl.serviciosMonitoriaimpl;
 /**
  *
  * @author 2112076
@@ -24,8 +27,21 @@ public class serviciosMonitoriaFactory {
             protected void initialize() {
                 install(JdbcHelper.MySQL);              
                 setClassPathResource("mybatis-config.xml");
+                bind(serviciosMonitoria.class).to(serviciosMonitoriaimpl.class);
+                bind(MonitoriaDAO.class).to(MonitoriaDaoMyBatis.class);
             }
         }
         );
+    }
+    public serviciosMonitoria getServiciosMonitoria() {
+        return injector.getInstance(serviciosMonitoria.class);
+    }    
+    
+     public serviciosMonitoria getTestingServiciosMonitoria() {
+        return testInjector.getInstance(serviciosMonitoria.class);
+    }
+     
+    public static serviciosMonitoriaFactory getInstance() {
+        return instance;
     }
 }

@@ -7,11 +7,11 @@ package dao.mybatis;
 
 import com.google.inject.Inject;
 import dao.MonitoriaDAO;
-import dao.PersistenceException;
 import dao.mybatis.mappers.MonitoriaMapper;
 import entidades.Monitoria;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.PersistenceException;
 
 /**
  *
