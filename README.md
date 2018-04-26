@@ -4,6 +4,8 @@
 
 Integrantes:
   -------
+  * Andres Rodriguez del Toro
+  * Alejandro Rodriguez del Toro
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
   * Sergio Alejandro Peña Pinto
