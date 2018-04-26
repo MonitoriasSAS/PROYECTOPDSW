@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package seguridad.bean;
 import entidades.Estudiante;
 import logica.servicios.*;
@@ -12,19 +13,22 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
+import javax.security.auth.Subject;
+import org.primefaces.util.SecurityUtils;
 /**
  *
- * @author CARLOS
+ * @author nicolas
  */
 @ManagedBean(name = "beanLogin")
 @SessionScoped
- public class LoginBeans implements Serializable {
+ public class LoginBean implements Serializable {
     private String usuario;
     private String contrasena;
     
-    public LoginBeans() {
+    public LoginBean() {
         
     }
+
     public String getUsuario() {
         return usuario;
     }
@@ -42,4 +46,3 @@ import java.io.Serializable;
     }
 
 }
-
