@@ -49,15 +49,15 @@ CREATE TABLE Estudiante (
    id_Carnet int  NOT NULL,
    nombre_Es varchar(20)  NOT NULL,
    apellido_Es varchar(20)  NOT NULL,
-   id_Asignatura int  NOT NULL,
-   Grupo_numero int  NOT NULL,
+   id_Asignatura int  ,
+   Grupo_numero int  ,
    CONSTRAINT Estudiante_pk PRIMARY KEY (id_Carnet)
 );
 
 CREATE TABLE Tema (
-   TemaID int  NOT NULL,
+   TemaID varchar(15)  NOT NULL,
    descripcion varchar(100)  NOT NULL,
-   Asignatura_id_Asignatura int  NOT NULL,
+   Asignatura_id_Asignatura int  ,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
 );
 
@@ -74,7 +74,7 @@ CREATE TABLE Monitoria (
    id_Mon int  NOT NULL,
    ip varchar(15)  NOT NULL,
    observaciones varchar(100)  NOT NULL,
-   Franja_id int  NOT NULL,
+   Franja_id int  ,
    fecha timestamp  NOT NULL,
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
