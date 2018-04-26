@@ -12,8 +12,7 @@ import entidades.Monitoria;
  * @author monitoriasSAS
  */
 public interface MonitoriaDAO {
-    public void agregarMonitoria(String ip, int id ,String nombre, String apellido) throws PersistenceException;
-    public Monitoria ConsultarMonitoria(int id) throws PersistenceException;
-    public void agregarObservaciones(int id,String obvservaciones) throws PersistenceException;
+    public void agregarMonitoria(String ip, int id ,String nombre, String apellido,String obvservaciones) ;
+    public Monitoria ConsultarMonitoria(int id) ;
     
 }

@@ -10,11 +10,11 @@
         <result property='fecha' column='fecha' />
         <association property='franja' javaType='FranjaId' resultmap='franjaResult'/>
      </resultMap>
-     <resultMap type='Tema' id='estudianteResult'>
+     <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
          <result poperty='descripcion' column='descripcion'/>
      </resultMap>
-     <resultMap>
+     <resultMap type= 'Estudiante' id='estudiateResult'>
          <id property='id' column='id_Carnet'/>
          <result property='nombre' column='nombre_Es'/>
          <result property='apellido' column='apellido_Es'/>
@@ -25,21 +25,14 @@
         <result property='hora' column='hora' />
      </resultMap>
      <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
-        select *    
-        from Monitoria 
-        where id_monitoria=#{idmo}
-     </select> 
-     <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
-        select *
-        from Franja_Horairio, Monitoria
+        select id_Monitoria, ip,observaciones,fecha,id_Carnet,nombre_Es,apellido_Es    
+        from Monitoria, Estudiante,Asistencia
+        where id_monitoria=#{idmo} and id_Carnet=Estudiante_id_Carnet and Monitoria_id_Monitoria=id_Monitoria
      </select> 
      <insert id='agregarMonitoria'>
-         insert into monitoria(ip,observaciones,Fanja_id)
-         values(#{ip},null,null)
-         insert into estudiante
+         insert into Monitoria(ip,observaciones,Fanja_id)
+         values(#{ip},#{obsv},null)
+         insert into Estudiante
          values(#{idcar},#{name},#{last},null,null)
      </insert>
-     <update id ='agregarObservaciones'>
-         UPDATE monitoria SET observaciones=#{obsv} WHERE id={idmon} 
-     </update>
  </mapper>

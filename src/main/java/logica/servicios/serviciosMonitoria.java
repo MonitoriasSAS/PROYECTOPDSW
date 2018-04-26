@@ -16,21 +16,18 @@ public interface serviciosMonitoria {
      /**
      * agrega una monitoria a la base de datos
      * @param id id de la monitoria
+     * @param observaciones comentarios de el monitor
      * @param ip donde se registra la monitoria
-     * @param Date fecha en la que se registra monitoria
+     * @param nombre nombre del estudiante que esta en la monitoria
+     * @param apellido apellido del estudiante que esta en la monitoria
      * @throws ExcepcionServiciosMonitoria si hay error de persistencia-
      **/
-    public void registrarMonitoria(int id,String ip,Date fecha);
-    /**
-     * Agrega las observaciones que el monitor desee de la sesion
-     * @param observaciones comentarios de el monitor
-     */
-    public void agregarObservaciones(String observaciones);
+    public void registrarMonitoria(String ip,int id,String nombre,String apellido,String observaciones) throws ExcepcionServiciosMonitoria;
     /**
      * Retorna una monitoria en especifico con su id correspondiente
      * @param id identificador de la monitoria
      * @return la monitoria con el id dado
      * @Throws ExcepcionServiciosMonitoria si no existe dicha monitoria
      */
-    public Monitoria consulatarMonitoria(int id);
+    public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
 }
