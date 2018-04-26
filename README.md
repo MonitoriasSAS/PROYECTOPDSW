@@ -20,7 +20,7 @@ Profesor:
   *Roles:*
   -------
   #### ****Stakeholder:****
-  ##### Wilmer
+  ##### Wilmer Edicson Garzón Alfonso
   
   #### ****Dueño de producto:****
   #####  Francisco Chavez
