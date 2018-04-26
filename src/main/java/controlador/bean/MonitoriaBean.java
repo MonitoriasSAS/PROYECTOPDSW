@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package managedbeans;
+package controlador.bean;
 import entidades.Estudiante;
 import logica.servicios.*;
 import java.util.ArrayList;

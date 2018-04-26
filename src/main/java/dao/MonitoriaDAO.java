@@ -12,7 +12,7 @@ import entidades.Monitoria;
  * @author monitoriasSAS
  */
 public interface MonitoriaDAO {
-    public void agregarMonitoria(String ip, int id ,String nombre, String apellido,String obvservaciones) ;
+    public void agregarMonitoria(String ip, int id ,String nombre, String apellido,String obvservaciones,String tema) ;
     public Monitoria ConsultarMonitoria(int id) ;
     
 }
