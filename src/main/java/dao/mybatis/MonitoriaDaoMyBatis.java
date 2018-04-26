@@ -21,8 +21,12 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      @Inject
     MonitoriaMapper monmap; 
 
-   
-
+    /**
+     *
+     * @param id
+     * @return
+     * @throws PersistenceException
+     */
     @Override
     public Monitoria ConsultarMonitoria(int id) throws PersistenceException{
         try {
@@ -33,6 +37,14 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
         }
     }
 
+    /**
+     *
+     * @param ip
+     * @param id
+     * @param nombre
+     * @param apellido
+     * @throws PersistenceException
+     */
     @Override
     public void agregarMonitoria(String ip, int id, String nombre, String apellido) throws PersistenceException {
         try{
