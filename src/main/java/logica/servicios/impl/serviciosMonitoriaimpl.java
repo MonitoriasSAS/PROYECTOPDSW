@@ -7,7 +7,9 @@ package logica.servicios.impl;
 
 import com.google.inject.Inject;
 import dao.MonitoriaDAO;
+import dao.SemestreDAO;
 import entidades.Monitoria;
+import entidades.Semestre;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +23,8 @@ import javax.persistence.PersistenceException;
  */
 public class serviciosMonitoriaimpl implements serviciosMonitoria {
     
+    @Inject
+    private SemestreDAO semestre;
     @Inject
     private MonitoriaDAO daoMon;
      
@@ -42,6 +46,11 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
        } catch(PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @Override
+    public Semestre getSemestre(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

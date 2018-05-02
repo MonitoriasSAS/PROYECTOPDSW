@@ -11,7 +11,7 @@ import javax.faces.bean.ManagedProperty;
 import seguridad.bean.LoginBean;
 /**
  *
- * @author nicolas
+ * @author MonitoriasSAS
  */
 @ManagedBean(name="Monitor")
 @SessionScoped

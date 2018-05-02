@@ -18,7 +18,7 @@ import logica.servicios.serviciosMonitoriaFactory;
 
 /**
  *
- * @author 2110540
+ * @author MonitoriasSAS
  */
 @ManagedBean(name = "bse")
 @SessionScoped

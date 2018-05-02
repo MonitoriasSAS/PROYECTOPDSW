@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package entidades;
+import java.io.Serializable;
 
 /**
  *
@@ -13,6 +14,16 @@ public class Grupo {
     private int numero;
     private Semestre semestre;
     private Profesor profesor;
+    private Monitor monitor;
+    
+    public Grupo(int numero, Semestre semestre,Monitor monitor,Profesor profesor){
+        this.numero=numero;
+        this.monitor=monitor;
+        this.profesor=profesor;
+        this.semestre=semestre;
+        
+    }
+            
 
     public int getNumero() {
         return numero;
@@ -21,7 +32,15 @@ public class Grupo {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
+    
+    public Monitor getMonitor(){
+        return monitor;
+    }
+    
+    public void setMonitor(Monitor monitor){
+        this.monitor=monitor;
+    }
+    
     public Semestre getSemestre() {
         return semestre;
     }

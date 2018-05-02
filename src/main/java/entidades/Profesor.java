@@ -14,7 +14,6 @@ public class Profesor {
     private String nombre;
     private String apellido;
     private String correo;
-    private String Correo;
 
     public int getId() {
         return id;
