@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class Semestre {
     private int periodo;
-    private int año;
+    private int anio;
     private Date inicio;
     private Date fin;
 
@@ -23,12 +23,12 @@ public class Semestre {
         this.periodo = periodo;
     }
 
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     public Date getInicio() {

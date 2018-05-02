@@ -6,6 +6,7 @@
 package logica.servicios;
 
 import entidades.Monitoria;
+import entidades.Semestre;
 import java.util.Date;
 
 /**
@@ -32,4 +33,6 @@ public interface serviciosMonitoria {
      * @Throws ExcepcionServiciosMonitoria si no existe dicha monitoria
      */
     public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
+
+    public Semestre getSemestre(int i);
 }

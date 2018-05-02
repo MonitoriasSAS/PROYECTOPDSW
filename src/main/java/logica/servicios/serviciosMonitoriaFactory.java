@@ -10,7 +10,9 @@ import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 import static com.google.inject.Guice.createInjector;
 import dao.MonitoriaDAO;
+import dao.SemestreDAO;
 import dao.mybatis.MonitoriaDaoMyBatis;
+import dao.mybatis.SemestreDaoMyBatis;
 import logica.servicios.impl.serviciosMonitoriaimpl;
 /**
  *
@@ -29,6 +31,7 @@ public class serviciosMonitoriaFactory {
                 setClassPathResource("mybatis-config.xml");
                 bind(serviciosMonitoria.class).to(serviciosMonitoriaimpl.class);
                 bind(MonitoriaDAO.class).to(MonitoriaDaoMyBatis.class);
+                bind(SemestreDAO.class).to(SemestreDaoMyBatis.class);
             }
         }
         );
