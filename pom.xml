@@ -27,7 +27,12 @@
             <artifactId>primefaces</artifactId>
             <version>5.0</version>
         </dependency>
-
+        <!-- PostgreSQL -->
+        <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.0-801.jdbc4</version>
+        </dependency>
         <dependency>           
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
