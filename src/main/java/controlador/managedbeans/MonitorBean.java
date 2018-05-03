@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import javax.faces.bean.ManagedProperty;
-import seguridad.bean.LoginBean;
+import seguridad.bean.LogBean;
 /**
  *
  * @author MonitoriasSAS
@@ -17,16 +17,16 @@ import seguridad.bean.LoginBean;
 @SessionScoped
 public class MonitorBean implements Serializable{
     @ManagedProperty(value = "#{loginBean}")
-    private LoginBean seguridad;
+    private LogBean seguridad;
     public MonitorBean(){
         
     }
 
-    public LoginBean getSeguridad() {
+    public LogBean getSeguridad() {
         return seguridad;
     }
 
-    public void setSeguridad(LoginBean seguridad) {
+    public void setSeguridad(LogBean seguridad) {
         this.seguridad = seguridad;
     }
 }

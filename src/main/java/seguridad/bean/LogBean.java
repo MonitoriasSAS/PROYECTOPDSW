@@ -3,35 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package seguridad.bean;
+
+import java.io.Serializable;
 import entidades.Estudiante;
-import java.io.IOException;
+import entidades.Semestre;
 import logica.servicios.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import java.io.Serializable;
+import logica.servicios.serviciosMonitoriaFactory;
+
 import java.util.logging.Logger;
 import javax.faces.context.FacesContext;
 import javax.security.auth.Subject;
-//import org.apache.log4j.spi.LoggerFactory;
+import org.apache.log4j.spi.LoggerFactory;
 import org.primefaces.util.SecurityUtils;
-//Simport org.slf4j.Logger;
+//import org.slf4j.Logger;
+
 /**
  *
- * @author nicolas
+ * @author CARLOS
  */
-
-@ManagedBean(name = "beanLogin", eager = true)
+@ManagedBean(name = "blogin",eager=true)
 @SessionScoped
- public class LoginBean implements Serializable {
+public class LogBean implements Serializable{
     //private static final Logger log = LoggerFactory.getLogger(LoginBean.class);
     
 
-    private String usuario;
+    /*private String usuario;
     private String contrasena;
     
     public LoginBean() {
@@ -75,5 +77,5 @@ import org.primefaces.util.SecurityUtils;
         } catch(Exception ex){
             throw  ex;
         }*/
-    }
+    //}
 }
