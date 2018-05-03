@@ -12,7 +12,15 @@ package entidades;
 public class Asignatura {
     private int id;
     private String nombre;
+    private Tema tema;  
 
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
+
+    public Tema getTema() {
+        return tema;
+    }
 
     public int getId() {
         return id;

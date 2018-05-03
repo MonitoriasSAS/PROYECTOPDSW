@@ -17,6 +17,7 @@ public class Monitoria {
     private String observaciones;
     private Date fecha;
     private Tema tema;
+    private FranjaHorario franjaHorario;
 
     public void setTema(Tema tema) {
         this.tema = tema;

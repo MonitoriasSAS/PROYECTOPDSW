@@ -13,5 +13,5 @@ import org.apache.ibatis.annotations.Param;
  * @author MonitoriasSaS
  */
 public interface GrupoMapper{
-    List<Grupo> grupo(@Param("id")int id,@Param("semestre")int semestre);
+    List<Grupo> grupo(@Param("numero")int numero);
 }
