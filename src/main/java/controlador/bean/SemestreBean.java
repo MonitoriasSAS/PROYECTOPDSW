@@ -6,7 +6,6 @@
 package controlador.bean;
 
 import java.io.Serializable;
-import entidades.Estudiante;
 import entidades.Semestre;
 import logica.servicios.*;
 import java.util.ArrayList;

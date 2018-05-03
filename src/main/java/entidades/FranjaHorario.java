@@ -5,15 +5,19 @@
  */
 package entidades;
 
+import java.util.Date;
+
 /**
  *
  * @author AsusPC
  */
 public class FranjaHorario {
     private int id;
-    private String dia_mon;
-    private int hora;
-
+    private Monitor monitor;
+    private Date fecha;
+    private Grupo grupo;
+    private Asignatura asignatura;
+    
     public int getId() {
         return id;
     }
@@ -22,20 +26,36 @@ public class FranjaHorario {
         this.id = id;
     }
 
-    public String getDia_mon() {
-        return dia_mon;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setDia_mon(String dia_mon) {
-        this.dia_mon = dia_mon;
+    public Grupo getGrupo() {
+        return grupo;
     }
 
-    public int getHora() {
-        return hora;
+    public Asignatura getAsignatura() {
+        return asignatura;
     }
 
-    public void setHora(int hora) {
-        this.hora = hora;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
     }
     
     

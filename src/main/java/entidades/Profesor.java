@@ -14,6 +14,7 @@ public class Profesor {
     private String nombre;
     private String apellido;
     private String correo;
+    private int telefono;
 
     public int getId() {
         return id;
@@ -47,4 +48,12 @@ public class Profesor {
         this.correo = correo;
     }
 
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+    
 }

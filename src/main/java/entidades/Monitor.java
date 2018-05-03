@@ -15,7 +15,7 @@ public class Monitor {
     private String apellido;
     private int telefono;
     private String carrera;
-
+    private String ingreso;
 
     public int getId() {
         return id;
@@ -56,4 +56,13 @@ public class Monitor {
     public void setCarrera(String carrera) {
         this.carrera = carrera;
     }
+
+    public String getIngreso() {
+        return ingreso;
+    }
+
+    public void setIngreso(String ingreso) {
+        this.ingreso = ingreso;
+    }
+    
 }

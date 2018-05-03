@@ -26,8 +26,8 @@ public class GrupoDaoMyBatis implements GrupoDAO {
      private GrupoMapper grupoMapper; 
 
     @Override
-    public List<Grupo> grupo(int id,int semestre) {
-       return grupoMapper.grupo(id,semestre);
+    public List<Grupo> grupo(int numero) {
+       return grupoMapper.grupo(numero);
     }
      
 }

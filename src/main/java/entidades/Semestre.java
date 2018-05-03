@@ -10,27 +10,17 @@ import java.util.Date;
  * @author 2112076
  */
 public class Semestre {
-    private int periodo;
-    private int anio;
+    private String periodo;
     private Date inicio;
     private Date fin;
 
-    public int getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(int periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
-
-    public int getAnio() {
-        return anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
     public Date getInicio() {
         return inicio;
     }

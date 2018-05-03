@@ -14,11 +14,11 @@ public class Grupo {
     private int numero;
     private Semestre semestre;
     private Profesor profesor;
-    private Monitor monitor;
+    private Asignatura asignatura;
     
-    public Grupo(int numero, Semestre semestre,Monitor monitor,Profesor profesor){
+    public Grupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor){
         this.numero=numero;
-        this.monitor=monitor;
+        this.asignatura=asignatura;
         this.profesor=profesor;
         this.semestre=semestre;
         
@@ -32,13 +32,13 @@ public class Grupo {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
-    public Monitor getMonitor(){
-        return monitor;
+
+    public Asignatura getAsignatura() {
+        return asignatura;
     }
-    
-    public void setMonitor(Monitor monitor){
-        this.monitor=monitor;
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
     }
     
     public Semestre getSemestre() {

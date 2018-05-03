@@ -5,13 +5,12 @@
  */
 package dao;
 
-import entidades.Estudiante;
+import entidades.Tema;
 
 /**
  *
- * @author monitoriasSAS
+ * @author 2112076
  */
-public interface EstudianteDAO {
-    public Estudiante estudiante(int id) ;
-    
+public interface TemaDAO {
+    public Tema tema(String id);
 }

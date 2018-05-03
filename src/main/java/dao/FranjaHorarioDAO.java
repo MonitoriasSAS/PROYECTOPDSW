@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package dao;
-import entidades.Grupo;
-import java.util.List;
+
+import entidades.FranjaHorario;
+
 /**
  *
- * @author 2110540
+ * @author 2112076
  */
-public interface GrupoDAO {
-    List<Grupo> grupo(int numero);
+public interface FranjaHorarioDAO {
+    public FranjaHorario franjaHorario(int id);
 }
