@@ -12,10 +12,12 @@
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
-         <result poperty='descripcion' column='descripcion'/>
+         <result poperty='name' column='name'/>
+         
      </resultMap>
      <resultMap type= 'Estudiante' id='estudiateResult'>
          <id property='id' column='id_Carnet'/>
+     <resultMap type= 'Estudiante' id='estudiateRes
          <result property='nombre' column='nombre_Es'/>
          <result property='apellido' column='apellido_Es'/>
      </resultMap>
@@ -33,10 +35,10 @@
          insert into Monitoria(ip,observaciones,Fanja_id)
          values(#{ip},#{obsv},null)
          insert into Estudiante
-         values(#{idcar},#{name},#{last},null,null)
+         values(#{idcar},null,null)
          insert into Asistencia 
          values(#{idcar},SELECT max(id_Mon) FROM monitoria,#{tem})
          insert into Tema
-         values(#{tem},#{descp})
+         values(#{tem})
      </insert>
  </mapper>
