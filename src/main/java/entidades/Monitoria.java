@@ -16,6 +16,15 @@ public class Monitoria {
     private String ip;
     private String observaciones;
     private Date fecha;
+    private Tema tema;
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
+
+    public Tema getTema() {
+        return tema;
+    }
 
     public void setId(int id) {
         this.id = id;
