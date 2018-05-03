@@ -110,21 +110,6 @@ VALUES
 ('2018/i',1,2117342,1);
 
 ---------------------------
--- Estudiante
-
-INSERT INTO Estudiante
-VALUES
-(2112712,'nicolas','patino',1,1);
-
-INSERT INTO Estudiante
-VALUES
-(2112713,'maria','paula',1,1);
-
-INSERT INTO Estudiante
-VALUES
-(2112714,'valentina','pulido',1,1);
-
----------------------------
 -- Franja Horario
 
 INSERT INTO Franja_Horario
@@ -148,29 +133,44 @@ VALUES
 INSERT INTO Monitoria
 (id_Mon,ip,observaciones,Franja_id,fecha)
 VALUES
-(1100,'192.168.1.1','entiende el tema',1000,'2018-03-04');
+(1100,'192.168.1.1','entiende el tema',1000,'2018-03-04',2110540,1);
 
 INSERT INTO Monitoria
 (id_Mon,ip,observaciones,Franja_id,fecha)
 VALUES
-(1101,'192.168.1.2','entiende el tema',1001,'2018-03-05');
+(1101,'192.168.1.2','entiende el tema',1001,'2018-03-05',2112070,1);
 
 INSERT INTO Monitoria
 (id_Mon,ip,observaciones,Franja_id,fecha)
 VALUES
-(1102,'192.168.1.3','entiende el tema',1002,'2018-03-06');
+(1102,'192.168.1.3','entiende el tema',1002,'2018-03-06',2115640,1);
 
 ---------------------------
 -- Asistencia
 INSERT INTO Asistencia
 VALUES
-(2112712,1100,'2');
+(1100,'2');
 
 INSERT INTO Asistencia
 VALUES
-(2112713,1101,'1');
+(1101,'1');
 
 INSERT INTO Asistencia
 VALUES
-(2112714,1102,'3');
+(1102,'3');
+
+------------------------------
+--Observaciones
+INSERT INTO Observaciones
+VALUES
+(1,2110540,2110541,'explica muy bien los temas');
+
+INSERT INTO Observaciones
+VALUES
+(2,2112070,2110542,'explica muy bien los temas');
+INSERT INTO Observaciones
+
+VALUES
+(3,2110546,2110543,'explica muy bien los temas');
+
 

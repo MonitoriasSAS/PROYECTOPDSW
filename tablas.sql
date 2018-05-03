@@ -46,21 +46,9 @@ CREATE TABLE Grupo (
    CONSTRAINT Grupo_pk PRIMARY KEY (Asignatura_id_Asignatura,numero)
 );
 
-CREATE TABLE Estudiante (
-   id_Carnet int  NOT NULL,
-   nombre_Es varchar(20)  NOT NULL,
-   apellido_Es varchar(20)  NOT NULL,
-   id_Asignatura int  ,
-   Grupo_numero int  ,
-   CONSTRAINT Estudiante_pk PRIMARY KEY (id_Carnet)
-);
-
 CREATE TABLE Tema (
    TemaID varchar(20)  NOT NULL,
-=======
-   TemaID varchar(15)  NOT NULL,
-   descripcion varchar(100)  NOT NULL,
-   Asignatura_id_Asignatura int  ,
+   nombre varchar(50)  NOT NULL,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
 );
 
@@ -79,16 +67,24 @@ CREATE TABLE Monitoria (
    observaciones varchar(100)  NOT NULL,
    Franja_id int  ,
    fecha timestamp  NOT NULL,
+   id_carnet int NOT NULL,
+   grupo int NOT NULL,
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
 
 CREATE TABLE Asistencia (
-   Estudiante_id_Carnet int  NOT NULL,
    Monitoria_id_Monitoria int  NOT NULL,
    Tema_TemaID varchar(20)  NOT NULL,
    CONSTRAINT Asistencia_pk PRIMARY KEY (Estudiante_id_Carnet,Monitoria_id_Monitoria)
 );
 
+CREATE TABLE Observaciones (
+   idobs int NOT NULL,
+   id_car int NOT NULL,
+   Monitor_id_Carnet int NOT NULL,
+   observacion varchar(100),
+   CONSTRAINT obs_pk PRIMARY KEY (idobs) 
+);
 
 -----------------------------------------
 --Foraneas
@@ -117,16 +113,6 @@ ADD CONSTRAINT FK_ProfesorID
 FOREIGN KEY (Profesro_id_Carnet)
 REFERENCES Profesor(id_Carnet);
 
-ALTER TABLE Estudiante
-ADD CONSTRAINT FK_Asigantura_id_grupo
-FOREIGN KEY (id_Asignatura)
-REFERENCES Grupo(Asignatura_id_Asignatura);
-
-ALTER TABLE Estudiante
-ADD CONSTRAINT FK_Grupo_numero
-FOREIGN KEY (Grupo_numero)
-REFERENCES Grupo(numero);
-
 ALTER TABLE Franja_Horario
 ADD CONSTRAINT FK_MonitorID
 FOREIGN KEY (Monitor_id_Carnet)
@@ -148,11 +134,6 @@ FOREIGN KEY (Franja_id)
 REFERENCES Franja_Horario(Franja_id);
 
 ALTER TABLE Asistencia
-ADD CONSTRAINT FK_Estudiante_id_Carn
-FOREIGN KEY (Estudiante_id_Carn)
-REFERENCES Estudiante(id_Carnet);
-
-ALTER TABLE Asistencia
 ADD CONSTRAINT FK_Monitoria_id_Monito
 FOREIGN KEY (Monitoria_id_Monito)
 REFERENCES Monitoria(id_Mon);
@@ -161,4 +142,9 @@ ALTER TABLE Asistencia
 ADD CONSTRAINT FK_Tema_id_Tema
 FOREIGN KEY (Tema_TemaID)
 REFERENCES Tema(TemaID);
+
+ALTER TABLE Observaciones
+ADD CONSTRAINT FK_Monitor_id_Carnet
+FOREIGN KEY (Monitor_id_Carnet)
+REFERENCES Monitor(id_Carnet);
 
