@@ -9,23 +9,24 @@ package entidades;
  *
  * @author 2112076
  */
-public class Estudiante {
+public class Tema {
     private int id;
-    private Grupo grupo;
+    private String name;
 
     public int getId() {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
-    public Grupo getGrupo() {
-        return grupo;
-    }
 
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
+    public void setName(String name) {
+        this.name = name;
     }
-
+    
 }

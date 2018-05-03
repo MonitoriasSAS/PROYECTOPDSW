@@ -56,11 +56,9 @@ CREATE TABLE Estudiante (
 );
 
 CREATE TABLE Tema (
-<<<<<<< HEAD
    TemaID varchar(20)  NOT NULL,
 =======
    TemaID varchar(15)  NOT NULL,
->>>>>>> 782648ae66ededf1e36bcfc18a6d5da663a959a8
    descripcion varchar(100)  NOT NULL,
    Asignatura_id_Asignatura int  ,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
@@ -90,7 +88,7 @@ CREATE TABLE Asistencia (
    Tema_TemaID varchar(20)  NOT NULL,
    CONSTRAINT Asistencia_pk PRIMARY KEY (Estudiante_id_Carnet,Monitoria_id_Monitoria)
 );
-<<<<<<< HEAD
+
 
 -----------------------------------------
 --Foraneas
@@ -163,5 +161,4 @@ ALTER TABLE Asistencia
 ADD CONSTRAINT FK_Tema_id_Tema
 FOREIGN KEY (Tema_TemaID)
 REFERENCES Tema(TemaID);
-=======
->>>>>>> 782648ae66ededf1e36bcfc18a6d5da663a959a8
+
