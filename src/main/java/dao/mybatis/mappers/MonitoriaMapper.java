@@ -6,6 +6,7 @@
 package dao.mybatis.mappers;
 
 import entidades.Monitoria;
+import java.util.Date;
 
 import org.apache.ibatis.annotations.Param;
 /**
@@ -15,6 +16,9 @@ import org.apache.ibatis.annotations.Param;
 public interface MonitoriaMapper{
     public Monitoria loadMonitoria(@Param("idmo") int id);
     public void agregarMonitoria(@Param("ip") String ip, 
-            @Param("idcar") int id ,@Param("obvs") String obvservaciones,
-             @Param("tem") String tema,@Param("descp") String descripcion);
+            @Param("obvs") String obvservaciones,
+            @Param("fec") Date fecha,
+            @Param("id") int id_carnet,
+            @Param("grup") int numero,
+            @Param("tem") String tema);
 }

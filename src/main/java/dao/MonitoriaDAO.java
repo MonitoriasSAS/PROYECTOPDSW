@@ -6,13 +6,14 @@
 package dao;
 
 import entidades.Monitoria;
+import java.util.Date;
 
 /**
  *
  * @author monitoriasSAS
  */
 public interface MonitoriaDAO {
-    public void agregarMonitoria(String ip, int id ,String obvservaciones,String tema,String descripcion) ;
+    public void agregarMonitoria(String ip,  String obvservaciones,Date fecha,int id,int numero,String tema) ;
     public Monitoria ConsultarMonitoria(int id) ;
     
 }

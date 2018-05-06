@@ -9,6 +9,7 @@ import com.google.inject.Inject;
 import dao.MonitoriaDAO;
 import dao.mybatis.mappers.MonitoriaMapper;
 import entidades.Monitoria;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.PersistenceException;
@@ -38,9 +39,10 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
     }
 
     @Override
-    public void agregarMonitoria(String ip, int id, String obvservaciones,String tema,String descripcion) {
+    public void agregarMonitoria(String ip,  String obvservaciones,Date fecha,int id,int numero,String tema) {
         try{
-            monmap.agregarMonitoria(ip, id,obvservaciones,tema,descripcion);
+            monmap.agregarMonitoria(ip, obvservaciones, fecha, id, numero, tema);
+            
         } catch(Exception e){
             throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
           
