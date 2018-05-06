@@ -6,6 +6,7 @@
 package dao.mybatis.mappers;
 
 import entidades.Semestre;
+import java.util.Date;
 import org.apache.ibatis.annotations.Param;
 /**
  *
@@ -13,4 +14,16 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface SemestreMapper{
     Semestre semestre(@Param("id")int id);
+    void agregarSemestre(@Param("perio")String id,
+            @Param("ini") Date inicio,
+            @Param("fin") Date fin);    
+    void agregarGrupo(@Param("semeste") String semestre,
+            @Param("asignatura") int asignatura,
+            @Param("profesor")int carnet,
+            @Param("num") int numero);
+    void agregarProfesor(@Param("id")int id,
+            @Param("nom") String nombre,
+            @Param("apell") String apellido,
+            @Param("tel") String telefono,
+            @Param("mail") String mail);
 }

@@ -13,6 +13,7 @@ public class Observacion {
     private Monitor monitor;
     private int id;
     private int estudiante;
+    private String observacion;
 
     public Monitor getMonitor() {
         return monitor;
@@ -36,6 +37,14 @@ public class Observacion {
 
     public void setEstudiante(int estudiante) {
         this.estudiante = estudiante;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
     }
     
 }
