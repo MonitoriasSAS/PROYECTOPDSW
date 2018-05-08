@@ -26,4 +26,10 @@ public interface SemestreMapper{
             @Param("apell") String apellido,
             @Param("tel") String telefono,
             @Param("mail") String mail);
+    void agregarFranja(@Param("idfra") int id_franja,
+            @Param("idmon") int id_monitor,
+            @Param("asig") int asignatura,
+            @Param("grup") int grupo,
+            @Param("fecha") Date inicio);
+    
 }

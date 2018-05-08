@@ -18,19 +18,15 @@ import logica.servicios.serviciosMonitoriaFactory;
  * @author monitoriasSas
  */
 public class main {
-    private SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HH::SS");
-    private Date fechaPru ;
-    public Date carcas(String Datepru){
-        fechaPru=null;
+    private static SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HH::SS");
+    private static Date fechaPru ;
+    public static void main(String a[]){
          try {
-            fechaPru=sdf.parse(Datepru);
+            fechaPru=sdf.parse("2018-01-10 7:00:00");
         } catch (ParseException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-         return fechaPru;
-    }
-    public static void main(String a[]){
-         //System.out.println(serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().agregarSemestre("2018-2",carcas("2018-01-10 7:00:00"),carcas("2018-01-10 7:00:00")));
+         serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().agregarSemestre("2018-2",fechaPru,fechaPru);
          System.exit(0);
     }
     

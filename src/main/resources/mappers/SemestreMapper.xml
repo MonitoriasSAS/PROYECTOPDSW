@@ -77,5 +77,8 @@
          insert into Monitor 
          Values(#{carnet},#{nombre},#{apellido},#{ingre}#{tel},#{carre})
      </insert>
-     
+     <insert>
+         insert into Franja_Horario
+         values(#{idfra},#{idmon},#{#asig},#{grup},#{fecha})
+     </insert>
  </mapper>
