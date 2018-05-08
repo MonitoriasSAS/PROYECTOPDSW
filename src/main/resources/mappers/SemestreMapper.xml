@@ -73,4 +73,9 @@
          insert into Profesor 
          Values(#{id},#{nom},#{apell},#{tel},#{mail})
      </insert>
+     <insert id='agregarMonitoror'>
+         insert into Monitor 
+         Values(#{carnet},#{nombre},#{apellido},#{ingre}#{tel},#{carre})
+     </insert>
+     
  </mapper>

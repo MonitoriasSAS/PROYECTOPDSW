@@ -45,4 +45,9 @@
          <result property='observacion' column='observacion'/>
          <association property='monitor' javaTypr='Monitor' resultmap='monitorResult'/>
      </resultMap>
+     <select id='consultarGrupos'>
+         select observaciones,fecha,id_carnet,grupo 
+         from Monitoria, Franja_Horaio, Grupo, Profesor
+         where #{id}=Profesor_id_Carnet and Franja_id=id_franja and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
+     </select>
  </mapper>
