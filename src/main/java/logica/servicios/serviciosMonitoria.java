@@ -32,4 +32,10 @@ public interface serviciosMonitoria {
     public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
 
     public Semestre getSemestre(int i);
+    
+    public void agregarSemestre(String id, Date inicio, Date fin);
+    
+    public void agregarGrupo(String semestre, int asignatura, int carnet, int numero);
+    
+    public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail);
 }

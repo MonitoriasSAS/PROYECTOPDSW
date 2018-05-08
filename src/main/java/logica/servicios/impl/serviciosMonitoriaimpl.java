@@ -24,10 +24,10 @@ import javax.persistence.PersistenceException;
 public class serviciosMonitoriaimpl implements serviciosMonitoria {
     
     @Inject
-    private SemestreDAO semestre;
+    private SemestreDAO daoSemestre;
     @Inject
     private MonitoriaDAO daoMon;
-     
+    
     @Override
     public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria{
         Monitoria x=null;
@@ -51,6 +51,33 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     @Override
     public Semestre getSemestre(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void agregarSemestre(String id, Date inicio, Date fin) {
+        try{
+            daoSemestre.agregarSemestre(id, inicio, fin);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void agregarGrupo(String semestre, int asignatura, int carnet, int numero) {
+         try{
+            daoSemestre.agregarGrupo(semestre, asignatura, carnet, numero);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail) {
+         try{
+            daoSemestre.agregarProfesor(id, nombre, apellido, telefono, mail);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
    
