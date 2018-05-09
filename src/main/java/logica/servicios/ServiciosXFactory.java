@@ -12,7 +12,7 @@ import org.mybatis.guice.datasource.helper.JdbcHelper;
 
 /**
  *
- * @author 2110540
+ * @author MonitoriasSAS
  */
 public class ServiciosXFactory {
     private static ServiciosXFactory instance = new ServiciosXFactory();
