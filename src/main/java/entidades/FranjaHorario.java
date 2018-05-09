@@ -17,6 +17,14 @@ public class FranjaHorario {
     private Date fecha;
     private Grupo grupo;
     private Asignatura asignatura;
+
+    public FranjaHorario(int id, Monitor monitor, Date fecha, Grupo grupo, Asignatura asignatura) {
+        this.id = id;
+        this.monitor = monitor;
+        this.fecha = fecha;
+        this.grupo = grupo;
+        this.asignatura = asignatura;
+    }
     
     public int getId() {
         return id;
@@ -58,5 +66,8 @@ public class FranjaHorario {
         this.monitor = monitor;
     }
     
-    
+    @Override
+    public String toString() {
+        return "FranjaHorario{" + "id=" + id + ", monitor=" + monitor + ", fecha=" + fecha + ", grupo=" + grupo + ", asignatura=" + asignatura +'}';
+    }
 }

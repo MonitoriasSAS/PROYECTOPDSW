@@ -14,6 +14,12 @@ public class Semestre {
     private Date inicio;
     private Date fin;
 
+    public Semestre(String periodo, Date inicio, Date fin) {
+        this.periodo = periodo;
+        this.inicio = inicio;
+        this.fin = fin;
+    }
+
     public String getPeriodo() {
         return periodo;
     }
@@ -35,6 +41,11 @@ public class Semestre {
 
     public void setFin(Date fin) {
         this.fin = fin;
+    }
+
+    @Override
+    public String toString() {
+        return "Semestre{" + "periodo=" + periodo + ", inicio=" + inicio + ", fin=" + fin + '}';
     }
 
 }

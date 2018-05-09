@@ -19,6 +19,14 @@ public class Monitoria {
     private Tema tema;
     private FranjaHorario franjaHorario;
 
+    public Monitoria(int id, String ip, Date fecha, Tema tema, FranjaHorario franjaHorario) {
+        this.id = id;
+        this.ip = ip;
+        this.fecha = fecha;
+        this.tema = tema;
+        this.franjaHorario = franjaHorario;
+    }
+
     public void setTema(Tema tema) {
         this.tema = tema;
     }
@@ -57,6 +65,14 @@ public class Monitoria {
 
     public Date getFecha() {
         return fecha;
+    }
+    
+    public void agregarObservacion(String observaciones){
+        this.observaciones=observaciones;
+    }
+    @Override
+    public String toString() {
+        return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + '}';
     }
     
 }

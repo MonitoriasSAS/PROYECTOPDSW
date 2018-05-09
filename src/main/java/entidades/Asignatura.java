@@ -14,6 +14,12 @@ public class Asignatura {
     private String nombre;
     private Tema tema;  
 
+    public Asignatura(int id, String nombre, Tema tema) {
+        this.id = id;
+        this.nombre = nombre;
+        this.tema = tema;
+    }
+    
     public void setTema(Tema tema) {
         this.tema = tema;
     }
@@ -36,5 +42,9 @@ public class Asignatura {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+     @Override
+    public String toString() {
+        return "Asignatura{" + "id=" + id + ", nombre=" + nombre + ", tema=" + tema + '}';
     }
 }

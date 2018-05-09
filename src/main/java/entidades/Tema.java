@@ -13,6 +13,11 @@ public class Tema {
     private String id;
     private String name;
 
+    public Tema(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public String getId() {
         return id;
     }
@@ -27,6 +32,11 @@ public class Tema {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Tema{" + "id=" + id + ", name=" + name + '}';
     }
     
 }

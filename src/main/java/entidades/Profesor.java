@@ -16,6 +16,14 @@ public class Profesor {
     private String correo;
     private int telefono;
 
+    public Profesor(int id, String nombre, String apellido, String correo, int telefono) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.telefono = telefono;
+    }
+
     public int getId() {
         return id;
     }
@@ -54,6 +62,11 @@ public class Profesor {
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Profesor{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", telefono=" + telefono + '}';
     }
     
 }

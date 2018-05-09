@@ -17,6 +17,15 @@ public class Monitor {
     private String carrera;
     private String ingreso;
 
+    public Monitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.carrera = carrera;
+        this.ingreso = ingreso;
+    }
+
     public int getId() {
         return id;
     }
@@ -63,6 +72,11 @@ public class Monitor {
 
     public void setIngreso(String ingreso) {
         this.ingreso = ingreso;
+    }
+
+    @Override
+    public String toString() {
+        return "Monitor{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + ", carrera=" + carrera + ", ingreso=" + ingreso + '}';
     }
     
 }

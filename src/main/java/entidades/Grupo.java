@@ -56,4 +56,8 @@ public class Grupo {
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
+    @Override
+    public String toString() {
+        return "Grupo{" + "numero=" + numero + ", asignatura=" + asignatura + ", profesor=" + profesor + ", semrestre=" + semestre + '}';
+    }
 }

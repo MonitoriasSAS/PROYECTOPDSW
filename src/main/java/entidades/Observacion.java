@@ -15,6 +15,13 @@ public class Observacion {
     private int estudiante;
     private String observacion;
 
+    public Observacion(Monitor monitor, int id, int estudiante, String observacion) {
+        this.monitor = monitor;
+        this.id = id;
+        this.estudiante = estudiante;
+        this.observacion = observacion;
+    }
+
     public Monitor getMonitor() {
         return monitor;
     }
@@ -45,6 +52,11 @@ public class Observacion {
 
     public void setObservacion(String observacion) {
         this.observacion = observacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Observacion{" + "monitor=" + monitor + ", id=" + id + ", estudiante=" + estudiante + ", observacion=" + observacion + '}';
     }
     
 }
