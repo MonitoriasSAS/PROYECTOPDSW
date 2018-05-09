@@ -8,24 +8,26 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha' />
-        <association property='franja' javaType='FranjaId' resultmap='franjaResult'/>
-        <id property='id_carnet' column='id_carnet'/>
-        <id property='grupo' column='grupo'/>
+        <result property='id_carnet' column='id_carnet'/>
+        <result property='grupo' column='grupo'/>
+        <association property='franja' javaType='Franja' resultMap='franjaResult'/>
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
-         <result poperty='name' column='name'/>
-         <association properti='asignatura' javaType='Asignatura' resultmap='AsignaturaReslut'/>
+         <result property='name' column='name'/>
+         <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaReslut'/>
      </resultMap>
-     <resultMap type= 'Franja_Horario' id='franjaResult'>
+     <resultMap type= 'Franja' id='franjaResult'>
         <id property='id' column='id_Franja_Horario'/>
         <result property='fecha' column='fecha' />
-        <association property='monitor' javaType='Monitor' resultmap='monitorResult'/>
-        <association property='grupo' javaType='Grupo' resultmap='grupoResult'/>
+        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
+        <association property='grupo' javaType='Grupo' resultMap='grupoResult'/>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
-        <id property='asignatura' column='Asignatura_id_Asignatura'/>
+        <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaResult'/>
+        <association property='profesor' javaType='Profesor' resultMap='profesorResult'/>
+        <association property='semestre' javaType='Semestre' resultMap='semestreResult'/>
      </resultMap>
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
@@ -39,11 +41,11 @@
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
      </resultMap>
-     <resultMap type='Observaciones' id='observacionResult'>
+     <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
          <result property='estudiante' column='id_car'/>
          <result property='observacion' column='observacion'/>
-         <association property='monitor' javaTypr='Monitor' resultmap='monitorResult'/>
+         <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
      </resultMap>
      <select id='consultarGrupos'>
          select observaciones,fecha,id_carnet,grupo 

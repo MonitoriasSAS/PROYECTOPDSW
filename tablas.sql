@@ -3,32 +3,32 @@
 -- Last modification date: 2018-04-25 02:51:11.743
 -- tables
 
-CREATE TABLE Semestre (
+CREATE TABLE IF NOT EXISTS Semestre (
    periodo_Academico varchar  NOT NULL,
    fecha_Inicio date  NOT NULL,
    fecha_Fin date  NOT NULL,
    CONSTRAINT Semestre_pk PRIMARY KEY (periodo_Academico)
 );
 
-CREATE TABLE Asignatura (
+CREATE TABLE IF NOT EXISTS Asignatura (
    id_Asignatura int  NOT NULL,
    nombre_Asig varchar(4)  NOT NULL,
    Tema_TemaID varchar(20)  NOT NULL,
    CONSTRAINT Asignatura_pk PRIMARY KEY (id_Asignatura)
 );
 
-CREATE TABLE Profesor (
+CREATE TABLE IF NOT EXISTS Profesor (
    id_Carnet int  NOT NULL,
    nombre_Prof varchar(20)  NOT NULL,
    apellido_Prof varchar(20)  NOT NULL,
    telefono int  NOT NULL,
    correo varchar(100)  NOT NULL,
-   CONSTRAINT Profesor_ak_1 UNIQUE (correo) NOT DEFERRABLE  INITIALLY IMMEDIATE,
-   CONSTRAINT Profesor_ak_2 UNIQUE (telefono) NOT DEFERRABLE  INITIALLY IMMEDIATE,
+   --CONSTRAINT Profesor_ak_1 UNIQUE (correo) NOT DEFERRABLE  INITIALLY IMMEDIATE,
+   --CONSTRAINT Profesor_ak_2 UNIQUE (telefono) NOT DEFERRABLE  INITIALLY IMMEDIATE,
    CONSTRAINT Profesor_pk PRIMARY KEY (id_Carnet)
 );
 
-CREATE TABLE Monitor (
+CREATE TABLE IF NOT EXISTS Monitor (
    id_Carnet int  NOT NULL,
    nombre_Moni varchar(20)  NOT NULL,
    apellido_Moni varchar(20)  NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE Monitor (
    CONSTRAINT Monitor_pk PRIMARY KEY (id_Carnet)
 );
 
-CREATE TABLE Grupo (
+CREATE TABLE IF NOT EXISTS Grupo (
    Semestre_periodo_Academico varchar  NOT NULL,
    Asignatura_id_Asignatura int  NOT NULL,
    Profesor_id_Carnet int  NOT NULL,
@@ -46,13 +46,13 @@ CREATE TABLE Grupo (
    CONSTRAINT Grupo_pk PRIMARY KEY (Asignatura_id_Asignatura,numero)
 );
 
-CREATE TABLE Tema (
+CREATE TABLE IF NOT EXISTS Tema (
    TemaID varchar(20)  NOT NULL,
    nombre varchar(50)  NOT NULL,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
 );
 
-CREATE TABLE Franja_Horario (
+CREATE TABLE IF NOT EXISTS Franja_Horario (
    id_Franja int  NOT NULL,
    Monitor_id_Carnet int  NOT NULL,
    Grupo_Asignatura_id_Asignatura int  NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE Franja_Horario (
    CONSTRAINT Franja_Horario_pk PRIMARY KEY (id_Franja)
 );
 
-CREATE TABLE Monitoria (
+CREATE TABLE IF NOT EXISTS Monitoria (
    id_Mon int  NOT NULL,
    ip varchar(15)  NOT NULL,
    observaciones varchar(100)  NOT NULL,
@@ -72,20 +72,20 @@ CREATE TABLE Monitoria (
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
 
-CREATE TABLE Asistencia (
+CREATE TABLE IF NOT EXISTS Asistencia (
    Monitoria_id_Monitoria int  NOT NULL,
    Tema_TemaID varchar(20)  NOT NULL,
-   CONSTRAINT Asistencia_pk PRIMARY KEY (Estudiante_id_Carnet,Monitoria_id_Monitoria)
+   CONSTRAINT Asistencia_pk PRIMARY KEY (Monitoria_id_Monitoria)
 );
 
-CREATE TABLE Observaciones (
+CREATE TABLE IF NOT EXISTS Observaciones (
    idobs int NOT NULL,
    id_car int NOT NULL,
    Monitor_id_Carnet int NOT NULL,
    observacion varchar(100),
    CONSTRAINT obs_pk PRIMARY KEY (idobs) 
 );
-
+/*
 -----------------------------------------
 --Foraneas
 ALTER TABLE Grupo
@@ -94,23 +94,17 @@ FOREIGN KEY (Semestre_periodo_Academico)
 REFERENCES Semestre(periodo_Academico);
 
 ALTER TABLE Grupo
-ADD CONSTRAINT FK_Semestre_anio
-FOREIGN KEY (Semestre_anio)
-REFERENCES Semestre(anio);
-
+ADD CONSTRAINT FK_id_Asignatura
+FOREIGN KEY (Asignatura_id_Asignatura)
+REFERENCES  Asignatura(id_Asignatura)
 ALTER TABLE Asignatura
 ADD CONSTRAINT FK_TemaID_Asi
 FOREIGN KEY (Tema_TemaID)
 REFERENCES Tema(TemaID);
 
 ALTER TABLE Grupo
-ADD CONSTRAINT FK_Asigantura_id
-FOREIGN KEY (Asignatura_id_Asignatura)
-REFERENCES Asigtantura(id_Asignatura);
-
-ALTER TABLE Grupo
 ADD CONSTRAINT FK_ProfesorID
-FOREIGN KEY (Profesro_id_Carnet)
+FOREIGN KEY (Profesor_id_Carnet)
 REFERENCES Profesor(id_Carnet);
 
 ALTER TABLE Franja_Horario
@@ -131,11 +125,11 @@ REFERENCES Grupo(numero);
 ALTER TABLE Monitoria
 ADD CONSTRAINT FK_FranjaID
 FOREIGN KEY (Franja_id)
-REFERENCES Franja_Horario(Franja_id);
+REFERENCES Franja_Horario(id_Franja);
 
 ALTER TABLE Asistencia
 ADD CONSTRAINT FK_Monitoria_id_Monito
-FOREIGN KEY (Monitoria_id_Monito)
+FOREIGN KEY (Monitoria_id_Monitoria)
 REFERENCES Monitoria(id_Mon);
 
 ALTER TABLE Asistencia
@@ -147,4 +141,4 @@ ALTER TABLE Observaciones
 ADD CONSTRAINT FK_Monitor_id_Carnet
 FOREIGN KEY (Monitor_id_Carnet)
 REFERENCES Monitor(id_Carnet);
-
+*/

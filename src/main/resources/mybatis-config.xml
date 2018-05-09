@@ -13,6 +13,10 @@
         <typeAlias type='entidades.Monitoria' alias='Monitoria'/>
         <typeAlias type='entidades.Asignatura' alias='Asignatura'/>
         <typeAlias type='entidades.Tema' alias='Tema'/>
+        <typeAlias type='entidades.FranjaHorario' alias='Franja'/>
+        <typeAlias type='entidades.Grupo' alias='Grupo'/>
+        <typeAlias type='entidades.Observacion' alias='Observacion'/>
+        <typeAlias type='entidades.Semestre' alias='Semestre'/>
     </typeAliases>
             
 <environments default="development">
@@ -31,6 +35,4 @@
         <mapper resource="mappers/SemestreMapper.xml"></mapper>
         <mapper resource="mappers/ProfesorMapper.xml"></mapper>
     </mappers> 
-        
-     
 </configuration>
