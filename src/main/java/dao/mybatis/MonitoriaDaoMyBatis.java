@@ -21,6 +21,7 @@ import javax.persistence.PersistenceException;
 public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      @Inject
     MonitoriaMapper monmap; 
+    
 
     /**
      *
@@ -29,7 +30,7 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      * @throws PersistenceException
      */
     @Override
-    public Monitoria ConsultarMonitoria(int id) {
+    public Monitoria consultarMonitoria(int id) {
         try {
             Monitoria monitoria = monmap.loadMonitoria(id);
             return monitoria;
@@ -46,6 +47,15 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
         } catch(Exception e){
             throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
           
+        }
+    }
+    @Override
+    public void agregarAsistencia(int idmon, String idtema){
+        try{
+            monmap.agregarAsistencia(idmon,idtema);
+        }
+        catch(Exception e){
+            throw new PersistenceException("Error al cargar as solicitudes:"+e.getLocalizedMessage(),e);
         }
     }
 

@@ -21,7 +21,7 @@ public interface serviciosMonitoria {
      * @param ip donde se registra la monitoria
      * @throws ExcepcionServiciosMonitoria si hay error de persistencia-
      **/
-    public void registrarMonitoria(String ip,  String obvservaciones,Date fecha
+    public abstract void registrarMonitoria(String ip,  String obvservaciones,Date fecha
             ,int id,int numero,String tema) throws ExcepcionServiciosMonitoria;
     /**
      * Retorna una monitoria en especifico con su id correspondiente
@@ -29,13 +29,20 @@ public interface serviciosMonitoria {
      * @return la monitoria con el id dado
      * @Throws ExcepcionServiciosMonitoria si no existe dicha monitoria
      */
-    public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
-
-    public Semestre getSemestre(int i);
+    public abstract Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
     
-    public void agregarSemestre(String id, Date inicio, Date fin);
+    public abstract void agregarSemestre(String id, Date inicio, Date fin);
     
-    public void agregarGrupo(String semestre, int asignatura, int carnet, int numero);
+    public abstract void agregarGrupo(String semestre, int asignatura, int carnet, int numero);
     
     public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail);
+    
+    public abstract Semestre getSemestre(int i);
+    
+    public abstract void registrarAsistencia(int idmon, String idtema);
+    
+    public abstract void consultarInfoSemestre();
+    
+   
+    
 }

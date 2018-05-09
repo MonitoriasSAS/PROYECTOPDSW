@@ -21,4 +21,6 @@ public interface MonitoriaMapper{
             @Param("id") int id_carnet,
             @Param("grup") int numero,
             @Param("tem") String tema);
+    public void agregarAsistencia(@Param("idmon") int idmon,
+            @Param("idtema") String tema);
 }

@@ -27,12 +27,14 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     private SemestreDAO daoSemestre;
     @Inject
     private MonitoriaDAO daoMon;
+    @Inject
+    
     
     @Override
     public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria{
         Monitoria x=null;
         try{
-            x=daoMon.ConsultarMonitoria(id);
+            x=daoMon.consultarMonitoria(id);
         } catch(Exception ex){
               Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -47,8 +49,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    @Override
+    
     public Semestre getSemestre(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -75,6 +76,25 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail) {
          try{
             daoSemestre.agregarProfesor(id, nombre, apellido, telefono, mail);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+ 
+
+    @Override
+    public void consultarInfoSemestre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void registrarAsistencia(int idmon,String idtema) {
+               try{
+            daoMon.consultarMonitoria(idmon);
+            
+           
+            
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
