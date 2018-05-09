@@ -8,8 +8,11 @@
         <setting name="logImpl" value="LOG4J"/>        
     </settings>
     <typeAliases>
-        <typeAlias type='entidades.Estudiante' alias='Estudiante'/>
+        <typeAlias type='entidades.Monitor' alias='Monitor'/>
+        <typeAlias type='entidades.Profesor' alias='Profesor'/>
         <typeAlias type='entidades.Monitoria' alias='Monitoria'/>
+        <typeAlias type='entidades.Asignatura' alias='Asignatura'/>
+        <typeAlias type='entidades.Tema' alias='Tema'/>
     </typeAliases>
             
 <environments default="development">
@@ -25,7 +28,8 @@
 </environments>
     <mappers>
         <mapper resource="mappers/MonitoriaMapper.xml"></mapper>
-        
+        <mapper resource="mappers/SemestreMapper.xml"></mapper>
+        <mapper resource="mappers/ProfesorMapper.xml"></mapper>
     </mappers> 
         
         
