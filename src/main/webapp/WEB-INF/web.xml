@@ -22,7 +22,7 @@
     </session-timeout>
         </session-config>
         <welcome-file-list>
-    <welcome-file>login.xhtml</welcome-file>
+    <welcome-file>nuevoLogin.xhtml</welcome-file>
         </welcome-file-list>
     
     <!-- Apache Shiro -->
@@ -50,6 +50,6 @@
 
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>login.xhtml</url-pattern>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 </web-app>
