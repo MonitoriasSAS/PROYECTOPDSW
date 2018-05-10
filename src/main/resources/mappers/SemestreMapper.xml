@@ -59,10 +59,11 @@
          <result property='telefono' column='telefono'/>
          <result property='correo' column='correo'/>
      </resultMap>
-     <!--select parameterType='map' id='ConsultarGrupo' resultMap='grupoReslut'>
+     <select parameterType='map' id='Consultarsemestre' resultMap='semestreResult'>
          select *
-         FROM grupo
-     </select-->
+         FROM Semestre 
+         WHERE #{id}=periodo_Academico
+     </select>
      <insert id='agregarSemestre'>
          insert into Semestre
          values (#{perio},#{ini},#{fin})
