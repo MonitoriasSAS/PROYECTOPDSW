@@ -32,5 +32,11 @@ public interface SemestreMapper{
             @Param("asig") int asignatura,
             @Param("grup") int grupo,
             @Param("fecha") Date inicio);
+    void agregarMonitor(@Param("id")int id,
+            @Param("nom") String nombre,
+            @Param("apell") String apellido,
+            @Param("nom") String semestre,
+            @Param("tel") int telefono,
+            @Param("mail") String carrera);
     
 }
