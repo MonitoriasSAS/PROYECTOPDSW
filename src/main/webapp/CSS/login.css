@@ -49,6 +49,57 @@ body{
     line-height: 1;
     
 }
+input{
+    outline: none;
+    background: rgba(0,0,0,.5);
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    transition: all .5s ease;
+}
+password{
+    outline: none;
+    background: rgba(0,0,0,.5);
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    transition: all .5s ease;
+}
+input:focus{
+    border-bottom: 4px solid #0075d9;
+}
+password:focus{
+    border-bottom: 4px solid #0075d9;
+}
+.ui-button{
+    background: #ff851b;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.ui-button:hover{
+    background: rgba(0,117,217,.7);
+}
 .contenedor-form input[type="text"],
 .contenedor-form input[type="password"],
 .contenedor-form input[type="email"]{

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador.managedbeans;
+/*package controlador.managedbeans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
@@ -12,7 +12,7 @@ import seguridad.bean.LogBean;
 /**
  *
  * @author MonitoriasSAS
- */
+ *//*
 @ManagedBean(name="Monitor")
 @SessionScoped
 public class MonitorBean implements Serializable{
@@ -29,4 +29,4 @@ public class MonitorBean implements Serializable{
     public void setSeguridad(LogBean seguridad) {
         this.seguridad = seguridad;
     }
-}
+}*/
