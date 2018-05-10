@@ -49,5 +49,14 @@ public class SemestreDaoMyBatis implements SemestreDAO {
             throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
         }
     }
+
+    @Override
+    public void agregarMonitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso) {
+        try {
+         semestreMapper.agregarMonitor(id, nombre, apellido, nombre, telefono, carrera);
+         }catch (Exception e){
+            throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
+        }
+    }
      
 }

@@ -123,5 +123,14 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public void agregarMonitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso) {
+         try{
+           daoSemestre.agregarMonitor(id, nombre, apellido, telefono, carrera, ingreso);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
    
 }
