@@ -3,6 +3,9 @@ package logica.servicios.Client;
 import dao.mybatis.mappers.*;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,6 +27,7 @@ import org.apache.ibatis.session.*;
  */
 public class main {
      public static SqlSessionFactory getSqlSessionFactory() {
+         Connection conn = null;
         SqlSessionFactory sqlSessionFactory = null;
         if (sqlSessionFactory == null) {
             InputStream inputStream;
@@ -36,12 +40,11 @@ public class main {
         }
         return sqlSessionFactory;
     }
-    public static void main(String a[]){
-         SqlSessionFactory sessionfact = getSqlSessionFactory();
-
+    public static void main(String a[])throws SQLException {
+        SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
         SemestreMapper mm=sqlss.getMapper(SemestreMapper.class);
-        mm.agregarSemestre("2012-2",new Date(2012,1,23),new Date(2012,5,25));
+        
          //serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().agregarSemestre("2018-2",fechaPru,fechaPru);
          System.exit(0);
     }

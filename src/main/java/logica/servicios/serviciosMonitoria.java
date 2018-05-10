@@ -43,6 +43,6 @@ public interface serviciosMonitoria {
     
     public abstract void consultarInfoSemestre();
     
-   public Monitoria consularInfoMonitoria(int id);
+   public abstract  Monitoria consularInfoMonitoria(int id);
     
 }
