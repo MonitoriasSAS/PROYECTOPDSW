@@ -35,7 +35,7 @@ public interface serviciosMonitoria {
     
     public abstract void agregarGrupo(String semestre, int asignatura, int carnet, int numero);
     
-    public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail);
+    public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail);
     
     public abstract Semestre getSemestre(String i);
     

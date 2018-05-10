@@ -46,7 +46,7 @@ public class main {
         SemestreMapper mm=sqlss.getMapper(SemestreMapper.class);
         mm.agregarSemestre("2012-3", new Date(2012,1,23), new Date(2012,5,25));
         mm.Consultarsemestre("2012-2");
-        mm.agregarProfesor(2112107, "tato", "apellido","8018546", "mail");
+        mm.agregarProfesor(2112107, "tato", "apellido",8018546, "mail@mail.escuelaing.edu.co");
          //serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().agregarSemestre("2018-2",fechaPru,fechaPru);
          System.exit(0);
     }

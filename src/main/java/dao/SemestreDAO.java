@@ -16,6 +16,6 @@ public interface SemestreDAO {
     public Semestre ConsultarSemestre(String id) ;
     void agregarSemestre(String id,Date inicio,Date fin);    
     void agregarGrupo( String semestre,int asignatura,int carnet,int numero);
-    void agregarProfesor(int id,String nombre,String apellido,String telefono, String mail);
+    void agregarProfesor(int id,String nombre,String apellido,int telefono, String mail);
     
 }

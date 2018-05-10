@@ -74,7 +74,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail) {
+    public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail) {
          try{
             daoSemestre.agregarProfesor(id, nombre, apellido, telefono, mail);
         } catch (PersistenceException ex){

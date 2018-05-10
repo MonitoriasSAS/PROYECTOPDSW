@@ -42,7 +42,7 @@ public class SemestreDaoMyBatis implements SemestreDAO {
     }
 
     @Override
-    public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail) {
+    public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail) {
         try {
          semestreMapper.agregarProfesor(id, nombre, apellido, telefono, mail);
          }catch (Exception e){

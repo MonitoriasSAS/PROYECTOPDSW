@@ -25,7 +25,7 @@ public interface SemestreMapper{
     void agregarProfesor(@Param("id")int id,
             @Param("nom") String nombre,
             @Param("apell") String apellido,
-            @Param("tel") String telefono,
+            @Param("tel") int telefono,
             @Param("mail") String mail);
     void agregarFranja(@Param("idfra") int id_franja,
             @Param("idmon") int id_monitor,

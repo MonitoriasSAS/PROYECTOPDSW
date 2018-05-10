@@ -25,7 +25,7 @@ public class SemestreBean implements Serializable {
     private Semestre semestre;
     
     public Semestre getSemestre(){
-        return serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().getSemestre(2018) ;
+        return serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().getSemestre("2012-2") ;
     }
     public void setSemestre(Semestre semestre){
         this.semestre = semestre;
