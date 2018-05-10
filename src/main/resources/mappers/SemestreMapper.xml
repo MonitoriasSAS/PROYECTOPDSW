@@ -86,7 +86,7 @@
      </insert>
      <insert id='agregarFranja'>
          insert into Franja_Horario
-         values(#{idfra},#{idmon},#{#asig},#{grup},#{fecha})
+         values(#{idfra},#{idmon},#{asig},#{grup},#{fecha})
      </insert>
      <insert id='agregarTema'>
          insert into Tema

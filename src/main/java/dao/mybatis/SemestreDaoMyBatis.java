@@ -24,11 +24,8 @@ public class SemestreDaoMyBatis implements SemestreDAO {
 
     @Override
     public Semestre ConsultarSemestre(String id) {
-        try{
+        
        return semestreMapper.Consultarsemestre(id);
-       }catch (Exception e){
-            throw new PersistenceException("Error al consultar semestre:"+e.getLocalizedMessage(), e);
-        }
     }
 
     @Override
