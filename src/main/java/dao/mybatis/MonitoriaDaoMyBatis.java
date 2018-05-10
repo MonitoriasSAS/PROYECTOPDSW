@@ -35,7 +35,7 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
             Monitoria monitoria = monmap.loadMonitoria(id);
             return monitoria;
         }catch (Exception e){
-            throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
+            throw new PersistenceException("Error al consultar monitorias:"+e.getLocalizedMessage(), e);
         }
     }
 
@@ -45,7 +45,7 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
             monmap.agregarMonitoria(ip, obvservaciones, fecha, id, numero, tema);
             
         } catch(Exception e){
-            throw new PersistenceException("Error al cargar las solicitudes:"+e.getLocalizedMessage(), e);
+            throw new PersistenceException("Error al agregar monitoria:"+e.getLocalizedMessage(), e);
           
         }
     }
@@ -55,10 +55,8 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
             monmap.agregarAsistencia(idmon,idtema);
         }
         catch(Exception e){
-            throw new PersistenceException("Error al cargar as solicitudes:"+e.getLocalizedMessage(),e);
+            throw new PersistenceException("Error al agregar asistencia:"+e.getLocalizedMessage(),e);
         }
     }
-
-  
      
 }

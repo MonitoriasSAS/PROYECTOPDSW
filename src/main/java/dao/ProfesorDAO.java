@@ -5,6 +5,7 @@
  */
 package dao;
 
+import entidades.Monitoria;
 import entidades.Profesor;
 
 /**
@@ -13,5 +14,5 @@ import entidades.Profesor;
  */
 public interface ProfesorDAO {
     public Profesor profesor(int id) ;
-    
+    public Monitoria consularInfoMonitoria(int id);
 }

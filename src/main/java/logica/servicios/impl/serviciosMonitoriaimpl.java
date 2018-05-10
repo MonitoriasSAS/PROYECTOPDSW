@@ -7,6 +7,7 @@ package logica.servicios.impl;
 
 import com.google.inject.Inject;
 import dao.MonitoriaDAO;
+import dao.ProfesorDAO;
 import dao.SemestreDAO;
 import entidades.Monitoria;
 import entidades.Semestre;
@@ -28,7 +29,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     @Inject
     private MonitoriaDAO daoMon;
     @Inject
-    
+    private ProfesorDAO daoPro;
     
     @Override
     public Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria{
@@ -91,13 +92,24 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     @Override
     public void registrarAsistencia(int idmon,String idtema) {
                try{
-            daoMon.consultarMonitoria(idmon);
+            daoMon.agregarAsistencia(idmon, idtema);
             
            
             
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @Override
+    public Monitoria consularInfoMonitoria(int id) {
+        Monitoria x=null;
+        try{
+            daoPro.consularInfoMonitoria(id);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
     }
 
    

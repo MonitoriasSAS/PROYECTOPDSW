@@ -52,4 +52,9 @@
          from Monitoria, Franja_Horaio, Grupo, Profesor
          where #{id}=Profesor_id_Carnet and Franja_id=id_franja and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
      </select>
+     <select id='consularInfoMonitoria'>
+         select id_carnet,
+         from Monitoria,Tema,Asistencia
+         where #{id}=Monitoria.id and Monitoria.id=Asistencia.Monitoria_id_Monitoria and Tema_TemaID=tema.TemaID
+     </select>
  </mapper>

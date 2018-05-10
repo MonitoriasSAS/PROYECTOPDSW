@@ -9,6 +9,7 @@ import com.google.inject.Inject;
 
 import dao.ProfesorDAO;
 import dao.mybatis.mappers.ProfesorMapper;
+import entidades.Monitoria;
 import entidades.Profesor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,6 +26,11 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     @Override
     public Profesor profesor(int id) {
        return profesorMapper.profesor(id);
+    }
+
+    @Override
+    public Monitoria consularInfoMonitoria(int id) {
+       return profesorMapper.consularInfoMonitoria(id);
     }
      
 }
