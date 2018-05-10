@@ -35,7 +35,7 @@ public interface SemestreMapper{
     void agregarMonitor(@Param("carnet")int carnet,
             @Param("nombre") String nombre,
             @Param("apell") String apellido,
-            @Param("nom") String semestre,
+            @Param("nom") int semestre,
             @Param("tel") int telefono,
             @Param("carre") String carrera);
     void agregarAsignatura(@Param("id")int id,

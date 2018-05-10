@@ -45,13 +45,12 @@ public class main {
         SqlSession sqlss = sessionfact.openSession();
         SemestreMapper mm=sqlss.getMapper(SemestreMapper.class);
         MonitoriaMapper mp=sqlss.getMapper(MonitoriaMapper.class);
-        mm.agregarSemestre("2012-6", new Date(2012,1,23), new Date(2012,5,25));
-        System.out.println(mm.Consultarsemestre("2012-2"));
+        mm.agregarSemestre("2012-7", new Date(2012,1,23), new Date(2012,5,25));
+        System.out.println("helloa therreeeee"+mm.Consultarsemestre("2012-7"));
         mm.agregarProfesor(2112107, "tato", "apellido",8018546, "mail@mail.escuelaing.edu.co");
-        //semestre de ingreso de monitor esta como int en tablassql y es un varchar no se corregir eso sorry
-        //mm.agregarMonitor(2112107,"nombre"," apellido"," 2010-2", 70172, "carrera");
+        mm.agregarMonitor(2112107,"nombre"," apellido",2010, 70172, "sistemas");
         mm.agregarAsignatura(7, "lcal");
-        //mm.agregarGrupo("2012-2", 7, 2112107, 2);
+        mm.agregarGrupo("2012-7", 7, 2112107, 2);
         mm.agregarFranja(30, 2112107, 7, 2, new Date(2012,4,10));
         //mp.agregarMonitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10), 2112076, 2, "recurrencia");
          //serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().agregarSemestre("2018-2",fechaPru,fechaPru);
