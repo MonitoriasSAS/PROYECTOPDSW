@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+#principal{
+    background: url(../Imagenes/tierra.jpg);
+    background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: monospace;
+}
+#formu{
+    width: 550px;
+    margin: auto;
+    background: rgba(0,0,0,.7);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+.inicio{
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.user,.pass{
+    outline: none;
+    background: rgba(0,0,0,.5);
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    transition: all .5s ease;
+}
+.user:focus,.pass:focus{
+    border-bottom: 4px solid #0075d9;
+}
+.myButton{
+    background: #ff851b;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.myButton:hover{
+    background: rgba(0,117,217,.7);
+}

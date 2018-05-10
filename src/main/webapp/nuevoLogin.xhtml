@@ -4,21 +4,19 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Prueba</title>
-        <link rel="icon" href="\Imagenes\logoSistemas.jpg"></link>
-        <h:outputStylesheet library="CSS" name="nuevoLogin.css"/>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
     </h:head>
     <h:body id="principal">
-        <h:form prependId="false">
-            <p:outputPanel id="hojaTotal">
-                <p:fieldset legend="Iniciar Sesión">
-                    <p:inputText id="username" value="#{loginBean.username}" placeholder="Usuario"/>
-                        <br/>
-                        <p:password id="password" value="#{loginBean.password}" placeholder="Contraseña"/>
-                        <br/>
-                        <p:commandButton value="Ingresar" action="#{loginBean.doLogin}"/>
-                        <br/> 
-                    </p:fieldset>
-            </p:outputPanel>
+        <h:form id="formu">
+            <p:outputLabel value="Iniciar Sesión" styleClass="inicio"/>
+            <br/>
+            <p:inputText id="username" placeholder="Usuario" value="#{loginBean.username}" required="true" styleClass="user"/>
+            <br/>
+            <p:password id="password" placeholder="Contraseña" value="#{loginBean.password}" required="true" styleClass="pass"/>
+            <br/>
+            <p:commandButton value="Entrar" action="#{loginBean.doLogin}" styleClass="myButton"/>
+            <br/>
         </h:form>
     </h:body>
 </html>         
