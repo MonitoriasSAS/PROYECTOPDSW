@@ -25,6 +25,7 @@ public class serviciosMonitoriaFactory {
     private static Injector injector;
     private static Injector testInjector;
     public serviciosMonitoriaFactory(){
+        
         injector = createInjector(new XMLMyBatisModule() {
 
             @Override
@@ -39,6 +40,8 @@ public class serviciosMonitoriaFactory {
         }
         );
     }
+
+    
     public serviciosMonitoria getServiciosMonitoria() {
         return injector.getInstance(serviciosMonitoria.class);
     }    
