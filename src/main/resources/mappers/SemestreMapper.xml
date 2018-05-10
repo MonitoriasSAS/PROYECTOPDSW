@@ -80,9 +80,9 @@
          insert into Profesor 
          Values(#{id},#{nom},#{apell},#{tel},#{mail})
      </insert>
-     <insert id='agregarMonitoror'>
+     <insert id='agregarMonitor'>
          insert into Monitor 
-         Values(#{carnet},#{nombre},#{apellido},#{ingre}#{tel},#{carre})
+         Values(#{carnet},#{nombre},#{apell},#{nom},#{tel},#{carre})
      </insert>
      <insert id='agregarFranja'>
          insert into Franja_Horario
@@ -90,6 +90,6 @@
      </insert>
      <insert id='agregarTema'>
          insert into Tema
-         values(#{id},#{nombre},#{asig})
+         values(#{id},#{nom},#{asig})
      </insert>
  </mapper>
