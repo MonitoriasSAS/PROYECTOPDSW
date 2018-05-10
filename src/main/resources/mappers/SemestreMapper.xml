@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="dao.SemestreDAO">
+ <mapper namespace="dao.mybatis.mappers.SemestreMapper">
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
@@ -59,10 +59,10 @@
          <result property='telefono' column='telefono'/>
          <result property='correo' column='correo'/>
      </resultMap>
-     <select parameterType='map' id='ConsultarGrupo' resultMap='grupoReslut'>
+     <!--select parameterType='map' id='ConsultarGrupo' resultMap='grupoReslut'>
          select *
          FROM grupo
-     </select>
+     </select-->
      <insert id='agregarSemestre'>
          insert into Semestre
          values (#{perio},#{ini},#{fin})

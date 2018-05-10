@@ -40,8 +40,8 @@ public class main {
          SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
-        MonitoriaMapper mm=sqlss.getMapper(MonitoriaMapper.class);
-        
+        SemestreMapper mm=sqlss.getMapper(SemestreMapper.class);
+        mm.agregarSemestre("2012-2",new Date(2012,1,23),new Date(2012,5,25));
          //serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().agregarSemestre("2018-2",fechaPru,fechaPru);
          System.exit(0);
     }
