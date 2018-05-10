@@ -70,7 +70,7 @@
      </insert>
      <insert id='agregarAsignatura'>
          insert into Asignatura
-         values (#{nombre})
+         values (#{id},#{nombre})
      </insert>
      <insert id='agregarGrupo'>
          insert into Grupo
@@ -87,5 +87,9 @@
      <insert id='agregarFranja'>
          insert into Franja_Horario
          values(#{idfra},#{idmon},#{#asig},#{grup},#{fecha})
+     </insert>
+     <insert id='agregarTema'>
+         insert into Tema
+         values(#{id},#{nombre},#{asig})
      </insert>
  </mapper>

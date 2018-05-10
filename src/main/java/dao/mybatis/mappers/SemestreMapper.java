@@ -38,5 +38,10 @@ public interface SemestreMapper{
             @Param("nom") String semestre,
             @Param("tel") int telefono,
             @Param("mail") String carrera);
+    void agregarAsignatura(@Param("id")int id,
+            @Param("nom") String nombre);
+    void agregarTema(@Param("id")int id,
+            @Param("nom") String nombre,
+             @Param("asig") String asignatura);
     
 }

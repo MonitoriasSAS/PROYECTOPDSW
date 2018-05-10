@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS Grupo (
 CREATE TABLE IF NOT EXISTS Tema (
    TemaID varchar(20)  NOT NULL,
    nombre varchar(50)  NOT NULL,
+   Asignatura_id_Asignatura int NOT NULL,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
 );
 
