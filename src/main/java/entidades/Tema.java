@@ -12,11 +12,17 @@ package entidades;
 public class Tema {
     private String id;
     private String name;
+    private Asignatura asignatura;
 
-    public Tema(String id, String name) {
+    public Tema(){
+        
+    }
+    public Tema(String id, String name, Asignatura asignatura) {
         this.id = id;
         this.name = name;
+        this.asignatura = asignatura;
     }
+    
 
     public String getId() {
         return id;
@@ -36,7 +42,7 @@ public class Tema {
 
     @Override
     public String toString() {
-        return "Tema{" + "id=" + id + ", name=" + name + '}';
+        return "Tema{" + "id=" + id + ", name=" + name + ", asignatura=" + asignatura + '}';
     }
     
 }

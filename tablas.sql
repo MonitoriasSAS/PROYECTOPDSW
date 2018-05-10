@@ -43,7 +43,6 @@ CREATE TABLE IF NOT EXISTS Grupo (
    numero int  NOT NULL,
    CONSTRAINT Grupo_pk PRIMARY KEY (Asignatura_id_Asignatura,numero)
 );
-
 CREATE TABLE IF NOT EXISTS Tema (
    TemaID varchar(20)  NOT NULL,
    nombre varchar(50)  NOT NULL,
@@ -56,7 +55,9 @@ CREATE TABLE IF NOT EXISTS Franja_Horario (
    Monitor_id_Carnet int  NOT NULL,
    Grupo_Asignatura_id_Asignatura int  NOT NULL,
    Grupo_numero int  NOT NULL,
-   fecha timestamp  NOT NULL,
+   dia varchar(10) NOT NULL,
+   inicio date NOT NULL;
+   fin date NOT NULL;
    CONSTRAINT Franja_Horario_pk PRIMARY KEY (id_Franja)
 );
 
@@ -68,6 +69,7 @@ CREATE TABLE IF NOT EXISTS Monitoria (
    fecha timestamp  NOT NULL,
    id_carnet int NOT NULL,
    grupo int NOT NULL,
+   profesor varchar(50) NOT NULL,
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
 
