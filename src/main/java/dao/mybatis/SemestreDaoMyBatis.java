@@ -24,7 +24,7 @@ public class SemestreDaoMyBatis implements SemestreDAO {
      private SemestreMapper semestreMapper; 
 
     @Override
-    public Semestre semestre(int id) {
+    public Semestre semestre(String id) {
        return semestreMapper.semestre(id);
     }
 

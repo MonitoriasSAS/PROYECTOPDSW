@@ -14,7 +14,7 @@ import org.apache.ibatis.annotations.Param;
  * @author MonitoriasSaS
  */
 public interface SemestreMapper{
-    Semestre semestre(@Param("id")int id);
+    Semestre semestre(@Param("id")String id);
     void agregarSemestre(@Param("perio")String id,
             @Param("ini") Date inicio,
             @Param("fin") Date fin);    
