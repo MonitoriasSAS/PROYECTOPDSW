@@ -44,5 +44,6 @@ public interface serviciosMonitoria {
     public abstract void consultarInfoSemestre();
     
    public abstract  Monitoria consularInfoMonitoria(int id);
-    
+   
+   public void agregarMonitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso); 
 }
