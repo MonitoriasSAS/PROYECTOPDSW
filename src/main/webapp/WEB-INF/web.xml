@@ -22,7 +22,7 @@
     </session-timeout>
         </session-config>
         <welcome-file-list>
-    <welcome-file>nuevoLogin.xhtml</welcome-file>
+    <welcome-file>login.xhtml</welcome-file>
         </welcome-file-list>
     
     <!-- Apache Shiro -->
