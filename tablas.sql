@@ -17,11 +17,11 @@ CREATE TABLE IF NOT EXISTS Asignatura (
    CONSTRAINT Asignatura_pk PRIMARY KEY (id_Asignatura)
 );
 
-CREATE TABLE IF NOT EXISTS Profesor (
+CREATE TABLE OR REPLACE Profesor (
    id_Carnet int  NOT NULL,
    nombre_Prof varchar(20)  NOT NULL,
    apellido_Prof varchar(20)  NOT NULL,
-   telefono int  NOT NULL,
+   telefono vatchar(20)  NOT NULL,
    correo varchar(100)  NOT NULL,
    --CONSTRAINT Profesor_ak_1 UNIQUE (correo) NOT DEFERRABLE  INITIALLY IMMEDIATE,
    --CONSTRAINT Profesor_ak_2 UNIQUE (telefono) NOT DEFERRABLE  INITIALLY IMMEDIATE,

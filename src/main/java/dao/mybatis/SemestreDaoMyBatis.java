@@ -11,9 +11,8 @@ import dao.SemestreDAO;
 import dao.mybatis.mappers.SemestreMapper;
 import entidades.Semestre;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.PersistenceException;
+
 
 /**
  *
@@ -24,8 +23,12 @@ public class SemestreDaoMyBatis implements SemestreDAO {
      private SemestreMapper semestreMapper; 
 
     @Override
-    public Semestre semestre(int id) {
-       return semestreMapper.semestre(id);
+    public Semestre ConsultarSemestre(String id) {
+        try{
+       return semestreMapper.Consultarsemestre(id);
+       }catch (Exception e){
+            throw new PersistenceException("Error al consultar semestre:"+e.getLocalizedMessage(), e);
+        }
     }
 
     @Override
@@ -40,7 +43,11 @@ public class SemestreDaoMyBatis implements SemestreDAO {
 
     @Override
     public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail) {
+        try {
          semestreMapper.agregarProfesor(id, nombre, apellido, telefono, mail);
+         }catch (Exception e){
+            throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
+        }
     }
      
 }

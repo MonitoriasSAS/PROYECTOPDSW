@@ -37,7 +37,7 @@ public interface serviciosMonitoria {
     
     public void agregarProfesor(int id, String nombre, String apellido, String telefono, String mail);
     
-    public abstract Semestre getSemestre(int i);
+    public abstract Semestre getSemestre(String i);
     
     public abstract void registrarAsistencia(int idmon, String idtema);
     

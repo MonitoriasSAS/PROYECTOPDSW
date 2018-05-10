@@ -10,8 +10,6 @@ import dao.MonitoriaDAO;
 import dao.mybatis.mappers.MonitoriaMapper;
 import entidades.Monitoria;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.PersistenceException;
 
 /**

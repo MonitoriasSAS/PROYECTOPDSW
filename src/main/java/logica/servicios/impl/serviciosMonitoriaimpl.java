@@ -82,12 +82,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
     }
 
- 
 
-    @Override
-    public void consultarInfoSemestre() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public void registrarAsistencia(int idmon,String idtema) {
@@ -110,6 +105,22 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return x;
+    }
+
+    @Override
+    public Semestre getSemestre(String i) {
+        Semestre x=null;
+         try{
+            x=daoSemestre.ConsultarSemestre(i);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         return x;
+    }
+
+    @Override
+    public void consultarInfoSemestre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
