@@ -9,42 +9,51 @@ import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import javax.faces.bean.ManagedProperty;
 import seguridad.bean.ShiroLoginBean;
-import entidades.Monitor;
+import entidades.Semestre;
+import entidades.Profesor;
 import entidades.Asignatura;
+import entidades.Semestre;
 
- /**
- * 
+/**
+ *
  * @author MonitoriasSAS
  */
-
-@ManagedBean(name="Monitor")
+ 
+@ManagedBean(name = "beanAdministrador", eager = true)
 @SessionScoped
-
-public class MonitorBean implements Serializable{
+public class AdministradorBean implements Serializable {
     @ManagedProperty(value = "#{loginBean}")
     private ShiroLoginBean seguridad;
-    private Monitor monitor;
+    private Profesor profesor;
     private Asignatura materia;
+    private Semestre semestre;
     
-    
-    public MonitorBean(){
+    public AdministradorBean(){
         
     }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
 
-    public Monitor getMonitor() {
-        return monitor;
+    public void setMateria(Asignatura materia) {
+        this.materia = materia;
+    }
+
+    public Profesor getProfesor() {
+        return profesor;
     }
 
     public Asignatura getMateria() {
         return materia;
     }
 
-    public void setMateria(Asignatura materia) {
-        this.materia = materia;
+    public void setSemestre(Semestre semestre) {
+        this.semestre = semestre;
+    }
+
+    public Semestre getSemestre() {
+        return semestre;
     }
     
     public ShiroLoginBean getSeguridad() {
