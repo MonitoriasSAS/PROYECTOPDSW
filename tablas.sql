@@ -70,7 +70,6 @@ CREATE TABLE IF NOT EXISTS Monitoria (
    profesor varchar(10),
    estudiante_id_carnet int NOT NULL,
    grupo int NOT NULL,
-   profesor varchar(50) NOT NULL,
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
 
