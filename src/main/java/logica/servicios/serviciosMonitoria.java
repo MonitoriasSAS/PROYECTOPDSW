@@ -21,8 +21,8 @@ public interface serviciosMonitoria {
      * @param ip donde se registra la monitoria
      * @throws ExcepcionServiciosMonitoria si hay error de persistencia-
      **/
-    public abstract void registrarMonitoria(String ip,  String obvservaciones,Date fecha
-            ,int id,int numero,String tema) throws ExcepcionServiciosMonitoria;
+    public abstract void registrarMonitoria(int mon,String ip,  String obvservaciones,
+            Date fecha,int id,int numero,String tema,String profesor) throws ExcepcionServiciosMonitoria;
     /**
      * Retorna una monitoria en especifico con su id correspondiente
      * @param id identificador de la monitoria

@@ -6,6 +6,7 @@
 package entidades;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -17,7 +18,10 @@ public class FranjaHorario {
     private Date fecha;
     private Grupo grupo;
     private Asignatura asignatura;
-
+    private List<Monitoria> monitorias;
+    
+    public FranjaHorario(){
+    }
     public FranjaHorario(int id, Monitor monitor, Date fecha, Grupo grupo, Asignatura asignatura) {
         this.id = id;
         this.monitor = monitor;
@@ -65,9 +69,19 @@ public class FranjaHorario {
     public void setMonitor(Monitor monitor) {
         this.monitor = monitor;
     }
-    
+
+    public List<Monitoria> getMonitorias() {
+        return monitorias;
+    }
+
+    public void setMonitorias(List<Monitoria> monitorias) {
+        this.monitorias = monitorias;
+    }
+
     @Override
     public String toString() {
-        return "FranjaHorario{" + "id=" + id + ", monitor=" + monitor + ", fecha=" + fecha + ", grupo=" + grupo + ", asignatura=" + asignatura +'}';
+        return "FranjaHorario{" + "id=" + id + ", monitor=" + monitor + ", fecha=" + fecha + ", grupo=" + grupo + ", asignatura=" + asignatura + ", monitorias=" + monitorias + '}';
     }
+    
+    
 }

@@ -7,11 +7,11 @@
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
          <collection property='temas' ofType='Tema' resultMap='temaResult'></collection>
-         <collection propery='grupos'ofType='Grupo' reslutMap='grupoResultt'></collection>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
-        <collection propery='franjas'ofType='Franja' reslutMap='franjaResultt'></collection>
+        <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
      <resultMap type='Monitor' id='monitorResult'>
          <id property='id' column='id_Carnet'/>
@@ -20,14 +20,14 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
-         <collection propery='franjas'ofType='Franja' reslutMap='franjaResultt'></collection>
+         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
         <id property='id' column='id_Franja_Horario'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-         <collection propery='monitorias'ofType='Monitoria' reslutMap='monitoriaResultt'></collection>
+         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
      </resultMap>
      <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
@@ -45,12 +45,13 @@
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
         <result property='grupo' column='grupo'/>
+        <result property='profesor' column='profesor'/>
      </resultMap>
      <resultMap type='Semestre' id='semestreResult'>
          <id property='periodo' column='periodo_Academico'/>
          <result  property='inicio' column='fecha_Inicio'/>
          <result  property='fin' column='fecha_Fin'/>
-         <collection propery='grupos'ofType='Grupo' reslutMap='grupoResultt'></collection>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Profesor' id='profesorResult'>
          <id property ='id' column='id_Carnet'/>
@@ -58,13 +59,13 @@
          <result property='apellido' column='apellido_Prof'/>
          <result property='telefono' column='telefono'/>
          <result property='correo' column='correo'/>
-         <collection propery='grupos'ofType='Grupo' reslutMap='grupoResultt'></collection>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Estudiante' id='estudianteResult'>
          <id property='carnet' column='nombre_es'/>
          <result property='nombre' column='nombre_es'/>
          <result property='apellido' column='apellido_es'/>
-         <collection properti='monitorias' ofType='Monitoria' resultmap='monitoriaResult' ></collection>
+         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult' ></collection>
      </resultMap>
      <select parameterType='map' id='Consultarsemestre' resultMap='semestreResult'>
          select *
@@ -98,5 +99,9 @@
      <insert id='agregarTema'>
          insert into Tema
          values(#{id},#{nom},#{asig})
+     </insert>
+     <insert id='agregarEstudiante'>
+         insert into Estudiante
+         values (#{carnet},#{nombre},#{apellido},7,2)
      </insert>
  </mapper>

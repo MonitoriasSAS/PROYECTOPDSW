@@ -4,6 +4,7 @@ package entidades;
 
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -13,7 +14,7 @@ public class Semestre {
     private String periodo;
     private Date inicio;
     private Date fin;
-
+    private List<Grupo> grupos;
     public Semestre(){
         
     }
@@ -48,7 +49,7 @@ public class Semestre {
 
     @Override
     public String toString() {
-        return "Semestre{" + "periodo=" + periodo + ", inicio=" + inicio + ", fin=" + fin + '}';
+        return "Semestre{" + "periodo=" + periodo + ", inicio=" + inicio + ", fin=" + fin + ", grupos=" + grupos + '}';
     }
-
+    
 }

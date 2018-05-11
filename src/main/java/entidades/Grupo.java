@@ -5,6 +5,7 @@
  */
 package entidades;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -15,7 +16,9 @@ public class Grupo {
     private Semestre semestre;
     private Profesor profesor;
     private Asignatura asignatura;
-    
+    private List<FranjaHorario> franjas;
+    public Grupo(){
+    }
     public Grupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor){
         this.numero=numero;
         this.asignatura=asignatura;
@@ -56,8 +59,19 @@ public class Grupo {
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
+
+    public List<FranjaHorario> getFranjas() {
+        return franjas;
+    }
+
+    public void setFranjas(List<FranjaHorario> franjas) {
+        this.franjas = franjas;
+    }
+
     @Override
     public String toString() {
-        return "Grupo{" + "numero=" + numero + ", asignatura=" + asignatura + ", profesor=" + profesor + ", semrestre=" + semestre + '}';
+        return "Grupo{" + "numero=" + numero + ", semestre=" + semestre + ", profesor=" + profesor + ", asignatura=" + asignatura + ", franjas=" + franjas + '}';
     }
+    
+   
 }

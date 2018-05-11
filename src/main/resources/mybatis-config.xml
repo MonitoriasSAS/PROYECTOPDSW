@@ -17,6 +17,7 @@
         <typeAlias type='entidades.Grupo' alias='Grupo'/>
         <typeAlias type='entidades.Observacion' alias='Observacion'/>
         <typeAlias type='entidades.Semestre' alias='Semestre'/>
+        <typeAlias type='entidades.Estudiante' alias='Estudiante'/>
     </typeAliases>
             
 <environments default="development">

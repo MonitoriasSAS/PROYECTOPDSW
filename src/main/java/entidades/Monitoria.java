@@ -18,9 +18,12 @@ public class Monitoria {
     private Date fecha;
     private Tema tema;
     private FranjaHorario franjaHorario;
+    private String profesor;
     private int idC;
     private int grupo;
-
+    
+    public Monitoria(){
+    }
     public Monitoria(int id, String ip, Date fecha, Tema tema, FranjaHorario franjaHorario, int idC, int grupo) {
         this.id = id;
         this.ip = ip;
@@ -75,10 +78,38 @@ public class Monitoria {
         this.observaciones=observaciones;
     }
 
-    @Override
-    public String toString() {
-        return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", idC=" + idC + ", grupo=" + grupo + '}';
+    public FranjaHorario getFranjaHorario() {
+        return franjaHorario;
     }
+
+    public void setFranjaHorario(FranjaHorario franjaHorario) {
+        this.franjaHorario = franjaHorario;
+    }
+
+    public String getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(String profesor) {
+        this.profesor = profesor;
+    }
+
+    public int getIdC() {
+        return idC;
+    }
+
+    public void setIdC(int idC) {
+        this.idC = idC;
+    }
+
+    public int getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(int grupo) {
+        this.grupo = grupo;
+    }
+
 
     
 }

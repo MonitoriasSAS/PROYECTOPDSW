@@ -43,9 +43,9 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void registrarMonitoria(String ip,  String observaciones,Date fecha,int id,int numero,String tema) throws ExcepcionServiciosMonitoria {
+    public void registrarMonitoria(int mon,String ip,  String obvservaciones,Date fecha,int id,int numero,String tema,String profesor) throws ExcepcionServiciosMonitoria {
          try{
-           daoMon.agregarMonitoria(ip, observaciones, fecha, id, numero, tema);
+           daoMon.agregarMonitoria(mon, ip, obvservaciones, fecha, id, numero, tema, profesor);
        } catch(PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
