@@ -14,6 +14,9 @@ public class Semestre {
     private Date inicio;
     private Date fin;
 
+    public Semestre(){
+        
+    }
     public Semestre(String periodo, Date inicio, Date fin) {
         this.periodo = periodo;
         this.inicio = inicio;

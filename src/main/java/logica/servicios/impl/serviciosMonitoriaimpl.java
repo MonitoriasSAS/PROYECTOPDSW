@@ -124,9 +124,9 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void agregarMonitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso) {
+    public void agregarMonitor(int id, String nombre, String apellido, int ingreso,int telefono, String carrera) {
          try{
-           daoSemestre.agregarMonitor(id, nombre, apellido, telefono, carrera, ingreso);
+           daoSemestre.agregarMonitor(id, nombre, apellido,  ingreso,telefono, carrera);
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }

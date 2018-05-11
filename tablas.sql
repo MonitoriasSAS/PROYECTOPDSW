@@ -2,7 +2,6 @@
 -- Created by Vertabelo (http://vertabelo.com)
 -- Last modification date: 2018-04-25 02:51:11.743
 -- tables
-
 CREATE TABLE IF NOT EXISTS Semestre (
    periodo_Academico varchar  NOT NULL,
    fecha_Inicio date  NOT NULL,
@@ -31,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Monitor (
    id_Carnet int  NOT NULL,
    nombre_Moni varchar(20)  NOT NULL,
    apellido_Moni varchar(20)  NOT NULL,
-   semestre_ingreso int  NOT NULL,
+   semestre_ingreso varchar(20) NOT NULL,
    telefono int  NOT NULL,
    carrera varchar(20)  NOT NULL,
    CONSTRAINT Monitor_pk PRIMARY KEY (id_Carnet)
@@ -44,7 +43,6 @@ CREATE TABLE IF NOT EXISTS Grupo (
    numero int  NOT NULL,
    CONSTRAINT Grupo_pk PRIMARY KEY (Asignatura_id_Asignatura,numero)
 );
-
 CREATE TABLE IF NOT EXISTS Tema (
    TemaID varchar(20)  NOT NULL,
    nombre varchar(50)  NOT NULL,
@@ -72,6 +70,7 @@ CREATE TABLE IF NOT EXISTS Monitoria (
    profesor varchar(10),
    estudiante_id_carnet int NOT NULL,
    grupo int NOT NULL,
+   profesor varchar(50) NOT NULL,
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
 

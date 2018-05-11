@@ -27,6 +27,11 @@
             <artifactId>primefaces</artifactId>
             <version>6.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.8</version>
+	</dependency>
         <!-- PostgreSQL -->
         <dependency>
                 <groupId>postgresql</groupId>
@@ -113,11 +118,11 @@
             <artifactId>shiro-web</artifactId>
             <version>1.2.1</version>
         </dependency>
-   <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-log4j12</artifactId>
-       <version>1.7.5</version>
-   </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
         
 
         <dependency>
@@ -169,6 +174,20 @@
 
     <build>
         <plugins>
+            <!-- clean project (also local H2 database)-->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.6.1</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- create local H2 database -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
