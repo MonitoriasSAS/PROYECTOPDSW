@@ -20,7 +20,9 @@ public interface MonitoriaMapper{
             @Param("fec") Date fecha,
             @Param("id") int id_carnet,
             @Param("grup") int numero,
-            @Param("tem") String tema);
+            @Param("tem") String tema,
+            @Param("profe") String profesor,
+            @Param("estu") int estudiante);
     public void agregarAsistencia(@Param("idmon") int idmon,
             @Param("idtema") String tema);
 }

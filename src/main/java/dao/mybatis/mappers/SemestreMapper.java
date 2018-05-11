@@ -7,6 +7,7 @@ package dao.mybatis.mappers;
 
 
 import entidades.Semestre;
+import java.sql.Time;
 import java.util.Date;
 import org.apache.ibatis.annotations.Param;
 /**
@@ -31,7 +32,9 @@ public interface SemestreMapper{
             @Param("idmon") int id_monitor,
             @Param("asig") int asignatura,
             @Param("grup") int grupo,
-            @Param("fecha") Date inicio);
+            @Param("dia") String dia,
+            @Param("ini") Time inicio,
+            @Param("fin") Time fin);
     void agregarMonitor(@Param("carnet")int carnet,
             @Param("nombre") String nombre,
             @Param("apell") String apellido,
