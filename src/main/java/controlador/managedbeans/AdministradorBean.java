@@ -12,7 +12,12 @@ import seguridad.bean.ShiroLoginBean;
 import entidades.Semestre;
 import entidades.Profesor;
 import entidades.Asignatura;
-import entidades.Semestre;
+import entidades.Monitor;
+
+import logica.servicios.serviciosMonitoria;
+import logica.servicios.serviciosMonitoriaFactory;
+import logica.servicios.ExcepcionServiciosMonitoria;
+
 
 /**
  *
@@ -24,6 +29,10 @@ import entidades.Semestre;
 public class AdministradorBean implements Serializable {
     @ManagedProperty(value = "#{loginBean}")
     private ShiroLoginBean seguridad;
+    
+    private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
+    
+    private Monitor monitor;
     private Profesor profesor;
     private Asignatura materia;
     private Semestre semestre;
@@ -31,7 +40,7 @@ public class AdministradorBean implements Serializable {
     public AdministradorBean(){
         
     }
-
+    
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
@@ -55,7 +64,19 @@ public class AdministradorBean implements Serializable {
     public Semestre getSemestre() {
         return semestre;
     }
-    
+
+    public serviciosMonitoria getMoni() {
+        return moni;
+    }
+
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
+    }
+   
     public ShiroLoginBean getSeguridad() {
         return seguridad;
     }

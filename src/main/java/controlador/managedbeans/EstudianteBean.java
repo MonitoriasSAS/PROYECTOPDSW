@@ -14,6 +14,9 @@ import entidades.Profesor;
 import entidades.Asignatura;
 import entidades.Monitoria;
 import entidades.Monitor;
+import logica.servicios.serviciosMonitoria;
+import logica.servicios.serviciosMonitoriaFactory;
+import logica.servicios.ExcepcionServiciosMonitoria;
 
 /**
  *
@@ -24,6 +27,9 @@ import entidades.Monitor;
 public class EstudianteBean {
     @ManagedProperty(value = "#{loginBean}")
     private ShiroLoginBean seguridad;
+    
+    private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
+    
     private Monitor monitor;
     private Monitoria monitoria;
     private Semestre semestre;
@@ -33,7 +39,7 @@ public class EstudianteBean {
     public EstudianteBean(){
         
     }
-
+   
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
@@ -73,9 +79,12 @@ public class EstudianteBean {
     public Semestre getSemestre() {
         return semestre;
     }
+
+    public serviciosMonitoria getMoni() {
+        return moni;
+    }
     
-    
-    
+   
     public ShiroLoginBean getSeguridad() {
         return seguridad;
     }
