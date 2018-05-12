@@ -9,7 +9,7 @@ import com.google.inject.Inject;
 
 import dao.SemestreDAO;
 import dao.mybatis.mappers.SemestreMapper;
-import entidades.Semestre;
+import entidades.*;
 import java.util.Date;
 import javax.persistence.PersistenceException;
 
@@ -29,32 +29,56 @@ public class SemestreDaoMyBatis implements SemestreDAO {
     }
 
     @Override
-    public void agregarSemestre(String id, Date inicio, Date fin) {
-       //semestreMapper.agregarSemestre(id, inicio, fin);
-    }
-
-    @Override
-    public void agregarGrupo(String semestre, int asignatura, int carnet, int numero) {
-        //semestreMapper.agregarGrupo(semestre, asignatura, carnet, numero);
-    }
-
-    @Override
-    public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail) {
-        try {
-         //semestreMapper.agregarProfesor(id, nombre, apellido, telefono, mail);
+    public void agregarSemestre(Semestre semestre) {
+      try {
+         semestreMapper.agregarSemestre(semestre);
          }catch (Exception e){
-            throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
+            throw new PersistenceException("Error al agregar semestre:"+e.getLocalizedMessage(), e);
         }
     }
 
     @Override
-    public void agregarMonitor(int id, String nombre, String apellido,int ingreso, int telefono, String carrera) {
+    public void agregarGrupo(Grupo grupo) {
         try {
-         //semestreMapper.agregarMonitor(id, nombre, apellido, ingreso, telefono, carrera);
+         semestreMapper.agregarGrupo(grupo);
          }catch (Exception e){
-            throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
+            throw new PersistenceException("Error al agregar Grupo:"+e.getLocalizedMessage(), e);
         }
     }
 
-     
+    @Override
+    public void agregarProfesor(Profesor profesor) {
+        try {
+         semestreMapper.agregarProfesor(profesor);
+         }catch (Exception e){
+            throw new PersistenceException("Error al agregar profesor:"+e.getLocalizedMessage(), e);
+        }
+    }
+
+    @Override
+    public void agregarMonitor(Monitor monitor) {
+        try {
+         semestreMapper.agregarMonitor(monitor);
+         }catch (Exception e){
+            throw new PersistenceException("Error al agregar monitor:"+e.getLocalizedMessage(), e);
+        }
+    }
+
+    @Override
+    public void agregarTema(Tema tema) {
+        try {
+         semestreMapper.agregarTema(tema);
+         }catch (Exception e){
+            throw new PersistenceException("Error al agregar tema:"+e.getLocalizedMessage(), e);
+        }
+    }
+    
+    @Override
+    public void agregarEstudiante(Estudiante estudiante) {
+        try {
+         semestreMapper.agregarEstudiante(estudiante);
+         }catch (Exception e){
+            throw new PersistenceException("Error al agregar estudiante:"+e.getLocalizedMessage(), e);
+        }
+    }   
 }

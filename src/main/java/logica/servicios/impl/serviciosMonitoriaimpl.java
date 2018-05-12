@@ -9,8 +9,7 @@ import com.google.inject.Inject;
 import dao.MonitoriaDAO;
 import dao.ProfesorDAO;
 import dao.SemestreDAO;
-import entidades.Monitoria;
-import entidades.Semestre;
+import entidades.*;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,9 +42,9 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void registrarMonitoria(int mon,String ip,  String obvservaciones,Date fecha,int id,int numero,String tema,String profesor) throws ExcepcionServiciosMonitoria {
+    public void registrarMonitoria(Monitoria monitoria,String tema) throws ExcepcionServiciosMonitoria {
          try{
-           daoMon.agregarMonitoria(mon, ip, obvservaciones, fecha, id, numero, tema, profesor);
+           daoMon.agregarMonitoria(monitoria, tema);
        } catch(PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -56,27 +55,27 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void agregarSemestre(String id, Date inicio, Date fin) {
+    public void agregarSemestre(Semestre semestre) {
         try{
-            daoSemestre.agregarSemestre(id, inicio, fin);
+            daoSemestre.agregarSemestre(semestre);
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public void agregarGrupo(String semestre, int asignatura, int carnet, int numero) {
+    public void agregarGrupo(Grupo grupo) {
          try{
-            daoSemestre.agregarGrupo(semestre, asignatura, carnet, numero);
+            daoSemestre.agregarGrupo(grupo);
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail) {
+    public void agregarProfesor(Profesor profesor) {
          try{
-            daoSemestre.agregarProfesor(id, nombre, apellido, telefono, mail);
+            daoSemestre.agregarProfesor(profesor);
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -114,9 +113,27 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void agregarMonitor(int id, String nombre, String apellido, int ingreso,int telefono, String carrera) {
+    public void agregarMonitor(Monitor monitor) {
          try{
-           daoSemestre.agregarMonitor(id, nombre, apellido,  ingreso,telefono, carrera);
+           daoSemestre.agregarMonitor(monitor);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void agregarEstudiante(Estudiante estudiante) {
+        try{
+           daoSemestre.agregarEstudiante(estudiante);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void agregarTema(Tema tema) {
+         try{
+           daoSemestre.agregarTema(tema);
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }

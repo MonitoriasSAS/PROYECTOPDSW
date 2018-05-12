@@ -38,9 +38,9 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
     }
 
     @Override
-    public void agregarMonitoria(int mon,String ip,  String obvservaciones,Date fecha,int id,int numero,String tema,String profesor) {
+    public void agregarMonitoria(Monitoria monitor,String tema) {
         try{
-            //monmap.agregarMonitoria(id, ip, obvservaciones, fecha, numero, profesor, numero);
+            monmap.agregarMonitoria(monitor);
             monmap.agregarMoni(tema);
         } catch(Exception e){
             throw new PersistenceException("Error al agregar monitoria:"+e.getLocalizedMessage(), e);
