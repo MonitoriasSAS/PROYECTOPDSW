@@ -15,5 +15,4 @@ import java.util.Date;
 public interface MonitoriaDAO {
     public void agregarMonitoria(int mon,String ip,  String obvservaciones,Date fecha,int id,int numero,String tema,String profesor) ;
     public Monitoria consultarMonitoria(int id) ;
-    public void agregarAsistencia(int idmon, String idtema);
 }

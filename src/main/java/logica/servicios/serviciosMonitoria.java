@@ -39,7 +39,7 @@ public interface serviciosMonitoria {
     
     public abstract Semestre getSemestre(String i);
     
-    public abstract void registrarAsistencia(int idmon, String idtema);
+   
     
     public abstract void consultarInfoSemestre();
     

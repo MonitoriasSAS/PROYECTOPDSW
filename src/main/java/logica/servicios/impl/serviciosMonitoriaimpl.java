@@ -84,17 +84,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
 
 
 
-    @Override
-    public void registrarAsistencia(int idmon,String idtema) {
-               try{
-            daoMon.agregarAsistencia(idmon, idtema);
-            
-           
-            
-        } catch (PersistenceException ex){
-            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+
 
     @Override
     public Monitoria consularInfoMonitoria(int id) {

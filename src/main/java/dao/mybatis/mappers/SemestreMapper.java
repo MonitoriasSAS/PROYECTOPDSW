@@ -6,9 +6,7 @@
 package dao.mybatis.mappers;
 
 
-import entidades.Semestre;
-import java.sql.Time;
-import java.util.Date;
+import entidades.*;
 import org.apache.ibatis.annotations.Param;
 /**
  *
@@ -16,37 +14,12 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface SemestreMapper{
     Semestre Consultarsemestre(@Param("id")String id);
-    void agregarSemestre(@Param("perio")String id,
-            @Param("ini") Date inicio,
-            @Param("fin") Date fin);    
-    void agregarGrupo(@Param("semeste") String semestre,
-            @Param("asignatura") int asignatura,
-            @Param("profesor")int carnet,
-            @Param("num") int numero);
-    void agregarProfesor(@Param("id")int id,
-            @Param("nom") String nombre,
-            @Param("apell") String apellido,
-            @Param("tel") int telefono,
-            @Param("mail") String mail);
-    void agregarFranja(@Param("idfra") int id_franja,
-            @Param("idmon") int id_monitor,
-            @Param("asig") int asignatura,
-            @Param("grup") int grupo,
-            @Param("dia") String dia,
-            @Param("ini") Time inicio,
-            @Param("fin") Time fin);
-    void agregarMonitor(@Param("carnet")int carnet,
-            @Param("nombre") String nombre,
-            @Param("apell") String apellido,
-            @Param("nom") int semestre,
-            @Param("tel") int telefono,
-            @Param("carre") String carrera);
-    void agregarAsignatura(@Param("id")int id,
-            @Param("nombre") String nombre);
-    void agregarTema(@Param("id")String id,
-            @Param("nom") String nombre,
-             @Param("asig") int asignatura);
-    void agregarEstudiante(@Param("carnet") int id,
-            @Param("nombre") String nombre,
-            @Param("apellido") String apellido);
+    void agregarSemestre(@Param("sem") Semestre semestre);    
+    void agregarGrupo(@Param("gru") Grupo grupo);
+    void agregarProfesor(@Param("pro")Profesor profesor);
+    void agregarFranja(@Param("fra") FranjaHorario franja);
+    void agregarMonitor(@Param("monr")Monitor monitor);
+    void agregarAsignatura(@Param("asig")Asignatura asignatura);
+    void agregarTema(@Param("tem") Tema tema);
+    void agregarEstudiante(@Param("estu") Estudiante estudiante);
 }

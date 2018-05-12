@@ -30,18 +30,18 @@ public class SemestreDaoMyBatis implements SemestreDAO {
 
     @Override
     public void agregarSemestre(String id, Date inicio, Date fin) {
-       semestreMapper.agregarSemestre(id, inicio, fin);
+       //semestreMapper.agregarSemestre(id, inicio, fin);
     }
 
     @Override
     public void agregarGrupo(String semestre, int asignatura, int carnet, int numero) {
-        semestreMapper.agregarGrupo(semestre, asignatura, carnet, numero);
+        //semestreMapper.agregarGrupo(semestre, asignatura, carnet, numero);
     }
 
     @Override
     public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail) {
         try {
-         semestreMapper.agregarProfesor(id, nombre, apellido, telefono, mail);
+         //semestreMapper.agregarProfesor(id, nombre, apellido, telefono, mail);
          }catch (Exception e){
             throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
         }
@@ -50,7 +50,7 @@ public class SemestreDaoMyBatis implements SemestreDAO {
     @Override
     public void agregarMonitor(int id, String nombre, String apellido,int ingreso, int telefono, String carrera) {
         try {
-         semestreMapper.agregarMonitor(id, nombre, apellido, ingreso, telefono, carrera);
+         //semestreMapper.agregarMonitor(id, nombre, apellido, ingreso, telefono, carrera);
          }catch (Exception e){
             throw new PersistenceException("Error al consultar profesor:"+e.getLocalizedMessage(), e);
         }
