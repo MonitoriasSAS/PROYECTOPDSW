@@ -40,6 +40,14 @@ public class Tema {
         this.name = name;
     }
 
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+    
     @Override
     public String toString() {
         return "Tema{" + "id=" + id + ", name=" + name + ", asignatura=" + asignatura + '}';

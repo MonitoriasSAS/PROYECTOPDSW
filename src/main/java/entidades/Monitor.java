@@ -15,9 +15,9 @@ public class Monitor {
     private String apellido;
     private int telefono;
     private String carrera;
-    private String ingreso;
+    private int ingreso;
 
-    public Monitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso) {
+    public Monitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -66,11 +66,11 @@ public class Monitor {
         this.carrera = carrera;
     }
 
-    public String getIngreso() {
+    public int getIngreso() {
         return ingreso;
     }
 
-    public void setIngreso(String ingreso) {
+    public void setIngreso(int ingreso) {
         this.ingreso = ingreso;
     }
 

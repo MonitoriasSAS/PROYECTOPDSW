@@ -24,21 +24,25 @@ public class Monitoria {
     
     public Monitoria(){
     }
-    public Monitoria(int id, String ip, Date fecha, Tema tema, FranjaHorario franjaHorario, int idC, int grupo) {
+
+    public Monitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo) {
         this.id = id;
         this.ip = ip;
+        this.observaciones = observaciones;
         this.fecha = fecha;
         this.tema = tema;
         this.franjaHorario = franjaHorario;
+        this.profesor = profesor;
         this.idC = idC;
         this.grupo = grupo;
     }
+   
 
-    public void setTema(Tema tema) {
+    public void setTema( Tema tema) {
         this.tema = tema;
     }
 
-    public Tema getTema() {
+    public  Tema getTema() {
         return tema;
     }
 
@@ -109,7 +113,7 @@ public class Monitoria {
     public void setGrupo(int grupo) {
         this.grupo = grupo;
     }
-
+    
 
     
 }

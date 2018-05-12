@@ -16,6 +16,12 @@ public class Estudiante {
     private String nombre;
     private String apellido;
     private List<Monitoria> monitorias;
+
+    public Estudiante(int carnet, String nombre, String apellido) {
+        this.carnet = carnet;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
     public Estudiante(){
     }
 

@@ -74,34 +74,34 @@
      </select>
      <insert id='agregarSemestre'>
          insert into Semestre
-         values (#{perio},#{ini},#{fin})
+         values (#{sem.periodo},#{sem.inicio},#{sem.fin})
      </insert>
      <insert id='agregarAsignatura'>
          insert into Asignatura
-         values (#{id},#{nombre})
+         values (#{asig.id},#{asig.nombre})
      </insert>
      <insert id='agregarGrupo'>
          insert into Grupo
-         values (#{semeste},#{asignatura},#{profesor},#{num})
+         values (#{gru.semestre.periodo},#{gru.asignatura.id},#{gru.profesor.id},#{gru.numero})
      </insert>
      <insert id='agregarProfesor'>
          insert into Profesor 
-         Values(#{id},#{nom},#{apell},#{tel},#{mail})
+         Values(#{pro.id},#{pro.nombre},#{pro.apellido},#{pro.telefono},#{pro.correo})
      </insert>
      <insert id='agregarMonitor'>
          insert into Monitor 
-         Values(#{carnet},#{nombre},#{apell},#{nom},#{tel},#{carre})
+         Values(#{monr.id},#{monr.nombre},#{monr.apellido},#{monr.ingreso},#{monr.telefono},#{monr.carrera})
      </insert>
      <insert id='agregarFranja'>
          insert into Franja_Horario
-         values(#{idfra},#{idmon},#{asig},#{grup},#{dia},#{ini},#{fin})
+         values(#{fra.id},#{fra.monitor.id},#{fra.asignatura.id},#{fra.grupo.numero},#{fra.dia},#{fra.inicio},#{fra.fin})
      </insert>
      <insert id='agregarTema'>
          insert into Tema
-         values(#{id},#{nom},#{asig})
+         values(#{tem.id},#{tem.name},#{tem.asignatura.id})
      </insert>
      <insert id='agregarEstudiante'>
          insert into Estudiante
-         values (#{carnet},#{nombre},#{apellido},7,2)
+         values (#{estu.carnet},#{estu.nombre},#{estu.apellido})
      </insert>
  </mapper>
