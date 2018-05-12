@@ -53,7 +53,7 @@ public class MonitorBean implements Serializable{
     }
     
     public void Acesoria(){
-        //monitoria=moni.registrarMonitoria(monitoria.getId(), ip, observaciones, fecha, 0, 0, tema, profesor);
+        //monitoria=moni.registrarMonitoria(monitoria.getId(),monitoria.getIp(),monitoria.getObservaciones(),monitoria.getFecha(),horario.getId(), grupo.getNumero(), tema.getId(),monitoria.getProfesor());
     }
     
     public void setMonitor(Monitor monitor) {
