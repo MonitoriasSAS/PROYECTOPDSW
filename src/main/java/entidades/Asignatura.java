@@ -11,21 +11,11 @@ package entidades;
  */
 public class Asignatura {
     private int id;
-    private String nombre;
-    private Tema tema;  
+    private String nombre; 
 
-    public Asignatura(int id, String nombre, Tema tema) {
+    public Asignatura(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.tema = tema;
-    }
-    
-    public void setTema(Tema tema) {
-        this.tema = tema;
-    }
-
-    public Tema getTema() {
-        return tema;
     }
 
     public int getId() {
@@ -45,6 +35,6 @@ public class Asignatura {
     }
      @Override
     public String toString() {
-        return "Asignatura{" + "id=" + id + ", nombre=" + nombre + ", tema=" + tema + '}';
+        return "Asignatura{" + "id=" + id + ", nombre=" + nombre +  '}';
     }
 }

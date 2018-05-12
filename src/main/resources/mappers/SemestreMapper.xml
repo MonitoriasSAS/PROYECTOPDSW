@@ -6,12 +6,12 @@
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
+         <collection property='temas' ofType='Tema' resultMap='temaResult'></collection>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
-        <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaResult'/>
-        <association property='profesor' javaType='Profesor' resultMap='profesorResult'/>
-        <association property='semestre' javaType='Semestre' resultMap='semestreResult'/>
+        <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
      <resultMap type='Monitor' id='monitorResult'>
          <id property='id' column='id_Carnet'/>
@@ -20,12 +20,14 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
+         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
         <id property='id' column='id_Franja_Horario'/>
-        <result property='fecha' column='fecha' />
-        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
-        <association property='grupo' javaType='Grupo' resultMap='grupoResult'/>
+        <result property='dia' column='dia' />
+        <result property='inicio' column='inicio' />
+        <result property='fin' column='fin' />
+         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
      </resultMap>
      <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
@@ -36,21 +38,20 @@
       <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
          <result property='name' column='name'/>
-         <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaReslut'/>
      </resultMap>
      <resultMap type= 'Monitoria' id='monitoriaResult'>
         <id property='id' column='id_Mon'/>
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
-        <result property='fecha' column='fecha' />
-        <result property='id_carnet' column='id_carnet'/>
+        <result property='fecha' column='fecha'/>
         <result property='grupo' column='grupo'/>
-        <association property='franja' javaType='Franja' resultMap='franjaResult'/>
+        <result property='profesor' column='profesor'/>
      </resultMap>
      <resultMap type='Semestre' id='semestreResult'>
          <id property='periodo' column='periodo_Academico'/>
          <result  property='inicio' column='fecha_Inicio'/>
          <result  property='fin' column='fecha_Fin'/>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Profesor' id='profesorResult'>
          <id property ='id' column='id_Carnet'/>
@@ -58,6 +59,13 @@
          <result property='apellido' column='apellido_Prof'/>
          <result property='telefono' column='telefono'/>
          <result property='correo' column='correo'/>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
+     </resultMap>
+     <resultMap type='Estudiante' id='estudianteResult'>
+         <id property='carnet' column='nombre_es'/>
+         <result property='nombre' column='nombre_es'/>
+         <result property='apellido' column='apellido_es'/>
+         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult' ></collection>
      </resultMap>
      <select parameterType='map' id='Consultarsemestre' resultMap='semestreResult'>
          select *
@@ -66,26 +74,34 @@
      </select>
      <insert id='agregarSemestre'>
          insert into Semestre
-         values (#{perio},#{ini},#{fin})
+         values (#{sem.periodo},#{sem.inicio},#{sem.fin})
      </insert>
      <insert id='agregarAsignatura'>
          insert into Asignatura
-         values (#{nombre})
+         values (#{asig.id},#{asig.nombre})
      </insert>
      <insert id='agregarGrupo'>
          insert into Grupo
-         values (#{semeste},#{asignatura},#{profesor},#{num})
+         values (#{gru.semestre.periodo},#{gru.asignatura.id},#{gru.profesor.id},#{gru.numero})
      </insert>
      <insert id='agregarProfesor'>
          insert into Profesor 
-         Values(#{id},#{nom},#{apell},#{tel},#{mail})
+         Values(#{pro.id},#{pro.nombre},#{pro.apellido},#{pro.telefono},#{pro.correo})
      </insert>
-     <insert id='agregarMonitoror'>
+     <insert id='agregarMonitor'>
          insert into Monitor 
-         Values(#{carnet},#{nombre},#{apellido},#{ingre}#{tel},#{carre})
+         Values(#{monr.id},#{monr.nombre},#{monr.apellido},#{monr.ingreso},#{monr.telefono},#{monr.carrera})
      </insert>
      <insert id='agregarFranja'>
          insert into Franja_Horario
-         values(#{idfra},#{idmon},#{#asig},#{grup},#{fecha})
+         values(#{fra.id},#{fra.monitor.id},#{fra.asignatura.id},#{fra.grupo.numero},#{fra.dia},#{fra.inicio},#{fra.fin})
+     </insert>
+     <insert id='agregarTema'>
+         insert into Tema
+         values(#{tem.id},#{tem.name},#{tem.asignatura.id})
+     </insert>
+     <insert id='agregarEstudiante'>
+         insert into Estudiante
+         values (#{estu.carnet},#{estu.nombre},#{estu.apellido})
      </insert>
  </mapper>

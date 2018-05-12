@@ -3,35 +3,15 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="dao.mybatis.mappers.MonitoriaMapper">
-     <resultMap type='Asignatura' id='AsignaturaResult'>
+      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
+         <collection property='temas' ofType='Tema' resultMap='temaResult'></collection>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
-        <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaResult'/>
-        <association property='profesor' javaType='Profesor' resultMap='profesorResult'/>
-        <association property='semestre' javaType='Semestre' resultMap='semestreResult'/>
-     </resultMap>
-     <resultMap type= 'Franja' id='franjaResult'>
-        <id property='id' column='id_Franja_Horario'/>
-        <result property='fecha' column='fecha' />
-        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
-        <association property='grupo' javaType='Grupo' resultMap='grupoResult'/>
-     </resultMap>
-    <resultMap type= 'Monitoria' id='monitoriaResult'>
-        <id property='id' column='id_Mon'/>
-        <result property='ip' column='ip' />
-        <result property='observaciones' column='observaciones' />
-        <result property='fecha' column='fecha' />
-        <result property='id_carnet' column='id_carnet'/>
-        <result property='grupo' column='grupo'/>
-        <association property='franja' javaType='Franja' resultMap='franjaResult'/>
-     </resultMap>
-     <resultMap type='Tema' id='temaResult'>
-         <id property='id' column='TemaID'/>
-         <result property='name' column='name'/>
-         <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaReslut'/>
+        <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
      <resultMap type='Monitor' id='monitorResult'>
          <id property='id' column='id_Carnet'/>
@@ -40,16 +20,38 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
+         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
-     <select parameterType='map' id='ConsultarMonitoria' resultMap='monitoriaResult'>
-        select id_Monitoria, ip,observaciones,Monitoria.fecha,fecha,id_carnet,TemaID,nombre_Asig,numero,nombre_Moni
+      <resultMap type='Franja' id='franjaResult'>
+        <id property='id' column='id_Franja_Horario'/>
+        <result property='dia' column='dia' />
+        <result property='inicio' column='inicio' />
+        <result property='fin' column='fin' />
+         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
+     </resultMap>
+     <resultMap type='Tema' id='temaResult'>
+         <id property='id' column='TemaID'/>
+         <result property='name' column='name'/>
+     </resultMap>
+    <resultMap type= 'Monitoria' id='monitoriaResult'>
+        <id property='id' column='id_Mon'/>
+        <result property='ip' column='ip' />
+        <result property='observaciones' column='observaciones' />
+        <result property='fecha' column='fecha'/>
+        <result property='grupo' column='grupo'/>
+        <result property='profesor' column='profesor'/>
+     </resultMap>
+     <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
+        select ip,observaciones,Monitoria.fecha,fecha,id_carnet,Tema.TemaID,nombre_Asig,numero,nombre_Moni
         from Monitoria,Asistencia,Tema,Monitor,Franja_Horario,Grupo,Asignatura
-        where id_monitoria=#{idmo} and id_Carnet=Estudiante_id_Carnet and Monitoria_id_Monitoria=id_Monitoria and TemaID=Tema_TemaID and Franja_id=id_franja and id_carnet=Monitor_id_Carnet and Tema.Asignatura_id_Asignatura = id_Asignatura and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
+        where id_Mon=#{idmo} and Monitoria_id_Monitoria=id_Monitoria and TemaID=Tema_TemaID and Franja_id=id_franja and id_carnet=Monitor_id_Carnet and Tema.Asignatura_id_Asignatura = id_Asignatura and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
      </select> 
      <insert id='agregarMonitoria'>
-         insert into Monitoria(ip,observaciones,Fanja_id,fecha,id_carnet,grupo)
-         values(#{ip},#{obsv},13,#{fec},#{id},#{grup})
+         insert into Monitoria
+         values(#{mon.id},#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo})
+     </insert>
+     <insert id='agregarMoni'>
          insert into Asistencia 
-         values(SELECT max(id_Mon) FROM monitoria,#{tem})
+         values(#{id},#{tem})
      </insert>
  </mapper>

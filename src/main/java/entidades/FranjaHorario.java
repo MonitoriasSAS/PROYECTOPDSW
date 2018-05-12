@@ -5,7 +5,8 @@
  */
 package entidades;
 
-import java.util.Date;
+import java.sql.Time;
+import java.util.List;
 
 /**
  *
@@ -14,17 +15,26 @@ import java.util.Date;
 public class FranjaHorario {
     private int id;
     private Monitor monitor;
-    private Date fecha;
+    private String dia;
     private Grupo grupo;
     private Asignatura asignatura;
+    private Time inicio;
+    private Time fin;
+    private List<Monitoria> monitorias;
+    
+    public FranjaHorario(){
+    }
 
-    public FranjaHorario(int id, Monitor monitor, Date fecha, Grupo grupo, Asignatura asignatura) {
+    public FranjaHorario(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
         this.id = id;
         this.monitor = monitor;
-        this.fecha = fecha;
+        this.dia = dia;
         this.grupo = grupo;
         this.asignatura = asignatura;
+        this.inicio = inicio;
+        this.fin = fin;
     }
+   
     
     public int getId() {
         return id;
@@ -34,30 +44,6 @@ public class FranjaHorario {
         this.id = id;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public Grupo getGrupo() {
-        return grupo;
-    }
-
-    public Asignatura getAsignatura() {
-        return asignatura;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
-    }
-
-    public void setAsignatura(Asignatura asignatura) {
-        this.asignatura = asignatura;
-    }
-
     public Monitor getMonitor() {
         return monitor;
     }
@@ -65,9 +51,63 @@ public class FranjaHorario {
     public void setMonitor(Monitor monitor) {
         this.monitor = monitor;
     }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+
     
+    
+    public List<Monitoria> getMonitorias() {
+        return monitorias;
+    }
+
+    public void setMonitorias(List<Monitoria> monitorias) {
+        this.monitorias = monitorias;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public Time getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Time inicio) {
+        this.inicio = inicio;
+    }
+
+    public Time getFin() {
+        return fin;
+    }
+
+    public void setFin(Time fin) {
+        this.fin = fin;
+    }
+
     @Override
     public String toString() {
-        return "FranjaHorario{" + "id=" + id + ", monitor=" + monitor + ", fecha=" + fecha + ", grupo=" + grupo + ", asignatura=" + asignatura +'}';
+        return "FranjaHorario{" + "id=" + id + ", monitor=" + monitor + ", dia=" + dia + ", grupo=" + grupo + ", asignatura=" + asignatura + ", inicio=" + inicio + ", fin=" + fin + ", monitorias=" + monitorias + '}';
     }
+    
+   
+    
+    
 }

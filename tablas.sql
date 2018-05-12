@@ -2,7 +2,6 @@
 -- Created by Vertabelo (http://vertabelo.com)
 -- Last modification date: 2018-04-25 02:51:11.743
 -- tables
-
 CREATE TABLE IF NOT EXISTS Semestre (
    periodo_Academico varchar  NOT NULL,
    fecha_Inicio date  NOT NULL,
@@ -31,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Monitor (
    id_Carnet int  NOT NULL,
    nombre_Moni varchar(20)  NOT NULL,
    apellido_Moni varchar(20)  NOT NULL,
-   semestre_ingreso int  NOT NULL,
+   semestre_ingreso varchar(20) NOT NULL,
    telefono int  NOT NULL,
    carrera varchar(20)  NOT NULL,
    CONSTRAINT Monitor_pk PRIMARY KEY (id_Carnet)
@@ -44,10 +43,10 @@ CREATE TABLE IF NOT EXISTS Grupo (
    numero int  NOT NULL,
    CONSTRAINT Grupo_pk PRIMARY KEY (Asignatura_id_Asignatura,numero)
 );
-
 CREATE TABLE IF NOT EXISTS Tema (
    TemaID varchar(20)  NOT NULL,
    nombre varchar(50)  NOT NULL,
+   Asignatura_id_Asignatura int NOT NULL,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
 );
 
@@ -56,7 +55,9 @@ CREATE TABLE IF NOT EXISTS Franja_Horario (
    Monitor_id_Carnet int  NOT NULL,
    Grupo_Asignatura_id_Asignatura int  NOT NULL,
    Grupo_numero int  NOT NULL,
-   fecha timestamp  NOT NULL,
+   dia varchar(10) NOT NULL,
+   inicio time  NOT NULL,
+   fin time  NOT NULL,
    CONSTRAINT Franja_Horario_pk PRIMARY KEY (id_Franja)
 );
 
@@ -66,7 +67,8 @@ CREATE TABLE IF NOT EXISTS Monitoria (
    observaciones varchar(100)  NOT NULL,
    Franja_id int  ,
    fecha timestamp  NOT NULL,
-   id_carnet int NOT NULL,
+   profesor varchar(10),
+   estudiante_id_carnet int NOT NULL,
    grupo int NOT NULL,
    CONSTRAINT Monitoria_pk PRIMARY KEY (id_Mon)
 );
@@ -83,6 +85,11 @@ CREATE TABLE IF NOT EXISTS Observaciones (
    Monitor_id_Carnet int NOT NULL,
    observacion varchar(100),
    CONSTRAINT obs_pk PRIMARY KEY (idobs) 
+);
+CREATE TABLE IF NOT EXISTS estudiante(
+   id_carnet int NOT NULL,
+   nombre_es varchar(20) NOT NULL,
+   apellido_es varchar(20) NOT NULL
 );
 /*
 -----------------------------------------

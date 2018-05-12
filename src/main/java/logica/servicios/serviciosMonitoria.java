@@ -5,8 +5,7 @@
  */
 package logica.servicios;
 
-import entidades.Monitoria;
-import entidades.Semestre;
+import entidades.*;
 import java.util.Date;
 
 /**
@@ -16,13 +15,10 @@ import java.util.Date;
 public interface serviciosMonitoria {
      /**
      * agrega una monitoria a la base de datos
-     * @param id id de la monitoria
-     * @param observaciones comentarios de el monitor
-     * @param ip donde se registra la monitoria
+     * @param monitoria monitoria que se empieza a registrar
      * @throws ExcepcionServiciosMonitoria si hay error de persistencia-
      **/
-    public abstract void registrarMonitoria(String ip,  String obvservaciones,Date fecha
-            ,int id,int numero,String tema) throws ExcepcionServiciosMonitoria;
+    public abstract void registrarMonitoria(Monitoria monitoria,String tema) throws ExcepcionServiciosMonitoria;
     /**
      * Retorna una monitoria en especifico con su id correspondiente
      * @param id identificador de la monitoria
@@ -31,19 +27,23 @@ public interface serviciosMonitoria {
      */
     public abstract Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
     
-    public abstract void agregarSemestre(String id, Date inicio, Date fin);
+    public abstract void agregarSemestre(Semestre semestre);
     
-    public abstract void agregarGrupo(String semestre, int asignatura, int carnet, int numero);
+    public abstract void agregarGrupo(Grupo grupo);
     
-    public void agregarProfesor(int id, String nombre, String apellido, int telefono, String mail);
+    public void agregarProfesor(Profesor profesor);
     
     public abstract Semestre getSemestre(String i);
     
-    public abstract void registrarAsistencia(int idmon, String idtema);
+   
     
     public abstract void consultarInfoSemestre();
     
    public abstract  Monitoria consularInfoMonitoria(int id);
    
-   public void agregarMonitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso); 
+   public void agregarMonitor(Monitor monitor); 
+   
+   public void agregarEstudiante(Estudiante estudiante);
+   
+   public void agregarTema(Tema tema);
 }

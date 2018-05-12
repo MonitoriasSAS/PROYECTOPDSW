@@ -14,9 +14,9 @@ public class Profesor {
     private String nombre;
     private String apellido;
     private String correo;
-    private String telefono;
+    private int telefono;
 
-    public Profesor(int id, String nombre, String apellido, String correo, String telefono) {
+    public Profesor(int id, String nombre, String apellido, String correo, int telefono) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -56,11 +56,11 @@ public class Profesor {
         this.correo = correo;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 

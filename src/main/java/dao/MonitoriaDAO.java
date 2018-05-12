@@ -13,7 +13,6 @@ import java.util.Date;
  * @author monitoriasSAS
  */
 public interface MonitoriaDAO {
-    public void agregarMonitoria(String ip,  String obvservaciones,Date fecha,int id,int numero,String tema) ;
+    public void agregarMonitoria(Monitoria monitoria,String tema) ;
     public Monitoria consultarMonitoria(int id) ;
-    public void agregarAsistencia(int idmon, String idtema);
 }

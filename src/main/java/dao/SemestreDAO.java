@@ -5,7 +5,7 @@
  */
 package dao;
 
-import entidades.Semestre;
+import entidades.*;
 import java.util.Date;
 
 /**
@@ -14,8 +14,10 @@ import java.util.Date;
  */
 public interface SemestreDAO {
     public Semestre ConsultarSemestre(String id) ;
-    void agregarSemestre(String id,Date inicio,Date fin);    
-    void agregarGrupo( String semestre,int asignatura,int carnet,int numero);
-    void agregarProfesor(int id,String nombre,String apellido,int telefono, String mail);
-    void agregarMonitor(int id, String nombre, String apellido, int telefono, String carrera, String ingreso);
+    void agregarSemestre(Semestre semestre);
+    void agregarGrupo(Grupo grupo);
+    void agregarProfesor(Profesor profesor);
+    void agregarMonitor(Monitor monitor);
+    void agregarTema(Tema tema);
+    void agregarEstudiante(Estudiante estudiante);
 }
