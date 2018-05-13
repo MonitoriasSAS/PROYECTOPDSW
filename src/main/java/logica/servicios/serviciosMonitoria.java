@@ -34,9 +34,7 @@ public interface serviciosMonitoria {
     public void agregarProfesor(Profesor profesor);
     
     public abstract Semestre getSemestre(String i);
-    
-   
-    
+     
     public abstract void consultarInfoSemestre();
     
    public abstract  Monitoria consularInfoMonitoria(int id);

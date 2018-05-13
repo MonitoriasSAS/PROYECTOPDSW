@@ -42,6 +42,7 @@ public class MonitorBean implements Serializable{
     private Observacion observacion;
     private Date fecha;
     private Tema tema;
+    private String t;
     private Profesor profesor;
     private FranjaHorario horario;
     private Estudiante estudiante;
@@ -52,8 +53,8 @@ public class MonitorBean implements Serializable{
         
     }
     
-    public void Acesoria(){
-        //monitoria=moni.registrarMonitoria(monitoria.getId(),monitoria.getIp(),monitoria.getObservaciones(),monitoria.getFecha(),horario.getId(), grupo.getNumero(), tema.getId(),monitoria.getProfesor());
+    public void Acesoria() throws ExcepcionServiciosMonitoria{
+        moni.registrarMonitoria(monitoria, t);
     }
     
     public void setMonitor(Monitor monitor) {
