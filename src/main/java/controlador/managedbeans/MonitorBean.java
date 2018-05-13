@@ -40,7 +40,6 @@ public class MonitorBean implements Serializable{
     private Monitor monitor;
     private Asignatura materia;
     private Observacion observacion;
-    private Date fecha;
     private Tema tema;
     private String t;
     private Profesor profesor;
@@ -92,15 +91,7 @@ public class MonitorBean implements Serializable{
     public Observacion getObservacion() {
         return observacion;
     }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
+    
     public FranjaHorario getHorario() {
         return horario;
     }

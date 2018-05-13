@@ -39,10 +39,9 @@ public class ProfesorBean implements Serializable {
     private Monitoria monitoria;
     private Asignatura materia;
     
-    
     public void consultar() throws ExcepcionServiciosMonitoria{
-        
-         servicio.consulatarMonitoria(monitoria.getId());
+        String mon = monitor.getNombre()+" "+monitor.getApellido();
+        servicio.consulatarMonitoria(monitoria.getId());
     }
 
     public Grupo getGrupo() {
@@ -84,10 +83,7 @@ public class ProfesorBean implements Serializable {
     public void setMateria(Asignatura materia) {
         this.materia = materia;
     }
-    
-    
-     
-    
+      
     public Profesor getProfesor(){
         return profesor;
     }
