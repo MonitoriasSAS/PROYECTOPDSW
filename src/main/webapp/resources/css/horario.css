@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+#principal{
+    background: url(../Imagenes/tierra.jpg);
+    background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: monospace;
+}
