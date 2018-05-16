@@ -10,21 +10,21 @@ package entidades;
  * @author 2112076
  */
 public class Tema {
-    private String id;
+    private int id;
     private String name;
     private Asignatura asignatura;
 
     public Tema(){
         
     }
-    public Tema(String id, String name, Asignatura asignatura) {
+    public Tema(int id, String name, Asignatura asignatura) {
         this.id = id;
         this.name = name;
         this.asignatura = asignatura;
     }
     
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class Tema {
         return name;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

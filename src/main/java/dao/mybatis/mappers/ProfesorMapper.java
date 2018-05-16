@@ -16,4 +16,5 @@ import org.apache.ibatis.annotations.Param;
 public interface ProfesorMapper{
     Profesor profesor(@Param("id")int id);
     Monitoria consularInfoMonitoria (@Param("id")int id);
+    float consultarEstudiantes(@Param("grup")int grupo);
 }

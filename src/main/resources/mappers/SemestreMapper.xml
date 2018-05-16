@@ -98,7 +98,7 @@
      </insert>
      <insert id='agregarTema'>
          insert into Tema
-         values(#{tem.id},#{tem.name},#{tem.asignatura.id})
+         values(#{tem.name},#{tem.asignatura.id},#{tem.id})
      </insert>
      <insert id='agregarEstudiante'>
          insert into Estudiante

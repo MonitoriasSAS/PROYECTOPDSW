@@ -91,6 +91,10 @@ CREATE TABLE IF NOT EXISTS estudiante(
    nombre_es varchar(20) NOT NULL,
    apellido_es varchar(20) NOT NULL
 );
+ALTER TABLE Monitoria
+ADD CONSTRAINT FK_FranjaID
+FOREIGN KEY (Franja_id)
+REFERENCES Franja_Horario(id_Franja);
 /*
 -----------------------------------------
 --Foraneas
@@ -128,10 +132,7 @@ ADD CONSTRAINT FK_Grupo_numeroFra
 FOREIGN KEY (Grupo_numero)
 REFERENCES Grupo(numero);
 
-ALTER TABLE Monitoria
-ADD CONSTRAINT FK_FranjaID
-FOREIGN KEY (Franja_id)
-REFERENCES Franja_Horario(id_Franja);
+
 
 ALTER TABLE Asistencia
 ADD CONSTRAINT FK_Monitoria_id_Monito

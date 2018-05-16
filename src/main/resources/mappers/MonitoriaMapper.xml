@@ -38,13 +38,13 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='grupo'/>
+        <result property='grupo' column='asignatura_id_asignatura'/>
         <result property='profesor' column='profesor'/>
+        <result property='idC' column='estudiante_id_carnet'/>
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
-        select ip,observaciones,Monitoria.fecha,fecha,id_carnet,Tema.TemaID,nombre_Asig,numero,nombre_Moni
-        from Monitoria,Asistencia,Tema,Monitor,Franja_Horario,Grupo,Asignatura
-        where id_Mon=#{idmo} and Monitoria_id_Monitoria=id_Monitoria and TemaID=Tema_TemaID and Franja_id=id_franja and id_carnet=Monitor_id_Carnet and Tema.Asignatura_id_Asignatura = id_Asignatura and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
+        SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario
+        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.asignatura_id_asignatura
      </select> 
      <insert id='agregarMonitoria'>
          insert into Monitoria
@@ -52,6 +52,6 @@
      </insert>
      <insert id='agregarMoni'>
          insert into Asistencia 
-         values(#{id},#{tem})
+         values(#{id},#{asig},#{tem})
      </insert>
  </mapper>

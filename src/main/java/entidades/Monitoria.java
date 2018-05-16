@@ -113,6 +113,11 @@ public class Monitoria {
     public void setGrupo(int grupo) {
         this.grupo = grupo;
     }
+
+    @Override
+    public String toString() {
+        return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + '}';
+    }
     
 
     

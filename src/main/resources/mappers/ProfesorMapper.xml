@@ -52,6 +52,7 @@
         <result property='fecha' column='fecha'/>
         <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
+        <result property='idC' column='estudiante_id_carnet'/>
      </resultMap>
      <select id='consultarGrupos'>
          select observaciones,fecha,id_carnet,grupo 
@@ -59,8 +60,12 @@
          where #{id}=Profesor_id_Carnet and Franja_id=id_franja and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
      </select>
      <select id='consularInfoMonitoria'>
-         select id_carnet,
+         select Monitoria.estudiante_id_carnet
          from Monitoria,Tema,Asistencia
-         where #{id}=Monitoria.id and Monitoria.id=Asistencia.Monitoria_id_Monitoria and Tema_TemaID=tema.TemaID
+         where #{id}=Monitoria.id_Mon and Monitoria.id_Mon=Asistencia.Monitoria_id_Monitoria and Tema_TemaID=tema.TemaID
+     </select>
+     <select id='consultarEstudiantes'>
+         SELECT count(grupo)/(SELECT COUNT(grupo) FROM Monitoria) FROM Monitoria
+         WHERE grupo=#{grup}
      </select>
  </mapper>

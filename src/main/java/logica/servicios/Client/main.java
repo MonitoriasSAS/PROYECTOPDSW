@@ -41,6 +41,7 @@ public class main {
         SqlSession sqlss = sessionfact.openSession();
         SemestreMapper mm=sqlss.getMapper(SemestreMapper.class);
         MonitoriaMapper mp=sqlss.getMapper(MonitoriaMapper.class);
+        ProfesorMapper pm=sqlss.getMapper(ProfesorMapper.class);
         Semestre s=new Semestre("2012-7", new Date(2012,1,23), new Date(2012,5,25));
         mm.agregarSemestre(s);
         System.out.println(mm.Consultarsemestre("2012-7"));
@@ -55,11 +56,16 @@ public class main {
         FranjaHorario kk=new FranjaHorario(30, ho,"martes", lcal, as, new Time(10,0,0), new Time(11,30,0));
         mm.agregarFranja(kk);
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
-        Tema tem = new Tema("Grafos","Grafos en la recurrencia",as);
+        Tema tem = new Tema(1,"Grafos",as);
         mm.agregarTema(tem);
-        mp.agregarMonitoria(new Monitoria(21, "10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2));
-        mp.agregarMoni(2112076,"Grafos");
-        mp.loadMonitoria(21);
+        Monitoria hi=new Monitoria(21, "10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2);
+        hi.setTema(tem);
+        hi.setFranjaHorario(kk);
+        mp.agregarMonitoria(hi);
+        mp.agregarMoni(2112076,1,21);
+        System.out.println(mp.loadMonitoria(21));
+       // pm.consultarEstudiantes(2);
+        //System.out.println(pm.consularInfoMonitoria(21));
          System.exit(0);
     }
     
