@@ -1,4 +1,4 @@
-package logica.servicios.Client;
+/*package logica.servicios.Client;
 
 import dao.mybatis.mappers.*;
 import entidades.*;
@@ -21,6 +21,7 @@ import org.apache.ibatis.session.*;
  *
  * @author monitoriasSas
  */
+/*
 public class main {
      public static SqlSessionFactory getSqlSessionFactory() {
          Connection conn = null;
@@ -63,10 +64,10 @@ public class main {
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         mp.agregarMoni(2112076,1,21);
-        System.out.println(mp.loadMonitoria(21));
+        //System.out.println(mp.loadMonitoria(21));
        // pm.consultarEstudiantes(2);
         //System.out.println(pm.consularInfoMonitoria(21));
          System.exit(0);
     }
     
-}
+}*/
