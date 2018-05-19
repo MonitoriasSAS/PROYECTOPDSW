@@ -58,13 +58,13 @@ public class main {
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema(1,"Grafos",as);
         mm.agregarTema(tem);
-        Monitoria hi=new Monitoria(21, "10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2);
+        Monitoria hi=new Monitoria(21,"10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2);
         hi.setTema(tem);
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         mp.agregarMoni(2112076,1,21);
         System.out.println(mp.loadMonitoria(21));
-       // pm.consultarEstudiantes(2);
+       // System.out.println(pm.consultarEstudiantes(2));
         //System.out.println(pm.consularInfoMonitoria(21));
          System.exit(0);
     }

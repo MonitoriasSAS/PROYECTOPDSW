@@ -38,7 +38,7 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='asignatura_id_asignatura'/>
+        <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
      </resultMap>

@@ -50,7 +50,7 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='grupo'/>
+        <result property='grupo' column='asignatura_id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
      </resultMap>
@@ -65,7 +65,7 @@
          where #{id}=Monitoria.id_Mon and Monitoria.id_Mon=Asistencia.Monitoria_id_Monitoria and Tema_TemaID=tema.TemaID
      </select>
      <select id='consultarEstudiantes'>
-         SELECT count(grupo)/(SELECT COUNT(grupo) FROM Monitoria) FROM Monitoria
-         WHERE grupo=#{grup}
+         SELECT count(*)/(SELECT COUNT(*) FROM Monitoria) FROM Monitoria
+         WHERE id_asignatura=#{grup}
      </select>
  </mapper>
