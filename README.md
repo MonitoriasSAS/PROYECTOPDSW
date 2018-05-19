@@ -48,10 +48,15 @@ https://monitoriassas.herokuapp.com/
  ![alt text][1]
    [1]: https://github.com/MonitoriasSAS/PROYECTOPDSW/blob/master/src/main/webapp/Imagenes/retros.jpeg "wow!"
    
-   
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c42353620eed40daaf4102f82214411e)](https://www.codacy.com/app/MonitoriasSAS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MonitoriasSAS&amp;utm_campaign=Badge_Grade)   
 
-[![CircleCI](https://circleci.com/gh/MonitoriasSAS.svg?style=svg)](https://circleci.com/gh/MonitoriasSAS)
+## *Integracion Continua*
+[![CircleCI](https://circleci.com/gh/MonitoriasSAS/PROYECTOPDSW.svg?style=svg)](https://circleci.com/gh/MonitoriasSAS)
+
+
+## *Analisis de Codigo*
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c42353620eed40daaf4102f82214411e)](https://www.codacy.com/app/MonitoriasSAS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MonitoriasSAS/PROYECTOPDSW&amp;utm_campaign=Badge_Grade)   
+
+
 
 
 
