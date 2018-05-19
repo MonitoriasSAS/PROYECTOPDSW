@@ -47,4 +47,17 @@ https://monitoriassas.herokuapp.com/
  ## *Retrospectiva:*
  ![alt text][1]
    [1]: https://github.com/MonitoriasSAS/PROYECTOPDSW/blob/master/src/main/webapp/Imagenes/retros.jpeg "wow!"
+   
+
+## *Integracion Continua*
+[![CircleCI](https://circleci.com/gh/MonitoriasSAS/PROYECTOPDSW.svg?style=svg)](https://circleci.com/gh/MonitoriasSAS)
+
+
+## *Analisis de Codigo*
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/08b963d8d09e43589f5ff4d63cdc3681)](https://www.codacy.com/app/nicolaspatino/PROYECTOPDSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MonitoriasSAS/PROYECTOPDSW&amp;utm_campaign=Badge_Grade)
+
+
+
+
+
  
