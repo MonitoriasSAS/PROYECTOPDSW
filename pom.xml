@@ -111,22 +111,21 @@
         </dependency>
 
         <!--security-->
-        
          <!--prueba quitando el shiro-->
         
-        <!--<dependency>
+        <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
             <version>1.2.1</version>
-        </dependency>-->
+        </dependency>
         
         <!--prueba quitando el shiro-->
         
-        <!--<dependency>
+        <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-web</artifactId>
             <version>1.2.1</version>
-        </dependency>-->
+        </dependency>
         
         <dependency>
             <groupId>org.slf4j</groupId>

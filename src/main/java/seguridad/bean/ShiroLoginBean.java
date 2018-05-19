@@ -7,9 +7,9 @@ package seguridad.bean;
 
 //prueba quitando el shiro
 
-//import org.apache.shiro.SecurityUtils;
-//import org.apache.shiro.authc.*;
-//import org.apache.shiro.subject.Subject;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.faces.application.FacesMessage;
@@ -27,14 +27,13 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class ShiroLoginBean implements Serializable {
     //prueba quitando el shiro
-    //private static final Logger log = LoggerFactory.getLogger(ShiroLoginBean.class);
+    private static final Logger log = LoggerFactory.getLogger(ShiroLoginBean.class);
     private String username;
     private String password;
     
     public ShiroLoginBean() {
         
     }
-    /**
      
     public Subject getSubject() {
         return SecurityUtils.getSubject();
@@ -80,7 +79,7 @@ public class ShiroLoginBean implements Serializable {
             token.clear();
         }
     }
-    */
+    
      
     private void facesError(String message) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, message, null));
