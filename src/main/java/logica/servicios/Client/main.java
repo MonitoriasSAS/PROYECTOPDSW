@@ -44,7 +44,6 @@ public class main {
         ProfesorMapper pm=sqlss.getMapper(ProfesorMapper.class);
         Semestre s=new Semestre("2012-7", new Date(2012,1,23), new Date(2012,5,25));
         mm.agregarSemestre(s);
-        System.out.println(mm.Consultarsemestre("2012-7"));
         Profesor x=new Profesor(2112107, "tato", "apellido", "mail@mail.escuelaing.edu.co",8018546);
         mm.agregarProfesor(x);
         Monitor ho=new Monitor(2112107,"nombre"," apellido", 70172, "sistemas",2012);
@@ -63,6 +62,7 @@ public class main {
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         mp.agregarMoni(2112076,1,21);
+        System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mp.loadMonitoria(21));
        // System.out.println(pm.consultarEstudiantes(2));
         //System.out.println(pm.consularInfoMonitoria(21));

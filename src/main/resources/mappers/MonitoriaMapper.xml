@@ -20,14 +20,13 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
-         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja_Horario'/>
+        <id property='id' column='id_Franja'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
+        <!--association property='monitor' javaType='Monitor' resultMap='monitorResult'/-->
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
@@ -41,6 +40,7 @@
         <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
+        <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
         SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario
