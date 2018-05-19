@@ -26,11 +26,11 @@
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-        <!--association property='monitor' javaType='Monitor' resultMap='monitorResult'/-->
+        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
-         <result property='name' column='name'/>
+         <result property='name' column='descripcion'/>
      </resultMap>
     <resultMap type= 'Monitoria' id='monitoriaResult'>
         <id property='id' column='id_Mon'/>
@@ -41,10 +41,15 @@
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
+        <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
-        SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario
-        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.monitoriaid
+        SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario,Monitor
+        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.monitoriaid and Monitor_id_Carnet=id_Carnet
+     </select> 
+     <select parameterType='map' id='loadFranja' resultMap='franjaResult'>
+        SELECT * Monitor
+        WHERE id_Carnet=#{idmon}
      </select> 
      <insert id='agregarMonitoria'>
          insert into Monitoria

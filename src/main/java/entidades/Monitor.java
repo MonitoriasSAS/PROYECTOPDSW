@@ -17,6 +17,9 @@ public class Monitor {
     private String carrera;
     private int ingreso;
 
+    public Monitor() {
+    }
+
     public Monitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.id = id;
         this.nombre = nombre;

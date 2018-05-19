@@ -5,7 +5,8 @@
  */
 package dao.mybatis.mappers;
 
-import entidades.Monitoria;
+
+import entidades.*;
 
 
 import org.apache.ibatis.annotations.Param;
@@ -19,4 +20,5 @@ public interface MonitoriaMapper{
     public void agregarMoni(@Param("id") int id,
             @Param("asig")int tem,
             @Param("tem") int tema);
+    public Monitor loadFranja(@Param("idmon") int id);
 }

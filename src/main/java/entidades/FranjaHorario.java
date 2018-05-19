@@ -6,7 +6,6 @@
 package entidades;
 
 import java.sql.Time;
-import java.util.List;
 
 /**
  *
