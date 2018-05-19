@@ -15,7 +15,9 @@ import entidades.Grupo;
 import logica.servicios.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import logica.servicios.ExcepcionServiciosMonitoria;
@@ -32,18 +34,28 @@ import logica.servicios.serviciosMonitoriaFactory;
 public class ProfesorBean implements Serializable {
     
     private serviciosMonitoria servicio = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
-    
+    private Map<String,Grupo> grupos = new HashMap<>();
+    private Map<String,Monitoria> monitorias = new HashMap<>();
     private Grupo grupo;
     private Monitor monitor;
     private Profesor profesor;
     private Monitoria monitoria;
     private Asignatura materia;
+    private float porcentaje;
     
     public void consultar() throws ExcepcionServiciosMonitoria{
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
     }
 
+    public Map<String, Grupo> getGrupos() {
+        return grupos;
+    }
+
+    public Map<String, Monitoria> getMonitorias() {
+        return monitorias;
+    }
+    
     public Grupo getGrupo() {
         return grupo;
     }
@@ -56,6 +68,14 @@ public class ProfesorBean implements Serializable {
         return monitor;
     }
 
+    public float getPorcentaje() {
+        return porcentaje;
+    }
+
+    public void setPorcentaje(float porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+    
     public Monitoria getMonitoria() {
         return monitoria;
     }
@@ -90,6 +110,10 @@ public class ProfesorBean implements Serializable {
     
     public void setProfesor(Profesor profesor){
         this.profesor = profesor;
+    }
+    
+    public void informacion(){
+       
     }
     
 }
