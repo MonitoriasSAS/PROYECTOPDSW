@@ -44,7 +44,7 @@
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
         SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario
-        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.asignatura_id_asignatura
+        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.monitoriaid
      </select> 
      <insert id='agregarMonitoria'>
          insert into Monitoria
