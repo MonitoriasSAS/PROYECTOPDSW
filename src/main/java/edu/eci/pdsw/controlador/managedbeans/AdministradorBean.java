@@ -36,8 +36,6 @@ import org.primefaces.component.inputtextarea.InputTextarea;
 @SessionScoped
 public class AdministradorBean implements Serializable {
     //@ManagedProperty(value = "#{loginBean}")
-    /*private ShiroLoginBean seguridad;*/
-    
     private Monitor monitor;
     private Profesor profesor;
     private Asignatura materia;
@@ -63,6 +61,30 @@ public class AdministradorBean implements Serializable {
     public FranjaHorario getFranja() {
         return franja;
     }
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
+
+    public void setFin(Date fin) {
+        this.fin = fin;
+    }
+   
 
     public void setFranja(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
         this.franja = new FranjaHorario(id,monitor,dia,grupo,asignatura,inicio,fin);
@@ -101,30 +123,7 @@ public class AdministradorBean implements Serializable {
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
-
-    public String getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
-    }
-
-    public Date getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
-    }
+    
 
     public serviciosMonitoria getMoni() {
         return moni;
@@ -132,8 +131,7 @@ public class AdministradorBean implements Serializable {
 
     public void setMoni(serviciosMonitoria moni) {
         this.moni = moni;
-    }
-    
+    }  
     
    /**
     public ShiroLoginBean getSeguridad() {
@@ -144,5 +142,6 @@ public class AdministradorBean implements Serializable {
         this.seguridad = seguridad;
     }
     */
+    
 }
 
