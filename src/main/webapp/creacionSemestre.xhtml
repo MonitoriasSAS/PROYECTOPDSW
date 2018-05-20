@@ -12,13 +12,13 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nuevo Semestre" styleClass="inicio"/>
             <br/>
-            <p:inputText id="semestre" placeholder="Semestre" required="true" styleClass="user"/>
+            <p:inputText id="semestre" placeholder="Semestre" required="true" styleClass="user" value="#{beanAdmin.periodo}"/>
             <br/>
-            <p:inputText id="fecha-ini" placeholder="Inicio de Clases" required="true" styleClass="user"/>
+            <p:inputText id="fecha-ini" placeholder="Inicio de Clases" required="true" styleClass="user" value="#{beanAdmin.inicio}" />
             <br/>
-            <p:inputText id="fecha_fin" placeholder="Fin de Clases" required="true" styleClass="user"/>
+            <p:inputText id="fecha_fin" placeholder="Fin de Clases" required="true" styleClass="user" value="#{beanAdmin.fin}" />
             <br/>
-            <p:commandButton value="Crear" styleClass="myButton"/>
+            <p:commandButton value="Crear" styleClass="myButton" actionListener= "#{beanAdministrador.registrarSemestre()}" />
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionAsignatura.xhtml"/>
             <br/>
         </h:form>

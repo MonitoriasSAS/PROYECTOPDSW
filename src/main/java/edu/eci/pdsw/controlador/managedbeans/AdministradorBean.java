@@ -32,7 +32,7 @@ import org.primefaces.component.inputtextarea.InputTextarea;
  * @author MonitoriasSAS
  */
  
-@ManagedBean(name = "beanAdministrador", eager = true)
+@ManagedBean(name = "beanAdmin")
 @SessionScoped
 public class AdministradorBean implements Serializable {
     @ManagedProperty(value = "#{loginBean}")
@@ -46,10 +46,20 @@ public class AdministradorBean implements Serializable {
     private Semestre semestre;
     private FranjaHorario franja;
     
+    private String periodo;
+    private Date inicio;
+    private Date fin;
+   
     public AdministradorBean(){
-        
+        this.periodo = periodo;
+        this.inicio = inicio;
+        this.fin = fin;
     }
     
+    public void registrarSemestre(){
+        moni.agregarSemestre(new Semestre(periodo,inicio,fin));
+    }
+   
     public FranjaHorario getFranja() {
         return franja;
     }
@@ -74,19 +84,10 @@ public class AdministradorBean implements Serializable {
         return materia;
     }
     
-    
 
     public void setSemestre(String periodo,Date inicio,Date fin){
         this.semestre = new Semestre(periodo,inicio,fin);
         moni.agregarSemestre(semestre);
-        InputTextarea ita = new InputTextarea();
-        
-        
-    }
-    public void ingresarSemestre(){
-        
-        
-        
     }
 
     public Semestre getSemestre() {
@@ -104,6 +105,32 @@ public class AdministradorBean implements Serializable {
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
+
+    public void setFin(Date fin) {
+        this.fin = fin;
+    }
+    
+    
    /**
     public ShiroLoginBean getSeguridad() {
         return seguridad;
