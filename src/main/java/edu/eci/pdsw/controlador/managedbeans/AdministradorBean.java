@@ -36,19 +36,23 @@ import org.primefaces.component.inputtextarea.InputTextarea;
 @SessionScoped
 public class AdministradorBean implements Serializable {
     //@ManagedProperty(value = "#{loginBean}")
+
     //private ShiroLoginBean seguridad;
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
     
+
     private Monitor monitor;
     private Profesor profesor;
     private Asignatura materia;
     private Semestre semestre;
     private FranjaHorario franja;
+
     
     private String periodo;
     private Date inicio;
     private Date fin;
+    
    
     public AdministradorBean(){
         this.periodo = periodo;
@@ -60,6 +64,9 @@ public class AdministradorBean implements Serializable {
         moni.agregarSemestre(new Semestre(periodo,inicio,fin));
     }
     
+    public FranjaHorario getFranja() {
+        return franja;
+    }
     public String getPeriodo() {
         return periodo;
     }
@@ -84,10 +91,8 @@ public class AdministradorBean implements Serializable {
         this.fin = fin;
     }
    
-    public FranjaHorario getFranja() {
-        return franja;
-    }
 
+    
     public void setFranja(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
         this.franja = new FranjaHorario(id,monitor,dia,grupo,asignatura,inicio,fin);
     }
@@ -99,7 +104,7 @@ public class AdministradorBean implements Serializable {
     public void setMateria(int id, String nombre) {
         this.materia = new Asignatura(id,nombre);
     }
-    
+
     public Profesor getProfesor() {
         return profesor;
     }
@@ -116,11 +121,7 @@ public class AdministradorBean implements Serializable {
     public Semestre getSemestre() {
         return semestre;
     }
-
-    public serviciosMonitoria getMoni() {
-        return moni;
-    }
-
+    
     public Monitor getMonitor() {
         return monitor;
     }
@@ -129,7 +130,24 @@ public class AdministradorBean implements Serializable {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
 
+    
+
+
     /**public ShiroLoginBean getSeguridad() {
+=======
+    
+
+    public serviciosMonitoria getMoni() {
+        return moni;
+    }
+
+    public void setMoni(serviciosMonitoria moni) {
+        this.moni = moni;
+    }  
+    
+   /**
+    public ShiroLoginBean getSeguridad() {
+>>>>>>> 3229894408caedf601d160a996645e36677baf76
         return seguridad;
     }
 
