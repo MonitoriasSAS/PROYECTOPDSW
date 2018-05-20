@@ -7,7 +7,7 @@
          <id property='carnet' column='nombre_es'/>
          <result property='nombre' column='nombre_es'/>
          <result property='apellido' column='apellido_es'/>
-         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult' ></collection>
+         <collection property='grupos' ofType='Grupo' resultMap='grupoResult' ></collection>
      </resultMap>
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
@@ -28,7 +28,7 @@
          <result property='carrera' column='carrera'/>
          <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
-       <resultMap type='Franja' id='franjaResult'>
+     <resultMap type='Franja' id='franjaResult'>
         <id property='id' column='id_Franja'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
@@ -55,19 +55,17 @@
         <result property='idC' column='estudiante_id_carnet'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
-     </resultMap>>
-     <select id='consultarGrupos'>
-         select observaciones,fecha,id_carnet,grupo 
-         from Monitoria, Franja_Horaio, Grupo, Profesor
-         where #{id}=Profesor_id_Carnet and Franja_id=id_franja and numero = Grupo_numero and Grupo.Asignatura_id_Asignatura =  Grupo_Asignatura_id_Asignatura
+     </resultMap>
+     <select id='consultarCursos'>
+         select * 
+         
      </select>
-     <select id='consularInfoMonitoria'>
-         select Monitoria.estudiante_id_carnet
-         from Monitoria,Tema,Asistencia
-         where #{id}=Monitoria.id_Mon and Monitoria.id_Mon=Asistencia.Monitoria_id_Monitoria and Tema_TemaID=tema.TemaID
+     <select id='consularTotalMonitoria'>
+         select *
+         from Monitoria
      </select>
-     <select id='consultarEstudiantes'>
-         SELECT count(*)/(SELECT COUNT(*) FROM Monitoria) FROM Monitoria
-         WHERE id_asignatura=#{grup}
+     <select id='consultarMonitaria'>
+         SELECT FROM Monitoria FROM Monitoria,Franja_Horario,Grupo
+         WHERE #{idpro}=Profesor_id_Carnet and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura and id_Franja=Franja_id
      </select>
  </mapper>

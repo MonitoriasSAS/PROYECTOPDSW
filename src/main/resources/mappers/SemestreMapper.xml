@@ -102,6 +102,8 @@
      </insert>
      <insert id='agregarEstudiante'>
          insert into Estudiante
-         values (#{estu.carnet},#{estu.nombre},#{estu.apellido})
+         values (#{estu.carnet},#{estu.nombre},#{estu.apellido},#{estu.grupos})
      </insert>
  </mapper>
+ 
+ 
