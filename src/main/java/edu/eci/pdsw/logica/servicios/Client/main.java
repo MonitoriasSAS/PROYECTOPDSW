@@ -33,6 +33,7 @@ import org.apache.ibatis.session.*;
  */
 public class main {
      public static SqlSessionFactory getSqlSessionFactory() {
+        
          Connection conn = null;
         SqlSessionFactory sqlSessionFactory = null;
         if (sqlSessionFactory == null) {

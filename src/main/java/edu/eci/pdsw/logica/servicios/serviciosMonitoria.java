@@ -14,6 +14,7 @@ import edu.eci.pdsw.entidades.Grupo;
 import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -53,4 +54,10 @@ public interface serviciosMonitoria {
    public void agregarTema(Tema tema);
    
    public void agregarFranjaHorario(FranjaHorario franjaHorario);
+   
+   public float consultarMonitorias(int id,int asi);
+   
+   public List<Float> consultarCursos(int id,int asig);
+   
+   public List<Float> consultarGrupos(int id,int numgrupo,int numasig);
 }
