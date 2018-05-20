@@ -9,7 +9,7 @@ import edu.eci.pdsw.entidades.FranjaHorario;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public interface FranjaHorarioDAO {
     public FranjaHorario franjaHorario(int id);

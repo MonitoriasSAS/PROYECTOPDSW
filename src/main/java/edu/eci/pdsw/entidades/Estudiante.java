@@ -16,7 +16,7 @@ public class Estudiante {
     private String nombre;
     private String apellido;
 
-    public Estudiante(int carnet, String nombre, String apellido, List<Grupo> grupos) {
+    public Estudiante(int carnet, String nombre, String apellido) {
         this.carnet = carnet;
         this.nombre = nombre;
         this.apellido = apellido;

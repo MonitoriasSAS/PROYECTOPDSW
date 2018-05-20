@@ -16,7 +16,7 @@ import java.util.Date;
 
 /**
  *
- * @author monitoriasSAS
+ * @author MonitoriasSAS
  */
 public interface SemestreDAO {
     public Semestre ConsultarSemestre(String id) ;

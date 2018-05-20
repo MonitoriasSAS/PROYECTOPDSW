@@ -28,7 +28,7 @@ import javax.persistence.PersistenceException;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public class serviciosMonitoriaimpl implements serviciosMonitoria {
     

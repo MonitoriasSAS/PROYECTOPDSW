@@ -18,7 +18,7 @@ import edu.eci.pdsw.dao.mybatis.SemestreDaoMyBatis;
 import edu.eci.pdsw.logica.servicios.impl.serviciosMonitoriaimpl;
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public class serviciosMonitoriaFactory {
     private static serviciosMonitoriaFactory instance = new serviciosMonitoriaFactory();

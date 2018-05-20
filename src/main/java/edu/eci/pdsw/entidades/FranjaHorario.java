@@ -9,7 +9,7 @@ import java.sql.Time;
 
 /**
  *
- * @author AsusPC
+ * @author MonitoriasSAS
  */
 public class FranjaHorario {
     private int id;

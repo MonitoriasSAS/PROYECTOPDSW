@@ -21,7 +21,7 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author user
+ * @author MonitoriasSAS
  */
 /**
 @ManagedBean(name = "loginBean", eager = true)

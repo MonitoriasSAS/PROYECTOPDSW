@@ -8,7 +8,7 @@ import edu.eci.pdsw.entidades.Grupo;
 import java.util.List;
 /**
  *
- * @author 2110540
+ * @author MonitoriasSAS
  */
 public interface GrupoDAO {
     List<Grupo> grupo(int numero);

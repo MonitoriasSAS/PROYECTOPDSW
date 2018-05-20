@@ -9,7 +9,7 @@ import edu.eci.pdsw.entidades.Monitor;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public interface MonitorDAO {
     public Monitor monitor(int id);

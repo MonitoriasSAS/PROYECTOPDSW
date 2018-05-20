@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public interface serviciosMonitoria {
      /**

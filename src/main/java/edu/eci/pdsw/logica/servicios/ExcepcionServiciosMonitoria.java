@@ -7,7 +7,7 @@ package edu.eci.pdsw.logica.servicios;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public class ExcepcionServiciosMonitoria extends Exception{
     public ExcepcionServiciosMonitoria(){

@@ -31,7 +31,7 @@ import org.apache.ibatis.session.*;
 
 /**
  *
- * @author monitoriasSas
+ * @author MonitoriasSAS
  */
 public class main {
      public static SqlSessionFactory getSqlSessionFactory() {
@@ -68,10 +68,7 @@ public class main {
         mm.agregarGrupo(lcal);
         FranjaHorario kk=new FranjaHorario( ho,"martes", lcal, as, new Time(10,0,0), new Time(11,30,0));
         mm.agregarFranja(kk);
-        kk.setId(mm.consultarFranja().getId());
-        List<Grupo> lul=new ArrayList<Grupo>();
-        lul.add(lcal);
-        mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler",lul));
+        mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema("Grafos",as);
         mm.agregarTema(tem);
         tem.setId(mm.consultarTema().getId());
