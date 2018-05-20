@@ -23,4 +23,6 @@ public interface ProfesorMapper{
     List<Grupo> consultarCursos(@Param("idpro")int id,@Param("idasi")int numasig);
     List<Monitoria> consultarEstudiantesGrupo(@Param("idpro")int id,@Param("idgrupo")int numgrupo,@Param("idasi")int numasig);
     List<Monitoria> consultarTotalGrupo(@Param("idpro")int id,@Param("idasi")int numasig);
+    List<Monitoria> consultarTemaMonitoria(@Param("idpro")int id,@Param("idasi")int numasig,@Param("idtema") int idtema);
+    List<Tema> consultarTema(@Param("idasi") int asi);       
 }

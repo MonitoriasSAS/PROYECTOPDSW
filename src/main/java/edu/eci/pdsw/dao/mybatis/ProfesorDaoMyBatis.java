@@ -13,6 +13,7 @@ import edu.eci.pdsw.entidades.Estudiante;
 import edu.eci.pdsw.entidades.Grupo;
 import edu.eci.pdsw.entidades.Monitoria;
 import edu.eci.pdsw.entidades.Profesor;
+import edu.eci.pdsw.entidades.Tema;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,5 +69,15 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     @Override
     public List<Monitoria> consultarTotalGrupo(int id, int numasig) {
         return profesorMapper.consultarTotalGrupo(id, numasig);
+    }
+
+    @Override
+    public List<Monitoria> consultarTemaMonitoria(int id, int numasig,int idtema) {
+        return profesorMapper.consultarTemaMonitoria(id, numasig,idtema);
+    }
+
+    @Override
+    public List<Tema> consultarTema(int asi) {
+       return profesorMapper.consultarTema(asi);
     }
 }

@@ -197,4 +197,18 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public List<Float> consultrarTema(int id, int numgrupo, int numasig) {
+        List<Float> x= new ArrayList<Float>();
+        try{
+            List<Tema> temas=daoPro.consultarTema(numasig);
+            for (Tema i: temas){
+                x.add((float)daoPro.consultarTemaMonitoria(id,numasig,i.getId()).size()/daoPro.consultarTotalMonitorias(id,numasig).size());
+            }
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }
