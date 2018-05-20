@@ -24,6 +24,8 @@ import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import java.sql.Time;
 import java.util.Date;
 
+import org.primefaces.component.inputtextarea.InputTextarea;
+
 
 /**
  *
@@ -71,9 +73,20 @@ public class AdministradorBean implements Serializable {
     public Asignatura getMateria() {
         return materia;
     }
+    
+    
 
     public void setSemestre(String periodo,Date inicio,Date fin){
         this.semestre = new Semestre(periodo,inicio,fin);
+        moni.agregarSemestre(semestre);
+        InputTextarea ita = new InputTextarea();
+        
+        
+    }
+    public void ingresarSemestre(){
+        
+        
+        
     }
 
     public Semestre getSemestre() {

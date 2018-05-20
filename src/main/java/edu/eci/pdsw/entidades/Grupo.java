@@ -17,23 +17,33 @@ public class Grupo {
     private Profesor profesor;
     private Asignatura asignatura;
     private List<FranjaHorario> franjas;
+    private int matriculados;
+  
     public Grupo(){
     }
-    public Grupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor){
+    public Grupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor,int matriculados){
         this.numero=numero;
         this.asignatura=asignatura;
         this.profesor=profesor;
         this.semestre=semestre;
-        
+        this.matriculados=matriculados;
+       
     }
             
-
     public int getNumero() {
         return numero;
     }
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public int getMatriculados() {
+        return matriculados;
+    }
+
+    public void setMatriculados(int matriculados) {
+        this.matriculados = matriculados;
     }
 
     public Asignatura getAsignatura() {
@@ -70,7 +80,7 @@ public class Grupo {
 
     @Override
     public String toString() {
-        return "Grupo{" + "numero=" + numero + ", semestre=" + semestre + ", profesor=" + profesor + ", asignatura=" + asignatura + ", franjas=" + franjas + '}';
+        return "Grupo{" + "numero=" + numero + ", semestre=" + semestre + ", profesor=" + profesor + ", asignatura=" + asignatura + ", franjas=" + franjas + ",matriculados="+ matriculados +'}';
     }
     
    

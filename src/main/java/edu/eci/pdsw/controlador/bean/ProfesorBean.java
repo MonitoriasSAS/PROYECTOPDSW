@@ -107,8 +107,8 @@ public class ProfesorBean implements Serializable {
         return materia;
     }
 
-    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor) {
-        this.grupo = new Grupo(numero,semestre,asignatura,profesor);
+    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor, int matriculados) {
+        this.grupo = new Grupo(numero,semestre,asignatura,profesor,matriculados);
     }
   
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
