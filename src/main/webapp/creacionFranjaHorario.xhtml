@@ -12,23 +12,23 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nueva Franja Horario" styleClass="inicio"/>
             <br/>
-            <p:inputText id="monitorFran" placeholder="Monitor Asociado" required="true" styleClass="user"/>
+            <p:inputText id="monitorFran" placeholder="Monitor Asociado" required="true" styleClass="user" value="#{beanAdmin.monitor}"/>
             <br/>
-            <p:inputText id="idAsigna" placeholder="ID Asignatura" required="true" styleClass="user"/>
+            <p:inputText id="idAsigna" placeholder="ID Asignatura" required="true" styleClass="user" value="#{beanAdmin.id}"/>
             <br/>
-            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user"/>
+            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.grupo}"/>
             <br/>
-            <p:inputText id="dia" placeholder="Dia" required="true" styleClass="user"/>
+            <p:inputText id="dia" placeholder="Dia" required="true" styleClass="user" value="#{beanAdmin.d}"/>
             <br/>
-            <p:inputText id="tiempoIni" placeholder="Tiempo de Inicio" required="true" styleClass="user"/>
+            <p:inputText id="tiempoIni" placeholder="Tiempo de Inicio" required="true" styleClass="user" value="#{beanAdmin.ini}"/>
             <br/>
-            <p:inputText id="tiempoFin" placeholder="Tiempo de Fin" required="true" styleClass="user"/>
+            <p:inputText id="tiempoFin" placeholder="Tiempo de Fin" required="true" styleClass="user" value="#{beanAdmin.fi}"/>
             <br/>
             <h:panelGrid columns="2" cellpadding="5">
                 <p:outputLabel value="ID Franja Horario:" style="color:white"/>
                 <p:outputLabel value="" style="color:white"/>
             </h:panelGrid>
-            <p:commandButton value="Crear" styleClass="myButton"/>
+            <p:commandButton value="Crear" styleClass="myButton" value="#{beanAdmin.registrarFranja()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionEstudiante.xhtml"/>
             <br/>
         </h:form>
