@@ -24,8 +24,8 @@
             <div id="fecha-fin" >
                     <p:growl id="msgc" showDetail="true" />
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:outputLabel for="button2" value="Fecha1: " />
-                        <p:calendar id="button2" value="#{beanAdmin.fin}" showOn="button2" />
+                        <p:outputLabel for="button" value="Fecha: " />
+                        <p:calendar id="button2" value="#{beanAdmin.fin}" showOn="button" />
                     </h:panelGrid>
             </div>
             <p:commandButton value="Crear" styleClass="myButton" actionListener= "#{beanAdmin.registrarSemestre()}" />
