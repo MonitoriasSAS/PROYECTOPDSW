@@ -55,7 +55,9 @@ public interface serviciosMonitoria {
    
    public void agregarFranjaHorario(FranjaHorario franjaHorario);
    
-   public float consultarMonitorias(int id);
+   public float consultarMonitorias(int id,int asi);
    
    public List<Float> consultarCursos(int id,int asig);
+   
+   public List<Float> consultarGrupos(int id,int numgrupo,int numasig);
 }

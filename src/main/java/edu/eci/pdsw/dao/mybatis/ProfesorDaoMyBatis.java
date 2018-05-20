@@ -36,13 +36,13 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
        return profesorMapper.consularInfoMonitoria(id);
     }
     @Override 
-    public List<Monitoria> consultarMonitorias(){
-        return profesorMapper.consultarMonitorias();
+    public List<Monitoria> consultarMonitorias(int asi){
+        return profesorMapper.consultarMonitorias(asi);
     }
 
     @Override
-    public List<Monitoria> consultarTotalMonitorias(int id) {
-        return profesorMapper.consultarTotalMonitorias(id);
+    public List<Monitoria> consultarTotalMonitorias(int id,int asi) {
+        return profesorMapper.consultarTotalMonitorias(id,asi);
     }
 
     @Override
@@ -58,5 +58,15 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     @Override
     public List<Grupo> consultarCursos(int id, int numasig) {
         return profesorMapper.consultarCursos(id, numasig);
+    }
+
+    @Override
+    public List<Monitoria> consultarEstudiantesGrupo(int id, int numgrupo, int numasig) {
+        return profesorMapper.consultarEstudiantesGrupo(id, numgrupo, numasig);
+    }
+
+    @Override
+    public List<Monitoria> consultarTotalGrupo(int id, int numasig) {
+        return profesorMapper.consultarTotalGrupo(id, numasig);
     }
 }

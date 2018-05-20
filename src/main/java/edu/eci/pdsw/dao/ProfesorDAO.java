@@ -16,9 +16,11 @@ import org.apache.ibatis.annotations.Param;
 public interface ProfesorDAO {
     public Profesor profesor(int id) ;
     public Monitoria consularInfoMonitoria(int id);
-    public List<Monitoria>consultarMonitorias();
-    public List<Monitoria>consultarTotalMonitorias(int id);
+    public List<Monitoria>consultarMonitorias(int asi);
+    public List<Monitoria>consultarTotalMonitorias(int id,int asi);
     public List<Estudiante> consulatarEstudiantesCursos(int id,int numgrupo,int numasig);
     public List<Monitoria> consultarMonitoriasCursos(int id,int numgrupo,int numasig);
     public List<Grupo> consultarCursos(int id,int numasig);
+    public List<Monitoria> consultarEstudiantesGrupo(int id,int numgrupo,int numasig);
+    public List<Monitoria> consultarTotalGrupo(int id,int numasig);
 }

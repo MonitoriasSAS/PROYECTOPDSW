@@ -158,10 +158,10 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
    }
 
     @Override
-    public float consultarMonitorias(int id) {
+    public float consultarMonitorias(int id,int asi) {
       float x=0;
       try{
-        x= daoPro.consultarMonitorias().size()/daoPro.consultarTotalMonitorias(id).size();
+        x= daoPro.consultarMonitorias(asi).size()/daoPro.consultarTotalMonitorias(id,asi).size();
       } catch (PersistenceException ex){
         Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
       }
@@ -181,5 +181,20 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
       }
       return x;
+    }
+
+    @Override
+    public List<Float> consultarGrupos(int id, int numgrupo, int numasig) {
+        List<Float> x= new ArrayList<Float>();
+        try{
+            Grupo g=new Grupo();
+            List<Grupo> grupos=daoPro.consultarCursos(id, numasig);
+            for (Grupo i: grupos){
+                x.add((float)daoPro.consultarEstudiantesGrupo(id, numgrupo, numasig).size()/daoPro.consultarTotalGrupo(id, numasig).size());
+            }
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
     }
 }
