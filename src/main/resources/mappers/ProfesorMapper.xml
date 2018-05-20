@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="dao.mybatis.mappers.ProfesorMapper">
+ <mapper namespace="edu.eci.pdsw.dao.mybatis.mappers.ProfesorMapper">
      <resultMap type='Estudiante' id='estudianteResult'>
          <id property='carnet' column='nombre_es'/>
          <result property='nombre' column='nombre_es'/>

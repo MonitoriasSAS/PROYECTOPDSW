@@ -64,7 +64,7 @@ public class main {
         mp.agregarMoni(2112076,1,21);
         System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mp.loadMonitoria(21));
-       // System.out.println(pm.consultarEstudiantes(2));
+        //System.out.println(pm.consultarEstudiantes(2));
         //System.out.println(pm.consularInfoMonitoria(21));
          System.exit(0);
     }

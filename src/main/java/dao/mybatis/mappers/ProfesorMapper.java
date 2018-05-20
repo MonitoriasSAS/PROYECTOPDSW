@@ -7,7 +7,6 @@ package dao.mybatis.mappers;
 
 import entidades.Monitoria;
 import entidades.Profesor;
-import entidades.Tema;
 import org.apache.ibatis.annotations.Param;
 /**
  *

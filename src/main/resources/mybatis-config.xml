@@ -8,16 +8,16 @@
         <setting name="logImpl" value="LOG4J"/>        
     </settings>
     <typeAliases>
-        <typeAlias type='entidades.Monitor' alias='Monitor'/>
-        <typeAlias type='entidades.Profesor' alias='Profesor'/>
-        <typeAlias type='entidades.Monitoria' alias='Monitoria'/>
-        <typeAlias type='entidades.Asignatura' alias='Asignatura'/>
-        <typeAlias type='entidades.Tema' alias='Tema'/>
-        <typeAlias type='entidades.FranjaHorario' alias='Franja'/>
-        <typeAlias type='entidades.Grupo' alias='Grupo'/>
-        <typeAlias type='entidades.Observacion' alias='Observacion'/>
-        <typeAlias type='entidades.Semestre' alias='Semestre'/>
-        <typeAlias type='entidades.Estudiante' alias='Estudiante'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Monitor' alias='Monitor'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Profesor' alias='Profesor'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Monitoria' alias='Monitoria'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Asignatura' alias='Asignatura'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Tema' alias='Tema'/>
+        <typeAlias type='edu.eci.pdsw.entidades.FranjaHorario' alias='Franja'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Grupo' alias='Grupo'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Observacion' alias='Observacion'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Semestre' alias='Semestre'/>
+        <typeAlias type='edu.eci.pdsw.entidades.Estudiante' alias='Estudiante'/>
     </typeAliases>
             
 <environments default="development">
