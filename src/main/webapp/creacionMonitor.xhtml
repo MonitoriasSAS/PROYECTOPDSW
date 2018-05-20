@@ -12,19 +12,19 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nuevo Monitor" styleClass="inicio"/>
             <br/>
-            <p:inputText id="carnetMoni" placeholder="Carnet" required="true" styleClass="user"/>
+            <p:inputText id="carnetMoni" placeholder="Carnet" required="true" styleClass="user" value="#{beanAdmin.id}"/>
             <br/>
-            <p:inputText id="nombreMoni" placeholder="Nombre" required="true" styleClass="user"/>
+            <p:inputText id="nombreMoni" placeholder="Nombre" required="true" styleClass="user" value="#{beanAdmin.nombre}"/>
             <br/>
-            <p:inputText id="apellidoMoni" placeholder="Apellido" required="true" styleClass="user"/>
+            <p:inputText id="apellidoMoni" placeholder="Apellido" required="true" styleClass="user" value="#{beanAdmin.apellido}"/>
             <br/>
-            <p:inputText id="smestreMoni" placeholder="Semestre Ingreso" required="true" styleClass="user"/>
+            <p:inputText id="smestreMoni" placeholder="Semestre Ingreso" required="true" styleClass="user" value="#{beanAdmin.semestre}"/>
             <br/>
-            <p:inputText id="telefonoMoni" placeholder="Telefono" required="true" styleClass="user"/>
+            <p:inputText id="telefonoMoni" placeholder="Telefono" required="true" styleClass="user" value="#{beanAdmin.telefono}"/>
             <br/>
-            <p:inputText id="carreraMoni" placeholder="Carrera" required="true" styleClass="user"/>
+            <p:inputText id="carreraMoni" placeholder="Carrera" required="true" styleClass="user" value="#{beanAdmin.carrera}"/>
             <br/>
-            <p:commandButton value="Crear" styleClass="myButton"/>
+            <p:commandButton value="Crear" styleClass="myButton" value="#{beanAdmin.registrarMonitor()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionGrupo.xhtml"/>
             <br/>
         </h:form>
