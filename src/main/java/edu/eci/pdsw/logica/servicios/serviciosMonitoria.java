@@ -60,4 +60,6 @@ public interface serviciosMonitoria {
    public List<Float> consultarCursos(int id,int asig);
    
    public List<Float> consultarGrupos(int id,int numgrupo,int numasig);
+   
+   public List<Float> consultrarTema(int id, int numgrupo, int numasig);
 }

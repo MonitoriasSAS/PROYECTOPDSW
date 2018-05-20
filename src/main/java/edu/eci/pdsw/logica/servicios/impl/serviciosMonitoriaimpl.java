@@ -175,7 +175,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
           Grupo g=new Grupo();
           List<Grupo> grupos=daoPro.consultarCursos(id, asig);
           for (Grupo i: grupos){
-              x.add((float)daoPro.consultarMonitoriasCursos(id,i.getNumero(), asig).size()/daoPro.consulatarEstudiantesCursos(id,i.getNumero(), asig).size());
+              x.add((float)daoPro.consultarMonitoriasCursos(id,i.getNumero(), asig).size()/daoPro.consulatarEstudiantesCursos(id,i.getNumero(), asig).getMatriculados());
           }
       } catch (PersistenceException ex){
         Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -191,6 +191,20 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             List<Grupo> grupos=daoPro.consultarCursos(id, numasig);
             for (Grupo i: grupos){
                 x.add((float)daoPro.consultarEstudiantesGrupo(id, numgrupo, numasig).size()/daoPro.consultarTotalGrupo(id, numasig).size());
+            }
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
+
+    @Override
+    public List<Float> consultrarTema(int id, int numgrupo, int numasig) {
+        List<Float> x= new ArrayList<Float>();
+        try{
+            List<Tema> temas=daoPro.consultarTema(numasig);
+            for (Tema i: temas){
+                x.add((float)daoPro.consultarTemaMonitoria(id,numasig,i.getId()).size()/daoPro.consultarTotalMonitorias(id,numasig).size());
             }
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
