@@ -40,19 +40,48 @@ public class ProfesorBean implements Serializable {
     private Profesor profesor;
     private Monitoria monitoria;
     private Asignatura materia;
-    private List<Float> porcentajes;
+    private float procentajeAsis;
+    private List<Float> porcentajesCurso;
+    private List<Float> porcentajesTema;
+    private List<Float> porcentajesGrupo;
+
+    public float getProcentajeAsis() {
+        return procentajeAsis;
+    }
+
+    public void setProcentajeAsis(float procentajeAsis) {
+        this.procentajeAsis = procentajeAsis;
+    }
+
+    public List<Float> getPorcentajesCurso() {
+        return porcentajesCurso;
+    }
+
+    public void setPorcentajesCurso(List<Float> porcentajesCurso) {
+        this.porcentajesCurso = porcentajesCurso;
+    }
+
+    public List<Float> getPorcentajesTema() {
+        return porcentajesTema;
+    }
+
+    public void setPorcentajesTema(List<Float> porcentajesTema) {
+        this.porcentajesTema = porcentajesTema;
+    }
+
+    public List<Float> getPorcentajesGrupo() {
+        return porcentajesGrupo;
+    }
+
+    public void setPorcentajesGrupo(List<Float> porcentajesGrupo) {
+        this.porcentajesGrupo = porcentajesGrupo;
+    }
+    
+    
     
     public void consultar() throws ExcepcionServiciosMonitoria{
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
-    }
-
-    public List<Float> getPorcentajes() {
-        return porcentajes;
-    }
-
-    public void setPorcentajes(List<Float> porcentajes) {
-        this.porcentajes = porcentajes;
     }
     
     public Map<String, Grupo> getGrupos() {
