@@ -11,7 +11,7 @@
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
-        <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
+        <result property='matriculados' column='matriculados'/>
      </resultMap>
      <resultMap type='Monitor' id='monitorResult'>
          <id property='id' column='id_Carnet'/>
@@ -46,6 +46,7 @@
         <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
+        <result property='asignatura' column='asignatura_id'/>
      </resultMap>
      <resultMap type='Semestre' id='semestreResult'>
          <id property='periodo' column='periodo_Academico'/>
