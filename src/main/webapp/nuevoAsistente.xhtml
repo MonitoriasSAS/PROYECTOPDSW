@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Nuevo Asistente</title>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
+    </h:head>
+    <h:body id="principal">
+        <h:form id="formu">
+            <p:outputLabel value="Nuevo Asistente" styleClass="inicio"/>
+            <br/>
+            <p:inputText id="carnet" placeholder="Carnet" required="true" styleClass="user"/>
+            <br/>
+            <p:inputText id="nombre" placeholder="Nombre" required="true" styleClass="user"/>
+            <br/>
+            <p:inputText id="apellido" placeholder="Apellido" required="true" styleClass="user"/>
+            <br/>
+            <p:commandButton value="Crear" styleClass="myButton"/>
+            <br/>
+        </h:form>
+    </h:body>
+</html>
