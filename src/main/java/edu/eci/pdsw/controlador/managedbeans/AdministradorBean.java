@@ -35,16 +35,16 @@ import org.primefaces.component.inputtextarea.InputTextarea;
 @ManagedBean(name = "beanAdmin")
 @SessionScoped
 public class AdministradorBean implements Serializable {
-    @ManagedProperty(value = "#{loginBean}")
+    //@ManagedProperty(value = "#{loginBean}")
     //private ShiroLoginBean seguridad;
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
     
-    private Monitor monitor;
+    /**private Monitor monitor;
     private Profesor profesor;
     private Asignatura materia;
     private Semestre semestre;
-    private FranjaHorario franja;
+    private FranjaHorario franja;*/
     
     private String periodo;
     private Date inicio;
@@ -59,8 +59,32 @@ public class AdministradorBean implements Serializable {
     public void registrarSemestre(){
         moni.agregarSemestre(new Semestre(periodo,inicio,fin));
     }
+    
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
+
+    public void setFin(Date fin) {
+        this.fin = fin;
+    }
    
-    public FranjaHorario getFranja() {
+    /**public FranjaHorario getFranja() {
         return franja;
     }
 
@@ -106,29 +130,7 @@ public class AdministradorBean implements Serializable {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
 
-    public String getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
-    }
-
-    public Date getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
-    }
+    
     
     
    /**
@@ -140,5 +142,6 @@ public class AdministradorBean implements Serializable {
         this.seguridad = seguridad;
     }
     */
+    
 }
 
