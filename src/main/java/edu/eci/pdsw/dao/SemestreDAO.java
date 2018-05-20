@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.dao;
 
+import edu.eci.pdsw.entidades.Asignatura;
 import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.entidades.Tema;
 import edu.eci.pdsw.entidades.Estudiante;
@@ -27,4 +28,5 @@ public interface SemestreDAO {
     void agregarTema(Tema tema);
     void agregarEstudiante(Estudiante estudiante);
     void agregarFranja(FranjaHorario franjaHorario);
+    void agregarAsignatura(Asignatura asignatura);
 }

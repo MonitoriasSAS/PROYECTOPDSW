@@ -17,6 +17,7 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.dao.MonitoriaDAO;
 import edu.eci.pdsw.dao.ProfesorDAO;
 import edu.eci.pdsw.dao.SemestreDAO;
+import edu.eci.pdsw.entidades.Asignatura;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -210,5 +211,14 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return x;
+    }
+
+    @Override
+    public void agregarAsignatura(Asignatura asignatura) {
+        try{
+            daoSemestre.agregarAsignatura(asignatura);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
