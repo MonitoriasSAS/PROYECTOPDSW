@@ -35,20 +35,20 @@ import org.primefaces.component.inputtextarea.InputTextarea;
 @ManagedBean(name = "beanAdmin")
 @SessionScoped
 public class AdministradorBean implements Serializable {
-    @ManagedProperty(value = "#{loginBean}")
-    //private ShiroLoginBean seguridad;
-    
-    private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
+    //@ManagedProperty(value = "#{loginBean}")
+    /*private ShiroLoginBean seguridad;*/
     
     private Monitor monitor;
     private Profesor profesor;
     private Asignatura materia;
     private Semestre semestre;
-    private FranjaHorario franja;
+   private FranjaHorario franja;
     
     private String periodo;
     private Date inicio;
     private Date fin;
+    
+    serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
    
     public AdministradorBean(){
         this.periodo = periodo;
@@ -59,7 +59,7 @@ public class AdministradorBean implements Serializable {
     public void registrarSemestre(){
         moni.agregarSemestre(new Semestre(periodo,inicio,fin));
     }
-   
+    
     public FranjaHorario getFranja() {
         return franja;
     }
@@ -75,7 +75,7 @@ public class AdministradorBean implements Serializable {
     public void setMateria(int id, String nombre) {
         this.materia = new Asignatura(id,nombre);
     }
-    
+
     public Profesor getProfesor() {
         return profesor;
     }
@@ -93,11 +93,7 @@ public class AdministradorBean implements Serializable {
     public Semestre getSemestre() {
         return semestre;
     }
-
-    public serviciosMonitoria getMoni() {
-        return moni;
-    }
-
+    
     public Monitor getMonitor() {
         return monitor;
     }
@@ -128,6 +124,14 @@ public class AdministradorBean implements Serializable {
 
     public void setFin(Date fin) {
         this.fin = fin;
+    }
+
+    public serviciosMonitoria getMoni() {
+        return moni;
+    }
+
+    public void setMoni(serviciosMonitoria moni) {
+        this.moni = moni;
     }
     
     
