@@ -25,6 +25,7 @@ import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import java.sql.Time;
+import java.util.List;
  /**
  * 
  * @author MonitoriasSAS
@@ -103,8 +104,8 @@ public class MonitorBean implements Serializable{
         return estudiante;
     }
 
-    public void setEstudiante(int carnet, String nombre, String apellido) {
-        this.estudiante = new Estudiante(carnet,nombre,apellido);
+    public void setEstudiante(int carnet, String nombre, String apellido, List<Grupo> grupos) {
+        this.estudiante = new Estudiante(carnet,nombre,apellido,grupos);
     }
     
     public void setProfesor(int id, String nombre, String apellido, String correo, int telefono) {
