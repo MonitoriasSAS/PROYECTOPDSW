@@ -131,8 +131,8 @@ public class MonitorBean implements Serializable{
         return grupo;
     }
 
-    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor) {
-        this.grupo = new Grupo(numero,semestre,asignatura,profesor);
+    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor,int matriculados) {
+        this.grupo = new Grupo(numero,semestre,asignatura,profesor,matriculados);
     }
    /**
     public ShiroLoginBean getSeguridad() {
