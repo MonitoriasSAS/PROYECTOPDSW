@@ -78,13 +78,34 @@ public class AdministradorBean implements Serializable {
     private int matriculados;
     private String name;
 
-    
-   
- 
     public AdministradorBean(){
         this.periodo = periodo;
         this.inicio = inicio;
         this.fin = fin;
+        this.monitor = monitor;
+        this.profesor = profesor;
+        this.materia = materia;
+        this.semestre = semestre;
+        this.franja = franja;
+        this.grupo = grupo;
+        this.estudiante = estudiante;
+        this.carnet = carnet;
+        this.periodo = periodo;
+        this.inicio = inicio;
+        this.fin = fin;
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.carrera = carrera;
+        this.ingreso = ingreso;
+        this.dia = dia;
+        this.d = d;
+        this.ini = ini;
+        this.fi = fi;
+        this.matriculados = matriculados;
+        this.name = name;
     }
     
     public void registrarSemestre(){
@@ -273,7 +294,40 @@ public class AdministradorBean implements Serializable {
     public void setFi(Time fi) {
         this.fi = fi;
     }
-   
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public int getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(int carnet) {
+        this.carnet = carnet;
+    }
+
+    public int getMatriculados() {
+        return matriculados;
+    }
+
+    public void setMatriculados(int matriculados) {
+        this.matriculados = matriculados;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    
     
     
 
