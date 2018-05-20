@@ -5,8 +5,8 @@
  */
 package Test;
 
-import logica.servicios.serviciosMonitoria;
-import logica.servicios.serviciosMonitoriaFactory;
+import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
+import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
