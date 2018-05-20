@@ -22,6 +22,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.PersistenceException;
 
 /**
@@ -154,4 +156,30 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
    }
+
+    @Override
+    public float consultarMonitorias(int id) {
+      float x=0;
+      try{
+        x= daoPro.consultarMonitorias().size()/daoPro.consultarTotalMonitorias(id).size();
+      } catch (PersistenceException ex){
+        Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      return x;
+    }
+
+    @Override
+    public List<Float> consultarCursos(int id, int asig) {
+      List<Float> x= new ArrayList<Float>();
+      try{
+          Grupo g=new Grupo();
+          List<Grupo> grupos=daoPro.consultarCursos(id, asig);
+          for (Grupo i: grupos){
+              x.add((float)daoPro.consultarMonitoriasCursos(id,i.getNumero(), asig).size()/daoPro.consulatarEstudiantesCursos(id,i.getNumero(), asig).size());
+          }
+      } catch (PersistenceException ex){
+        Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      return x;
+    }
 }

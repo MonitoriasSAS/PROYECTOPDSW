@@ -5,8 +5,8 @@
  */
 package edu.eci.pdsw.dao.mybatis.mappers;
 
-import edu.eci.pdsw.entidades.Monitoria;
-import edu.eci.pdsw.entidades.Profesor;
+import edu.eci.pdsw.entidades.*;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 /**
  *
@@ -16,4 +16,9 @@ public interface ProfesorMapper{
     Profesor profesor(@Param("id")int id);
     Monitoria consularInfoMonitoria (@Param("id")int id);
     float consultarEstudiantes(@Param("grup")int grupo);
+    List<Monitoria> consultarMonitorias();
+    List<Monitoria> consultarTotalMonitorias(@Param("idpro")int id);
+    public List<Estudiante> consulatarEstudiantesCursos(@Param("idpro")int id,@Param("idgrupo")int numgrupo,@Param("idasi")int numasig);
+    public List<Monitoria> consultarMonitoriasCursos(@Param("idpro")int id,@Param("idgrupo")int numgrupo,@Param("idasi")int numasig);
+    public List<Grupo> consultarCursos(@Param("idpro")int id,@Param("idasi")int numasig);
 }
