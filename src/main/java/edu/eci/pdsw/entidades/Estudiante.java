@@ -15,13 +15,15 @@ public class Estudiante {
     private int carnet;
     private String nombre;
     private String apellido;
-    private List<Monitoria> monitorias;
+    private List<Grupo> grupos;
 
     public Estudiante(int carnet, String nombre, String apellido) {
         this.carnet = carnet;
         this.nombre = nombre;
         this.apellido = apellido;
+       
     }
+ 
     public Estudiante(){
     }
 
@@ -49,17 +51,19 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public List<Monitoria> getMonitorias() {
-        return monitorias;
+    public List<Grupo> getMonitorias() {
+        return grupos;
     }
 
-    public void setMonitorias(List<Monitoria> monitorias) {
-        this.monitorias = monitorias;
+    public void setMonitorias(List<Grupo> monitorias) {
+        this.grupos = monitorias;
     }
 
     @Override
     public String toString() {
-        return "Estudiante{" + "carnet=" + carnet + ", nombre=" + nombre + ", apellido=" + apellido + ", monitorias=" + monitorias + '}';
+        return "Estudiante{" + "carnet=" + carnet + ", nombre=" + nombre + ", apellido=" + apellido + ", grupos=" + grupos + '}';
     }
+
+   
     
 }

@@ -17,7 +17,9 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.*;
 
@@ -65,17 +67,17 @@ public class main {
         mm.agregarGrupo(lcal);
         FranjaHorario kk=new FranjaHorario(30, ho,"martes", lcal, as, new Time(10,0,0), new Time(11,30,0));
         mm.agregarFranja(kk);
+        
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema(1,"Grafos",as);
         mm.agregarTema(tem);
-        Monitoria hi=new Monitoria(21,"10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2,1);
+        Monitoria hi=new Monitoria(21,"10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2,7);
         hi.setTema(tem);
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         mp.agregarMoni(2112076,1,21);
         System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mp.loadMonitoria(21));
-        //System.out.println(pm.consultarEstudiantes(2));
         //System.out.println(pm.consularInfoMonitoria(21));
          System.exit(0);
     }

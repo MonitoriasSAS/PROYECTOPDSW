@@ -175,7 +175,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
           Grupo g=new Grupo();
           List<Grupo> grupos=daoPro.consultarCursos(id, asig);
           for (Grupo i: grupos){
-              x.add((float)daoPro.consultarMonitoriasCursos(id,i.getNumero(), asig).size()/daoPro.consulatarEstudiantesCursos(id,i.getNumero(), asig).size());
+              x.add((float)daoPro.consultarMonitoriasCursos(id,i.getNumero(), asig).size()/daoPro.consulatarEstudiantesCursos(id,i.getNumero(), asig).getMatriculados());
           }
       } catch (PersistenceException ex){
         Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
