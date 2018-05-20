@@ -20,11 +20,18 @@ import edu.eci.pdsw.entidades.Grupo;
 
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
-import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import org.primefaces.PrimeFaces;
+import static org.primefaces.component.contextmenu.ContextMenu.PropertyKeys.event;
+import static org.primefaces.component.effect.Effect.PropertyKeys.event;
+import static org.primefaces.component.inplace.Inplace.PropertyKeys.event;
 import org.primefaces.component.inputtextarea.InputTextarea;
+import org.primefaces.event.SelectEvent;
 
 
 /**
@@ -114,6 +121,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void setSemestre(String periodo,Date inicio,Date fin){
+        
         this.semestre = new Semestre(periodo,inicio,fin);
         moni.agregarSemestre(semestre);
     }

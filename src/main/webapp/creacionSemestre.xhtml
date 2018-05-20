@@ -12,20 +12,20 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nuevo Semestre" styleClass="inicio"/>
             <br/>
-            <p:inputText id="semestre" placeholder="Semestre" required="true" styleClass="user" value="#{beanAdmin.periodo}"/>
+            <p:inputText id="semestre" placeholder="Semestre" required="true"   styleClass="user" value="#{beanAdmin.periodo}"/>
             <br/>
             <div id="fecha-ini" >
                 <p:growl id="msgs" showDetail="true" />
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:outputLabel for="button" value="Fecha: " />
-                        <p:calendar id="button" value="#{beanAdmin.inicio}" showOn="button" />
+                        <p:calendar id="button" value="#{beanAdmin.inicio}" />
                 </h:panelGrid>
             </div>
             <div id="fecha-fin" >
                     <p:growl id="msgc" showDetail="true" />
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:outputLabel for="button" value="Fecha: " />
-                        <p:calendar id="button2" value="#{beanAdmin.fin}" showOn="button" />
+                        <p:calendar id="button2" value="#{beanAdmin.fin}" />
                     </h:panelGrid>
             </div>
             <p:commandButton value="Crear" styleClass="myButton" actionListener= "#{beanAdmin.registrarSemestre()}" />
