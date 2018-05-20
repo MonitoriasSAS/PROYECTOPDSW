@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="dao.mybatis.mappers.ProfesorMapper">
+ <mapper namespace="edu.eci.pdsw.dao.mybatis.mappers.ProfesorMapper">
      <resultMap type='Estudiante' id='estudianteResult'>
          <id property='carnet' column='nombre_es'/>
          <result property='nombre' column='nombre_es'/>
@@ -28,12 +28,12 @@
          <result property='carrera' column='carrera'/>
          <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
-      <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja_Horario'/>
+       <resultMap type='Franja' id='franjaResult'>
+        <id property='id' column='id_Franja'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
+        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
@@ -50,10 +50,12 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='grupo'/>
+        <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
-     </resultMap>
+        <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
+        <association property='tema' javaType='Tema' resultMap='temaResult'/>
+     </resultMap>>
      <select id='consultarGrupos'>
          select observaciones,fecha,id_carnet,grupo 
          from Monitoria, Franja_Horaio, Grupo, Profesor
@@ -65,7 +67,7 @@
          where #{id}=Monitoria.id_Mon and Monitoria.id_Mon=Asistencia.Monitoria_id_Monitoria and Tema_TemaID=tema.TemaID
      </select>
      <select id='consultarEstudiantes'>
-         SELECT count(grupo)/(SELECT COUNT(grupo) FROM Monitoria) FROM Monitoria
-         WHERE grupo=#{grup}
+         SELECT count(*)/(SELECT COUNT(*) FROM Monitoria) FROM Monitoria
+         WHERE id_asignatura=#{grup}
      </select>
  </mapper>

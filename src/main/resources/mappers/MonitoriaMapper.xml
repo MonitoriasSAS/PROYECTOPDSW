@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="dao.mybatis.mappers.MonitoriaMapper">
+ <mapper namespace="edu.eci.pdsw.dao.mybatis.mappers.MonitoriaMapper">
       <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
@@ -20,31 +20,36 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
-         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja_Horario'/>
+        <id property='id' column='id_Franja'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
+        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
-         <result property='name' column='name'/>
+         <result property='name' column='descripcion'/>
      </resultMap>
     <resultMap type= 'Monitoria' id='monitoriaResult'>
         <id property='id' column='id_Mon'/>
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='asignatura_id_asignatura'/>
+        <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
+        <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
+        <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
-        SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario
-        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.monitoriaid
+        SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario,Monitor
+        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.monitoriaid and Monitor_id_Carnet=id_Carnet
+     </select> 
+     <select parameterType='map' id='loadFranja' resultMap='franjaResult'>
+        SELECT * Monitor
+        WHERE id_Carnet=#{idmon}
      </select> 
      <insert id='agregarMonitoria'>
          insert into Monitoria

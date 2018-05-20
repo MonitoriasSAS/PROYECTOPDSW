@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="dao.mybatis.mappers.SemestreMapper">
+ <mapper namespace="edu.eci.pdsw.dao.mybatis.mappers.SemestreMapper">
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
@@ -27,7 +27,6 @@
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult'></collection>
      </resultMap>
      <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
@@ -44,8 +43,9 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='grupo'/>
+        <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
+        <result property='idC' column='estudiante_id_carnet'/>
      </resultMap>
      <resultMap type='Semestre' id='semestreResult'>
          <id property='periodo' column='periodo_Academico'/>
@@ -69,8 +69,8 @@
      </resultMap>
      <select parameterType='map' id='Consultarsemestre' resultMap='semestreResult'>
          select *
-         FROM Semestre 
-         WHERE #{id}=periodo_Academico
+         FROM Semestre,Grupo
+         WHERE #{id}=periodo_Academico and Semestre_periodo_Academico=periodo_Academico
      </select>
      <insert id='agregarSemestre'>
          insert into Semestre
