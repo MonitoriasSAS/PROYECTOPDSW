@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.logica.servicios;
 
+import edu.eci.pdsw.entidades.Asignatura;
 import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.entidades.Monitoria;
 import edu.eci.pdsw.entidades.Tema;
@@ -54,6 +55,8 @@ public interface serviciosMonitoria {
    public void agregarTema(Tema tema);
    
    public void agregarFranjaHorario(FranjaHorario franjaHorario);
+   
+   public void agregarAsignatura(Asignatura asignatura);
    
    public float consultarMonitorias(int id,int asi);
    

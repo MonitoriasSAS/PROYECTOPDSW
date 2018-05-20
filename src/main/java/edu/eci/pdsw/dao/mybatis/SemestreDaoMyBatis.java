@@ -16,6 +16,7 @@ import com.google.inject.Inject;
 
 import edu.eci.pdsw.dao.SemestreDAO;
 import edu.eci.pdsw.dao.mybatis.mappers.SemestreMapper;
+import edu.eci.pdsw.entidades.Asignatura;
 import java.util.Date;
 import javax.persistence.PersistenceException;
 
@@ -94,6 +95,15 @@ public class SemestreDaoMyBatis implements SemestreDAO {
          semestreMapper.agregarFranja(franjaHorario);
          }catch (Exception e){
             throw new PersistenceException("Error al agregar franja horario:"+e.getLocalizedMessage(), e);
+        }
+    }
+
+    @Override
+    public void agregarAsignatura(Asignatura asignatura) {
+        try {
+         semestreMapper.agregarAsignatura(asignatura);
+         }catch (Exception e){
+            throw new PersistenceException("Error al agregar Asignatura:"+e.getLocalizedMessage(), e);
         }
     }
 }
