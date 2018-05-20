@@ -67,9 +67,8 @@ public class main {
         mm.agregarGrupo(lcal);
         FranjaHorario kk=new FranjaHorario(30, ho,"martes", lcal, as, new Time(10,0,0), new Time(11,30,0));
         mm.agregarFranja(kk);
-        List<Grupo> lul=new ArrayList<Grupo>();
-        lul.add(lcal);
-        mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler",lul));
+        
+        mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema(1,"Grafos",as);
         mm.agregarTema(tem);
         Monitoria hi=new Monitoria(21,"10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2,7);

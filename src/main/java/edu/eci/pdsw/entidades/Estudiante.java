@@ -17,11 +17,11 @@ public class Estudiante {
     private String apellido;
     private List<Grupo> grupos;
 
-    public Estudiante(int carnet, String nombre, String apellido, List<Grupo> grupos) {
+    public Estudiante(int carnet, String nombre, String apellido) {
         this.carnet = carnet;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.grupos = grupos;
+       
     }
  
     public Estudiante(){
