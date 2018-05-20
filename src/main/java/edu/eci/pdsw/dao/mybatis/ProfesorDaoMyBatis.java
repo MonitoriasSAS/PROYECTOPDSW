@@ -48,7 +48,7 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
 
     @Override
     public Grupo consulatarEstudiantesCursos(int id,int numgrupo, int numasig) {
-        return profesorMapper.consulatarEstudiantesCursos(id, numgrupo, numasig);
+        return profesorMapper.consulatarEstudiatesCursos(id, numgrupo, numasig);
     }
 
     @Override

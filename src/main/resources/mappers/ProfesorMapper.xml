@@ -12,8 +12,6 @@
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
          <result property='nombre' column='nombe_Asig'/>
-         <collection property='temas' ofType='Tema' resultMap='temaResult'></collection>
-         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
@@ -26,7 +24,6 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
-         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
      <resultMap type='Franja' id='franjaResult'>
         <id property='id' column='id_Franja'/>
@@ -57,33 +54,28 @@
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
-     <select id='consultarCursos'>
+     <select parameterType='map' id='consultarTotalMonitorias' resultMap='monitoriaResult'>
+         select * From Monitoria,Franja_Horario,Grupo
+         WHERE #{idpro}=Profesor_id_Carnet and #{idasi}=Grupo_Asignatura_id_Asignatura and numero=Grupo_numero and Asignatura_id_Asignatura=Grupo_Asignatura_id_Asignatura
+     </select>
+     <select parameterType='map' id='consultarMonitorias' resultMap='monitoriaResult'>
+         SELECT* FROM Monitoria,Franja_Horario,Grupo
+         WHERE numero=Grupo_numero and Asignatura_id_Asignatura=#{idasi} and  Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
+     </select>
+     <select parameterType='map' id='consultarCursos'>
          select * FROM Grupo
          WHERE #{idpro}=Profesor_id_Carnet and #{idasig}=Grupo_Asignatura_id_Asignatura
      </select>
-     <select id='consularTotalMonitoria'>
-         select * From Monitoria,Franja_Horario,Grupo
-         from Monitoria 
-         WHERE #{idasi}=Grupo_Asignatura_id_Asignatura  numero=Grupo_numero and Asignatura_id_Asignatura=Grupo_Asignatura_id_Asignatura
+     <select  parameterType='map' id='consulatarEstudiatesCursos' resultMap='grupoResult'>
+         SELECT * FROM Grupo 
+         WHERE numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi}
      </select>
-     <select id='consultarMonitarias'>
-         SELECT* FROM Monitoria,Franja_Horario,Grupo
-         WHERE #{idpro}=Profesor_id_Carnet and numero=Grupo_numero and Asignatura_id_Asignatura=#{idasi} and  Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
+     <select parameterType='map' id='consultarMonitoriasCursos' resultMap='monitoriaResult'>
+         SELECT * FROM Monitoria,Franja_Horario,Grupo
+         Where  #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
      </select>
-     <select id='consultarEstudiatesCursos'>
-         SELECT * Grupo
-         Where Monitoria.id_asignatura=#{idgrupo} and #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi}
-     </select>
-     <select id='consultarTotalGrupo'>
+     <select parameterType='map' id='consultarTotalGrupo'>
          SELECT * FROM Monitoria,Franja_Horario,Grupo
          Where  #{idpro}=Profesor_id_Carnet and  Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
-     </select>
-     <select id='consulatarMonitoriasCursos'>
-         SELECT * FROM Monitoria,Franja_Horario,Grupo
-         Where  #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
-     </select>
-     <select id='consulatarEstudiantesGrupos'>
-         SELECT * FROM Monitoria,Franja_Horario,Grupo
-         Where  #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
      </select>
  </mapper>

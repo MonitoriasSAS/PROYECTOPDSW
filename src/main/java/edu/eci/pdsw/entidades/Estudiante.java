@@ -15,13 +15,11 @@ public class Estudiante {
     private int carnet;
     private String nombre;
     private String apellido;
-    private List<Grupo> grupos;
 
     public Estudiante(int carnet, String nombre, String apellido, List<Grupo> grupos) {
         this.carnet = carnet;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.grupos = grupos;
     }
  
     public Estudiante(){
@@ -51,18 +49,12 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public List<Grupo> getMonitorias() {
-        return grupos;
-    }
-
-    public void setMonitorias(List<Grupo> monitorias) {
-        this.grupos = monitorias;
-    }
-
     @Override
     public String toString() {
-        return "Estudiante{" + "carnet=" + carnet + ", nombre=" + nombre + ", apellido=" + apellido + ", grupos=" + grupos + '}';
+        return "Estudiante{" + "carnet=" + carnet + ", nombre=" + nombre + ", apellido=" + apellido + '}';
     }
+
+    
 
    
     

@@ -13,10 +13,19 @@ public class Asignatura {
     private int id;
     private String nombre; 
 
+    public Asignatura() {
+    }
+    
+    
     public Asignatura(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
+
+    public Asignatura(String nombre) {
+        this.nombre = nombre;
+    }
+    
 
     public int getId() {
         return id;

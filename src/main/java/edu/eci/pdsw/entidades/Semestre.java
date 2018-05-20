@@ -14,7 +14,6 @@ public class Semestre {
     private String periodo;
     private Date inicio;
     private Date fin;
-    private List<Grupo> grupos;
     public Semestre(){
         
     }
@@ -49,7 +48,9 @@ public class Semestre {
 
     @Override
     public String toString() {
-        return "Semestre{" + "periodo=" + periodo + ", inicio=" + inicio + ", fin=" + fin + ", grupos=" + grupos + '}';
+        return "Semestre{" + "periodo=" + periodo + ", inicio=" + inicio + ", fin=" + fin + '}';
     }
+
+   
     
 }

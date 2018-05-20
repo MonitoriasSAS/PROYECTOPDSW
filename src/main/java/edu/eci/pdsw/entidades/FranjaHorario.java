@@ -23,6 +23,15 @@ public class FranjaHorario {
     public FranjaHorario(){
     }
 
+    public FranjaHorario(Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
+        this.monitor = monitor;
+        this.dia = dia;
+        this.grupo = grupo;
+        this.asignatura = asignatura;
+        this.inicio = inicio;
+        this.fin = fin;
+    }
+    
     public FranjaHorario(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
         this.id = id;
         this.monitor = monitor;

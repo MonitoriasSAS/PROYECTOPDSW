@@ -17,6 +17,13 @@ public class Tema {
     public Tema(){
         
     }
+
+    public Tema(String name, Asignatura asignatura) {
+        this.name = name;
+        this.asignatura = asignatura;
+    }
+    
+    
     public Tema(int id, String name, Asignatura asignatura) {
         this.id = id;
         this.name = name;

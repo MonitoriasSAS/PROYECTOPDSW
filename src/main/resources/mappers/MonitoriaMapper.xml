@@ -5,9 +5,7 @@
  <mapper namespace="edu.eci.pdsw.dao.mybatis.mappers.MonitoriaMapper">
       <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
-         <result property='nombre' column='nombe_Asig'/>
-         <collection property='temas' ofType='Tema' resultMap='temaResult'></collection>
-         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
+         <result property='nombre' column='nombre_Asig'/>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
@@ -30,7 +28,8 @@
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
-         <result property='name' column='descripcion'/>
+         <result property='name' column='nombre'/>
+         <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaResult'/>
      </resultMap>
     <resultMap type= 'Monitoria' id='monitoriaResult'>
         <id property='id' column='id_Mon'/>
@@ -40,7 +39,8 @@
         <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
-        <result property='asignatura' column='asignatura_id'/>
+        <result property="grupo" column='grupo'/>
+        <result property='asignatura' column='id_asignatura'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
@@ -53,8 +53,8 @@
         WHERE id_Carnet=#{idmon}
      </select> 
      <insert id='agregarMonitoria'>
-         insert into Monitoria
-         values(#{mon.id},#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo})
+         insert into Monitoria(ip,observaciones,Franja_id,fecha,profesor,estudiante_id_carnet,grupo,id_asignatura)
+         values(#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo},#{mon.asignatura})
      </insert>
      <insert id='agregarMoni'>
          insert into Asistencia 

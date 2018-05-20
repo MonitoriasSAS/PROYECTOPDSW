@@ -5,9 +5,7 @@
  <mapper namespace="edu.eci.pdsw.dao.mybatis.mappers.SemestreMapper">
      <resultMap type='Asignatura' id='AsignaturaResult'>
          <id property='id' column='id_Asignatura'/>
-         <result property='nombre' column='nombe_Asig'/>
-         <collection property='temas' ofType='Tema' resultMap='temaResult'></collection>
-         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
+         <result property='nombre' column='nombre_Asig'/>
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
@@ -20,10 +18,9 @@
          <result property='ingreso' column='semestre_ingreso'/>
          <result property='telefono' column='telefono'/>
          <result property='carrera' column='carrera'/>
-         <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja_Horario'/>
+        <id property='id' column='id_Franja'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
@@ -54,7 +51,6 @@
          <id property='periodo' column='periodo_Academico'/>
          <result  property='inicio' column='fecha_Inicio'/>
          <result  property='fin' column='fecha_Fin'/>
-         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Profesor' id='profesorResult'>
          <id property ='id' column='id_Carnet'/>
@@ -75,17 +71,33 @@
          FROM Semestre,Grupo
          WHERE #{id}=periodo_Academico and Semestre_periodo_Academico=periodo_Academico
      </select>
+     <select parameterType='map' id='consultarAsignatura' resultMap='AsignaturaResult'>
+         select * from Asignatura
+         WHERE id_Asignatura=(select MAX(id_Asignatura) FROM Asignatura )
+     </select>
+     <select parameterType='map' id='consultarTema' resultMap='temaResult'>
+         select * from Tema
+         WHERE temaID=(select MAX(temaID) FROM Tema )
+     </select>
+     <select parameterType='map' id='consultarMon' resultMap='monitoriaResult'>
+         select * from Monitoria
+         WHERE id_Mon=(select MAX(id_Mon) FROM Monitoria )
+     </select>
+     <select parameterType='map' id='consultarFranja' resultMap='franjaResult'>
+         select * from Franja_Horario
+         WHERE id_Franja=(select MAX(id_Franja) FROM Franja_Horario )
+     </select>
      <insert id='agregarSemestre'>
          insert into Semestre
          values (#{sem.periodo},#{sem.inicio},#{sem.fin})
      </insert>
      <insert id='agregarAsignatura'>
-         insert into Asignatura
-         values (#{asig.id},#{asig.nombre})
+         insert into Asignatura(nombre_Asig)
+         values (#{asig.nombre})
      </insert>
      <insert id='agregarGrupo'>
          insert into Grupo
-         values (#{gru.semestre.periodo},#{gru.asignatura.id},#{gru.profesor.id},#{gru.numero})
+         values (#{gru.semestre.periodo},#{gru.asignatura.id},#{gru.profesor.id},#{gru.numero},#{gru.matriculados})
      </insert>
      <insert id='agregarProfesor'>
          insert into Profesor 
@@ -96,16 +108,16 @@
          Values(#{monr.id},#{monr.nombre},#{monr.apellido},#{monr.ingreso},#{monr.telefono},#{monr.carrera})
      </insert>
      <insert id='agregarFranja'>
-         insert into Franja_Horario
-         values(#{fra.id},#{fra.monitor.id},#{fra.asignatura.id},#{fra.grupo.numero},#{fra.dia},#{fra.inicio},#{fra.fin})
+         insert into Franja_Horario(monitor_id_carnet,Grupo_Asignatura_id_Asignatura,Grupo_numero,dia,inicio,fin)
+         values(#{fra.monitor.id},#{fra.asignatura.id},#{fra.grupo.numero},#{fra.dia},#{fra.inicio},#{fra.fin})
      </insert>
      <insert id='agregarTema'>
-         insert into Tema
-         values(#{tem.name},#{tem.asignatura.id},#{tem.id})
+         insert into Tema(nombre,Asignatura_id_Asignatura)
+         values(#{tem.name},#{tem.asignatura.id})
      </insert>
      <insert id='agregarEstudiante'>
          insert into Estudiante
-         values (#{estu.carnet},#{estu.nombre},#{estu.apellido},#{estu.grupos})
+         values (#{estu.carnet},#{estu.nombre},#{estu.apellido})
      </insert>
  </mapper>
  

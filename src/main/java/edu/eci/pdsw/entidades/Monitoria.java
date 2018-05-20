@@ -128,6 +128,18 @@ public class Monitoria {
     public String toString() {
         return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + ", asignatura=" + asignatura + '}';
     }
+
+    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, int asignatura) {
+        this.ip = ip;
+        this.observaciones = observaciones;
+        this.fecha = fecha;
+        this.tema = tema;
+        this.franjaHorario = franjaHorario;
+        this.profesor = profesor;
+        this.idC = idC;
+        this.grupo = grupo;
+        this.asignatura = asignatura;
+    }
     
 
     
