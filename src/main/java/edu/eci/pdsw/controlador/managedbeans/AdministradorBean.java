@@ -15,6 +15,7 @@ import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.entidades.Profesor;
 import edu.eci.pdsw.entidades.Asignatura;
 import edu.eci.pdsw.entidades.Monitor;
+import edu.eci.pdsw.entidades.FranjaHorario;
 
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
@@ -38,9 +39,22 @@ public class AdministradorBean implements Serializable {
     private Profesor profesor;
     private Asignatura materia;
     private Semestre semestre;
+    private FranjaHorario franja;
     
     public AdministradorBean(){
         
+    }
+    
+    public void agregarFranja(){
+        moni.agregarFranjaHorario(franja);
+    }
+
+    public FranjaHorario getFranja() {
+        return franja;
+    }
+
+    public void setFranja(FranjaHorario franja) {
+        this.franja = franja;
     }
     
     public void setProfesor(Profesor profesor) {
