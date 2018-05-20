@@ -7,6 +7,7 @@ package edu.eci.pdsw.controlador.bean;
 
 import java.io.Serializable;
 import edu.eci.pdsw.entidades.Semestre;
+import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +26,7 @@ public class SemestreBean implements Serializable {
     
     public Semestre getSemestre(){
         return serviciosMonitoriaFactory.getInstance().getServiciosMonitoria().getSemestre("2012-2") ;
-    }
+    } 
     public void setSemestre(Semestre semestre){
         this.semestre = semestre;
     }

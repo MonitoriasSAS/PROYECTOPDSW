@@ -14,11 +14,14 @@ import javax.faces.bean.ManagedProperty;
 import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.entidades.Profesor;
 import edu.eci.pdsw.entidades.Asignatura;
+import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Monitoria;
 import edu.eci.pdsw.entidades.Monitor;
+import edu.eci.pdsw.entidades.Tema;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
+import java.util.Date;
 
 /**
  *
@@ -42,12 +45,12 @@ public class EstudianteBean {
         
     }
    
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setProfesor(int id, String nombre, String apellido, String correo, int telefono) {
+        this.profesor = new Profesor(id,nombre,apellido,correo,telefono);
     }
 
-    public void setMateria(Asignatura materia) {
-        this.materia = materia;
+     public void setMateria(int id, String nombre) {
+        this.materia = new Asignatura(id,nombre);
     }
 
     public Profesor getProfesor() {
@@ -58,17 +61,18 @@ public class EstudianteBean {
         return materia;
     }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
-    }
-
     public void setMonitoria(Monitoria monitoria) {
         this.monitoria = monitoria;
     }
-
-    public void setSemestre(Semestre semestre) {
-        this.semestre = semestre;
+    
+    public void setMonitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo) {
+        this.monitoria = new Monitoria(id,ip,observaciones,fecha,tema,franjaHorario,profesor,idC,grupo);
     }
+
+    public void setSemestre(String periodo,Date inicio,Date fin){
+        this.semestre = new Semestre(periodo,inicio,fin);
+    }
+
 
     public Monitor getMonitor() {
         return monitor;

@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
         <title>Registro</title>
-        <meta charset="UTF-8"/>
-        <link rel="icon" href="resources/Imagenes/logoSistemas.jpg"></link>
-        <link rel="stylesheet" href="/resources/css/registroAsistente.css"></link>
-    </head>
-    <body>
-        <form action="#">
-            <h2>Registro Asistente a Monitoria</h2>
-            <input type="text" placeholder="Codigo Asistente"></input>
-            <select>
-                <option value="recurrencia">Recurrencia</option>
-                <option value="matrices">Matrices</option>
-                <option value="dinamica">Dinamica</option>
-                <option value="algoritmos">Algoritmos</option>
-            </select>
-            <output name="Pepito Perez"></output>
-            <textarea placeholder="Escriba sus observaciones respecto a la Monitoria"></textarea>
-            <input type="submit" value="Enviar"></input>
-        </form>
-    </body>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
+    </h:head>
+    <h:body id="principal">
+        <h:form id="formu">
+            <p:outputLabel value="Registro Asistente a Monitoria" styleClass="inicio"/>
+            <br/>
+            <p:inputText id="carnet" placeholder="Carnet Asistente" required="true" styleClass="user"/>
+            <br/>
+            <p:inputTextarea id="nombre" placeholder="Observaciones" required="true" styleClass="user"/>
+            <br/>
+            <p:selectOneMenu id="console" styleClass="user">
+                <f:selectItem itemLabel="Select One" itemValue=""/>
+                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One"/>
+                <f:selectItem itemLabel="PS4" itemValue="PS4"/>
+                <f:selectItem itemLabel="Wii U" itemValue="Wii U"/>
+            </p:selectOneMenu>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel value="Profesor:" style="color:white"/>
+                <p:outputLabel value="Popo" style="color:white"/>
+            </h:panelGrid>
+            <p:commandButton value="Enviar" styleClass="myButton"/>
+            <p:button value="Empezar Monitoria" styleClass="myButton" href="dentroMonitoria.xhtml"/>
+            <br/>
+        </h:form>
+    </h:body>
 </html>
