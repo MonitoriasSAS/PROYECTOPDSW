@@ -327,11 +327,6 @@ public class AdministradorBean implements Serializable {
         this.name = name;
     }
     
-    
-    
-    
-
-
    /**public ShiroLoginBean getSeguridad() {
     public serviciosMonitoria getMoni() {
         return moni;
