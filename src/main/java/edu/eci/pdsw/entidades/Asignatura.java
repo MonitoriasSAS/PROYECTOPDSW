@@ -7,7 +7,7 @@ package edu.eci.pdsw.entidades;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public class Asignatura {
     private int id;

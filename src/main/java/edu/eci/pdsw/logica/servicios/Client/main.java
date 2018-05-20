@@ -29,7 +29,7 @@ import org.apache.ibatis.session.*;
 
 /**
  *
- * @author monitoriasSas
+ * @author MonitoriasSAS
  */
 public class main {
      public static SqlSessionFactory getSqlSessionFactory() {

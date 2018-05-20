@@ -15,7 +15,7 @@ import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 
 /**
  *
- * @author CARLOS
+ * @author MonitoriasSAS
  */
 public class GraficasBean implements Serializable{
     private serviciosMonitoria servicio = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();

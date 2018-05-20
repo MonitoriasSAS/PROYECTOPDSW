@@ -27,7 +27,7 @@ import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 
 /**
  *
- * @author 2110540
+ * @author MonitoriasSAS
  */
 @ManagedBean(name = "bpr")
 @SessionScoped

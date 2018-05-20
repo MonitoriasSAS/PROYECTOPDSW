@@ -7,7 +7,7 @@ package edu.eci.pdsw.entidades;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public class Monitor {
     private int id;

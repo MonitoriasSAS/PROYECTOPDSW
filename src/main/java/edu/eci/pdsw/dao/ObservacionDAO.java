@@ -10,7 +10,7 @@ import edu.eci.pdsw.entidades.Observacion;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public interface ObservacionDAO {
     public Observacion observacaion(int id);

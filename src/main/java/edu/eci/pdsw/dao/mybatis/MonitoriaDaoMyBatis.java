@@ -14,7 +14,7 @@ import javax.persistence.PersistenceException;
 
 /**
  *
- * @author AsusPC
+ * @author MonitoriasSAS
  */
 public class MonitoriaDaoMyBatis implements MonitoriaDAO {
      @Inject

@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author Andres
+ * @author MonitoriasSAS
  */
 public class Monitoria {
     private int id;

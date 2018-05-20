@@ -9,7 +9,7 @@ import edu.eci.pdsw.entidades.Tema;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public interface TemaDAO {
     public Tema tema(String id);

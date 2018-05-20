@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author monitoriasSAS
+ * @author MonitoriasSAS
  */
 public interface MonitoriaDAO {
     public void agregarMonitoria(Monitoria monitoria,String tema) ;

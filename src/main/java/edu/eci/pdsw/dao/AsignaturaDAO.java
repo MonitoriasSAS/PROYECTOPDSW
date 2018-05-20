@@ -9,7 +9,7 @@ import edu.eci.pdsw.entidades.Asignatura;
 
 /**
  *
- * @author 2112076
+ * @author MonitoriasSAS
  */
 public interface AsignaturaDAO {
     public Asignatura asignatura(int id);

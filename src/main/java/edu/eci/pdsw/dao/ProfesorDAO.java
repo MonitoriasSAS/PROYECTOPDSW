@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  *
- * @author monitoriasSAS
+ * @author MonitoriasSAS
  */
 public interface ProfesorDAO {
     public Profesor profesor(int id) ;

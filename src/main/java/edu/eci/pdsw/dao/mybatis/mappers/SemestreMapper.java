@@ -17,7 +17,7 @@ import edu.eci.pdsw.entidades.FranjaHorario;
 import org.apache.ibatis.annotations.Param;
 /**
  *
- * @author MonitoriasSaS
+ * @author MonitoriasSAS
  */
 public interface SemestreMapper{
     Semestre Consultarsemestre(@Param("id")String id);
