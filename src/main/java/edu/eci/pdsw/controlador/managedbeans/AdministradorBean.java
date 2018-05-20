@@ -40,11 +40,11 @@ public class AdministradorBean implements Serializable {
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
     
-    /**private Monitor monitor;
+    private Monitor monitor;
     private Profesor profesor;
     private Asignatura materia;
     private Semestre semestre;
-    private FranjaHorario franja;*/
+    private FranjaHorario franja;
     
     private String periodo;
     private Date inicio;
@@ -84,7 +84,7 @@ public class AdministradorBean implements Serializable {
         this.fin = fin;
     }
    
-    /**public FranjaHorario getFranja() {
+    public FranjaHorario getFranja() {
         return franja;
     }
 
@@ -108,7 +108,6 @@ public class AdministradorBean implements Serializable {
         return materia;
     }
     
-
     public void setSemestre(String periodo,Date inicio,Date fin){
         this.semestre = new Semestre(periodo,inicio,fin);
         moni.agregarSemestre(semestre);
@@ -130,18 +129,14 @@ public class AdministradorBean implements Serializable {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
 
-    
-    
-    
-   /**
-    public ShiroLoginBean getSeguridad() {
+    /**public ShiroLoginBean getSeguridad() {
         return seguridad;
     }
 
     public void setSeguridad(ShiroLoginBean seguridad) {
         this.seguridad = seguridad;
     }
-    */
-    
+ 
+    **/
 }
 

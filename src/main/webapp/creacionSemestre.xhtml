@@ -14,10 +14,20 @@
             <br/>
             <p:inputText id="semestre" placeholder="Semestre" required="true" styleClass="user" value="#{beanAdmin.periodo}"/>
             <br/>
-            <p:inputText id="fecha-ini" placeholder="Inicio de Clases" required="true" styleClass="user" value="#{beanAdmin.inicio}" />
-            <br/>
-            <p:inputText id="fecha_fin" placeholder="Fin de Clases" required="true" styleClass="user" value="#{beanAdmin.fin}" />
-            <br/>
+            <div id="fecha-ini" >
+                <p:growl id="msgs" showDetail="true" />
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel for="button" value="Fecha: " />
+                        <p:calendar id="button" value="#{beanAdmin.inicio}" showOn="button" />
+                </h:panelGrid>
+            </div>
+            <div id="fecha-fin" >
+                    <p:growl id="msgc" showDetail="true" />
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel for="button2" value="Fecha1: " />
+                        <p:calendar id="button2" value="#{beanAdmin.fin}" showOn="button2" />
+                    </h:panelGrid>
+            </div>
             <p:commandButton value="Crear" styleClass="myButton" actionListener= "#{beanAdmin.registrarSemestre()}" />
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionAsignatura.xhtml"/>
             <br/>
