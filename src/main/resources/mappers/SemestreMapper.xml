@@ -47,6 +47,8 @@
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
         <result property='asignatura' column='asignatura_id'/>
+        <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
+        <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
      <resultMap type='Semestre' id='semestreResult'>
          <id property='periodo' column='periodo_Academico'/>

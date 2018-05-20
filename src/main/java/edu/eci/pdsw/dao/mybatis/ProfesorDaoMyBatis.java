@@ -9,8 +9,11 @@ import com.google.inject.Inject;
 
 import edu.eci.pdsw.dao.ProfesorDAO;
 import edu.eci.pdsw.dao.mybatis.mappers.ProfesorMapper;
+import edu.eci.pdsw.entidades.Estudiante;
+import edu.eci.pdsw.entidades.Grupo;
 import edu.eci.pdsw.entidades.Monitoria;
 import edu.eci.pdsw.entidades.Profesor;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.PersistenceException;
@@ -32,5 +35,38 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     public Monitoria consularInfoMonitoria(int id) {
        return profesorMapper.consularInfoMonitoria(id);
     }
-     
+    @Override 
+    public List<Monitoria> consultarMonitorias(int asi){
+        return profesorMapper.consultarMonitorias(asi);
+    }
+
+    @Override
+    public List<Monitoria> consultarTotalMonitorias(int id,int asi) {
+        return profesorMapper.consultarTotalMonitorias(id,asi);
+    }
+
+    @Override
+    public List<Estudiante> consulatarEstudiantesCursos(int id,int numgrupo, int numasig) {
+        return profesorMapper.consulatarEstudiantesCursos(id, numgrupo, numasig);
+    }
+
+    @Override
+    public List<Monitoria> consultarMonitoriasCursos(int id,int numgrupo, int numasig) {
+        return profesorMapper.consultarMonitoriasCursos(id, numgrupo, numasig);
+    }
+
+    @Override
+    public List<Grupo> consultarCursos(int id, int numasig) {
+        return profesorMapper.consultarCursos(id, numasig);
+    }
+
+    @Override
+    public List<Monitoria> consultarEstudiantesGrupo(int id, int numgrupo, int numasig) {
+        return profesorMapper.consultarEstudiantesGrupo(id, numgrupo, numasig);
+    }
+
+    @Override
+    public List<Monitoria> consultarTotalGrupo(int id, int numasig) {
+        return profesorMapper.consultarTotalGrupo(id, numasig);
+    }
 }

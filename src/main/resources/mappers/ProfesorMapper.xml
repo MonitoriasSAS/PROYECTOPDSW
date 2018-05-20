@@ -17,7 +17,7 @@
      </resultMap>
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
-        <collection property='franjas' ofType='Franja' resultMap='franjaResult'></collection>
+        <result property='matriculados' column='matriculados'/>
      </resultMap>
      <resultMap type='Monitor' id='monitorResult'>
          <id property='id' column='id_Carnet'/>
@@ -53,6 +53,7 @@
         <result property='grupo' column='id_asignatura'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
+        <result property='asignatura' column='asignatura_id'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
@@ -65,15 +66,19 @@
          from Monitoria 
          WHERE #{idasi}=Grupo_Asignatura_id_Asignatura  numero=Grupo_numero and Asignatura_id_Asignatura=Grupo_Asignatura_id_Asignatura
      </select>
-     <select id='consultarMonitaria'>
+     <select id='consultarMonitarias'>
          SELECT* FROM Monitoria,Franja_Horario,Grupo
          WHERE #{idpro}=Profesor_id_Carnet and numero=Grupo_numero and Asignatura_id_Asignatura=#{idasi} and  Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
      </select>
      <select id='consultarEstudiatesGrupo'>
          SELECT * FROM Monitoria,Franja_Horario,Grupo
-         Where #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and #{idasi}
+         Where Monitoria.id_asignatura=#{idgrupo} and #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
      </select>
      <select id='consultarTotalGrupo'>
-         
+        SELECT * FROM Monitoria,Franja_Horario,Grupo
+         Where #{idpro}=Profesor_id_Carnet and  numero=#{idgrupo} and Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id
+     </select>
+     <select id='consulatarEstudiantesCursos'>
+         SELECT *
      </select>
  </mapper>
