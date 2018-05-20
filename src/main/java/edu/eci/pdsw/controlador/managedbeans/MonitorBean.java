@@ -20,9 +20,11 @@ import edu.eci.pdsw.entidades.Profesor;
 import edu.eci.pdsw.entidades.Estudiante;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Grupo;
+import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
+import java.sql.Time;
  /**
  * 
  * @author MonitoriasSAS
@@ -57,10 +59,10 @@ public class MonitorBean implements Serializable{
         moni.registrarMonitoria(monitoria, t);
     }
     
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+   public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
+        this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
-
+   
     public Monitor getMonitor() {
         return monitor;
     }
@@ -69,8 +71,8 @@ public class MonitorBean implements Serializable{
         return materia;
     }
 
-    public void setMateria(Asignatura materia) {
-        this.materia = materia;
+     public void setMateria(int id, String nombre) {
+        this.materia = new Asignatura(id,nombre);
     }
 
     public serviciosMonitoria getMoni() {
@@ -85,8 +87,8 @@ public class MonitorBean implements Serializable{
         this.monitoria = monitoria;
     }
 
-    public void setObservacion(Observacion observacion) {
-        this.observacion = observacion;
+    public void setObservacion(Monitor monitor, int id, int estudiante, String obs) {
+        this.observacion = new Observacion(monitor,id,estudiante,obs);
     }
 
     public Observacion getObservacion() {
@@ -101,40 +103,36 @@ public class MonitorBean implements Serializable{
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
+    public void setEstudiante(int carnet, String nombre, String apellido) {
+        this.estudiante = new Estudiante(carnet,nombre,apellido);
     }
     
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setProfesor(int id, String nombre, String apellido, String correo, int telefono) {
+        this.profesor = new Profesor(id,nombre,apellido,correo,telefono);
     }
 
-    public void setHorario(FranjaHorario horario) {
-        this.horario = horario;
+    public void setHorario(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
+        this.horario = new FranjaHorario(id,monitor,dia,grupo,asignatura,inicio,fin);
     }
     
     public Tema getTema() {
         return tema;
     }
 
-    public void setTema(Tema tema) {
-        this.tema = tema;
+    public void setTema(int id, String name, Asignatura asignatura) {
+        this.tema = new Tema(id,name,asignatura);
     }
 
     public Profesor getProfesor() {
         return profesor;
     }
 
-    public void setProfesro(Profesor profesor) {
-        this.profesor = profesor;
-    }
-
     public Grupo getGrupo() {
         return grupo;
     }
 
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
+    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor) {
+        this.grupo = new Grupo(numero,semestre,asignatura,profesor);
     }
    /**
     public ShiroLoginBean getSeguridad() {

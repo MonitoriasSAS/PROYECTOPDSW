@@ -16,10 +16,13 @@ import edu.eci.pdsw.entidades.Profesor;
 import edu.eci.pdsw.entidades.Asignatura;
 import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.FranjaHorario;
+import edu.eci.pdsw.entidades.Grupo;
 
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
+import java.sql.Time;
+import java.util.Date;
 
 
 /**
@@ -45,26 +48,22 @@ public class AdministradorBean implements Serializable {
         
     }
     
-    public void agregarFranja(){
-        moni.agregarFranjaHorario(franja);
-    }
-
     public FranjaHorario getFranja() {
         return franja;
     }
 
-    public void setFranja(FranjaHorario franja) {
-        this.franja = franja;
+    public void setFranja(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
+        this.franja = new FranjaHorario(id,monitor,dia,grupo,asignatura,inicio,fin);
     }
     
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setProfesor(int id, String nombre, String apellido, String correo, int telefono) {
+        this.profesor = new Profesor(id,nombre,apellido,correo,telefono);
     }
 
-    public void setMateria(Asignatura materia) {
-        this.materia = materia;
+    public void setMateria(int id, String nombre) {
+        this.materia = new Asignatura(id,nombre);
     }
-
+    
     public Profesor getProfesor() {
         return profesor;
     }
@@ -73,8 +72,8 @@ public class AdministradorBean implements Serializable {
         return materia;
     }
 
-    public void setSemestre(Semestre semestre) {
-        this.semestre = semestre;
+    public void setSemestre(String periodo,Date inicio,Date fin){
+        this.semestre = new Semestre(periodo,inicio,fin);
     }
 
     public Semestre getSemestre() {
@@ -89,8 +88,8 @@ public class AdministradorBean implements Serializable {
         return monitor;
     }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+    public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
+        this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
    /**
     public ShiroLoginBean getSeguridad() {
