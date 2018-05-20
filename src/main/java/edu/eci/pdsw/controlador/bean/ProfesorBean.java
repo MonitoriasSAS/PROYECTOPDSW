@@ -12,6 +12,7 @@ import edu.eci.pdsw.entidades.Asignatura;
 import edu.eci.pdsw.entidades.Estudiante;
 import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.Grupo;
+import edu.eci.pdsw.entidades.Semestre;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -77,8 +78,6 @@ public class ProfesorBean implements Serializable {
         this.porcentajesGrupo = porcentajesGrupo;
     }
     
-    
-    
     public void consultar() throws ExcepcionServiciosMonitoria{
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
@@ -95,11 +94,7 @@ public class ProfesorBean implements Serializable {
     public Grupo getGrupo() {
         return grupo;
     }
-    
-    public serviciosMonitoria getServicio() {
-        return servicio;
-    }
-
+   
     public Monitor getMonitor() {
         return monitor;
     }
@@ -112,34 +107,22 @@ public class ProfesorBean implements Serializable {
         return materia;
     }
 
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
+    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor) {
+        this.grupo = new Grupo(numero,semestre,asignatura,profesor);
     }
-    
-    public void setServicio(serviciosMonitoria servicio) {
-        this.servicio = servicio;
-    }
-
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+  
+    public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
+        this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
 
     public void setMonitoria(Monitoria monitoria) {
         this.monitoria = monitoria;
     }
 
-    public void setMateria(Asignatura materia) {
-        this.materia = materia;
+    public void setMateria(int id, String nombre) {
+        this.materia = new Asignatura(id,nombre);
     }
-      
-    public Profesor getProfesor(){
-        return profesor;
-    }
-    
-    public void setProfesor(Profesor profesor){
-        this.profesor = profesor;
-    }
-    
+     
     public void informacion(){
        
     }
