@@ -81,4 +81,13 @@ public class SemestreDaoMyBatis implements SemestreDAO {
             throw new PersistenceException("Error al agregar estudiante:"+e.getLocalizedMessage(), e);
         }
     }   
+
+    @Override
+    public void agregarFranja(FranjaHorario franjaHorario) {
+        try {
+         semestreMapper.agregarFranja(franjaHorario);
+         }catch (Exception e){
+            throw new PersistenceException("Error al agregar franja horario:"+e.getLocalizedMessage(), e);
+        }
+    }
 }

@@ -138,6 +138,13 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-   
+ 
+   @Override
+   public void agregarFranjaHorario(FranjaHorario franjaHorario){
+        try{
+          daoSemestre.agregarFranja(franjaHorario);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+   }
 }

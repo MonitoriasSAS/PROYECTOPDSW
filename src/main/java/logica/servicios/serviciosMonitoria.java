@@ -44,4 +44,6 @@ public interface serviciosMonitoria {
    public void agregarEstudiante(Estudiante estudiante);
    
    public void agregarTema(Tema tema);
+   
+   public void agregarFranjaHorario(FranjaHorario franjaHorario);
 }

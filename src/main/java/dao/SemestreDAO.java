@@ -20,4 +20,5 @@ public interface SemestreDAO {
     void agregarMonitor(Monitor monitor);
     void agregarTema(Tema tema);
     void agregarEstudiante(Estudiante estudiante);
+    void agregarFranja(FranjaHorario franjaHorario);
 }
