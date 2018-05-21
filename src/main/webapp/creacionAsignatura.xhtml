@@ -12,12 +12,12 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nueva Asignatura" styleClass="inicio"/>
             <br/>
-            <p:inputText id="nombreAsig" placeholder="Nombre Asignatura" required="true" styleClass="user" value="#{beanAdmin.nombre}"/>
-            <br/>
             <p:inputText id="idasignatura" placeholder="Siglas Asignatura" required="true" styleClass="user" value="#{beanAdmin.idasignatura}"/>
+            
+            <br/>
+           <p:inputText id="nombreAsig" placeholder="Nombre Asignatura" required="true" styleClass="user" value="#{beanAdmin.nombre}"/>
             <br/>
             <h:panelGrid columns="2" cellpadding="5">
-                <p:outputLabel value="ID Asignatura:" style="color:white"/>
                 <p:outputLabel value="#{beanAdmin.name}" style="color:white"/>
             </h:panelGrid>
             <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.registrarAsignatura()}"/>
