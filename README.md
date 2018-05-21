@@ -69,9 +69,7 @@ También es de gran importancia el uso del patrón de método fabrica, y las iny
 ## *URL Heroku:*
 https://monitoriassas.herokuapp.com/
 
-## *Retrospectiva:*
-![](img/diagrama.png)
-   
+
 ## *Integracion Continua*
 [![CircleCI](https://circleci.com/gh/MonitoriasSAS/PROYECTOPDSW.svg?style=svg)](https://circleci.com/gh/MonitoriasSAS)
 
