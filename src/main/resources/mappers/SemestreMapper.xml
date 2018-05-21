@@ -90,6 +90,14 @@
          select * from Franja_Horario
          WHERE id_Franja=(select MAX(id_Franja) FROM Franja_Horario )
      </select>
+     <select parameterType='map' id='consultarMonitor' resultMap='monitorResult'>
+         select * from Monitor
+         WHERE id_Carnet=#{carnet}
+     </select>
+     <select parameterType='map' id='consultarGrupo' resultMap='grupoResult'>
+         select * from grupo 
+         WHERE numero=#{numero} and Asignatura_id_Asignatura=#{idasig}
+     </select>
      <insert id='agregarSemestre'>
          insert into Semestre
          values (#{sem.periodo},#{sem.inicio},#{sem.fin})

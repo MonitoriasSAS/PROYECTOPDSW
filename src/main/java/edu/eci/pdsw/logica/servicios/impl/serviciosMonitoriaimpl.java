@@ -254,4 +254,26 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public Grupo consultarGrupo(int grupo, String asignatura) {
+        Grupo x=null;
+        try{
+            x=daoSemestre.consultarGrupo(grupo, asignatura);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
+
+    @Override
+    public Monitor consultarMonitor(int carnet) {
+        Monitor x=null;
+        try{
+            x=daoSemestre.consultarMonitor(carnet);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }
