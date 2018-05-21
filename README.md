@@ -36,6 +36,14 @@ Profesor:
   + Andres Rodriguez del Toro - a.rodriguez
   + Alejandro Rodriguez del Toro - a.toro
     
+    
+Descripción del producto:
+  -------
+  
+  
+## *Descripción General:*
+La Plataforma de gestión a servicios de Monitorias Académicas, es una herramienta que ha contribuido a una mejora significativa en el desempeño de los estudiantes del programa de Ingeniería de Sistemas de la Escuela, en las asignaturas de primeros semestres administradas por el mismo. El sistema, más allá de facilitar el seguimiento de la labor de los monitores, se ha convertido en una valiosa base de conocimiento con la que los coordinadores de asignaturas y de línea pueden identificar aquellos temas que -a través del tiempo- han presentado mayores dificultades a los estudiantes. Con esto, ha sido posible organizar, de forma más estratégica, la toma de acciones a nivel pedagógico, didáctico y administrativo que han redundado en un mejoramiento general del desempeño de los estudiantes.
+
 Modelo de Bases de Datos:
   -------
   
