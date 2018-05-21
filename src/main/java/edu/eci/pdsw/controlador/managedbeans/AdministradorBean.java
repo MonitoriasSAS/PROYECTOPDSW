@@ -65,6 +65,7 @@ public class AdministradorBean implements Serializable {
     private Date inicio;
     private Date fin;
     private int id;
+    private String idAsignatura;
     private String nombre;
     private String apellido;
     private String correo;
@@ -112,6 +113,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarAsignatura(){
+
         moni.agregarAsignatura(new Asignatura(idasignatura,nombre));
     }
 
@@ -135,7 +137,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarGrupo(){
-        moni.agregarGrupo(new Grupo(id,semestre,materia,profesor,matriculados));
+        moni.agregarGrupo(new Grupo(id,moni.getSemestre(periodo),moni.getAsignatura(idasignatura),profesor,matriculados));
     }
     
     public void agregarFranja(){
@@ -186,7 +188,7 @@ public class AdministradorBean implements Serializable {
         this.profesor = profesor;
     }
 
-    public Asignatura getMateria() {
+    public Asignatura getAsignatura(String idAsignatura) {
         return materia;
     }
     public Semestre getSemestre() {

@@ -92,8 +92,8 @@
          values (#{sem.periodo},#{sem.inicio},#{sem.fin})
      </insert>
      <insert id='agregarAsignatura'>
-         insert into Asignatura(nombre_Asig)
-         values (#{asig.nombre})
+         insert into Asignatura
+         values (#{asig.id},#{asig.nombre})
      </insert>
      <insert id='agregarGrupo'>
          insert into Grupo

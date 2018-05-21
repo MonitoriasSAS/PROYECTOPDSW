@@ -10,14 +10,14 @@ package edu.eci.pdsw.entidades;
  * @author MonitoriasSAS
  */
 public class Asignatura {
-    private int id;
+    private String id;
     private String nombre; 
 
     public Asignatura() {
     }
     
     
-    public Asignatura(int id, String nombre) {
+    public Asignatura(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -27,11 +27,11 @@ public class Asignatura {
     }
     
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

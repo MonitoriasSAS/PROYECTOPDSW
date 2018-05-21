@@ -43,7 +43,7 @@ public class MonitorBean implements Serializable{
     private Monitoria monitoria;
     private Monitor monitor;
     private Asignatura materia;
-    private Observacion observacion;
+    //private Observacion observacion;
     private Tema tema;
     private String t;
     private Profesor profesor;
@@ -51,16 +51,24 @@ public class MonitorBean implements Serializable{
     private Estudiante estudiante;
     private Grupo grupo;
     
+    private int id;
+    private String ip;
+    private String observacion;
+    private Date fecha;
+    private String pro;
+    private int idc;
+    private int gru;
+    private String mate;
     
     public MonitorBean(){
         
     }
     
     public void Acesoria() throws ExcepcionServiciosMonitoria{
-        moni.registrarMonitoria(monitoria, t);
+        moni.registrarMonitoria(new Monitoria(id,ip,observacion,fecha,tema,horario,pro, idc, gru,mate), t);
     }
     
-   public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
+    public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }
    
@@ -72,7 +80,7 @@ public class MonitorBean implements Serializable{
         return materia;
     }
 
-     public void setMateria(int id, String nombre) {
+     public void setMateria(String id, String nombre) {
         this.materia = new Asignatura(id,nombre);
     }
 
@@ -88,14 +96,6 @@ public class MonitorBean implements Serializable{
         this.monitoria = monitoria;
     }
 
-    public void setObservacion(Monitor monitor, int id, int estudiante, String obs) {
-        this.observacion = new Observacion(monitor,id,estudiante,obs);
-    }
-
-    public Observacion getObservacion() {
-        return observacion;
-    }
-    
     public FranjaHorario getHorario() {
         return horario;
     }

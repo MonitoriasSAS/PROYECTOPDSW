@@ -37,47 +37,47 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
        return profesorMapper.consularInfoMonitoria(id);
     }
     @Override 
-    public List<Monitoria> consultarMonitorias(int asi){
+    public List<Monitoria> consultarMonitorias(String asi){
         return profesorMapper.consultarMonitorias(asi);
     }
 
     @Override
-    public List<Monitoria> consultarTotalMonitorias(int id,int asi) {
+    public List<Monitoria> consultarTotalMonitorias(int id,String asi) {
         return profesorMapper.consultarTotalMonitorias(id,asi);
     }
 
     @Override
-    public Grupo consulatarEstudiantesCursos(int id,int numgrupo, int numasig) {
+    public Grupo consulatarEstudiantesCursos(int id,int numgrupo, String numasig) {
         return profesorMapper.consulatarEstudiatesCursos(id, numgrupo, numasig);
     }
 
     @Override
-    public List<Monitoria> consultarMonitoriasCursos(int id,int numgrupo, int numasig) {
+    public List<Monitoria> consultarMonitoriasCursos(int id,int numgrupo, String numasig) {
         return profesorMapper.consultarMonitoriasCursos(id, numgrupo, numasig);
     }
 
     @Override
-    public List<Grupo> consultarCursos(int id, int numasig) {
+    public List<Grupo> consultarCursos(int id, String numasig) {
         return profesorMapper.consultarCursos(id, numasig);
     }
 
     @Override
-    public List<Monitoria> consultarEstudiantesGrupo(int id, int numgrupo, int numasig) {
+    public List<Monitoria> consultarEstudiantesGrupo(int id, int numgrupo, String numasig) {
         return profesorMapper.consultarEstudiantesGrupo(id, numgrupo, numasig);
     }
 
     @Override
-    public List<Monitoria> consultarTotalGrupo(int id, int numasig) {
+    public List<Monitoria> consultarTotalGrupo(int id, String numasig) {
         return profesorMapper.consultarTotalGrupo(id, numasig);
     }
 
     @Override
-    public List<Monitoria> consultarTemaMonitoria(int id, int numasig,int idtema) {
+    public List<Monitoria> consultarTemaMonitoria(int id, String numasig,int idtema) {
         return profesorMapper.consultarTemaMonitoria(id, numasig,idtema);
     }
 
     @Override
-    public List<Tema> consultarTema(int asi) {
+    public List<Tema> consultarTema(String asi) {
        return profesorMapper.consultarTema(asi);
     }
 }

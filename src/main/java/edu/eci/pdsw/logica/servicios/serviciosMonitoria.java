@@ -58,11 +58,11 @@ public interface serviciosMonitoria {
    
    public void agregarAsignatura(Asignatura asignatura);
    
-   public float consultarMonitorias(int id,int asi);
+   public float consultarMonitorias(int id,String asi);
    
-   public List<Float> consultarCursos(int id,int asig);
+   public List<Float> consultarCursos(int id,String asig);
    
-   public List<Float> consultarGrupos(int id,int numgrupo,int numasig);
+   public List<Float> consultarGrupos(int id,int numgrupo,String numasig);
    
-   public List<Float> consultrarTema(int id, int numgrupo, int numasig);
+   public List<Float> consultrarTema(int id, int numgrupo, String numasig);
 }
