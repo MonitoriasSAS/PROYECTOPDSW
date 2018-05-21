@@ -76,6 +76,7 @@ public class AdministradorBean implements Serializable {
     private String d;
     private Time ini;
     private Time fi;
+    private int numero;
     private int matriculados;
     private String name;
     private String idasignatura;
@@ -106,6 +107,7 @@ public class AdministradorBean implements Serializable {
         this.matriculados = matriculados;
         this.name = name;
         this.idasignatura=idasignatura;
+        this.numero=numero;
     }
     
     public void registrarSemestre(){
@@ -137,7 +139,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarGrupo(){
-        moni.agregarGrupo(new Grupo(id,moni.getSemestre(periodo),moni.consultarAsignatura(idasignatura),profesor,matriculados));
+        moni.agregarGrupo(new Grupo(numero,moni.getSemestre(periodo),moni.consultarAsignatura(idasignatura),moni.consultarProfe(carnet),matriculados));
     }
     
     public void agregarFranja(){
@@ -318,6 +320,30 @@ public class AdministradorBean implements Serializable {
 
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
+    }
+
+    public Asignatura getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Asignatura materia) {
+        this.materia = materia;
+    }
+
+    public String getIdAsignatura() {
+        return idAsignatura;
+    }
+
+    public void setIdAsignatura(String idAsignatura) {
+        this.idAsignatura = idAsignatura;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
 

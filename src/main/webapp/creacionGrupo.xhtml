@@ -18,8 +18,9 @@
             <br/>
             <p:inputText id="profesorGru" placeholder="Carnet del Profesor" required="true" styleClass="user" value="#{beanAdmin.carnet}"/>
             <br/>
-            <p:inputText id="matriculadosGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.matriculados}"/>
+            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.numero}"/>
             <br/>
+            <p:inputText id="matriculadosGru" placeholder="Matriculados al grupo" styleClass="user" value="#{beanAdmin.matriculados}"/>
             <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.registrarGrupo()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionFranjaHorario.xhtml"/>
             <br/>

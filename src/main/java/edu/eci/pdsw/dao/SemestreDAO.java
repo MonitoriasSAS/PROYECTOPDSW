@@ -31,4 +31,5 @@ public interface SemestreDAO {
     void agregarFranja(FranjaHorario franjaHorario);
     void agregarAsignatura(Asignatura asignatura);
     Asignatura consultarAsignatura(String asignatura);
+    Profesor consultarProfe(int carnet);
 }

@@ -10,6 +10,7 @@
      <resultMap type='Grupo' id='grupoResult'>
         <id property='numero' column='numero'/>
         <result property='matriculados' column='matriculados'/>
+        <association property='semestre' javaType='Semestre' resultMap='semestreResult'/>
      </resultMap>
      <resultMap type='Monitor' id='monitorResult'>
          <id property='id' column='id_Carnet'/>
@@ -58,18 +59,16 @@
          <result property='apellido' column='apellido_Prof'/>
          <result property='telefono' column='telefono'/>
          <result property='correo' column='correo'/>
-         <collection property='grupos' ofType='Grupo' resultMap='grupoResult'></collection>
      </resultMap>
      <resultMap type='Estudiante' id='estudianteResult'>
          <id property='carnet' column='nombre_es'/>
          <result property='nombre' column='nombre_es'/>
          <result property='apellido' column='apellido_es'/>
-         <collection property='monitorias' ofType='Monitoria' resultMap='monitoriaResult' ></collection>
      </resultMap>
      <select parameterType='map' id='Consultarsemestre' resultMap='semestreResult'>
          select *
-         FROM Semestre,Grupo
-         WHERE #{id}=periodo_Academico and Semestre_periodo_Academico=periodo_Academico
+         FROM Semestre
+         WHERE #{id}=periodo_Academico 
      </select>
      <select parameterType='map' id='consultarAsignatura' resultMap='AsignaturaResult'>
          select * from Asignatura
@@ -82,6 +81,10 @@
      <select parameterType='map' id='consultarMon' resultMap='monitoriaResult'>
          select * from Monitoria
          WHERE id_Mon=(select MAX(id_Mon) FROM Monitoria )
+     </select>
+     <select parameterType='map' id='consultarProfe' resultMap='profesorResult'>
+         select * from Profesor
+         WHERE id_carnet=#{idpro}
      </select>
      <select parameterType='map' id='consultarFranja' resultMap='franjaResult'>
          select * from Franja_Horario

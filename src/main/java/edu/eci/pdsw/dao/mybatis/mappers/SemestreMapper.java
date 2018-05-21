@@ -34,4 +34,5 @@ public interface SemestreMapper{
     FranjaHorario consultarFranja();
     Tema consultarTema();
     Monitoria consultarMon();
+    Profesor consultarProfe(@Param("idpro") int carnet);
 }

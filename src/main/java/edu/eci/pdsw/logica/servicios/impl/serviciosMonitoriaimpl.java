@@ -243,4 +243,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public Profesor consultarProfe(int carnet) {
+        Profesor x=null;
+        try{
+            x=daoSemestre.consultarProfe(carnet);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }

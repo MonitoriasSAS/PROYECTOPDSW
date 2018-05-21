@@ -111,4 +111,9 @@ public class SemestreDaoMyBatis implements SemestreDAO {
     public Asignatura consultarAsignatura(String asignatura) {
         return semestreMapper.consultarAsignatura(asignatura);
     }
+
+    @Override
+    public Profesor consultarProfe(int carnet) {
+       return semestreMapper.consultarProfe(carnet);
+    }
 }
