@@ -85,6 +85,13 @@ public class AdministradorBean implements Serializable {
         this.periodo = periodo;
         this.inicio = inicio;
         this.fin = fin;
+        this.carnet=carnet;
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.correo=correo;
+        this.telefono=telefono;
+        
+        
     }
     
     public void registrarSemestre(){
@@ -96,7 +103,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarProfesor(){
-        moni.agregarProfesor(new Profesor(id,nombre,apellido,correo,telefono));
+        moni.agregarProfesor(new Profesor(carnet,nombre,apellido,correo,telefono));
     }
     
     public void registrarEstudiante(){
@@ -273,7 +280,12 @@ public class AdministradorBean implements Serializable {
     public void setFi(Time fi) {
         this.fi = fi;
     }
-   
+   public int getCarnet(){
+       return carnet;
+   }
+   public void setCarnet(int carnet){
+       this.carnet=carnet;
+   }
     
     
 
