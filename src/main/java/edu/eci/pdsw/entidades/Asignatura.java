@@ -15,18 +15,13 @@ public class Asignatura {
 
     public Asignatura() {
     }
-    
-    
+
     public Asignatura(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
-
-    public Asignatura(String nombre) {
-        this.nombre = nombre;
-    }
     
-
+    
     public String getId() {
         return id;
     }
