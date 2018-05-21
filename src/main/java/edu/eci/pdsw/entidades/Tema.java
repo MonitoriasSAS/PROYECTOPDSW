@@ -10,7 +10,7 @@ package edu.eci.pdsw.entidades;
  * @author MonitoriasSAS
  */
 public class Tema {
-    private int id;
+    private String id;
     private String name;
     private Asignatura asignatura;
 
@@ -18,20 +18,13 @@ public class Tema {
         
     }
 
-    public Tema(String name, Asignatura asignatura) {
-        this.name = name;
-        this.asignatura = asignatura;
-    }
-    
-    
-    public Tema(int id, String name, Asignatura asignatura) {
+    public Tema(String id, String name, Asignatura asignatura) {
         this.id = id;
         this.name = name;
         this.asignatura = asignatura;
     }
     
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -39,7 +32,7 @@ public class Tema {
         return name;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

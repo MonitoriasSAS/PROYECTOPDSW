@@ -21,10 +21,11 @@
          <result property='carrera' column='carrera'/>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja'/>
+        <id property='id' column='monitor_id_carnet'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
+        <association property='Monitor' javaType='Monitor'  resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
@@ -37,13 +38,12 @@
          <result property='name' column='name'/>
      </resultMap>
      <resultMap type= 'Monitoria' id='monitoriaResult'>
-        <id property='id' column='id_Mon'/>
+        <id property='idC' column='estudiante_id_carnet'/>
+        <id property='fecha' column='fecha'/>
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
-        <result property='fecha' column='fecha'/>
         <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
-        <result property='idC' column='estudiante_id_carnet'/>
         <result property='asignatura' column='asignatura_id'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
@@ -70,25 +70,9 @@
          FROM Semestre
          WHERE #{id}=periodo_Academico 
      </select>
-     <select parameterType='map' id='consultarAsignatura' resultMap='AsignaturaResult'>
-         select * from Asignatura
-         WHERE id_Asignatura=#{asig}
-     </select>
-     <select parameterType='map' id='consultarTema' resultMap='temaResult'>
-         select * from Tema
-         WHERE temaID=(select MAX(temaID) FROM Tema )
-     </select>
-     <select parameterType='map' id='consultarMon' resultMap='monitoriaResult'>
-         select * from Monitoria
-         WHERE id_Mon=(select MAX(id_Mon) FROM Monitoria )
-     </select>
      <select parameterType='map' id='consultarProfe' resultMap='profesorResult'>
          select * from Profesor
          WHERE id_carnet=#{idpro}
-     </select>
-     <select parameterType='map' id='consultarFranja' resultMap='franjaResult'>
-         select * from Franja_Horario
-         WHERE id_Franja=(select MAX(id_Franja) FROM Franja_Horario )
      </select>
      <select parameterType='map' id='consultarMonitor' resultMap='monitorResult'>
          select * from Monitor
@@ -123,8 +107,8 @@
          values(#{fra.monitor.id},#{fra.asignatura.id},#{fra.grupo.numero},#{fra.dia},#{fra.inicio},#{fra.fin})
      </insert>
      <insert id='agregarTema'>
-         insert into Tema(nombre,Asignatura_id_Asignatura)
-         values(#{tem.name},#{tem.asignatura.id})
+         insert into Tema(temaID,nombre,asignatura_id_asignatura)
+         values(#{tem.id},#{tem.name},#{tem.asignatura.id})
      </insert>
      <insert id='agregarEstudiante'>
          insert into Estudiante

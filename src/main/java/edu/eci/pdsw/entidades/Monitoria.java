@@ -12,7 +12,6 @@ import java.util.Date;
  * @author MonitoriasSAS
  */
 public class Monitoria {
-    private int id;
     private String ip;
     private String observaciones;
     private Date fecha;
@@ -43,29 +42,11 @@ public class Monitoria {
         this.asignatura = asignatura;
     }
 
-    public Monitoria(int id, String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, String asignatura) {
-        this.id = id;
-        this.ip = ip;
-        this.observaciones = observaciones;
-        this.fecha = fecha;
-        this.tema = tema;
-        this.franjaHorario = franjaHorario;
-        this.profesor = profesor;
-        this.idC = idC;
-        this.grupo = grupo;
-        this.asignatura = asignatura;
-    }
 
     @Override
     public String toString() {
-        return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + ", asignatura=" + asignatura + '}';
+        return "Monitoria{" +", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + ", asignatura=" + asignatura + '}';
     }
-    
-    
-    
-    
-
-   
    
     public void setTema( Tema tema) {
         this.tema = tema;
@@ -73,10 +54,6 @@ public class Monitoria {
 
     public  Tema getTema() {
         return tema;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setIp(String ip) {
@@ -89,10 +66,6 @@ public class Monitoria {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getIp() {

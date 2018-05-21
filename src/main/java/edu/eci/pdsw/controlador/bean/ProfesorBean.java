@@ -78,6 +78,10 @@ public class ProfesorBean implements Serializable {
     
     public void consultar() throws ExcepcionServiciosMonitoria{
         String mon = monitor.getNombre()+" "+monitor.getApellido();
-        servicio.consulatarMonitoria(monitoria.getId());
+        servicio.consulatarMonitoria(monitoria.getIdC());
+    }
+    
+    public float consultarMonitorias(int id,String asi){
+        return servicio.consultarMonitorias(id, asi);
     }
 }

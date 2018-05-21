@@ -20,11 +20,11 @@
          <result property='carrera' column='carrera'/>
      </resultMap>
       <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja'/>
+        <id property='id' column='monitor_id_carnet'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
+        <association property='Monitor' javaType='Monitor'  resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
@@ -32,28 +32,27 @@
          <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaResult'/>
      </resultMap>
     <resultMap type= 'Monitoria' id='monitoriaResult'>
-        <id property='id' column='id_Mon'/>
+        <id property='idC' column='estudiante_id_carnet'/>
+        <id property='fecha' column='fecha'/>
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
-        <result property='fecha' column='fecha'/>
+        <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
-        <result property='idC' column='estudiante_id_carnet'/>
-        <result property="grupo" column='grupo'/>
-        <result property='asignatura' column='id_asignatura'/>
+        <result property='asignatura' column='asignatura_id'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
-        SELECT * FROM Monitoria,Tema,Asistencia,Franja_Horario,Monitor
-        WHERE id_Mon=#{idmo} and Tema.TemaID=Asistencia.TemaID and Franja_id=id_Franja and id_Mon=Asistencia.monitoriaid and Monitor_id_Carnet=id_Carnet
+        SELECT * FROM Monitoria,Tema,Franja_Horario,Monitor
+        WHERE Monitoria.estudiante_id_carnet=#{idmo} and Monitoria.estudiante_id_carnet=Franja_Horario.monitor_id_carnet and monitoria.temaid=Tema.temaID and id_Carnet=Franja_Horario.monitor_id_carnet 
      </select> 
      <select parameterType='map' id='loadFranja' resultMap='franjaResult'>
         SELECT * Monitor
         WHERE id_Carnet=#{idmon}
      </select> 
      <insert id='agregarMonitoria'>
-         insert into Monitoria(ip,observaciones,Franja_id,fecha,profesor,estudiante_id_carnet,grupo,id_asignatura)
-         values(#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo},#{mon.asignatura})
+         insert into Monitoria(ip,observaciones,monitor_id_carnet,fecha,profesor,estudiante_id_carnet,grupo,id_asignatura,temaid)
+         values(#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.monitor.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo},#{mon.asignatura},#{mon.tema.id})
      </insert>
      <insert id='agregarMoni'>
          insert into Asistencia 

@@ -68,19 +68,15 @@ public class main {
         mm.agregarGrupo(lcal);
         FranjaHorario kk=new FranjaHorario( ho,"martes", lcal, as, new Time(10,0,0), new Time(11,30,0));
         mm.agregarFranja(kk);
-        kk.setId(mm.consultarFranja().getId());
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
-        Tema tem = new Tema("Grafos",as);
+        Tema tem = new Tema("Grafos","el kompayaso",as);
         mm.agregarTema(tem);
-        tem.setId(mm.consultarTema().getId());
         Monitoria hi=new Monitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2,as.getId());
         hi.setTema(tem);
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
-        hi.setId(mm.consultarMon().getId());
-        mp.agregarMoni(2112076,tem.getId(),hi.getId());
         System.out.println(mm.Consultarsemestre("2012-7"));
-        System.out.println(mp.loadMonitoria(hi.getId()));
+        /*System.out.println(mp.loadMonitoria(hi.getIdC()));
         System.out.println(pm.consultarMonitorias(as.getId()));
         System.out.println(pm.consultarTotalMonitorias(2112107, as.getId()));
         System.out.println(pm.consultarCursos(2112107, as.getId()));
@@ -89,7 +85,7 @@ public class main {
         System.out.println(pm.consultarEstudiantesGrupo(2112107, 2,as.getId()));
         System.out.println(pm.consultarTotalGrupo(2112107, as.getId()));
         System.out.println(pm.consultarTema(as.getId()));
-        System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId()));  
+        System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); */
          System.exit(0);
     }
     

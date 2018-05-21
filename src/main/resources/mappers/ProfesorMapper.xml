@@ -25,11 +25,10 @@
          <result property='carrera' column='carrera'/>
      </resultMap>
      <resultMap type='Franja' id='franjaResult'>
-        <id property='id' column='id_Franja'/>
+        <id property='id' column='monitor_id_carnet'/>
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-        <association property='monitor' javaType='Monitor' resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Observacion' id='observacionResult'>
          <id property='id' column='idobs'/>
@@ -42,14 +41,13 @@
          <result property='name' column='name'/>
      </resultMap>
      <resultMap type= 'Monitoria' id='monitoriaResult'>
-        <id property='id' column='id_Mon'/>
+        <id property='idC' column='estudiante_id_carnet'/>
+        <id property='fecha' column='fecha'/>
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
-        <result property='fecha' column='fecha'/>
+        <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
-        <result property='idC' column='estudiante_id_carnet'/>
-        <result property="grupo" column='grupo'/>
-        <result property='asignatura' column='id_asignatura'/>
+        <result property='asignatura' column='asignatura_id'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
