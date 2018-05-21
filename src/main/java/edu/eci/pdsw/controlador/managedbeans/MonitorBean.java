@@ -25,7 +25,10 @@ import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import java.sql.Time;
+import java.util.Date;
 import java.util.List;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
  /**
  * 
  * @author MonitoriasSAS
@@ -60,11 +63,18 @@ public class MonitorBean implements Serializable{
     private int gru;
     private String mate;
     
+    private int idMonitor;
+    private int idEstudiante;
+    
+    
     public MonitorBean(){
         
     }
     
     public void Acesoria() throws ExcepcionServiciosMonitoria{
+        fecha = new Date();
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        String ip = request.getHeader("X-FORWARDED-FOR");
         moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,tema,horario,pro, idc, gru,mate), t);
     }
     
@@ -135,6 +145,94 @@ public class MonitorBean implements Serializable{
     public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor,int matriculados) {
         this.grupo = new Grupo(numero,semestre,asignatura,profesor,matriculados);
     }
+    public String getT() {
+        return t;
+    }
+
+    public void setT(String t) {
+        this.t = t;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getPro() {
+        return pro;
+    }
+
+    public void setPro(String pro) {
+        this.pro = pro;
+    }
+
+    public int getIdc() {
+        return idc;
+    }
+
+    public void setIdc(int idc) {
+        this.idc = idc;
+    }
+
+    public int getGru() {
+        return gru;
+    }
+
+    public void setGru(int gru) {
+        this.gru = gru;
+    }
+
+    public String getMate() {
+        return mate;
+    }
+
+    public void setMate(String mate) {
+        this.mate = mate;
+    }
+
+    public int getIdMonitor() {
+        return idMonitor;
+    }
+
+    public void setIdMonitor(int idMonitor) {
+        this.idMonitor = idMonitor;
+    }
+
+    public int getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
+    
    /**
     public ShiroLoginBean getSeguridad() {
         return seguridad;
