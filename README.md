@@ -44,10 +44,19 @@ Descripción del producto:
 ## *Descripción General:*
 Es una herramienta que ha contribuido a una mejora significativa en el desempeño de los estudiantes del programa de Ingeniería de Sistemas de la Escuela, en las asignaturas de primeros semestres administradas por el mismo. El sistema, más allá de facilitar el seguimiento de la labor de los monitores, se ha convertido en una valiosa base de conocimiento con la que los coordinadores de asignaturas y de línea pueden identificar aquellos temas que a través del tiempo han presentado mayores dificultades a los estudiantes. Con esto, ha sido posible organizar, de forma más estratégica, la toma de acciones a nivel pedagógico, didáctico y administrativo que han redundado en un mejoramiento general del desempeño de los estudiantes.
 
-Modelo de Bases de Datos:
+## *Funcionalidades:*
+
+Arquitectura y Diseño Detallado:
   -------
-  
-  
+## *Modelo E-R:*
+ ![](img/diagrama.png)
+     
+# *Diagrama de Clases:*  
+
+# *Arquitectura:*
+La plataforma de gestión a servicios de Monitorias Académicas divide su funcionamiento en cuatro capas:
+
+***Persistencia:*** La capa de persistencia empieza su funcionamiento en una base de datos utilizando PostgreSQL. Seguido por una extracción de los datos, y una transformación por medio de un mapper con el Framework de MyBatis, para trasformar lo que se extrae a objetos, para finalmente llevarlos a la capa de aplicación.
 
 ## *URL Heroku:*
 https://monitoriassas.herokuapp.com/
