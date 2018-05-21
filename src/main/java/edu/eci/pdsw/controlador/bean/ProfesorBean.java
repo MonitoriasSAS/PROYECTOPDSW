@@ -80,4 +80,8 @@ public class ProfesorBean implements Serializable {
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
     }
+    
+    public float consultarMonitorias(int id,String asi){
+        return servicio.consultarMonitorias(id, asi);
+    }
 }
