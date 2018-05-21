@@ -23,8 +23,11 @@ import javax.faces.bean.SessionScoped;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
-
-
+import org.primefaces.model.chart.PieChartModel;
+import org.primefaces.event.ItemSelectEvent;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.annotation.PostConstruct;
 /**
  *
  * @author MonitoriasSAS
@@ -43,6 +46,67 @@ public class ProfesorBean implements Serializable {
     private List<Float> porcentajesCurso;
     private List<Float> porcentajesTema;
     private List<Float> porcentajesGrupo;
+    private PieChartModel pieModel1;
+
+    public serviciosMonitoria getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(serviciosMonitoria servicio) {
+        this.servicio = servicio;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
+    }
+
+    public Profesor getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
+    }
+
+    public Monitoria getMonitoria() {
+        return monitoria;
+    }
+
+    public void setMonitoria(Monitoria monitoria) {
+        this.monitoria = monitoria;
+    }
+
+    public Asignatura getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Asignatura materia) {
+        this.materia = materia;
+    }
+
+    public PieChartModel getPieModel1() {
+        return pieModel1;
+    }
+
+    public void setPieModel1(PieChartModel pieModel1) {
+        this.pieModel1 = pieModel1;
+    }
+    
+    public ProfesorBean(){
+        this.pieModel1=pieModel1;
+    }
 
     public float getProcentajeAsis() {
         return procentajeAsis;
@@ -79,5 +143,27 @@ public class ProfesorBean implements Serializable {
     public void consultar() throws ExcepcionServiciosMonitoria{
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
+    }
+    @PostConstruct
+    public void init() {
+        createPieModels();
+    }
+    private void createPieModels() {
+        createPieModel1();
+    }
+    private void createPieModel1() {
+        pieModel1 = new PieChartModel();
+         
+        pieModel1.set("Asistentes de mi Grupo", this.getProcentajeAsis());
+        pieModel1.set("Asistentes que no son de mi Grupo", 1-this.getProcentajeAsis());
+         
+        pieModel1.setTitle("Asistencia a las Monitorias");
+        pieModel1.setLegendPosition("w");
+    }
+    public void itemSelect(ItemSelectEvent event) {
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Item selected",
+                        "Item Index: " + event.getItemIndex() + ", Series Index:" + event.getSeriesIndex());
+         
+        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 }
