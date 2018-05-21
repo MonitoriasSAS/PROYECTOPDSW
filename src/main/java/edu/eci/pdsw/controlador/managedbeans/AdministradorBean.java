@@ -147,7 +147,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void agregarTema(){
-        moni.agregarTema(new Tema(name,materia));
+        moni.agregarTema(new Tema(name,moni.consultarAsignatura(idAsignatura)));
     }
     
     public String getPeriodo() {

@@ -28,7 +28,7 @@
                 <p:outputLabel value="ID Franja Horario:" style="color:white"/>
                 <p:outputLabel value="" style="color:white"/>
             </h:panelGrid>
-            <p:commandButton value="Crear" styleClass="myButton" value="#{beanAdmin.registrarFranja()}"/>
+            <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.registrarFranja()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionEstudiante.xhtml"/>
             <br/>
         </h:form>
