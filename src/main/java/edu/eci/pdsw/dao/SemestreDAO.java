@@ -14,6 +14,7 @@ import edu.eci.pdsw.entidades.Grupo;
 import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import java.util.Date;
+import org.apache.ibatis.annotations.Param;
 
 /**
  *
@@ -29,4 +30,5 @@ public interface SemestreDAO {
     void agregarEstudiante(Estudiante estudiante);
     void agregarFranja(FranjaHorario franjaHorario);
     void agregarAsignatura(Asignatura asignatura);
+    Asignatura consultarAsignatura(String asignatura);
 }

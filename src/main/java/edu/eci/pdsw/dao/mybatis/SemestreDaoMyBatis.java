@@ -106,4 +106,9 @@ public class SemestreDaoMyBatis implements SemestreDAO {
             throw new PersistenceException("Error al agregar Asignatura:"+e.getLocalizedMessage(), e);
         }
     }
+
+    @Override
+    public Asignatura consultarAsignatura(String asignatura) {
+        return semestreMapper.consultarAsignatura(asignatura);
+    }
 }

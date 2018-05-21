@@ -232,4 +232,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public Asignatura consultarAsignatura(String asignatura) {
+        Asignatura x=null;
+        try{
+            x=daoSemestre.consultarAsignatura(asignatura);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }

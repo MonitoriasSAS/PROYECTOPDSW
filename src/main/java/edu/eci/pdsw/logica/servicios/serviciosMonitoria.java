@@ -68,4 +68,5 @@ public interface serviciosMonitoria {
    
    public List<Grupo> consultarGruposProfe(int id, String numasig);
    
+    public Asignatura consultarAsignatura(String asignatura);
 }
