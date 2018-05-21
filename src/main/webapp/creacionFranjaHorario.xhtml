@@ -12,23 +12,28 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nueva Franja Horario" styleClass="inicio"/>
             <br/>
-            <p:inputText id="monitorFran" placeholder="Monitor Asociado" required="true" styleClass="user" value="#{beanAdmin.carnet}"/>
+            <p:inputText id="monitorFran" placeholder="Monitor Asociado" required="true" styleClass="user" value="#{beanAdmin.monitor}"/>
             <br/>
-            <p:inputText id="idAsigna" placeholder="ID Asignatura" required="true" styleClass="user" value="#{beanAdmin.idAsignatura}"/>
+            <p:inputText id="idAsigna" placeholder="ID Asignatura" required="true" styleClass="user" value="#{beanAdmin.id}"/>
             <br/>
-            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.numero}"/>
+            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.grupo}"/>
             <br/>
             <p:inputText id="dia" placeholder="Dia" required="true" styleClass="user" value="#{beanAdmin.d}"/>
-            <br/> 
-            <p:inputText id="tiempoIni" placeholder="Tiempo de Inicio" required="true" styleClass="user" value="#{beanAdmin.ini}"/>
-            <br/>
-            <p:inputText id="tiempoFin" placeholder="Tiempo de Fin" required="true" styleClass="user" value="#{beanAdmin.fi}"/>
-            <br/>
+                <p:growl id="msgs1" showDetail="true" />
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="time" value="Time:" />
+                    <p:calendar id="time1" value="#{beanAdmin.ini}" pattern="HH:mm" timeOnly="true"  />
+                </h:panelGrid>
+                    <p:growl id="msgs2" showDetail="true" />
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="time" value="Time:" />
+                    <p:calendar id="time2" value="#{beanAdmin.fi}" pattern="HH:mm" timeOnly="true"  />
+                </h:panelGrid>
             <h:panelGrid columns="2" cellpadding="5">
                 <p:outputLabel value="ID Franja Horario:" style="color:white"/>
                 <p:outputLabel value="" style="color:white"/>
             </h:panelGrid>
-            <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.agregarFranja()}"/>
+            <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.registrarFranja()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionEstudiante.xhtml"/>
             <br/>
         </h:form>
