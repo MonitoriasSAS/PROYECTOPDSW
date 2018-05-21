@@ -251,8 +251,8 @@ public class AdministradorBean implements Serializable {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
+    public void setTelefono(int asd) {
+        this.telefono = asd;
     }
 
     public String getCarrera() {
