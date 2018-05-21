@@ -137,7 +137,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarGrupo(){
-        moni.agregarGrupo(new Grupo(id,moni.getSemestre(periodo),moni.getAsignatura(idasignatura),profesor,matriculados));
+        moni.agregarGrupo(new Grupo(id,moni.getSemestre(periodo),moni.consultarAsignatura(idasignatura),profesor,matriculados));
     }
     
     public void agregarFranja(){
