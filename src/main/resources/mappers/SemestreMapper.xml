@@ -100,8 +100,8 @@
          values (#{gru.semestre.periodo},#{gru.asignatura.id},#{gru.profesor.id},#{gru.numero},#{gru.matriculados})
      </insert>
      <insert id='agregarProfesor'>
-         insert into Profesor 
-         Values(#{pro.id},#{pro.nombre},#{pro.apellido},#{pro.telefono},#{pro.correo})
+         insert into Profesor (id_carnet,nombre_prof,apellido_prof,correo,telefono)
+         Values(#{pro.id},#{pro.nombre},#{pro.apellido},#{pro.correo},#{pro.telefono})
      </insert>
      <insert id='agregarMonitor'>
          insert into Monitor 
