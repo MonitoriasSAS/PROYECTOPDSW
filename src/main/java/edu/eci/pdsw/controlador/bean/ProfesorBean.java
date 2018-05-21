@@ -156,7 +156,7 @@ public class ProfesorBean implements Serializable {
     private void createPieModel1() {
         pieModel1 = new PieChartModel();
          
-        pieModel1.set("Asistentes de mi Grupo", servicio.consultarMonitorias(profesor.getId(), materia.getId()));
+        pieModel1.set("Asistentes mi Grupo", servicio.consultarMonitorias(profesor.getId(), materia.getId()));
         pieModel1.set("Asistentes que no son de mi Grupo", 1-servicio.consultarMonitorias(profesor.getId(), materia.getId()));
          
         pieModel1.setTitle("Asistencia a las Monitorias");
