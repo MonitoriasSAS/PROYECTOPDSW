@@ -47,6 +47,12 @@ public class ProfesorBean implements Serializable {
     private List<Float> porcentajesTema;
     private List<Float> porcentajesGrupo;
     private PieChartModel pieModel1;
+    
+    public ProfesorBean(){
+        this.pieModel1=pieModel1;
+        this.materia=materia;
+        this.profesor=profesor;
+    }
 
     public serviciosMonitoria getServicio() {
         return servicio;
@@ -103,10 +109,6 @@ public class ProfesorBean implements Serializable {
     public void setPieModel1(PieChartModel pieModel1) {
         this.pieModel1 = pieModel1;
     }
-    
-    public ProfesorBean(){
-        this.pieModel1=pieModel1;
-    }
 
     public float getProcentajeAsis() {
         return procentajeAsis;
@@ -154,8 +156,8 @@ public class ProfesorBean implements Serializable {
     private void createPieModel1() {
         pieModel1 = new PieChartModel();
          
-        pieModel1.set("Asistentes de mi Grupo", this.getProcentajeAsis());
-        pieModel1.set("Asistentes que no son de mi Grupo", 1-this.getProcentajeAsis());
+        pieModel1.set("Asistentes de mi Grupo", servicio.consultarMonitorias(profesor.getId(), materia.getId()));
+        pieModel1.set("Asistentes que no son de mi Grupo", 1-servicio.consultarMonitorias(profesor.getId(), materia.getId()));
          
         pieModel1.setTitle("Asistencia a las Monitorias");
         pieModel1.setLegendPosition("w");

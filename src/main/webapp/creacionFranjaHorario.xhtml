@@ -12,14 +12,14 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nueva Franja Horario" styleClass="inicio"/>
             <br/>
-            <p:inputText id="monitorFran" placeholder="Monitor Asociado" required="true" styleClass="user" value="#{beanAdmin.monitor}"/>
+            <p:inputText id="monitorFran" placeholder="Monitor Asociado" required="true" styleClass="user" value="#{beanAdmin.carnet}"/>
             <br/>
-            <p:inputText id="idAsigna" placeholder="ID Asignatura" required="true" styleClass="user" value="#{beanAdmin.id}"/>
+            <p:inputText id="idAsigna" placeholder="ID Asignatura" required="true" styleClass="user" value="#{beanAdmin.idAsignatura}"/>
             <br/>
-            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.grupo}"/>
+            <p:inputText id="numeroGrup" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.numero}"/>
             <br/>
             <p:inputText id="dia" placeholder="Dia" required="true" styleClass="user" value="#{beanAdmin.d}"/>
-            <br/>
+            <br/> 
             <p:inputText id="tiempoIni" placeholder="Tiempo de Inicio" required="true" styleClass="user" value="#{beanAdmin.ini}"/>
             <br/>
             <p:inputText id="tiempoFin" placeholder="Tiempo de Fin" required="true" styleClass="user" value="#{beanAdmin.fi}"/>
@@ -28,7 +28,7 @@
                 <p:outputLabel value="ID Franja Horario:" style="color:white"/>
                 <p:outputLabel value="" style="color:white"/>
             </h:panelGrid>
-            <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.registrarFranja()}"/>
+            <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.agregarFranja()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionEstudiante.xhtml"/>
             <br/>
         </h:form>
