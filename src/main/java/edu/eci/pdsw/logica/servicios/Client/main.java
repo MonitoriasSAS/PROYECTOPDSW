@@ -61,7 +61,7 @@ public class main {
         mm.agregarProfesor(x);
         Monitor ho=new Monitor(2112107,"nombre"," apellido", 70172, "sistemas",2012);
         mm.agregarMonitor(ho);
-        Asignatura as=new Asignatura("lcal");
+        Asignatura as=new Asignatura("lcal","logica calculativa");
         mm.agregarAsignatura(as);
         as.setId(mm.consultarAsignatura().getId());
         Grupo lcal=new Grupo(2,s,as, x,30);

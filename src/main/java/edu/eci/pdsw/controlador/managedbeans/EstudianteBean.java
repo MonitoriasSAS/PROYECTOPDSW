@@ -65,7 +65,7 @@ public class EstudianteBean {
         this.monitoria = monitoria;
     }
     
-    public void setMonitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo,int asignatura) {
+    public void setMonitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo,String asignatura) {
         this.monitoria = new Monitoria(id,ip,observaciones,fecha,tema,franjaHorario,profesor,idC,grupo,asignatura);
     }
 

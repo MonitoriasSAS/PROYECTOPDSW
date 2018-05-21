@@ -159,7 +159,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
    }
 
     @Override
-    public float consultarMonitorias(int id,int asi) {
+    public float consultarMonitorias(int id,String asi) {
       float x=0;
       try{
         x= daoPro.consultarMonitorias(asi).size()/daoPro.consultarTotalMonitorias(id,asi).size();
@@ -170,7 +170,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public List<Float> consultarCursos(int id, int asig) {
+    public List<Float> consultarCursos(int id, String asig) {
       List<Float> x= new ArrayList<Float>();
       try{
           Grupo g=new Grupo();
@@ -185,7 +185,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public List<Float> consultarGrupos(int id, int numgrupo, int numasig) {
+    public List<Float> consultarGrupos(int id, int numgrupo, String numasig) {
         List<Float> x= new ArrayList<Float>();
         try{
             Grupo g=new Grupo();
@@ -200,7 +200,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public List<Float> consultrarTema(int id, int numgrupo, int numasig) {
+    public List<Float> consultrarTema(int id, int numgrupo, String numasig) {
         List<Float> x= new ArrayList<Float>();
         try{
             List<Tema> temas=daoPro.consultarTema(numasig);

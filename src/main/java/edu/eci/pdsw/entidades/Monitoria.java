@@ -21,13 +21,13 @@ public class Monitoria {
     private String profesor;
     private int idC;
     private int grupo;
-    private int asignatura;
+    private String asignatura;
     
     public Monitoria(){
         
     }
 
-    public Monitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo,int asignatura) {
+    public Monitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo,String asignatura) {
         this.id = id;
         this.ip = ip;
         this.observaciones = observaciones;
@@ -40,11 +40,11 @@ public class Monitoria {
         this.asignatura = asignatura;
     }
 
-    public int getAsignatura() {
+    public String getAsignatura() {
         return asignatura;
     }
 
-    public void setAsignatura(int asignatura) {
+    public void setAsignatura(String asignatura) {
         this.asignatura = asignatura;
     }
    
@@ -129,7 +129,7 @@ public class Monitoria {
         return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + ", asignatura=" + asignatura + '}';
     }
 
-    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, int asignatura) {
+    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, String asignatura) {
         this.ip = ip;
         this.observaciones = observaciones;
         this.fecha = fecha;

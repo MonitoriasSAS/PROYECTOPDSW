@@ -58,7 +58,7 @@ public class MonitorBean implements Serializable{
     private String pro;
     private int idc;
     private int gru;
-    private int mate;
+    private String mate;
     
     public MonitorBean(){
         
