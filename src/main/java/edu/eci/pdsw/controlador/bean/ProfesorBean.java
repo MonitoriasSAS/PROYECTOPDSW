@@ -146,6 +146,7 @@ public class ProfesorBean implements Serializable {
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
     }
+
     @PostConstruct
     public void init() {
         createPieModels();
@@ -168,4 +169,24 @@ public class ProfesorBean implements Serializable {
          
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
+    //primera grafica
+    public float consultarMonitorias(int id,String asi){
+        return servicio.consultarMonitorias(id, asi);
+    }
+    //segunda grafica
+     public List<Float> consultarCursos(int id, String asig){
+         return servicio.consultarCursos(id, asig);
+     }
+     //tercera grafica
+     public List<Float> consultarGrupos(int id, int numgrupo, String numasig){
+         return servicio.consultarGrupos(id, numgrupo, numasig);
+     }
+     //cuarta grafica
+     public List<Float> consultrarTema(int id, int numgrupo, String numasig){
+         return servicio.consultrarTema(id, numgrupo, numasig);
+     }
+     //gupos del profe 
+     public List<Grupo> consultarGruposProfe(int id, String numasig){
+         return servicio.consultarGruposProfe(id, numasig);
+     }
 }

@@ -12,21 +12,31 @@
         <h:form id="formu">
             <p:outputLabel value="Registro Asistente a Monitoria" styleClass="inicio"/>
             <br/>
-            <p:inputText id="carnet" placeholder="Carnet Asistente" required="true" styleClass="user"/>
+            <p:inputText id="carnet" placeholder="Carnet Asistente" required="true" styleClass="user" value="#{Monitor.idEstudiante}"/>
             <br/>
-            <p:inputTextarea id="nombre" placeholder="Observaciones" required="true" styleClass="user"/>
+            <p:inputText id="carnet" placeholder="Carnet Monitor" required="true" styleClass="user" value="#{Monitor.idMonitor}"/>
             <br/>
-            <p:selectOneMenu id="console" styleClass="user">
+            <p:inputTextarea id="nombre" placeholder="Observaciones" required="true" styleClass="user" value="#{Monitor.observacion}"/>
+            <br/>
+            <p:inputTextarea id="grupo" placeholder="Grupo" required="true" styleClass="user" value="#{Monitor.gru}"/>
+            <br/>
+            <p:inputTextarea id="asignatura" placeholder="Asignatura" required="true" styleClass="user" value="#{Monitor.mate}"/>
+            <br/>
+            <p:inputTextarea id="profesor" placeholder="Profesor" required="true" styleClass="user" value="#{Monitor.pro}"/>
+            <br/>
+            <p:inputTextarea id="tema" placeholder="Tema" required="true" styleClass="user" value="#{Monitor.t}"/>
+            <br/>
+            <!--<p:selectOneMenu id="console" styleClass="user">
                 <f:selectItem itemLabel="Select One" itemValue=""/>
                 <f:selectItem itemLabel="Xbox One" itemValue="Xbox One"/>
                 <f:selectItem itemLabel="PS4" itemValue="PS4"/>
                 <f:selectItem itemLabel="Wii U" itemValue="Wii U"/>
-            </p:selectOneMenu>
+            </p:selectOneMenu>-->
             <h:panelGrid columns="2" cellpadding="5">
                 <p:outputLabel value="Profesor:" style="color:white"/>
                 <p:outputLabel value="Popo" style="color:white"/>
             </h:panelGrid>
-            <p:commandButton value="Enviar" styleClass="myButton"/>
+            <p:commandButton value="Enviar" styleClass="myButton" actionListener="#{Monitor.acesoria()}"/>
             <p:button value="Empezar Monitoria" styleClass="myButton" href="dentroMonitoria.xhtml"/>
             <br/>
         </h:form>
