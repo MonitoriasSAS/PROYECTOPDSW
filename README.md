@@ -51,9 +51,9 @@ Arquitectura y Diseño Detallado:
 ## *Modelo E-R:*
  ![](img/diagrama.png)
      
-# *Diagrama de Clases:*  
+## *Diagrama de Clases:*  
 
-# *Arquitectura:*
+## *Arquitectura:*
 La plataforma de gestión a servicios de Monitorias Académicas divide su funcionamiento en cuatro capas:
 
 ***Persistencia:*** La capa de persistencia empieza su funcionamiento en una base de datos utilizando PostgreSQL. Seguido por una extracción de los datos, y una transformación por medio de un mapper con el Framework de MyBatis, para trasformar lo que se extrae a objetos, para finalmente llevarlos a la capa de aplicación.
