@@ -30,7 +30,7 @@ public interface SemestreMapper{
     void agregarAsignatura(@Param("asig")Asignatura asignatura);
     void agregarTema(@Param("tem") Tema tema);
     void agregarEstudiante(@Param("estu") Estudiante estudiante);
-    Asignatura consultarAsignatura();
+    Asignatura consultarAsignatura(@Param("asig")String asignatura);
     FranjaHorario consultarFranja();
     Tema consultarTema();
     Monitoria consultarMon();

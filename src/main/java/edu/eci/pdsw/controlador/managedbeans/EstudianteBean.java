@@ -66,7 +66,7 @@ public class EstudianteBean {
     }
     
     public void setMonitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo,String asignatura) {
-        this.monitoria = new Monitoria(id,ip,observaciones,fecha,tema,franjaHorario,profesor,idC,grupo,asignatura);
+        this.monitoria = new Monitoria(id,ip,observaciones,fecha,tema,franjaHorario,profesor,idC,grupo,asignatura) ;
     }
 
     public void setSemestre(String periodo,Date inicio,Date fin){

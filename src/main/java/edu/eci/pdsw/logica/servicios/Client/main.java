@@ -63,7 +63,6 @@ public class main {
         mm.agregarMonitor(ho);
         Asignatura as=new Asignatura("lcal","logica calculativa");
         mm.agregarAsignatura(as);
-        as.setId(mm.consultarAsignatura().getId());
         Grupo lcal=new Grupo(2,s,as, x,30);
         mm.agregarGrupo(lcal);
         FranjaHorario kk=new FranjaHorario( ho,"martes", lcal, as, new Time(10,0,0), new Time(11,30,0));
@@ -77,7 +76,8 @@ public class main {
         hi.setTema(tem);
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
-         hi.setId(mm.consultarMon().getId());
+        System.out.println(mm.consultarMon().getId());
+        hi.setId(mm.consultarMon().getId());
         mp.agregarMoni(2112076,tem.getId(),hi.getId());
         System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mp.loadMonitoria(hi.getId()));

@@ -22,12 +22,28 @@ public class Monitoria {
     private int idC;
     private int grupo;
     private String asignatura;
-    
-    public Monitoria(){
-        
+
+    public String getAsignatura() {
+        return asignatura;
     }
 
-    public Monitoria(int id, String ip, String observaciones, Date fecha,  Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo,String asignatura) {
+    public void setAsignatura(String asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, String asignatura) {
+        this.ip = ip;
+        this.observaciones = observaciones;
+        this.fecha = fecha;
+        this.tema = tema;
+        this.franjaHorario = franjaHorario;
+        this.profesor = profesor;
+        this.idC = idC;
+        this.grupo = grupo;
+        this.asignatura = asignatura;
+    }
+
+    public Monitoria(int id, String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, String asignatura) {
         this.id = id;
         this.ip = ip;
         this.observaciones = observaciones;
@@ -40,13 +56,16 @@ public class Monitoria {
         this.asignatura = asignatura;
     }
 
-    public String getAsignatura() {
-        return asignatura;
+    @Override
+    public String toString() {
+        return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + ", asignatura=" + asignatura + '}';
     }
+    
+    
+    
+    
 
-    public void setAsignatura(String asignatura) {
-        this.asignatura = asignatura;
-    }
+   
    
     public void setTema( Tema tema) {
         this.tema = tema;
@@ -124,22 +143,9 @@ public class Monitoria {
         this.grupo = grupo;
     }
 
-    @Override
-    public String toString() {
-        return "Monitoria{" + "id=" + id + ", ip=" + ip + ", observaciones=" + observaciones + ", fecha=" + fecha + ", tema=" + tema + ", franjaHorario=" + franjaHorario + ", profesor=" + profesor + ", idC=" + idC + ", grupo=" + grupo + ", asignatura=" + asignatura + '}';
+    public Monitoria() {
     }
-
-    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, String asignatura) {
-        this.ip = ip;
-        this.observaciones = observaciones;
-        this.fecha = fecha;
-        this.tema = tema;
-        this.franjaHorario = franjaHorario;
-        this.profesor = profesor;
-        this.idC = idC;
-        this.grupo = grupo;
-        this.asignatura = asignatura;
-    }
+    
     
 
     

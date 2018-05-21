@@ -40,7 +40,7 @@
         <result property='ip' column='ip' />
         <result property='observaciones' column='observaciones' />
         <result property='fecha' column='fecha'/>
-        <result property='grupo' column='id_asignatura'/>
+        <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
         <result property='idC' column='estudiante_id_carnet'/>
         <result property='asignatura' column='asignatura_id'/>
@@ -73,7 +73,7 @@
      </select>
      <select parameterType='map' id='consultarAsignatura' resultMap='AsignaturaResult'>
          select * from Asignatura
-         WHERE id_Asignatura=(select MAX(id_Asignatura) FROM Asignatura )
+         WHERE id_Asignatura=#{asig}
      </select>
      <select parameterType='map' id='consultarTema' resultMap='temaResult'>
          select * from Tema
@@ -92,11 +92,11 @@
          values (#{sem.periodo},#{sem.inicio},#{sem.fin})
      </insert>
      <insert id='agregarAsignatura'>
-         insert into Asignatura
+         insert into Asignatura(id_asignatura,nombre_Asig)
          values (#{asig.id},#{asig.nombre})
      </insert>
      <insert id='agregarGrupo'>
-         insert into Grupo
+         insert into Grupo(Semestre_periodo_Academico,Asignatura_id_Asignatura,profesor_id_Carnet,numero,matriculados)
          values (#{gru.semestre.periodo},#{gru.asignatura.id},#{gru.profesor.id},#{gru.numero},#{gru.matriculados})
      </insert>
      <insert id='agregarProfesor'>
