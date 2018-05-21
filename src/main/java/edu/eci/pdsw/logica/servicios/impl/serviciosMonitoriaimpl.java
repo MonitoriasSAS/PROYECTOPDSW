@@ -221,4 +221,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public List<Grupo> consultarGruposProfe(int id, String numasig) {
+        List<Grupo> x=new ArrayList<Grupo>();
+        try{
+            x=daoPro.consultarCursos(id, numasig);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }
