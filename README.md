@@ -91,6 +91,10 @@ En el proceso no se realizaron reuniones Daily Standup ya que el ambiente acadé
 
 Al momento de hacer la entrega con el Dueño del producto se tienen en cuenta los diferentes comentarios que se hacen, y se tienen como objetivo para futuros Sprints, finalmente se hace una reunión de retrospectiva con la que podemos sacar conclusiones de la temporada que ha pasado y así finalizar el ciclo con una retrospectiva, antes de empezar nuevamente con otro Sprint.
 
+## *Trello:*
 
+https://trello.com/b/PepJZUrX/2018-1-proypdsw-monitoriassas
+
+## *Sprint 1:*
 
  
