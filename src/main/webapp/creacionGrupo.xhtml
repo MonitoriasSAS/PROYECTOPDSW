@@ -12,13 +12,17 @@
         <h:form id="formu">
             <p:outputLabel value="Creación de un Nuevo Grupo" styleClass="inicio"/>
             <br/>
-            <p:inputText id="semestreGru" placeholder="Semestre" required="true" styleClass="user"/>
+            <p:inputText id="semestreGru" placeholder="Semestre" required="true" styleClass="user" value="#{beanAdmin.semestre}"/>
             <br/>
-            <p:inputText id="carnetProf" placeholder="Carnet Profesor" required="true" styleClass="user"/>
+            <p:inputText id="idGru" placeholder="Carnet Profesor" required="true" styleClass="user" value="#{beanAdmin.id}"/>
             <br/>
-            <p:inputText id="numeroGru" placeholder="Numero del Grupo" required="true" styleClass="user"/>
+            <p:inputText id="materiaGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.materia}"/>
             <br/>
-            <p:commandButton value="Crear" styleClass="myButton"/>
+            <p:inputText id="profesorGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.profesor}"/>
+            <br/>
+            <p:inputText id="matriculadosGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.matriculados}"/>
+            <br/>
+            <p:commandButton value="Crear" styleClass="myButton" value="#{beanAdmin.registrarGrupo()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionFranjaHorario.xhtml"/>
             <br/>
         </h:form>

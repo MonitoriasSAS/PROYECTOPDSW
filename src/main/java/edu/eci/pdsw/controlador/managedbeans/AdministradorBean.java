@@ -79,9 +79,6 @@ public class AdministradorBean implements Serializable {
     private String name;
 
     public AdministradorBean(){
-        this.periodo = periodo;
-        this.inicio = inicio;
-        this.fin = fin;
         this.monitor = monitor;
         this.profesor = profesor;
         this.materia = materia;
@@ -106,6 +103,7 @@ public class AdministradorBean implements Serializable {
         this.fi = fi;
         this.matriculados = matriculados;
         this.name = name;
+
     }
     
     public void registrarSemestre(){
@@ -117,7 +115,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarProfesor(){
-        moni.agregarProfesor(new Profesor(id,nombre,apellido,correo,telefono));
+        moni.agregarProfesor(new Profesor(carnet,nombre,apellido,correo,telefono));
     }
     
     public void registrarEstudiante(){
@@ -295,6 +293,15 @@ public class AdministradorBean implements Serializable {
         this.fi = fi;
     }
 
+   public int getCarnet(){
+       return carnet;
+   }
+   public void setCarnet(int carnet){
+       this.carnet=carnet;
+   }
+    
+    
+
     public Estudiante getEstudiante() {
         return estudiante;
     }
@@ -303,13 +310,6 @@ public class AdministradorBean implements Serializable {
         this.estudiante = estudiante;
     }
 
-    public int getCarnet() {
-        return carnet;
-    }
-
-    public void setCarnet(int carnet) {
-        this.carnet = carnet;
-    }
 
     public int getMatriculados() {
         return matriculados;
@@ -327,11 +327,6 @@ public class AdministradorBean implements Serializable {
         this.name = name;
     }
     
-    
-    
-    
-
-
    /**public ShiroLoginBean getSeguridad() {
     public serviciosMonitoria getMoni() {
         return moni;
