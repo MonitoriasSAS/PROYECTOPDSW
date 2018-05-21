@@ -32,4 +32,6 @@ public interface SemestreDAO {
     void agregarAsignatura(Asignatura asignatura);
     Asignatura consultarAsignatura(String asignatura);
     Profesor consultarProfe(int carnet);
+    Grupo consultarGrupo(int grupo,String asignatura);
+    Monitor consultarMonitor(int carnet);
 }

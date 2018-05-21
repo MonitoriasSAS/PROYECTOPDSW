@@ -70,4 +70,6 @@ public interface serviciosMonitoria {
    
     public Asignatura consultarAsignatura(String asignatura);
     public Profesor consultarProfe(int carnet);
+    Grupo consultarGrupo(int grupo,String asignatura);
+    Monitor consultarMonitor(int carnet);
 }

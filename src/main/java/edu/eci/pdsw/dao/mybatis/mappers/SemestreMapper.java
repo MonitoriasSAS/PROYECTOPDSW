@@ -35,4 +35,6 @@ public interface SemestreMapper{
     Tema consultarTema();
     Monitoria consultarMon();
     Profesor consultarProfe(@Param("idpro") int carnet);
+    Grupo consultarGrupo(@Param("numero")int numero,@Param("idasig") String asignatura);
+    Monitor consultarMonitor(@Param("numero")int carnet);
 }

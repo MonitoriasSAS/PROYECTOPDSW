@@ -116,4 +116,14 @@ public class SemestreDaoMyBatis implements SemestreDAO {
     public Profesor consultarProfe(int carnet) {
        return semestreMapper.consultarProfe(carnet);
     }
+
+    @Override
+    public Grupo consultarGrupo(int grupo, String asignatura) {
+        return semestreMapper.consultarGrupo(grupo, asignatura);
+    }
+
+    @Override
+    public Monitor consultarMonitor(int carnet) {
+        return semestreMapper.consultarMonitor(carnet);
+    }
 }
