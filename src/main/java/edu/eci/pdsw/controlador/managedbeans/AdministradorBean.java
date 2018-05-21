@@ -65,6 +65,7 @@ public class AdministradorBean implements Serializable {
     private Date inicio;
     private Date fin;
     private int id;
+    private String idAsignatura;
     private String nombre;
     private String apellido;
     private String correo;
@@ -111,7 +112,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarAsignatura(){
-        moni.agregarAsignatura(new Asignatura(id,nombre));
+        moni.agregarAsignatura(new Asignatura(idAsignatura,nombre));
     }
     
     public void registrarProfesor(){

@@ -34,8 +34,6 @@ import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 public class ProfesorBean implements Serializable {
     
     private serviciosMonitoria servicio = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
-    private Map<String,Grupo> grupos = new HashMap<>();
-    private Map<String,Monitoria> monitorias = new HashMap<>();
     private Grupo grupo;
     private Monitor monitor;
     private Profesor profesor;
@@ -82,49 +80,4 @@ public class ProfesorBean implements Serializable {
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getId());
     }
-    
-    public Map<String, Grupo> getGrupos() {
-        return grupos;
-    }
-
-    public Map<String, Monitoria> getMonitorias() {
-        return monitorias;
-    }
-    
-    public Grupo getGrupo() {
-        return grupo;
-    }
-   
-    public Monitor getMonitor() {
-        return monitor;
-    }
-    
-    public Monitoria getMonitoria() {
-        return monitoria;
-    }
-
-    public Asignatura getMateria() {
-        return materia;
-    }
-
-    public void setGrupo(int numero, Semestre semestre,Asignatura asignatura,Profesor profesor, int matriculados) {
-        this.grupo = new Grupo(numero,semestre,asignatura,profesor,matriculados);
-    }
-  
-    public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
-        this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
-    }
-
-    public void setMonitoria(Monitoria monitoria) {
-        this.monitoria = monitoria;
-    }
-
-    public void setMateria(int id, String nombre) {
-        this.materia = new Asignatura(id,nombre);
-    }
-     
-    public void informacion(){
-       
-    }
-    
 }

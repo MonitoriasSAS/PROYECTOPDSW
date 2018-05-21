@@ -49,7 +49,7 @@ public class EstudianteBean {
         this.profesor = new Profesor(id,nombre,apellido,correo,telefono);
     }
 
-     public void setMateria(int id, String nombre) {
+     public void setMateria(String id, String nombre) {
         this.materia = new Asignatura(id,nombre);
     }
 
