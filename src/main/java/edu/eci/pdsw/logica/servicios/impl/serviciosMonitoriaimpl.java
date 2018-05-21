@@ -185,13 +185,13 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public List<Float> consultarGrupos(int id, int numgrupo, String numasig) {
+    public List<Float> consultarGrupos(int id, String numasig) {
         List<Float> x= new ArrayList<Float>();
         try{
             Grupo g=new Grupo();
             List<Grupo> grupos=daoPro.consultarCursos(id, numasig);
             for (Grupo i: grupos){
-                x.add((float)daoPro.consultarEstudiantesGrupo(id, numgrupo, numasig).size()/daoPro.consultarTotalGrupo(id, numasig).size());
+                x.add((float)daoPro.consultarEstudiantesGrupo(id,i.getNumero(), numasig).size()/daoPro.consultarTotalGrupo(id, numasig).size());
             }
         } catch (PersistenceException ex){
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);

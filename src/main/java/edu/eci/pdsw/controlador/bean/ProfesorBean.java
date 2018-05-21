@@ -89,8 +89,8 @@ public class ProfesorBean implements Serializable {
          return servicio.consultarCursos(id, asig);
      }
      //tercera grafica
-     public List<Float> consultarGrupos(int id, int numgrupo, String numasig){
-         return servicio.consultarGrupos(id, numgrupo, numasig);
+     public List<Float> consultarGrupos(int id, String numasig){
+         return servicio.consultarGrupos(id,numasig);
      }
      //cuarta grafica
      public List<Float> consultrarTema(int id, int numgrupo, String numasig){
