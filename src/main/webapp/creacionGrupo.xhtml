@@ -14,15 +14,13 @@
             <br/>
             <p:inputText id="semestreGru" placeholder="Semestre" required="true" styleClass="user" value="#{beanAdmin.semestre}"/>
             <br/>
-            <p:inputText id="idGru" placeholder="Carnet Profesor" required="true" styleClass="user" value="#{beanAdmin.id}"/>
+            <p:inputText id="asignatura" placeholder="Asignatura id" required="true" styleClass="user" value="#{beanAdmin.idasignatura}"/>
             <br/>
-            <p:inputText id="materiaGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.materia}"/>
-            <br/>
-            <p:inputText id="profesorGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.profesor}"/>
+            <p:inputText id="profesorGru" placeholder="Carnet del Profesor" required="true" styleClass="user" value="#{beanAdmin.carnet}"/>
             <br/>
             <p:inputText id="matriculadosGru" placeholder="Numero del Grupo" required="true" styleClass="user" value="#{beanAdmin.matriculados}"/>
             <br/>
-            <p:commandButton value="Crear" styleClass="myButton" value="#{beanAdmin.registrarGrupo()}"/>
+            <p:commandButton value="Crear" styleClass="myButton" actionListener="#{beanAdmin.registrarGrupo()}"/>
             <p:button value="Siguiente Paso" styleClass="myButton" href="creacionFranjaHorario.xhtml"/>
             <br/>
         </h:form>
