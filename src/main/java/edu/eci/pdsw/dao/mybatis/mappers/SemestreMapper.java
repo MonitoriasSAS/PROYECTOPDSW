@@ -31,10 +31,11 @@ public interface SemestreMapper{
     void agregarTema(@Param("tem") Tema tema);
     void agregarEstudiante(@Param("estu") Estudiante estudiante);
     Asignatura consultarAsignatura(@Param("asig")String asignatura);
-    FranjaHorario consultarFranja();
+    FranjaHorario consultarFranja(@Param("franja")String franja);
     Tema consultarTema();
     Monitoria consultarMon();
     Profesor consultarProfe(@Param("idpro") int carnet);
     Grupo consultarGrupo(@Param("numero")int numero,@Param("idasig") String asignatura);
     Monitor consultarMonitor(@Param("numero")int carnet);
+    Tema consultarTema(@Param("idtema") String id);
 }

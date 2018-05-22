@@ -72,4 +72,5 @@ public interface serviciosMonitoria {
     public Profesor consultarProfe(int carnet);
     Grupo consultarGrupo(int grupo,String asignatura);
     Monitor consultarMonitor(int carnet);
+    Tema consultarTema(String id);
 }

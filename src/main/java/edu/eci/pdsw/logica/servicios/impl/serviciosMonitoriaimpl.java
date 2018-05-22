@@ -276,4 +276,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public Tema consultarTema(String id) {
+        Tema x=null;
+        try{
+            x=daoSemestre.consultarTema(id);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }
