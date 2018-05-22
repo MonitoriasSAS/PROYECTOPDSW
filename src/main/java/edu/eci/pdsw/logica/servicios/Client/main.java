@@ -75,16 +75,15 @@ public class main {
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         System.out.println(mm.Consultarsemestre("2012-7"));
-        System.out.println(hi.getIdC()+"----"+kk.getMonitor().getId());
         System.out.println(mp.loadMonitoria(hi.getIdC()));
-        /*System.out.println(pm.consultarMonitorias(as.getId()));
+        System.out.println(pm.consultarMonitorias(as.getId()));
         System.out.println(pm.consultarTotalMonitorias(2112107, as.getId()));
         System.out.println(pm.consultarCursos(2112107, as.getId()));
         System.out.println(pm.consulatarEstudiatesCursos(2112107, 2,as.getId()).getMatriculados());
         System.out.println(pm.consultarMonitoriasCursos(2112107, 2,as.getId()));
         System.out.println(pm.consultarEstudiantesGrupo(2112107, 2,as.getId()));
         System.out.println(pm.consultarTotalGrupo(2112107, as.getId()));
-        System.out.println(pm.consultarTema(as.getId()));
+        /*System.out.println(pm.consultarTema(as.getId()));
         System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); */
         System.exit(0);
     }

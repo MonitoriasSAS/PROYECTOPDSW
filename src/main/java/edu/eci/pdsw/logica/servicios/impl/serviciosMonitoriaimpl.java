@@ -200,7 +200,7 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public List<Float> consultrarTema(int id, int numgrupo, String numasig) {
+    public List<Float> consultrarTema(int id, String numasig) {
         List<Float> x= new ArrayList<Float>();
         try{
             List<Tema> temas=daoPro.consultarTema(numasig);
