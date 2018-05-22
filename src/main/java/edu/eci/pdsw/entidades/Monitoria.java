@@ -46,7 +46,7 @@ public class Monitoria {
         this.tema = tema;
         this.profesor = profesor;
         this.idC = idC;
-        this.monitor=monitor;
+        this.monitor=Monitor;
         this.grupo = grupo;
         this.asignatura = asignatura;
     }

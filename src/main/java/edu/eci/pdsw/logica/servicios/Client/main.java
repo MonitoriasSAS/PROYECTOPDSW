@@ -71,10 +71,10 @@ public class main {
         Tema tem = new Tema("Grafos","el kompayaso",as);
         mm.agregarTema(tem);
         Monitoria hi=new Monitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,"tato", 2112076,2112107,2,as.getId());
-        hi.setTema(tem);
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         System.out.println(mm.Consultarsemestre("2012-7"));
+        System.out.println(mm.consultarGrupo(2,"ll1l"));
         System.out.println(mp.loadMonitoria(hi.getMonitor()));
         System.out.println(pm.consultarMonitorias(as.getId()));
         System.out.println(pm.consultarTotalMonitorias(2112107, as.getId()));

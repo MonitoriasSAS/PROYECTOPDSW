@@ -53,11 +53,11 @@
      </select> 
      <select parameterType='map' id='consultarInformacion' resultMap='monitoriaResult'>
          SELECT * from Franja_Horario,Monitoria,Grupo,Monitor
-         where #{idpro}=Monitoria.monitor_id_carnet and Monitor.id_Carnet=Monitoria.estudiante_id_carnet <!--and monitor.id_Carnet=Franja_Horario.monitor_id_carnet --> 
+         where #{idpro}=Monitoria.monitor_id_carnet and Franja_Horario.monitor_id_carnet=#{idpro} and Grupo.numero=Grupo_numero and asignatura_id_asignatura=Grupo_asignatura_id_asignatura and monitor.id_Carnet=Franja_Horario.monitor_id_carnet --> 
      </select>
      <insert id='agregarMonitoria'>
          insert into Monitoria(ip,observaciones,monitor_id_carnet,fecha,profesor,estudiante_id_carnet,grupo,id_asignatura,temaid)
-         values(#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.monitor.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo},#{mon.asignatura},#{mon.tema.id})
+         values(#{mon.ip},#{mon.observaciones},#{mon.monitor},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo},#{mon.asignatura},#{mon.tema.id})
      </insert>
      <insert id='agregarMoni'>
          insert into Asistencia 
