@@ -75,13 +75,17 @@
          FROM Semestre
          WHERE #{id}=periodo_Academico 
      </select>
+     <select parameterType='map' id='consultarTema' resultMap='temaResult'>
+         select * from Tema
+         where #{idtema}=TemaID
+     </select>
      <select parameterType='map' id='consultarProfe' resultMap='profesorResult'>
          select * from Profesor
          WHERE id_carnet=#{idpro}
      </select>
      <select parameterType='map' id='consultarMonitor' resultMap='monitorResult'>
          select * from Monitor
-         WHERE id_Carnet=#{carnet}
+         WHERE id_Carnet=#{numero}
      </select>
      <select parameterType='map' id='consultarGrupo' resultMap='grupoResult'>
          select * from grupo 

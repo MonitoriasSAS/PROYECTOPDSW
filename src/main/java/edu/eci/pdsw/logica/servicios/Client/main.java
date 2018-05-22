@@ -70,7 +70,7 @@ public class main {
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema("Grafos","el kompayaso",as);
         mm.agregarTema(tem);
-        Monitoria hi=new Monitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,kk,  "tato", 2112076,2,as.getId());
+        Monitoria hi=new Monitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,"tato", 2112076,2,as.getId());
         hi.setTema(tem);
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);

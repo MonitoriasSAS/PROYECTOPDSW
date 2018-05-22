@@ -74,8 +74,8 @@ public class AdministradorBean implements Serializable {
     private int ingreso;
     private int dia;
     private String d;
-    private Time ini;
-    private Time fi;
+    private Date ini;
+    private Date fi;
     private int numero;
     private int matriculados;
     private String name;
@@ -153,7 +153,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void agregarFranja(){
-        moni.agregarFranjaHorario(new FranjaHorario(moni.consultarMonitor(carnet),d,moni.consultarGrupo(numero, idAsignatura),moni.consultarAsignatura(idAsignatura),ini,fi));
+        moni.agregarFranjaHorario(new FranjaHorario(moni.consultarMonitor(carnet),d,moni.consultarGrupo(numero, idAsignatura),moni.consultarAsignatura(idAsignatura),new Time(ini.getTime()),new Time(fi.getTime())));
     }
     
     public void agregarTema(){
@@ -299,19 +299,19 @@ public class AdministradorBean implements Serializable {
         this.d = d;
     }
 
-    public Time getIni() {
+    public Date getIni() {
         return ini;
     }
 
-    public void setIni(Time ini) {
+    public void setIni(Date ini) {
         this.ini = ini;
     }
 
-    public Time getFi() {
+    public Date getFi() {
         return fi;
     }
 
-    public void setFi(Time fi) {
+    public void setFi(Date fi) {
         this.fi = fi;
     }
 

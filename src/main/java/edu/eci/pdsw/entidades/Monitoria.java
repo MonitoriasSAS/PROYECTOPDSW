@@ -30,6 +30,17 @@ public class Monitoria {
         this.asignatura = asignatura;
     }
 
+    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, String profesor, int idC, int grupo, String asignatura) {
+        this.ip = ip;
+        this.observaciones = observaciones;
+        this.fecha = fecha;
+        this.tema = tema;
+        this.profesor = profesor;
+        this.idC = idC;
+        this.grupo = grupo;
+        this.asignatura = asignatura;
+    }
+    
     public Monitoria(String ip, String observaciones, Date fecha, Tema tema, FranjaHorario franjaHorario, String profesor, int idC, int grupo, String asignatura) {
         this.ip = ip;
         this.observaciones = observaciones;

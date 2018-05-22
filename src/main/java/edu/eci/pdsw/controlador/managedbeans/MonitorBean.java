@@ -38,7 +38,7 @@ import javax.servlet.http.HttpServletRequest;
 @SessionScoped
 
 public class MonitorBean implements Serializable{
-    @ManagedProperty(value = "#{loginBean}")
+    //@ManagedProperty(value = "#{loginBean}")
     //private ShiroLoginBean seguridad;
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
@@ -75,7 +75,7 @@ public class MonitorBean implements Serializable{
         fecha = new Date();
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         String ip = request.getHeader("X-FORWARDED-FOR");
-        moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,tema,horario,pro, idc, gru,mate), t);
+        moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,tema,pro,idEstudiante, gru,mate), t);
     }
     
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
