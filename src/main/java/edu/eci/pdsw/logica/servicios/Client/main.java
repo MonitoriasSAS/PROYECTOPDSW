@@ -76,7 +76,8 @@ public class main {
         hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         System.out.println(mm.Consultarsemestre("2012-7"));
-        /*System.out.println(mp.loadMonitoria(hi.getIdC()));
+        System.out.println(mp.loadMonitoria(hi.getIdC()));
+        /*
         System.out.println(pm.consultarMonitorias(as.getId()));
         System.out.println(pm.consultarTotalMonitorias(2112107, as.getId()));
         System.out.println(pm.consultarCursos(2112107, as.getId()));
