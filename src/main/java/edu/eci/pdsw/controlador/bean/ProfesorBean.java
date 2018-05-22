@@ -190,7 +190,7 @@ public class ProfesorBean implements Serializable {
          return servicio.consultarGruposProfe(id, numasig);
      }
    
-    public void consultaGeneral(int id,String asi) {
+    public void consultaGeneral(int id,String asig) {
         this.consultarCursos(id, asig);
         this.consultarGrupos(id, asig);
         this.consultarMonitorias(id, asig);
