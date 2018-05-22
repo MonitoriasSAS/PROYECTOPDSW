@@ -24,7 +24,7 @@
         <result property='dia' column='dia' />
         <result property='inicio' column='inicio' />
         <result property='fin' column='fin' />
-        <association property='Monitor' javaType='Monitor'  resultMap='monitorResult'/>
+        <association property='monitor' javaType='Monitor'  resultMap='monitorResult'/>
      </resultMap>
      <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
@@ -44,7 +44,7 @@
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
         SELECT * FROM Monitoria,Tema,Franja_Horario,Monitor
-        WHERE Monitoria.estudiante_id_carnet=#{idmo} and Monitoria.estudiante_id_carnet=Franja_Horario.monitor_id_carnet and monitoria.temaid=Tema.temaID and id_Carnet=Franja_Horario.monitor_id_carnet 
+        WHERE Monitoria.estudiante_id_carnet=#{idmo} and Monitoria.estudiante_id_carnet=Franja_Horario.monitor_id_carnet<!-- and monitoria.temaid=Tema.temaID and id_Carnet=Franja_Horario.monitor_id_carnet-->
      </select> 
      <select parameterType='map' id='loadFranja' resultMap='franjaResult'>
         SELECT * Monitor
