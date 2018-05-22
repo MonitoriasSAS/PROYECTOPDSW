@@ -23,7 +23,7 @@ import javax.faces.bean.SessionScoped;
  *
  * @author MonitoriasSAS
  */
-/**
+
 @ManagedBean(name = "loginBean", eager = true)
 @SessionScoped
 public class ShiroLoginBean implements Serializable {
@@ -102,4 +102,3 @@ public class ShiroLoginBean implements Serializable {
         this.password = senha;
     }
 }
-*/
