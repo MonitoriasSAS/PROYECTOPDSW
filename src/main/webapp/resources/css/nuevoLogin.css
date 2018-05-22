@@ -44,13 +44,13 @@
     transition: all .5s ease;
 }
 .user:focus,.pass:focus{
-    border-bottom: 4px solid #0075d9;
+    border-bottom: 4px solid #008080;
 }
 .myButton{
-    background: #ff851b;
+    background: #008080;
     color: #fff;
     border: none;
-    width: 100%;
+    width: 50%;
     padding: 10px 0;
     font-weight: normal;
     letter-spacing: 1px;
