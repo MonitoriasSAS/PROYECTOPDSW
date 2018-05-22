@@ -58,7 +58,6 @@ public class main {
         Semestre s=new Semestre("2012-7", new Date(2012,1,23), new Date(2012,5,25));
         mm.agregarSemestre(s);
         Profesor x=new Profesor(2112107, "tato", "apellido", "mail@mail.escuelaing.edu.co",8018546);
-        
         mm.agregarProfesor(x);
         Monitor ho=new Monitor(2112107,"nombre"," apellido", 70172, "sistemas",2012);
         mm.agregarMonitor(ho);
@@ -77,7 +76,6 @@ public class main {
         mp.agregarMonitoria(hi);
         System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mp.loadMonitoria(hi.getIdC()));
-        /*
         System.out.println(pm.consultarMonitorias(as.getId()));
         System.out.println(pm.consultarTotalMonitorias(2112107, as.getId()));
         System.out.println(pm.consultarCursos(2112107, as.getId()));
@@ -85,7 +83,7 @@ public class main {
         System.out.println(pm.consultarMonitoriasCursos(2112107, 2,as.getId()));
         System.out.println(pm.consultarEstudiantesGrupo(2112107, 2,as.getId()));
         System.out.println(pm.consultarTotalGrupo(2112107, as.getId()));
-        System.out.println(pm.consultarTema(as.getId()));
+        /*System.out.println(pm.consultarTema(as.getId()));
         System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); */
         System.exit(0);
     }

@@ -44,8 +44,7 @@
      </resultMap>
      <select parameterType='map' id='loadMonitoria' resultMap='monitoriaResult'>
         SELECT * FROM Monitoria,Tema,Franja_Horario,Monitor
-        WHERE Monitoria.estudiante_id_carnet=#{idmo} and monitoria.temaid=Tema.temaid and monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
-     
+        WHERE Monitoria.estudiante_id_carnet=#{idmo} and monitoria.temaid=Tema.temaid and monitor.id_Carnet=Franja_Horario.monitor_id_carnet
      </select>
      <select parameterType='map' id='loadFranja' resultMap='franjaResult'>
         SELECT * Monitor

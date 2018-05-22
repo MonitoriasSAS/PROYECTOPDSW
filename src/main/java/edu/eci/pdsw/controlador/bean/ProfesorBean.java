@@ -189,7 +189,14 @@ public class ProfesorBean implements Serializable {
      public List<Grupo> consultarGruposProfe(int id, String numasig){
          return servicio.consultarGruposProfe(id, numasig);
      }
-
+   
+    public void consultaGeneral(int id,String asi) {
+        this.consultarCursos(id, asig);
+        this.consultarGrupos(id, asig);
+        this.consultarMonitorias(id, asig);
+        this.consultrarTema(id, asig);
+    }
+     
     public int getId() {
         return id;
     }
@@ -229,6 +236,5 @@ public class ProfesorBean implements Serializable {
     public void setNumasig(String numasig) {
         this.numasig = numasig;
     }
-     
-     
+       
 }
