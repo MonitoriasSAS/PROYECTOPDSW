@@ -153,7 +153,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void agregarFranja(){
-        moni.agregarFranjaHorario(new FranjaHorario(moni.consultarMonitor(carnet),d,moni.consultarGrupo(numero, idAsignatura),materia,ini,fi));
+        moni.agregarFranjaHorario(new FranjaHorario(moni.consultarMonitor(carnet),d,moni.consultarGrupo(numero, idAsignatura),moni.consultarAsignatura(idAsignatura),ini,fi));
     }
     
     public void agregarTema(){
