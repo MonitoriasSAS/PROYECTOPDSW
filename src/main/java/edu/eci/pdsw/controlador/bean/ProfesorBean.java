@@ -106,7 +106,7 @@ public class ProfesorBean implements Serializable {
     public void setMateria(Asignatura materia) {
         this.materia = materia;
     }
-
+    
     public PieChartModel getPieModel1() {
         return pieModel1;
     }
@@ -114,7 +114,6 @@ public class ProfesorBean implements Serializable {
     public void setPieModel1(PieChartModel pieModel1) {
         this.pieModel1 = pieModel1;
     }
-
     
     public float getProcentajeAsis() {
         return procentajeAsis;
@@ -152,7 +151,7 @@ public class ProfesorBean implements Serializable {
         String mon = monitor.getNombre()+" "+monitor.getApellido();
         servicio.consulatarMonitoria(monitoria.getIdC());
     }
-
+    
     @PostConstruct
     public void init() {
         createPieModels();
@@ -163,18 +162,13 @@ public class ProfesorBean implements Serializable {
     private void createPieModel1() {
         pieModel1 = new PieChartModel();
          
-        pieModel1.set("Asistentes mi Grupo", servicio.consultarMonitorias(profesor.getId(), materia.getId()));
-        pieModel1.set("Asistentes que no son de mi Grupo", 1-servicio.consultarMonitorias(profesor.getId(), materia.getId()));
+        pieModel1.set("Asistentes mi Grupo",1);
+        pieModel1.set("Asistentes que no son de mi Grupo", 1);
          
         pieModel1.setTitle("Asistencia a las Monitorias");
         pieModel1.setLegendPosition("w");
     }
-    public void itemSelect(ItemSelectEvent event) {
-        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Item selected",
-                        "Item Index: " + event.getItemIndex() + ", Series Index:" + event.getSeriesIndex());
-         
-        FacesContext.getCurrentInstance().addMessage(null, msg);
-    }
+
     //primera grafica
     public float consultarMonitorias(int id,String asi){
         return servicio.consultarMonitorias(id, asi);
