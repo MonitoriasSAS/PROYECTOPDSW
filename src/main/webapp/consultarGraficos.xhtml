@@ -13,11 +13,10 @@
             <p:outputLabel value="Consultar Graficos" styleClass="inicio"/>
             <br/>
             <p:inputText id="idprofff" placeholder="Carnet" required="true" styleClass="user" value="#{bpr.id}"/>
-            
             <br/>
-            <p:inputText id="nombreAsigiii" placeholder="Nombre Asignatura" required="true" styleClass="user" value=""/>
+            <p:inputText id="nombreAsigiii" placeholder="Nombre Asignatura" required="true" styleClass="user" value="#{bpr.asig}"/>
             <br/>
-            <p:commandButton value="Consultar" styleClass="myButton"/>
+            <p:commandButton value="Consultar" styleClass="myButton" actionListener="#{bpr.consultarMonitorias()}"/>
             <p:button value="Ver Graficas" styleClass="myButton" href="graficas.xhtml"/>
             <br/>
         </h:form>

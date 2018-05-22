@@ -38,7 +38,7 @@ import javax.servlet.http.HttpServletRequest;
 @SessionScoped
 
 public class MonitorBean implements Serializable{
-    @ManagedProperty(value = "#{loginBean}")
+    //@ManagedProperty(value = "#{loginBean}")
     //private ShiroLoginBean seguridad;
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();

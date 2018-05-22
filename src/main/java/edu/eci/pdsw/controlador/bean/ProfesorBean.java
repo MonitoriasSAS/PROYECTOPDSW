@@ -171,7 +171,7 @@ public class ProfesorBean implements Serializable {
 
     //primera grafica
     public float consultarMonitorias(){
-        return servicio.consultarMonitorias(id, asi);
+        return servicio.consultarMonitorias(id, asig);
     }
     //segunda grafica
      public List<Float> consultarCursos(){
@@ -179,15 +179,15 @@ public class ProfesorBean implements Serializable {
      }
      //tercera grafica
      public List<Float> consultarGrupos(){
-         return servicio.consultarGrupos(id,numasig);
+         return servicio.consultarGrupos(id,asig);
      }
      //cuarta grafica
      public List<Float> consultrarTema(){
-         return servicio.consultrarTema(id, numasig);
+         return servicio.consultrarTema(id, asig);
      }
      //gupos del profe 
      public List<Grupo> consultarGruposProfe(){
-         return servicio.consultarGruposProfe(id, numasig);
+         return servicio.consultarGruposProfe(id, asig);
      }
    
     /**public void consultaGeneral(int id,String asig) {
