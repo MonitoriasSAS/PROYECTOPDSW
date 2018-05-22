@@ -170,32 +170,32 @@ public class ProfesorBean implements Serializable {
     }
 
     //primera grafica
-    public float consultarMonitorias(int id,String asi){
+    public float consultarMonitorias(){
         return servicio.consultarMonitorias(id, asi);
     }
     //segunda grafica
-     public List<Float> consultarCursos(int id, String asig){
+     public List<Float> consultarCursos(){
          return servicio.consultarCursos(id, asig);
      }
      //tercera grafica
-     public List<Float> consultarGrupos(int id, String numasig){
+     public List<Float> consultarGrupos(){
          return servicio.consultarGrupos(id,numasig);
      }
      //cuarta grafica
-     public List<Float> consultrarTema(int id, String numasig){
+     public List<Float> consultrarTema(){
          return servicio.consultrarTema(id, numasig);
      }
      //gupos del profe 
-     public List<Grupo> consultarGruposProfe(int id, String numasig){
+     public List<Grupo> consultarGruposProfe(){
          return servicio.consultarGruposProfe(id, numasig);
      }
    
-    public void consultaGeneral(int id,String asig) {
+    /**public void consultaGeneral(int id,String asig) {
         porcentajesCurso=this.consultarCursos(id, asig);
         porcentajesGrupo=this.consultarGrupos(id, asig);
         procentajeAsis=this.consultarMonitorias(id, asig);
         porcentajesTema=this.consultrarTema(id, asig);
-    }
+    }*/
      
     public int getId() {
         return id;
