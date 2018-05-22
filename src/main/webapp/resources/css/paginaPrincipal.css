@@ -12,7 +12,7 @@ img{
     max-width: 100%;
 }
 body{
-    background: url(../Imagenes/tierra.jpg);
+    background: url(../Imagenes/fondo.jpg);
     background-size: cover;
     background-size: cover;
     background-attachment: fixed;
@@ -32,14 +32,14 @@ h1,h2,h3,h4,h5,h6{
 }
 .logo,.icon-menu{
     margin:5px;
-    color: #fff;
+    color: #008080;
 }
 .icon-menu{
     display: block;
     width: 40px;
     height: 40px;
     font-size: 30px;
-    background: #ff851b;
+    background: #008080;
     text-align: center;
     line-height: 40px;
     border-radius: 5px;
@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h6{
     cursor:pointer;
 }
 .icon-menu:hover{
-    background: #0075d9;
+    background: #D3D3D3;
     color: #fff;
 }
 .nav{
@@ -65,12 +65,12 @@ h1,h2,h3,h4,h5,h6{
 .menu-link{
     display: block;
     padding: 20px;
-    background: #ff851b;
+    background: #A9A9A9;
     text-decoration: none;
     color: #fff;
 }
 .menu-link:hover{
-    background: #0075d9;
+    background: #D3D3D3;
     color: #fff;
 }
 .mostrar{
@@ -79,6 +79,6 @@ h1,h2,h3,h4,h5,h6{
 .banner .contenedor{
     margin-top: 430px;
     width: 100%;
-    color: #fff;
+    color: #008080;
     text-align: center;
 }
