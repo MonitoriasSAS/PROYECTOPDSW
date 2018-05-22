@@ -298,4 +298,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public List<Monitoria> consultarAsistentes(int id) {
+        List<Monitoria> x=null;
+        try{
+            x=daoPro.consultarAsistentes(id);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }
