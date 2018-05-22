@@ -16,6 +16,7 @@ import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import java.util.Date;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  *
@@ -74,4 +75,5 @@ public interface serviciosMonitoria {
     Monitor consultarMonitor(int carnet);
     Tema consultarTema(String id);
     public List<FranjaHorario> consultarInformacion(int id);
+    public List<Monitoria> consultarAsistentes(@Param("idpro")int id);
 }

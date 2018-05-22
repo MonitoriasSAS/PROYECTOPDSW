@@ -80,4 +80,9 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     public List<Tema> consultarTema(String asi) {
        return profesorMapper.consultarTema(asi);
     }
+
+    @Override
+    public List<Monitoria> consultarAsistentes(int id) {
+        return profesorMapper.consultarAsistentes(id);
+    }
 }
