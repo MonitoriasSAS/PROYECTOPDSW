@@ -19,4 +19,5 @@ public interface MonitoriaDAO {
     public void agregarMonitoria(Monitoria monitoria,String tema) ;
     public Monitoria consultarMonitoria(int id) ;
     public List<FranjaHorario> consultarInformacion(int id);
+    public List<Monitoria> consultarMonitoriasMon(int id);
 }

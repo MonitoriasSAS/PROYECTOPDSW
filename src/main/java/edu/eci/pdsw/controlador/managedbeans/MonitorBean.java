@@ -86,6 +86,10 @@ public class MonitorBean implements Serializable{
         moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,moni.consultarTema(t),pro,idEstudiante,idMonitor, gru,mate), t);
     }
     
+    public List<Monitoria>consultarMonitorias(){
+        
+        return this.moni.consultarMonitoriasMon(2110541);
+    }
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
     }

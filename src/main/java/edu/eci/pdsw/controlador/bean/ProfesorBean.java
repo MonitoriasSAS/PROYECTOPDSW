@@ -52,6 +52,7 @@ public class ProfesorBean implements Serializable {
     private int numgrupo;
     private String numasig;
     private PieChartModel pieModel1;
+    private List<Monitoria> monitorias;
     
     public ProfesorBean(){
         this.pieModel1=pieModel1;
@@ -168,7 +169,11 @@ public class ProfesorBean implements Serializable {
         pieModel1.setTitle("Asistencia a las Monitorias");
         pieModel1.setLegendPosition("w");
     }
-
+    //pruba asesoria de sus monitores
+    
+    public List<Monitoria>consultarAsesoriaMonitores(){
+       return servicio.consultarAsistentes(12345);
+    }
     //primera grafica
     public float consultarMonitorias(){
         return servicio.consultarMonitorias(id, asig);

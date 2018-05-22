@@ -38,6 +38,15 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
             throw new PersistenceException("Error al consultar monitorias:"+e.getLocalizedMessage(), e);
         }
     }
+    @Override
+    public List<Monitoria> consultarMonitoriasMon(int id) {
+        try {
+            List <Monitoria> monitoria = monmap.consultarMonitoriasMon(id);
+            return monitoria;
+        }catch (Exception e){
+            throw new PersistenceException("Error al consultar monitorias:"+e.getLocalizedMessage(), e);
+        }
+    }
 
     @Override
     public void agregarMonitoria(Monitoria monitor,String tema) {

@@ -76,4 +76,5 @@ public interface serviciosMonitoria {
     Tema consultarTema(String id);
     public List<FranjaHorario> consultarInformacion(int id);
     public List<Monitoria> consultarAsistentes(@Param("idpro")int id);
+    public List<Monitoria> consultarMonitoriasMon(@Param("idmon")int id);
 }

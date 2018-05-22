@@ -25,4 +25,5 @@ public interface MonitoriaMapper{
             @Param("tem") int tema);
     public Monitor loadFranja(@Param("idmon") int id);
     public List<FranjaHorario> consultarInformacion(@Param("idpro") int id);
+    public List<Monitoria> consultarMonitoriasMon(int id);
 }
