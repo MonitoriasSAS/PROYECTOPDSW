@@ -97,3 +97,6 @@ Al momento de hacer la entrega con el Dueño del producto se tienen en cuenta lo
 https://trello.com/b/PepJZUrX/2018-1-proypdsw-monitoriassas
 
 ## *Sprint 1:*
+
+***Descripción del Sprint:***
+El primer sprint concluyó de una manera adecuada, durante este tiempo se elaboró la estructura necesaria para el proyecto, además se logró tener un producto entregable para la fecha acordada, sin embargo, los últimos días antes de la entrega tuvimos un trabajo que excedió lo que habíamos planeado, ya que tuvimos grandes cambios en la estructura de la plataforma. En general tuvimos un buen desempeño donde todo el equipo trabajó constantemente y con un punto de vista de entregar un buen producto; la comunicación fue clave en este aspecto para lograr mezclar las cuatro ramas en un gran proyecto.
