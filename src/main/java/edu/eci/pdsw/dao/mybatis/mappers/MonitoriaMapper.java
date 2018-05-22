@@ -6,8 +6,10 @@
 package edu.eci.pdsw.dao.mybatis.mappers;
 
 
+import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Monitoria;
 import edu.eci.pdsw.entidades.Monitor;
+import java.util.List;
 
 
 import org.apache.ibatis.annotations.Param;
@@ -22,4 +24,5 @@ public interface MonitoriaMapper{
             @Param("asig")int tem,
             @Param("tem") int tema);
     public Monitor loadFranja(@Param("idmon") int id);
+    public List<FranjaHorario> consultarInformacion(@Param("idpro") int id);
 }

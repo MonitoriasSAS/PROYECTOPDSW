@@ -287,4 +287,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public List<FranjaHorario> consultarInformacion(int id) {
+        List<FranjaHorario> x=null;
+        try{
+            x=daoMon.consultarInformacion(id);
+        } catch (PersistenceException ex){
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return x;
+    }
 }

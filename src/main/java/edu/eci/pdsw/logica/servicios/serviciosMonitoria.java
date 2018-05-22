@@ -73,4 +73,5 @@ public interface serviciosMonitoria {
     Grupo consultarGrupo(int grupo,String asignatura);
     Monitor consultarMonitor(int carnet);
     Tema consultarTema(String id);
+    public List<FranjaHorario> consultarInformacion(int id);
 }
