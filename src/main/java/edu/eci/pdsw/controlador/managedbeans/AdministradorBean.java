@@ -111,6 +111,14 @@ public class AdministradorBean implements Serializable {
         this.idasignatura=idasignatura;
         this.numero=numero;
     }
+
+    public String getIdtema() {
+        return idtema;
+    }
+
+    public void setIdtema(String idtema) {
+        this.idtema = idtema;
+    }
     
     public void registrarSemestre(){
         moni.agregarSemestre(new Semestre(periodo,inicio,fin));
@@ -149,7 +157,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void agregarTema(){
-        moni.agregarTema(new Tema(idtema,name,moni.consultarAsignatura(idAsignatura)));
+        moni.agregarTema(new Tema(idtema,name,moni.consultarAsignatura(idasignatura)));
     }
     
     public String getPeriodo() {

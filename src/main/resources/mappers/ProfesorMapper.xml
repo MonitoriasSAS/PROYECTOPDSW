@@ -39,7 +39,7 @@
      </resultMap>
       <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
-         <result property='name' column='name'/>
+         <result property='name' column='nombre'/>
      </resultMap>
      <resultMap type= 'Monitoria' id='monitoriaResult'>
         <id property='idC' column='estudiante_id_carnet'/>
@@ -85,7 +85,7 @@
          WHERE #{idasi}=Asignatura_id_Asignatura
      </select>
      <select parameterType='map' id='consultarTemaMonitoria' resultMap='monitoriaResult'>
-         SELECT * FROM Monitoria,Franja_Horario,Grupo,Asistencia
-         Where  #{idpro}=Profesor_id_Carnet and  Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura and id_Franja=Franja_id and id_Mon=Asistencia.monitoriaid and Asistencia.TemaID=#{idtema}
+         SELECT * FROM Monitoria,Franja_Horario,Grupo,Monitor
+         Where  #{idpro}=Profesor_id_Carnet and  Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura  and Temaid=#{idtema} and monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
      </select>
  </mapper>

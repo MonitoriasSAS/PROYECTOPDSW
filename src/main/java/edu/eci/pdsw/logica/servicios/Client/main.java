@@ -83,8 +83,8 @@ public class main {
         System.out.println(pm.consultarMonitoriasCursos(2112107, 2,as.getId()));
         System.out.println(pm.consultarEstudiantesGrupo(2112107, 2,as.getId()));
         System.out.println(pm.consultarTotalGrupo(2112107, as.getId()));
-        /*System.out.println(pm.consultarTema(as.getId()));
-        System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); */
+        System.out.println(pm.consultarTema(as.getId()));
+        System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); 
         System.exit(0);
     }
     
