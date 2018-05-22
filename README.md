@@ -52,6 +52,7 @@ Arquitectura y Diseño Detallado:
  ![](img/diagrama.png)
      
 ## *Diagrama de Clases:*  
+ ![](img/diagramaclases.PNG)
 
 ## *Arquitectura:*
 La plataforma de gestión a servicios de Monitorias Académicas divide su funcionamiento en cuatro capas:
@@ -96,5 +97,3 @@ Al momento de hacer la entrega con el Dueño del producto se tienen en cuenta lo
 https://trello.com/b/PepJZUrX/2018-1-proypdsw-monitoriassas
 
 ## *Sprint 1:*
-
- 
