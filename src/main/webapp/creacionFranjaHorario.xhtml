@@ -21,12 +21,12 @@
             <p:inputText id="dia" placeholder="Dia" required="true" styleClass="user" value="#{beanAdmin.d}"/>
                 <p:growl id="msg1" showDetail="true" />
                 <h:panelGrid columns="2" cellpadding="5">
-                    <p:outputLabel for="time" value="Time:" />
+                    <p:outputLabel for="time" value="Hora Inicial: " style="color:white" />
                     <p:calendar id="time" value="#{beanAdmin.ini}" pattern="HH:mm" timeOnly="true"  />
                 </h:panelGrid>
                     <p:growl id="msg2" showDetail="true" />
                 <h:panelGrid columns="2" cellpadding="5">
-                    <p:outputLabel for="time" value="Time:" />
+                    <p:outputLabel for="time" value="Hora Final: " style="color:white" />
                     <p:calendar id="time2" value="#{beanAdmin.fi}" pattern="HH:mm" timeOnly="true"  />
                 </h:panelGrid>
             <h:panelGrid columns="2" cellpadding="5">

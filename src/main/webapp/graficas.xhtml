@@ -12,9 +12,7 @@
             <p:growl id="growl" showDetail="true" />
 
             <h:panelGrid columns="2" columnClasses="left,right" style="width:100%">
-                <p:chart type="pie" model="#{bpr.pieModel1}" style="width:400px;height:300px">
-                    <p:ajax event="itemSelect" listener="#{bpr.itemSelect}" update="growl" />
-                </p:chart> 
+                <p:chart type="pie" model="#{bpr.pieModel1}" style="width:400px;height:300px"></p:chart> 
             </h:panelGrid>
         </h:form>
     </h:body>
