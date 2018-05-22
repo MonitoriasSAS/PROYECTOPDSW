@@ -190,11 +190,11 @@ public class ProfesorBean implements Serializable {
          return servicio.consultarGruposProfe(id, numasig);
      }
    
-    public void consultaGeneral(int id,String asi) {
-        this.consultarCursos(id, asig);
-        this.consultarGrupos(id, asig);
-        this.consultarMonitorias(id, asig);
-        this.consultrarTema(id, asig);
+    public void consultaGeneral(int id,String asig) {
+        porcentajesCurso=this.consultarCursos(id, asig);
+        porcentajesGrupo=this.consultarGrupos(id, asig);
+        procentajeAsis=this.consultarMonitorias(id, asig);
+        porcentajesTema=this.consultrarTema(id, asig);
     }
      
     public int getId() {
