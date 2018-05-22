@@ -77,8 +77,6 @@ public class MonitorBean implements Serializable{
     
     public void Acesoria() throws ExcepcionServiciosMonitoria{
         fecha = new Date();
-        //HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        //String ip = request.getHeader("X-FORWARDED-FOR");
         String ip=null;
         try {
             ip = InetAddress.getLocalHost().getHostAddress();

@@ -85,6 +85,7 @@ public class main {
         System.out.println(pm.consultarTotalGrupo(2112107, as.getId()));
         System.out.println(pm.consultarTema(as.getId()));
         System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); 
+        //System.out.println(mp.consultarInformacion(2112107));
         System.exit(0);
     }
     

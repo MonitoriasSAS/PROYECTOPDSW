@@ -47,9 +47,13 @@
         WHERE Monitoria.estudiante_id_carnet=#{idmo} and monitoria.temaid=Tema.temaid and monitor.id_Carnet=Franja_Horario.monitor_id_carnet
      </select>
      <select parameterType='map' id='loadFranja' resultMap='franjaResult'>
-        SELECT * Monitor
+        SELECT * from Monitor
         WHERE id_Carnet=#{idmon}
      </select> 
+     <Select parameterType='map' id='consultarInformacion' resultMap='monitoriaResult'>
+         SELECT * from Franja_Horario,Monitoria,Grupo,Monitor
+         where #{idpro}= Profesor_id_Carnet and monitor.id_Carnet=Franja_Horario.monitor_id_carnet  
+     </Select>
      <insert id='agregarMonitoria'>
          insert into Monitoria(ip,observaciones,monitor_id_carnet,fecha,profesor,estudiante_id_carnet,grupo,id_asignatura,temaid)
          values(#{mon.ip},#{mon.observaciones},#{mon.franjaHorario.monitor.id},#{mon.fecha},#{mon.profesor},#{mon.idC},#{mon.grupo},#{mon.asignatura},#{mon.tema.id})
