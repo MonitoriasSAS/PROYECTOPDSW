@@ -8,8 +8,10 @@ package edu.eci.pdsw.dao.mybatis;
 import com.google.inject.Inject;
 import edu.eci.pdsw.dao.MonitoriaDAO;
 import edu.eci.pdsw.dao.mybatis.mappers.MonitoriaMapper;
+import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Monitoria;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.PersistenceException;
 
 /**
@@ -44,6 +46,15 @@ public class MonitoriaDaoMyBatis implements MonitoriaDAO {
         } catch(Exception e){
             throw new PersistenceException("Error al agregar monitoria:"+e.getLocalizedMessage(), e);
           
+        }
+    }
+
+    @Override
+    public List<FranjaHorario> consultarInformacion(int id) {
+        try{
+            return monmap.consultarInformacion(id);
+        } catch(Exception e){
+            throw new PersistenceException("Error al consultar la info"+e.getLocalizedMessage(), e);
         }
     }
      

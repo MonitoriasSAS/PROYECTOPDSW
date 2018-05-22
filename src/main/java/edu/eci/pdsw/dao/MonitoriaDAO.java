@@ -5,8 +5,11 @@
  */
 package edu.eci.pdsw.dao;
 
+import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Monitoria;
 import java.util.Date;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  *
@@ -15,4 +18,5 @@ import java.util.Date;
 public interface MonitoriaDAO {
     public void agregarMonitoria(Monitoria monitoria,String tema) ;
     public Monitoria consultarMonitoria(int id) ;
+    public List<FranjaHorario> consultarInformacion(int id);
 }
