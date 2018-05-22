@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cosa para Entrar Graficos</title>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
+    </h:head>
+    <h:body id="principal">
+        <h:form id="formu">
+            <p:outputLabel value="Consultar Graficos" styleClass="inicio"/>
+            <br/>
+            <p:inputText id="idprofff" placeholder="Siglas Asignatura" required="true" styleClass="user" value="#{bpr.id}"/>
+            
+            <br/>
+            <p:inputText id="nombreAsigiii" placeholder="Nombre Asignatura" required="true" styleClass="user" value="#{bpr.asig}"/>
+            <br/>
+            <p:commandButton value="Crear" styleClass="myButton" actionListener=""/>
+            <p:button value="Siguiente Paso" styleClass="myButton" href="creacionProfesor.xhtml"/>
+            <br/>
+        </h:form>
+    </h:body>
+</html>
