@@ -24,9 +24,13 @@ import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
  /**
@@ -73,9 +77,15 @@ public class MonitorBean implements Serializable{
     
     public void Acesoria() throws ExcepcionServiciosMonitoria{
         fecha = new Date();
-        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        String ip = request.getHeader("X-FORWARDED-FOR");
-        moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,tema,pro,idEstudiante, gru,mate), t);
+        //HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        //String ip = request.getHeader("X-FORWARDED-FOR");
+        String ip=null;
+        try {
+            ip = InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(MonitorBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,moni.consultarTema(t),pro,idEstudiante, gru,mate), t);
     }
     
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
