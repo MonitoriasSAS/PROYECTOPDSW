@@ -44,9 +44,9 @@ import org.primefaces.event.SelectEvent;
 @ManagedBean(name = "beanAdmin")
 @SessionScoped
 public class AdministradorBean implements Serializable {
-    //@ManagedProperty(value = "#{loginBean}")
+    ///@ManagedProperty(value = "#{loginBean}")
 
-    //private ShiroLoginBean seguridad;
+    ///private ShiroLoginBean seguridad;
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
     
@@ -382,9 +382,9 @@ public class AdministradorBean implements Serializable {
         this.moni = moni;
     }  
     
-   /**
+   
     public ShiroLoginBean getSeguridad() {
->>>>>>> 3229894408caedf601d160a996645e36677baf76
+
         return seguridad;
     }
 
