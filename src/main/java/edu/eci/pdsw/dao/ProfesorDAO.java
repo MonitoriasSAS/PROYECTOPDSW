@@ -23,6 +23,6 @@ public interface ProfesorDAO {
     public List<Grupo> consultarCursos(int id,String numasig);
     public List<Monitoria> consultarEstudiantesGrupo(int id,int numgrupo,String numasig);
     public List<Monitoria> consultarTotalGrupo(int id,String numasig);
-    public List<Monitoria> consultarTemaMonitoria(int id,String numasig,int idtema);
+    public List<Monitoria> consultarTemaMonitoria(int id,String numasig,String idtema);
     public List<Tema> consultarTema(@Param("idasi") String asi);
 }

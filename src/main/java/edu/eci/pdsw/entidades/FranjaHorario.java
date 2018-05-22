@@ -25,31 +25,12 @@ public class FranjaHorario {
 
     public FranjaHorario(Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
         this.monitor = monitor;
+        this.id=monitor.getId();
         this.dia = dia;
         this.grupo = grupo;
         this.asignatura = asignatura;
         this.inicio = inicio;
         this.fin = fin;
-    }
-    
-    public FranjaHorario(int id, Monitor monitor, String dia, Grupo grupo, Asignatura asignatura, Time inicio, Time fin) {
-        this.id = id;
-        this.monitor = monitor;
-        this.dia = dia;
-        this.grupo = grupo;
-        this.asignatura = asignatura;
-        this.inicio = inicio;
-        this.fin = fin;
-    }
-
- 
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Monitor getMonitor() {
@@ -57,6 +38,7 @@ public class FranjaHorario {
     }
 
     public void setMonitor(Monitor monitor) {
+        this.id=monitor.getId();
         this.monitor = monitor;
     }
 
@@ -102,7 +84,7 @@ public class FranjaHorario {
 
     @Override
     public String toString() {
-        return "FranjaHorario{" + "id=" + id + ", monitor=" + monitor + ", dia=" + dia + ", grupo=" + grupo + ", asignatura=" + asignatura + ", inicio=" + inicio + ", fin=" + fin + '}';
+        return "FranjaHorario{" +  ", monitor=" + monitor + ", dia=" + dia + ", grupo=" + grupo + ", asignatura=" + asignatura + ", inicio=" + inicio + ", fin=" + fin + '}';
     }
 
     

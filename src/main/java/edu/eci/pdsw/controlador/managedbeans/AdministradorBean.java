@@ -80,6 +80,7 @@ public class AdministradorBean implements Serializable {
     private int matriculados;
     private String name;
     private String idasignatura;
+    private String idtema;
 
     public AdministradorBean(){
         this.monitor = monitor;
@@ -106,6 +107,7 @@ public class AdministradorBean implements Serializable {
         this.fi = fi;
         this.matriculados = matriculados;
         this.name = name;
+        this.idtema= idtema;
         this.idasignatura=idasignatura;
         this.numero=numero;
     }
@@ -147,7 +149,7 @@ public class AdministradorBean implements Serializable {
     }
     
     public void agregarTema(){
-        moni.agregarTema(new Tema(name,moni.consultarAsignatura(idAsignatura)));
+        moni.agregarTema(new Tema(idtema,name,moni.consultarAsignatura(idAsignatura)));
     }
     
     public String getPeriodo() {
