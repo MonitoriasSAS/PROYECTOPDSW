@@ -88,4 +88,8 @@
          SELECT * FROM Monitoria,Franja_Horario,Grupo,Monitor
          Where  #{idpro}=Profesor_id_Carnet and  Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura  and Temaid=#{idtema} and monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
      </select>
+     <select parameterType='map' id='consultarAsistentes' resultMap='monitoriaResult'>
+         SELECT * from Franja_Horario,Monitoria,Grupo,Monitor
+         where #{idpro}=Profesor_id_Carnet and monitor.id_Carnet=Franja_Horario.monitor_id_carnet   
+     </select>
  </mapper>

@@ -20,23 +20,33 @@ public class Monitoria {
     private String profesor;
     private int idC;
     private int grupo;
+    private int monitor;
     private String asignatura;
 
     public String getAsignatura() {
         return asignatura;
     }
 
+    public int getMonitor() {
+        return monitor;
+    }
+
+    public void setMonitor(int monitor) {
+        this.monitor = monitor;
+    }
+
     public void setAsignatura(String asignatura) {
         this.asignatura = asignatura;
     }
 
-    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, String profesor, int idC, int grupo, String asignatura) {
+    public Monitoria(String ip, String observaciones, Date fecha, Tema tema, String profesor, int idC,int Monitor, int grupo, String asignatura) {
         this.ip = ip;
         this.observaciones = observaciones;
         this.fecha = fecha;
         this.tema = tema;
         this.profesor = profesor;
         this.idC = idC;
+        this.monitor=monitor;
         this.grupo = grupo;
         this.asignatura = asignatura;
     }

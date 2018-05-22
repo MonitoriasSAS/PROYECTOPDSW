@@ -83,7 +83,7 @@ public class MonitorBean implements Serializable{
         } catch (UnknownHostException ex) {
             Logger.getLogger(MonitorBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-        moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,moni.consultarTema(t),pro,idEstudiante, gru,mate), t);
+        moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,moni.consultarTema(t),pro,idEstudiante,idMonitor, gru,mate), t);
     }
     
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
