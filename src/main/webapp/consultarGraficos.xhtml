@@ -4,7 +4,7 @@
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Cosa para Entrar Graficos</title>
+        <title>Entrar a Graficos</title>
         <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
         <h:outputStylesheet name="css/nuevoLogin.css"/>
     </h:head>
@@ -12,13 +12,13 @@
         <h:form id="formu">
             <p:outputLabel value="Consultar Graficos" styleClass="inicio"/>
             <br/>
-            <p:inputText id="idprofff" placeholder="Siglas Asignatura" required="true" styleClass="user" value="#{bpr.id}"/>
+            <p:inputText id="idprofff" placeholder="Carnet" required="true" styleClass="user" value=""/>
             
             <br/>
-            <p:inputText id="nombreAsigiii" placeholder="Nombre Asignatura" required="true" styleClass="user" value="#{bpr.asig}"/>
+            <p:inputText id="nombreAsigiii" placeholder="Nombre Asignatura" required="true" styleClass="user" value=""/>
             <br/>
-            <p:commandButton value="Crear" styleClass="myButton" actionListener=""/>
-            <p:button value="Siguiente Paso" styleClass="myButton" href="creacionProfesor.xhtml"/>
+            <p:commandButton value="Consultar" styleClass="myButton"/>
+            <p:button value="Ver Graficas" styleClass="myButton" href="graficas.xhtml"/>
             <br/>
         </h:form>
     </h:body>
