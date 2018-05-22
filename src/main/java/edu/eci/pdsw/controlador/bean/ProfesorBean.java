@@ -46,6 +46,11 @@ public class ProfesorBean implements Serializable {
     private List<Float> porcentajesCurso;
     private List<Float> porcentajesTema;
     private List<Float> porcentajesGrupo;
+    private int id;
+    private String asi;
+    private String asig;
+    private int numgrupo;
+    private String numasig;
     private PieChartModel pieModel1;
     
     public ProfesorBean(){
@@ -110,6 +115,7 @@ public class ProfesorBean implements Serializable {
         this.pieModel1 = pieModel1;
     }
 
+    
     public float getProcentajeAsis() {
         return procentajeAsis;
     }
@@ -178,8 +184,8 @@ public class ProfesorBean implements Serializable {
          return servicio.consultarCursos(id, asig);
      }
      //tercera grafica
-     public List<Float> consultarGrupos(int id, int numgrupo, String numasig){
-         return servicio.consultarGrupos(id, numgrupo, numasig);
+     public List<Float> consultarGrupos(int id, String numasig){
+         return servicio.consultarGrupos(id,numasig);
      }
      //cuarta grafica
      public List<Float> consultrarTema(int id, int numgrupo, String numasig){
@@ -189,4 +195,46 @@ public class ProfesorBean implements Serializable {
      public List<Grupo> consultarGruposProfe(int id, String numasig){
          return servicio.consultarGruposProfe(id, numasig);
      }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAsi() {
+        return asi;
+    }
+
+    public void setAsi(String asi) {
+        this.asi = asi;
+    }
+
+    public String getAsig() {
+        return asig;
+    }
+
+    public void setAsig(String asig) {
+        this.asig = asig;
+    }
+
+    public int getNumgrupo() {
+        return numgrupo;
+    }
+
+    public void setNumgrupo(int numgrupo) {
+        this.numgrupo = numgrupo;
+    }
+
+    public String getNumasig() {
+        return numasig;
+    }
+
+    public void setNumasig(String numasig) {
+        this.numasig = numasig;
+    }
+     
+     
 }
