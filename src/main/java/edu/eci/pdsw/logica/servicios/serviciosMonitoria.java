@@ -64,7 +64,7 @@ public interface serviciosMonitoria {
    
    public List<Float> consultarGrupos(int id,String numasig);
    
-   public List<Float> consultrarTema(int id, int numgrupo, String numasig);
+   public List<Float> consultrarTema(int id, String numasig);
    
    public List<Grupo> consultarGruposProfe(int id, String numasig);
    

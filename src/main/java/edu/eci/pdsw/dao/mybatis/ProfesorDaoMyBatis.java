@@ -72,7 +72,7 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     }
 
     @Override
-    public List<Monitoria> consultarTemaMonitoria(int id, String numasig,int idtema) {
+    public List<Monitoria> consultarTemaMonitoria(int id, String numasig,String idtema) {
         return profesorMapper.consultarTemaMonitoria(id, numasig,idtema);
     }
 

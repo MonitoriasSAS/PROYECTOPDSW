@@ -150,7 +150,7 @@ public class ProfesorBean implements Serializable {
     
     public void consultar() throws ExcepcionServiciosMonitoria{
         String mon = monitor.getNombre()+" "+monitor.getApellido();
-        servicio.consulatarMonitoria(monitoria.getId());
+        servicio.consulatarMonitoria(monitoria.getIdC());
     }
 
     @PostConstruct
@@ -188,8 +188,8 @@ public class ProfesorBean implements Serializable {
          return servicio.consultarGrupos(id,numasig);
      }
      //cuarta grafica
-     public List<Float> consultrarTema(int id, int numgrupo, String numasig){
-         return servicio.consultrarTema(id, numgrupo, numasig);
+     public List<Float> consultrarTema(int id, String numasig){
+         return servicio.consultrarTema(id, numasig);
      }
      //gupos del profe 
      public List<Grupo> consultarGruposProfe(int id, String numasig){
