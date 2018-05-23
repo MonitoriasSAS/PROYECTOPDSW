@@ -12,19 +12,19 @@
          <h:form id="formu">
             <p:dataTable var="car" value="#{Monitor.consultarMonitorias()}">
                 <p:column headerText="IP">
-                    <h:outputText value="#{Monitor.ip}" />
+                    <h:outputText value="#{car.ip}" />
                 </p:column>
 
                 <p:column headerText="OBSERVACIONES">
-                    <h:outputText value="#{Monitor.observacion}" />
+                    <h:outputText value="#{car.observaciones}" />
                 </p:column>
 
                 <p:column headerText="FECHA">
-                    <h:outputText value="#{Monitor.fecha}" />
+                    <h:outputText value="#{car.fecha}" />
                 </p:column>
 
                 <p:column headerText="IDESTUDIANTECARNET">
-                    <h:outputText value="#{Monitor.idEstudiante}" />
+                    <h:outputText value="#{car.idC}" />
                 </p:column>
             </p:dataTable>    
         </h:form>

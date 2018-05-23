@@ -70,8 +70,8 @@ public class main {
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema("Grafos","el kompayaso",as);
         mm.agregarTema(tem);
+        Monitoria hy=new Monitoria("5.78.100.1", "locha", new Date(2012,4,10) ,tem,"jesus", 2112076,2112107,2,as.getId());
         Monitoria hi=new Monitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,"tato", 2112076,2112107,2,as.getId());
-        hi.setFranjaHorario(kk);
         mp.agregarMonitoria(hi);
         System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mm.consultarGrupo(2,"ll1l"));
@@ -87,6 +87,7 @@ public class main {
         System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); 
         System.out.println(mp.consultarInformacion(2112107));
         System.out.println(pm.consultarAsistentes(2112107));
+        System.out.println(mp.consultarMonitoriasMon(2112107));
         System.exit(0);
     }
     

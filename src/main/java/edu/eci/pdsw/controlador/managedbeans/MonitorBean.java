@@ -27,10 +27,12 @@ import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
  /**
@@ -70,9 +72,25 @@ public class MonitorBean implements Serializable{
     private int idMonitor;
     private int idEstudiante;
     
+    private List<Monitoria> monitorias;
+    
+    @ManagedProperty("#{Monip}")
+    private monitoriasBean moniservi;
     
     public MonitorBean(){
         
+    }
+    
+    public List<Monitoria> getMonitorias() {
+        return monitorias;
+    }
+
+    public void setMoniservi(monitoriasBean moniservi) {
+        this.moniservi = moniservi;
+    }
+    
+    public void setMonitorias(List<Monitoria> monitorias) {
+        this.monitorias = monitorias;
     }
     
     public void Acesoria() throws ExcepcionServiciosMonitoria{
@@ -85,10 +103,13 @@ public class MonitorBean implements Serializable{
         }
         moni.registrarMonitoria(new Monitoria(ip,observacion,fecha,moni.consultarTema(t),pro,idEstudiante,idMonitor, gru,mate), t);
     }
-    
     public List<Monitoria>consultarMonitorias(){
+        this.preparar();
+        return monitorias;
         
-        return this.moni.consultarMonitoriasMon(2110541);
+    }
+    public void preparar(){
+        this.monitorias=moniservi.crear(gru);
     }
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);
