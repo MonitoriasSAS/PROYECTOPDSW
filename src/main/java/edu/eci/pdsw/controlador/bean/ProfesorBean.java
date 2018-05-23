@@ -24,7 +24,6 @@ import javax.faces.bean.SessionScoped;
 import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
-//import edu.eci.pdsw.seguridad.bean.ShiroLoginBean;
 import org.primefaces.model.chart.PieChartModel;
 import org.primefaces.event.ItemSelectEvent;
 import javax.faces.application.FacesMessage;
@@ -38,8 +37,6 @@ import javax.faces.bean.ManagedProperty;
 @ManagedBean(name = "bpr")
 @SessionScoped
 public class ProfesorBean implements Serializable {
-    //@ManagedProperty(value = "#{loginBean}")
-    //private ShiroLoginBean seguridad;
     
     private serviciosMonitoria servicio = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
     private Grupo grupo;
@@ -265,12 +262,5 @@ public class ProfesorBean implements Serializable {
     public void setNumasig(String numasig) {
         this.numasig = numasig;
     }
-    
-    /*public ShiroLoginBean getSeguridad() {
-        return seguridad;
-    }
-
-    public void setSeguridad(ShiroLoginBean seguridad) {
-        this.seguridad = seguridad;
-    }*/
+       
 }

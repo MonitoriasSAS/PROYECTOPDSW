@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.seguridad.bean;
 
+//prueba quitando el shiro
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -26,6 +27,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "loginBean", eager = true)
 @SessionScoped
 public class ShiroLoginBean implements Serializable {
+    //prueba quitando el shiro
     private static final Logger log = LoggerFactory.getLogger(ShiroLoginBean.class);
     private String username;
     private String password;
