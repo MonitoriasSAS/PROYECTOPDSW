@@ -54,6 +54,8 @@ En la vista del profesor se puede saber lo que estan haciendo los monitores y es
 
 ![](img/profesor.PNG)
 
+![](img/infoProfe.PNG)
+
 Arquitectura y Diseño Detallado:
   -------
 ## *Modelo E-R:*
