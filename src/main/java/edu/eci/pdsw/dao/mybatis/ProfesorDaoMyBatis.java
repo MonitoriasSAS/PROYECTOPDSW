@@ -85,4 +85,9 @@ public class ProfesorDaoMyBatis implements ProfesorDAO {
     public List<Monitoria> consultarAsistentes(int id) {
         return profesorMapper.consultarAsistentes(id);
     }
+
+    @Override
+    public int consultarTotalm(int id,String numasig) {
+        return profesorMapper.consultarTotalGrupo(id, numasig).size();
+    }
 }

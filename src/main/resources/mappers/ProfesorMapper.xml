@@ -55,11 +55,11 @@
      </resultMap>
      <select parameterType='map' id='consultarTotalMonitorias' resultMap='monitoriaResult'>
          select * From Monitoria,Franja_Horario,Grupo,Monitor
-         WHERE #{idpro}=Profesor_id_Carnet and #{idasi}=Grupo_Asignatura_id_Asignatura and  monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
+         WHERE #{idpro}=Grupo.Profesor_id_Carnet and  #{idasi}=Monitoria.id_Asignatura and Monitoria.grupo=Grupo.numero and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura
      </select>
      <select parameterType='map' id='consultarMonitorias' resultMap='monitoriaResult'>
          SELECT* FROM Monitoria,Franja_Horario,Grupo,Monitor
-         WHERE Asignatura_id_Asignatura=#{idasi} and  monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
+        WHERE #{idasi}=Monitoria.id_Asignatura and Monitoria.grupo=Grupo.numero and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura
      </select>
      <select parameterType='map' id='consultarCursos' resultMap='grupoResult'>
          select * FROM Grupo
