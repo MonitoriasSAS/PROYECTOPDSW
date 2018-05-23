@@ -56,6 +56,8 @@ En la vista del profesor se puede saber lo que estan haciendo los monitores y es
 
 ![](img/infoProfe.PNG)
 
+![](img/grafi.PNG)
+
 En la vista del monitor se presta el servicio de la monitoria que es el fin por el que se creo esta plataforma, en dicha monitoria viene el estudiante que tiene dudas sobre temas de la materia, si el estudiante no esta en la base de datos, el monitor puede agregarlo para que asi pueda acudir mas veces y asi tenga un mejor rendimiento. Tambien se le muestra el tiempo que tiene el monitor para dictar su monitoria.
 
 ![](img/monitor.PNG)
