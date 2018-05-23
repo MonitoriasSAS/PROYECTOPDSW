@@ -150,3 +150,4 @@ Para este punto el trabajo era superior al tiempo que realmente íbamos a tener 
 ### Reporte GIT Sprint 3:
 
 ## *Reporte de Pruebas:*
+![](img/tests.PNG)
