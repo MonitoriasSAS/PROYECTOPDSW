@@ -46,6 +46,9 @@ Es una herramienta que ha contribuido a una mejora significativa en el desempeñ
 
 ## *Funcionalidades:*
 
+Un plataforma sencilla y completa, que facilita el mejoramiento del desempeño en la nota de los estudiantes de la Escuela. Los usuarios que pueden ser el publico comun y corriente, los profesores y los mismos estudiantes.  Elaborada en PrimeFaces lo cual brinda variedad de herramientas que se aprovecharon de la mejor manera.
+![](img/inicioDeTodo.PNG)
+
 Arquitectura y Diseño Detallado:
   -------
 ## *Modelo E-R:*
