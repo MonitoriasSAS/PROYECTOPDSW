@@ -2,7 +2,7 @@
 ======
 *Proyecto desarrollado en el periodo académico 2018-1 por MonitoriasSAS para el curso Procesos de Desarrollo de Software (PDSW)*
 
-Integrantes:
+Integrantes de MonitoriasSAS:
   -------
   * Carlos Andrés Castañeda Lozano
   * Nicolas Patiño Parra
