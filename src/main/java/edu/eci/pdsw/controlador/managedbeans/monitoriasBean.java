@@ -30,6 +30,6 @@ public class monitoriasBean implements Serializable{
     
     
     public List<Monitoria> crear(int carnet){
-        return moni.consultarMonitoriasMon(2110541);
+        return moni.consultarMonitoriasMon(carnet);
     }
 }

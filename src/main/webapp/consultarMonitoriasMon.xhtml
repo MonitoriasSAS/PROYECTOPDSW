@@ -9,7 +9,8 @@
         <h:outputStylesheet name="css/nuevoLogin.css"/>
     </h:head>
     <h:body id="principal">
-         <h:form id="formu">
+        <h:form id="formu" >
+            <p:inputText id="carnetMoni" placeholder="Carnet Monitor" required="true" styleClass="user" value="#{Monitor.consulta}"/>
             <p:dataTable var="car" value="#{Monitor.consultarMonitorias()}">
                 <p:column headerText="IP">
                     <h:outputText value="#{car.ip}" />

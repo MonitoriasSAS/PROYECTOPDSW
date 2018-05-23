@@ -55,6 +55,7 @@ public class ProfesorBean implements Serializable {
     private String numasig;
     private PieChartModel pieModel1;
     private List<Monitoria> monitorias;
+    private int consulta;
     
     @ManagedProperty("#{Monip}")
     private monitoriasBean monit;
@@ -64,13 +65,25 @@ public class ProfesorBean implements Serializable {
         this.materia=materia;
         this.profesor=profesor;
     }
-
+    @PostConstruct
+    public void init() {
+        consulta=0;
+        createPieModels();
+    }
     public serviciosMonitoria getServicio() {
         return servicio;
     }
 
     public List<Monitoria> getMonitorias() {
         return monitorias;
+    }
+    
+    public int getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(int consulta) {
+        this.consulta = consulta;
     }
 
     public void setMonitorias(List<Monitoria> monitorias) {
@@ -170,10 +183,6 @@ public class ProfesorBean implements Serializable {
         servicio.consulatarMonitoria(monitoria.getIdC());
     }
     
-    @PostConstruct
-    public void init() {
-        createPieModels();
-    }
     private void createPieModels() {
         createPieModel1();
     }

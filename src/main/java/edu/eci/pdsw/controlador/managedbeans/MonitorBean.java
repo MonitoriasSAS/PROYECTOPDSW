@@ -73,12 +73,17 @@ public class MonitorBean implements Serializable{
     private int idEstudiante;
     
     private List<Monitoria> monitorias;
+    private int consulta;
     
     @ManagedProperty("#{Monip}")
     private monitoriasBean moniservi;
     
     public MonitorBean(){
         
+    }
+    @PostConstruct
+    public void init() {
+        consulta=0;
     }
     
     public List<Monitoria> getMonitorias() {
@@ -88,6 +93,15 @@ public class MonitorBean implements Serializable{
     public void setMoniservi(monitoriasBean moniservi) {
         this.moniservi = moniservi;
     }
+
+    public int getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(int consulta) {
+        this.consulta = consulta;
+    }
+    
     
     public void setMonitorias(List<Monitoria> monitorias) {
         this.monitorias = monitorias;
@@ -109,7 +123,7 @@ public class MonitorBean implements Serializable{
         
     }
     public void preparar(){
-        this.monitorias=moniservi.crear(gru);
+        this.monitorias=moniservi.crear(consulta);
     }
     public void setMonitor(int id, String nombre, String apellido, int telefono, String carrera, int ingreso) {
         this.monitor = new Monitor(id,nombre,apellido,telefono,carrera,ingreso);

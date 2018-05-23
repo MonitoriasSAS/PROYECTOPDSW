@@ -57,7 +57,7 @@ public class main {
         ProfesorMapper pm=sqlss.getMapper(ProfesorMapper.class);
         Semestre s=new Semestre("2012-7", new Date(2012,1,23), new Date(2012,5,25));
         mm.agregarSemestre(s);
-        Profesor x=new Profesor(2112107, "tato", "apellido", "mail@mail.escuelaing.edu.co",8018546);
+        Profesor x=new Profesor(214, "t4dsad", "apellido", "mail@mail.escuelaing.edu.co",8018546);
         mm.agregarProfesor(x);
         Monitor ho=new Monitor(2112107,"nombre"," apellido", 70172, "sistemas",2012);
         mm.agregarMonitor(ho);
@@ -70,8 +70,7 @@ public class main {
         mm.agregarEstudiante(new Estudiante(2112076, "carlitos", "hitler"));
         Tema tem = new Tema("Grafos","el kompayaso",as);
         mm.agregarTema(tem);
-        Monitoria hy=new Monitoria("5.78.100.1", "locha", new Date(2012,4,10) ,tem,"jesus", 2112076,2112107,2,as.getId());
-        Monitoria hi=new Monitoria("10.18.45.0", "tato me perrio", new Date(2012,4,10) ,tem,"tato", 2112076,2112107,2,as.getId());
+        Monitoria hi=new Monitoria("5.78.100.1", "locha", new Date(2012,4,10) ,tem,"jesus", 2112076,2112107,2,as.getId());
         mp.agregarMonitoria(hi);
         System.out.println(mm.Consultarsemestre("2012-7"));
         System.out.println(mp.loadMonitoria(hi.getMonitor()));
@@ -85,7 +84,7 @@ public class main {
         System.out.println(pm.consultarTema(as.getId()));
         System.out.println(pm.consultarTemaMonitoria(2112107,as.getId(),tem.getId())); 
         System.out.println(mp.consultarInformacion(2112107));
-        System.out.println(pm.consultarAsistentes(2112107));
+        System.out.println(pm.consultarAsistentes(214));
         System.out.println(mp.consultarMonitoriasMon(2112107));
         System.exit(0);
     }

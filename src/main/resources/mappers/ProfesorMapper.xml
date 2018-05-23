@@ -91,6 +91,6 @@
      </select>
      <select parameterType='map' id='consultarAsistentes' resultMap='monitoriaResult'>
          SELECT * from Franja_Horario,Monitoria,Grupo,Monitor,Tema
-         where #{idpro}=Profesor_id_Carnet and monitor.id_Carnet=Franja_Horario.monitor_id_carnet and monitoria.temaid=Tema.temaid 
+         WHERE #{idpro}=Grupo.Profesor_id_carnet and Grupo.numero=Franja_Horario.Grupo_numero and Franja_Horario.Grupo_Asignatura_id_Asignatura = Grupo.Asignatura_id_Asignatura and Franja_Horario.monitor_id_carnet=Monitoria.monitor_id_carnet and monitoria.temaid=Tema.temaid 
      </select>
  </mapper>
