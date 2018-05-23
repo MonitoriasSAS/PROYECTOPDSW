@@ -10,7 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import javax.faces.bean.ManagedProperty;
-//import seguridad.bean.ShiroLoginBean;
+import edu.eci.pdsw.seguridad.bean.ShiroLoginBean;
 import edu.eci.pdsw.entidades.Semestre;
 import edu.eci.pdsw.entidades.Profesor;
 import edu.eci.pdsw.entidades.Asignatura;
@@ -31,7 +31,7 @@ import java.util.Date;
 @SessionScoped
 public class EstudianteBean {
     @ManagedProperty(value = "#{loginBean}")
-    //private ShiroLoginBean seguridad;
+    private ShiroLoginBean seguridad;
     
     private final serviciosMonitoria moni = serviciosMonitoriaFactory.getInstance().getServiciosMonitoria();
     
@@ -90,7 +90,6 @@ public class EstudianteBean {
         return moni;
     }
     
-   /**
     public ShiroLoginBean getSeguridad() {
         return seguridad;
     }
@@ -98,5 +97,4 @@ public class EstudianteBean {
     public void setSeguridad(ShiroLoginBean seguridad) {
         this.seguridad = seguridad;
     }
-   */
 }

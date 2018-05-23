@@ -29,8 +29,6 @@
     <welcome-file>faces/inicio.xhtml</welcome-file>
         </welcome-file-list>
     
-    <!-- Apache Shiro -->
-    <!--prueba quitando el shiro>
     <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
@@ -45,5 +43,5 @@
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
         <dispatcher>ERROR</dispatcher>
-    </filter-mapping>-->
+    </filter-mapping>
 </web-app>
