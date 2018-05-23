@@ -66,6 +66,7 @@ En la vista del monitor se presta el servicio de la monitoria que es el fin por 
 
 Aqui tambien podemos ver que se muestra la IP desde donde el monitor se encuentra dictando la monitoria, para que asi no se generen inconvenientes de ningun ambito con los profesores o los estudiantes.
 
+
 Arquitectura y Diseño Detallado:
   -------
 ## *Modelo E-R:*
