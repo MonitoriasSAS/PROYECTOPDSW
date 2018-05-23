@@ -1,4 +1,4 @@
-***Monitorias académico de estudiantes de Pregrado de la Escuela Colombiana de Ingeniería Julio Garavito***
+***Monitorias académicas de estudiantes de Pregrado de la Escuela Colombiana de Ingeniería Julio Garavito***
 ======
 *Proyecto desarrollado en el periodo académico 2018-1 por MonitoriasSAS para el curso Procesos de Desarrollo de Software (PDSW)*
 
@@ -101,7 +101,7 @@ https://monitoriassas.herokuapp.com/
 ## *Analisis de Codigo*
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/08b963d8d09e43589f5ff4d63cdc3681)](https://www.codacy.com/app/nicolaspatino/PROYECTOPDSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MonitoriasSAS/PROYECTOPDSW&amp;utm_campaign=Badge_Grade)
 
-Descrpción del Proceso:
+Descripción del Proceso:
   -------
   
 ## *Metodología:*
