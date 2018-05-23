@@ -76,6 +76,7 @@ public class ShiroLoginBean implements Serializable {
             facesError("Unknown error: " + ex.getMessage());
             log.error(ex.getMessage(), ex);
         }
+
         finally {
             token.clear();
         }
