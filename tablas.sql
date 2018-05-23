@@ -10,9 +10,8 @@ CREATE TABLE IF NOT EXISTS Semestre (
 );
 
 CREATE TABLE IF NOT EXISTS Asignatura (
-   id_Asignatura int  NOT NULL,
-   nombre_Asig varchar(4)  NOT NULL,
-   Tema_TemaID varchar(20)  NOT NULL,
+   id_Asignatura varchar(4)  NOT NULL,
+   nombre_Asig varchar  NOT NULL,
    CONSTRAINT Asignatura_pk PRIMARY KEY (id_Asignatura)
 );
 CREATE TABLE IF NOT EXISTS Profesor (
@@ -37,28 +36,28 @@ CREATE TABLE IF NOT EXISTS Monitor (
 );
 
 CREATE TABLE IF NOT EXISTS Grupo (
-   Semestre_periodo_Academico varchar  NOT NULL,
-   Asignatura_id_Asignatura int  NOT NULL,
-   Profesor_id_Carnet int  NOT NULL,
    numero int  NOT NULL,
+   Asignatura_id_Asignatura varchar  NOT NULL,
+   Profesor_id_Carnet int  NOT NULL,
+   Semestre_periodo_Academico varchar  NOT NULL,
+   matriculados int NOT NULL,
    CONSTRAINT Grupo_pk PRIMARY KEY (Asignatura_id_Asignatura,numero)
 );
 CREATE TABLE IF NOT EXISTS Tema (
    TemaID varchar(20)  NOT NULL,
    nombre varchar(50)  NOT NULL,
-   Asignatura_id_Asignatura int NOT NULL,
+   Asignatura_id_Asignatura varchar(4) NOT NULL,
    CONSTRAINT Tema_pk PRIMARY KEY (TemaID)
 );
 
 CREATE TABLE IF NOT EXISTS Franja_Horario (
-   id_Franja int  NOT NULL,
    Monitor_id_Carnet int  NOT NULL,
-   Grupo_Asignatura_id_Asignatura int  NOT NULL,
-   Grupo_numero int  NOT NULL,
    dia varchar(10) NOT NULL,
+   Grupo_numero int  NOT NULL,
+   Grupo_Asignatura_id_Asignatura varchar(4)  NOT NULL,
    inicio time  NOT NULL,
    fin time  NOT NULL,
-   CONSTRAINT Franja_Horario_pk PRIMARY KEY (id_Franja)
+   CONSTRAINT Franja_Horario_pk PRIMARY KEY (Monitor_id_Carnet)
 );
 
 CREATE TABLE IF NOT EXISTS Monitoria (
@@ -79,22 +78,30 @@ CREATE TABLE IF NOT EXISTS Asistencia (
    CONSTRAINT Asistencia_pk PRIMARY KEY (Monitoria_id_Monitoria)
 );
 
-CREATE TABLE IF NOT EXISTS Observaciones (
-   idobs int NOT NULL,
-   id_car int NOT NULL,
-   Monitor_id_Carnet int NOT NULL,
-   observacion varchar(100),
-   CONSTRAINT obs_pk PRIMARY KEY (idobs) 
-);
 CREATE TABLE IF NOT EXISTS estudiante(
    id_carnet int NOT NULL,
    nombre_es varchar(20) NOT NULL,
    apellido_es varchar(20) NOT NULL
 );
+/*ALTER TABLE Franja_Horario
+ADD CONSTRAINT FK_GRUPO
+FOREIGN KEY (Grupo_numero)
+REFERENCES Grupo (numero);
+
+ALTER TABLE Franja_Horario
+ADD CONSTRAINT FK_Monitor
+FOREIGN KEY (Monitor_id_Carnet)
+REFERENCES Monitor(id_Carnet);
+
+ALTER TABLE Franja_Horario
+ADD CONSTRAINT FK_Asignatura
+FOREIGN KEY (Grupo_Asignatura_id_Asignatura)
+REFERENCES Asignatura(id_Asignatura);
 ALTER TABLE Monitoria
 ADD CONSTRAINT FK_FranjaID
 FOREIGN KEY (Franja_id)
 REFERENCES Franja_Horario(id_Franja);
+*/
 /*
 -----------------------------------------
 --Foraneas

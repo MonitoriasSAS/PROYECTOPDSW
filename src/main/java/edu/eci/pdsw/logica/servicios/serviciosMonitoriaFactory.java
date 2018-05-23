@@ -39,6 +39,20 @@ public class serviciosMonitoriaFactory {
             }
         }
         );
+        testInjector = createInjector(new XMLMyBatisModule() {
+
+            @Override
+            protected void initialize() {
+                install(JdbcHelper.PostgreSQL);
+                setClassPathResource("mybatis-config-h2.xml");
+                bind(serviciosMonitoria.class).to(serviciosMonitoriaimpl.class);
+                bind(MonitoriaDAO.class).to(MonitoriaDaoMyBatis.class);
+                bind(SemestreDAO.class).to(SemestreDaoMyBatis.class);
+                bind(ProfesorDAO.class).to(ProfesorDaoMyBatis.class);
+            }
+
+        }
+        );
     }
 
     
