@@ -50,6 +50,10 @@ Un plataforma sencilla y completa, que facilita el mejoramiento del desempeño e
 
 ![](img/inicioDeTodo.PNG)
 
+En la vista del profesor se puede saber lo que estan haciendo los monitores y estudiantes de su materia con unos informes que facilita la plataforma en donde se muestra detalladamente cada monitoria prestada, tambien se pueden ver las estadisticas que desee el profesor saber con respecto a dichas monitorias.
+
+![](img/profesor.PNG)
+
 Arquitectura y Diseño Detallado:
   -------
 ## *Modelo E-R:*
