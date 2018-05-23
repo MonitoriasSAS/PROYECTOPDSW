@@ -162,8 +162,8 @@ public class ProfesorBean implements Serializable {
     private void createPieModel1() {
         pieModel1 = new PieChartModel();
          
-        pieModel1.set("Asistentes mi Grupo",1);
-        pieModel1.set("Asistentes que no son de mi Grupo", 1);
+        pieModel1.set("Asistentes mi Grupo",consultarMonitorias());
+        pieModel1.set("Asistentes que no son de mi Grupo", 1-consultarMonitorias());
          
         pieModel1.setTitle("Asistencia a las Monitorias");
         pieModel1.setLegendPosition("w");
