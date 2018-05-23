@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Estudiantes Asistentes</title>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
+    </h:head>
+    <h:body id="principal">
+         <h:form id="formu">
+             <p:inputText id="carnetPro" placeholder="Carnet Profesor" required="true" styleClass="user" value="#{bpr.consulta}"/>
+             <p:dataTable var="car" value="#{bpr.consultarAsesoriaMonitores()}">
+                <p:column headerText="Monitor">
+                    <h:outputText value="#{car.monitor}" />
+                </p:column>
+
+                <p:column headerText="fecha">
+                    <h:outputText value="#{car.fecha}" />
+                </p:column>
+
+                <p:column headerText="Asistente">
+                    <h:outputText value="#{car.idC}" />
+                </p:column>
+                 <p:column headerText="Grupo Asistente">
+                     <h:outputText value="#{car.grupo}" />
+                 </p:column>
+                 <p:column headerText="Asignatura">
+                     <h:outputText value="#{car.asignatura}" />
+                 </p:column>
+                <p:column headerText="Tema">
+                    <h:outputText value="#{car.tema}" />
+                </p:column>
+            </p:dataTable>    
+        </h:form>
+        </h:body>
+</html>

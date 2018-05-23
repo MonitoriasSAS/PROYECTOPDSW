@@ -90,7 +90,7 @@
          Where  #{idpro}=Profesor_id_Carnet and  Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura  and Temaid=#{idtema} and monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
      </select>
      <select parameterType='map' id='consultarAsistentes' resultMap='monitoriaResult'>
-         SELECT * from Franja_Horario,Monitoria,Grupo,Monitor,Tema
-         WHERE #{idpro}=Grupo.Profesor_id_carnet and Grupo.numero=Franja_Horario.Grupo_numero and Franja_Horario.Grupo_Asignatura_id_Asignatura = Grupo.Asignatura_id_Asignatura and Franja_Horario.monitor_id_carnet=Monitoria.monitor_id_carnet and monitoria.temaid=Tema.temaid 
+         SELECT * from Franja_Horario,Monitoria,Grupo,Monitor,Tema,estudiante
+         WHERE #{idpro}=Grupo.Profesor_id_carnet and Grupo.numero=Franja_Horario.Grupo_numero and Franja_Horario.Grupo_Asignatura_id_Asignatura = Grupo.Asignatura_id_Asignatura and Franja_Horario.monitor_id_carnet=Monitoria.monitor_id_carnet and monitoria.temaid=Tema.temaid and estudiante.id_carnet=monitoria.estudiante_id_carnet
      </select>
  </mapper>

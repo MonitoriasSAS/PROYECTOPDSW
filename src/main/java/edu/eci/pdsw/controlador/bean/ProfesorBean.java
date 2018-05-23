@@ -58,6 +58,9 @@ public class ProfesorBean implements Serializable {
     private int consulta;
     private float x;
     private float y;
+
+
+    private String nombre;
     
     @ManagedProperty("#{Monip}")
     private monitoriasBean monit;
@@ -66,6 +69,14 @@ public class ProfesorBean implements Serializable {
         this.pieModel1=pieModel1;
         this.materia=materia;
         this.profesor=profesor;
+    }
+    
+        public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     @PostConstruct
     public void init() {
@@ -280,6 +291,10 @@ public class ProfesorBean implements Serializable {
 
     public void setNumasig(String numasig) {
         this.numasig = numasig;
+    }
+    public List<Monitoria> consultarAsistentes(){
+         this.Acceder();
+       return monitorias;
     }
        
 }
