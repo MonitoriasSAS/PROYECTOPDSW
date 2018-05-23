@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Colsutar Aserorias</title>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
+    </h:head>
+    <h:body id="principal">
+        
+        
+      
+        
+         <h:form id="formu">
+            <p:dataTable var="car" value="#{bpr.consultarAsesoriaMonitores()}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{monitoria.ip}" />
+                </p:column>
+
+                <p:column headerText="Year">
+                    <h:outputText value="#{monitoria.observaciones}" />
+                </p:column>
+
+                <p:column headerText="Brand">
+                    <h:outputText value="#{monitoria.fecha}" />
+                </p:column>
+
+                <p:column headerText="Color">
+                    <h:outputText value="#{monitoria.estudiante_id_carnet}" />
+                </p:column>
+            </p:dataTable>    
+        </h:form>
+        </h:body>
+</html>

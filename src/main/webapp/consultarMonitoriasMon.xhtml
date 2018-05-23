@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Consultar Monitorias del Monitor</title>
+        <link rel="icon" href="\resources\Imagenes\logoSistemas.jpg"></link>
+        <h:outputStylesheet name="css/nuevoLogin.css"/>
+    </h:head>
+    <h:body id="principal">
+         <h:form id="formu">
+            <p:dataTable var="car" value="#{Monitor.consultarMonitorias()}">
+                <p:column headerText="IP">
+                    <h:outputText value="#{Monitor.ip}" />
+                </p:column>
+
+                <p:column headerText="OBSERVACIONES">
+                    <h:outputText value="#{Monitor.observacion}" />
+                </p:column>
+
+                <p:column headerText="FECHA">
+                    <h:outputText value="#{Monitor.fecha}" />
+                </p:column>
+
+                <p:column headerText="IDESTUDIANTECARNET">
+                    <h:outputText value="#{Monitor.idEstudiante}" />
+                </p:column>
+            </p:dataTable>    
+        </h:form>
+        </h:body>
+</html>

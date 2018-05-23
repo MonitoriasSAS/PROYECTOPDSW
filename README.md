@@ -52,6 +52,7 @@ Arquitectura y Diseño Detallado:
  ![](img/diagrama.png)
      
 ## *Diagrama de Clases:*  
+ ![](img/diagramaclases.PNG)
 
 ## *Arquitectura:*
 La plataforma de gestión a servicios de Monitorias Académicas divide su funcionamiento en cuatro capas:
@@ -97,4 +98,34 @@ https://trello.com/b/PepJZUrX/2018-1-proypdsw-monitoriassas
 
 ## *Sprint 1:*
 
- 
+### Descripción del Sprint:
+El primer sprint concluyó de una manera adecuada, durante este tiempo se elaboró la estructura necesaria para el proyecto, además se logró tener un producto entregable para la fecha acordada, sin embargo, los últimos días antes de la entrega tuvimos un trabajo que excedió lo que habíamos planeado, ya que tuvimos grandes cambios en la estructura de la plataforma. En general tuvimos un buen desempeño donde todo el equipo trabajó constantemente y con un punto de vista de entregar un buen producto; la comunicación fue clave en este aspecto para lograr mezclar las cuatro ramas en un gran proyecto.
+### Sprint-backlog:
+![](img/sprint1.PNG)
+### Sprint-burndown Chart:
+![](img/sprintbur1.PNG)
+### Reporte GIT Sprint 1:
+
+
+## *Sprint 2:*
+### Descripción del Sprint:
+Este Sprint no terminó con los resultados esperados, en este periodo aunque se le trabajó el tiempo que se tenía disponible, las demás materias afectaron mucho al tiempo que se tenía destinado al proyecto y finalmente se redujo en gran parte el trabajo que se le hizo en esta temporada, sin embargo se hicieron grandes avances en la parte logica y de los servicios, con esto pensamos que nos facilitará la parte visual en el proximo Sprint.
+### Sprint-backlog:
+![](img/sprint2.PNG)
+### Sprint-burndown Chart:
+![](img/sprintbur2.PNG)
+### Reporte GIT Sprint 2:
+
+
+## *Sprint 3:*
+### Descripción del Sprint:
+En este ultimo sprint se buscaba tener lo que se había propuesto en un inicio, poder finalizar toda la plataforma con sus funciones, lo cual se completó en una gran parte, el tiempo en esta temporada fue mucho mayor, sin embargo, la cantidad de trabajo era mucho mayor, ya que en el Sprint 2 no se completaron varias tareas claves. La comunicación en equipo, y el trabajo constante fueron la clave para desarrollar este proyecto de la mejor manera.
+
+Para este punto el trabajo era superior al tiempo que realmente íbamos a tener disponible, así que fue necesario un trabajo mucho mayor, dedicado y organizado para cumplir con el objetivo propuesto.
+### Sprint-backlog:
+![](img/sprint3.PNG)
+### Sprint-burndown Chart:
+![](img/sprintbur3.PNG)
+### Reporte GIT Sprint 3:
+
+## *Reporte de Pruebas:*
