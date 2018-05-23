@@ -190,7 +190,7 @@ public class ProfesorBean implements Serializable {
     }
     private void createPieModel1() {
         pieModel1 = new PieChartModel();
-        pieModel1.set("Asistentes mi Grupo",1);
+        pieModel1.set("Asistentes mi Grupo",0);
         pieModel1.set("Asistentes que no son de mi Grupo",0);
         pieModel1.setTitle("Asistencia a las Monitorias");
         pieModel1.setLegendPosition("w");
@@ -207,8 +207,8 @@ public class ProfesorBean implements Serializable {
     //primera grafica
     public void coi(){
         PieChartModel pie=new PieChartModel();
-        pie.set("Asistentes mi Grupo",servicio.consultarMonitorias(id, asig)*10);
-        pie.set("Asistentes que no son de mi Grupox",10-servicio.consultarMonitorias(id, asig)*10);
+        pie.set("Asistentes mi Grupo",servicio.consultarMonitorias(id, asig));
+        pie.set("Asistentes que no son de mi Grupox",servicio.consultarMonitorias(id, asig));
         pie.setTitle("Asistencia a las Monitorias");
         pie.setLegendPosition("w");
         this.setPieModel1(pie);
