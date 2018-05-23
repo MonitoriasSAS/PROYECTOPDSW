@@ -126,7 +126,7 @@ El primer sprint concluyó de una manera adecuada, durante este tiempo se elabor
 ### Sprint-burndown Chart:
 ![](img/sprintbur1.PNG)
 ### Reporte GIT Sprint 1:
-
+http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/
 
 ## *Sprint 2:*
 ### Descripción del Sprint:
@@ -136,7 +136,7 @@ Este Sprint no terminó con los resultados esperados, en este periodo aunque se 
 ### Sprint-burndown Chart:
 ![](img/sprintbur2.PNG)
 ### Reporte GIT Sprint 2:
-
+http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/
 
 ## *Sprint 3:*
 ### Descripción del Sprint:
@@ -148,6 +148,7 @@ Para este punto el trabajo era superior al tiempo que realmente íbamos a tener 
 ### Sprint-burndown Chart:
 ![](img/sprintbur3.PNG)
 ### Reporte GIT Sprint 3:
+http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/
 
 ## *Reporte de Pruebas:*
 ![](img/tests.PNG)
