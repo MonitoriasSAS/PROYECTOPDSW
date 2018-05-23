@@ -6,13 +6,18 @@
 package Test;
 
 import edu.eci.pdsw.entidades.*;
+import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
 import java.sql.Time;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import org.postgresql.util.PSQLException;
 
 /**
  *
@@ -25,7 +30,15 @@ public class SimpleTest {
     public void deberiaAgregarUnSemestre() {
         serviciosMonitoria serv= serviciosMonitoriaFactory.getInstance().getTestingServiciosMonitoria();
         Semestre semes=new Semestre("2012-7", new Date(2012,1,23), new Date(2012,5,25));
-        serv.agregarSemestre(semes);
+        try {
+            serv.agregarSemestre(semes);
+        } catch (ExcepcionServiciosMonitoria ex) {
+            Logger.getLogger(SimpleTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PSQLException ex) {
+            Logger.getLogger(SimpleTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PersistenceException ex) {
+            Logger.getLogger(SimpleTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals("2012-7",semes.getPeriodo());
     }
     @Test

@@ -138,17 +138,19 @@ public class AdministradorBean implements Serializable {
     }
     
     public void registrarSemestre(){
-        
         try {
             moni.agregarSemestre(new Semestre(periodo,inicio,fin));
         } catch (ExcepcionServiciosMonitoria ex) {
             this.message="semestre existente";
             Logger.getLogger(AdministradorBean.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (PSQLException ex){
+            System.out.println("lolosaldlsadlsad1");
+        } catch (org.postgresql.util.PSQLException ex){
             this.message="semestre existente";
+            System.out.println("lolosaldlsadlsad2");
              Logger.getLogger(AdministradorBean.class.getName()).log(Level.SEVERE, null, ex);
         }   catch (javax.persistence.PersistenceException ex){
-            //facesError("Wrong password");
+            System.out.println("lolosaldlsadlsad3");
+            facesError("Wrong password");
             Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         

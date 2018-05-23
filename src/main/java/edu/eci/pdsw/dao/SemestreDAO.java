@@ -14,7 +14,9 @@ import edu.eci.pdsw.entidades.Grupo;
 import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import java.util.Date;
+import javax.persistence.PersistenceException;
 import org.apache.ibatis.annotations.Param;
+import org.postgresql.util.PSQLException;
 
 /**
  *
@@ -22,7 +24,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface SemestreDAO {
     public Semestre ConsultarSemestre(String id) ;
-    void agregarSemestre(Semestre semestre);
+    void agregarSemestre(Semestre semestre)throws PersistenceException,PSQLException;
     void agregarGrupo(Grupo grupo);
     void agregarProfesor(Profesor profesor);
     void agregarMonitor(Monitor monitor);

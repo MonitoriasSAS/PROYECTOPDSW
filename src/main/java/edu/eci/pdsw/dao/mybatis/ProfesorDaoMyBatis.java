@@ -17,7 +17,7 @@ import edu.eci.pdsw.entidades.Tema;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.ibatis.exceptions.PersistenceException;
+import javax.persistence.PersistenceException;
 
 /**
  *

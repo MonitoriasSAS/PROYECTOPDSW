@@ -19,6 +19,7 @@ import edu.eci.pdsw.dao.mybatis.mappers.SemestreMapper;
 import edu.eci.pdsw.entidades.Asignatura;
 import java.util.Date;
 import javax.persistence.PersistenceException;
+import org.postgresql.util.PSQLException;
 
 
 /**
@@ -36,12 +37,8 @@ public class SemestreDaoMyBatis implements SemestreDAO {
     }
 
     @Override
-    public void agregarSemestre(Semestre semestre) {
-      try {
-         semestreMapper.agregarSemestre(semestre);
-         }catch (Exception e){
-            throw new PersistenceException("Error al agregar semestre:"+e.getLocalizedMessage(), e);
-        }
+    public void agregarSemestre(Semestre semestre) throws PersistenceException,PSQLException{
+        semestreMapper.agregarSemestre(semestre);
     }
 
     @Override
