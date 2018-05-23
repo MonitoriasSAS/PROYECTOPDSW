@@ -56,6 +56,8 @@ public class ProfesorBean implements Serializable {
     private PieChartModel pieModel1;
     private List<Monitoria> monitorias;
     private int consulta;
+    private float x;
+    private float y;
     
     @ManagedProperty("#{Monip}")
     private monitoriasBean monit;
@@ -67,8 +69,8 @@ public class ProfesorBean implements Serializable {
     }
     @PostConstruct
     public void init() {
-        consulta=0;
         createPieModels();
+        consulta=0;
     }
     public serviciosMonitoria getServicio() {
         return servicio;
@@ -188,10 +190,8 @@ public class ProfesorBean implements Serializable {
     }
     private void createPieModel1() {
         pieModel1 = new PieChartModel();
-         
-        //pieModel1.set("Asistentes mi Grupo",consultarMonitorias());
-        //pieModel1.set("Asistentes que no son de mi Grupo", 1-consultarMonitorias());
-         
+        pieModel1.set("Asistentes mi Grupo",1);
+        pieModel1.set("Asistentes que no son de mi Grupo",0);
         pieModel1.setTitle("Asistencia a las Monitorias");
         pieModel1.setLegendPosition("w");
     }
@@ -202,9 +202,19 @@ public class ProfesorBean implements Serializable {
        return monitorias;
     }
     public void Acceder(){
-        this.monitorias=monit.crear(id);
+        this.monitorias=monit.crear(consulta);
     }
     //primera grafica
+    public void coi(){
+        PieChartModel pie=new PieChartModel();
+        pie.set("Asistentes mi Grupo",servicio.consultarMonitorias(id, asig)*10);
+        pie.set("Asistentes que no son de mi Grupox",10-servicio.consultarMonitorias(id, asig)*10);
+        pie.setTitle("Asistencia a las Monitorias");
+        pie.setLegendPosition("w");
+        this.setPieModel1(pie);
+       
+       
+    }
     public float consultarMonitorias(){
         return servicio.consultarMonitorias(id, asig);
     }

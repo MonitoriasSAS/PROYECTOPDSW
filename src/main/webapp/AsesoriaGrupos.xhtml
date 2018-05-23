@@ -10,7 +10,7 @@
     </h:head>
     <h:body id="principal">
          <h:form id="formu">
-             <p:inputText id="carnetPro" placeholder="Carnet Profesor" required="true" styleClass="user" value="#{bpr.consulta  }"/>
+             <p:inputText id="carnetPro" placeholder="Carnet Profesor" required="true" styleClass="user" value="#{bpr.consulta}"/>
              <p:dataTable var="car" value="#{bpr.consultarAsesoriaMonitores()}">
                 <p:column headerText="Monitor">
                     <h:outputText value="#{car.monitor}" />

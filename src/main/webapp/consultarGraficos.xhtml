@@ -16,9 +16,14 @@
             <br/>
             <p:inputText id="nombreAsigiii" placeholder="Nombre Asignatura" required="true" styleClass="user" value="#{bpr.asig}"/>
             <br/>
-            <p:commandButton value="Consultar" styleClass="myButton" actionListener="#{bpr.consultarMonitorias()}"/>
-            <p:button value="Ver Graficas" styleClass="myButton" href="graficas.xhtml"/>
+            <p:commandButton value="Consultar" styleClass="myButton" actionListener="#{bpr.coi()}"/>
+            <!--<p:button value="Ver Graficas" styleClass="myButton" href="graficas.xhtml"/>-->
             <br/>
+            <p:chart type="pie" model="#{bpr.pieModel1}" rendererType="true" style="width:400px;height:300px"></p:chart> 
         </h:form>
+        
+            
+
+          
     </h:body>
 </html>
