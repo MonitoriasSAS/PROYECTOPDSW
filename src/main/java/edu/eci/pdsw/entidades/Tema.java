@@ -50,7 +50,7 @@ public class Tema {
     
     @Override
     public String toString() {
-        return "Tema{" + "id=" + id + ", name=" + name + ", asignatura=" + asignatura + '}';
+        return id;
     }
     
 }

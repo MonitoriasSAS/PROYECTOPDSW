@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.controlador.bean;
 
+import edu.eci.pdsw.controlador.managedbeans.monitoriasBean;
 import java.io.Serializable;
 import edu.eci.pdsw.entidades.Profesor;
 import edu.eci.pdsw.entidades.Monitoria;
@@ -28,6 +29,7 @@ import org.primefaces.event.ItemSelectEvent;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedProperty;
 /**
  *
  * @author MonitoriasSAS
@@ -54,6 +56,9 @@ public class ProfesorBean implements Serializable {
     private PieChartModel pieModel1;
     private List<Monitoria> monitorias;
     
+    @ManagedProperty("#{Monip}")
+    private monitoriasBean monit;
+    
     public ProfesorBean(){
         this.pieModel1=pieModel1;
         this.materia=materia;
@@ -62,6 +67,18 @@ public class ProfesorBean implements Serializable {
 
     public serviciosMonitoria getServicio() {
         return servicio;
+    }
+
+    public List<Monitoria> getMonitorias() {
+        return monitorias;
+    }
+
+    public void setMonitorias(List<Monitoria> monitorias) {
+        this.monitorias = monitorias;
+    }
+
+    public void setMonit(monitoriasBean monit) {
+        this.monit = monit;
     }
 
     public void setServicio(serviciosMonitoria servicio) {
@@ -172,7 +189,11 @@ public class ProfesorBean implements Serializable {
     //pruba asesoria de sus monitores
     
     public List<Monitoria>consultarAsesoriaMonitores(){
-       return servicio.consultarAsistentes(12345);
+        this.Acceder();
+       return monitorias;
+    }
+    public void Acceder(){
+        this.monitorias=monit.crear(id);
     }
     //primera grafica
     public float consultarMonitorias(){

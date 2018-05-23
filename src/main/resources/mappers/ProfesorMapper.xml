@@ -40,6 +40,7 @@
       <resultMap type='Tema' id='temaResult'>
          <id property='id' column='TemaID'/>
          <result property='name' column='nombre'/>
+         <association property='asignatura' javaType='Asignatura' resultMap='AsignaturaResult'/>
      </resultMap>
      <resultMap type= 'Monitoria' id='monitoriaResult'>
         <id property='idC' column='estudiante_id_carnet'/>
@@ -48,7 +49,7 @@
         <result property='observaciones' column='observaciones' />
         <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
-        <result property='asignatura' column='asignatura_id'/>
+        <result property='asignatura' column='id_asignatura'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
@@ -89,7 +90,7 @@
          Where  #{idpro}=Profesor_id_Carnet and  Asignatura_id_Asignatura=#{idasi} and numero=Grupo_numero and Grupo_Asignatura_id_Asignatura=Asignatura_id_Asignatura  and Temaid=#{idtema} and monitor.id_Carnet=Franja_Horario.monitor_id_carnet 
      </select>
      <select parameterType='map' id='consultarAsistentes' resultMap='monitoriaResult'>
-         SELECT * from Franja_Horario,Monitoria,Grupo,Monitor
-         where #{idpro}=Profesor_id_Carnet and monitor.id_Carnet=Franja_Horario.monitor_id_carnet   
+         SELECT * from Franja_Horario,Monitoria,Grupo,Monitor,Tema
+         where #{idpro}=Profesor_id_Carnet and monitor.id_Carnet=Franja_Horario.monitor_id_carnet and monitoria.temaid=Tema.temaid 
      </select>
  </mapper>

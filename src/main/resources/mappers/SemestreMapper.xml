@@ -44,7 +44,7 @@
         <result property='observaciones' column='observaciones' />
         <result property='grupo' column='grupo'/>
         <result property='profesor' column='profesor'/>
-        <result property='asignatura' column='asignatura_id'/>
+        <result property='asignatura' column='id_asignatura'/>
         <association property='franjaHorario' javaType='Franja' resultMap='franjaResult'/>
         <association property='tema' javaType='Tema' resultMap='temaResult'/>
      </resultMap>
