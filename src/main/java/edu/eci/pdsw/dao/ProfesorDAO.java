@@ -26,4 +26,5 @@ public interface ProfesorDAO {
     public List<Monitoria> consultarTemaMonitoria(int id,String numasig,String idtema);
     public List<Tema> consultarTema(String asi);
     public List<Monitoria> consultarAsistentes(@Param("idpro")int id);
+    public int consultarTotalm(int id,String numasig);
 }

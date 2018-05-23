@@ -59,7 +59,7 @@ public interface serviciosMonitoria {
    
    public void agregarAsignatura(Asignatura asignatura);
    
-   public float consultarMonitorias(int id,String asi);
+   public double consultarMonitorias(int id,String asi);
    
    public List<Float> consultarCursos(int id,String asig);
    
@@ -77,4 +77,6 @@ public interface serviciosMonitoria {
     public List<FranjaHorario> consultarInformacion(int id);
     public List<Monitoria> consultarAsistentes(@Param("idpro")int id);
     public List<Monitoria> consultarMonitoriasMon(@Param("idmon")int id);
+    public int consultarTotalm(int id,String asig);
+    public int consultarMoni(String asig);
 }

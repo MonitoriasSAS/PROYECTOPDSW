@@ -159,16 +159,15 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
    }
 
     @Override
-    public float consultarMonitorias(int id,String asi) {
-      float x=0;
+    public double consultarMonitorias(int id,String asi) {
+      double x=0;
       try{
-        x= daoPro.consultarMonitorias(asi).size()/daoPro.consultarTotalMonitorias(id,asi).size();
+        x= (double)daoPro.consultarTotalMonitorias(id,asi).size()/(double)daoPro.consultarMonitorias(asi).size();
       } catch (PersistenceException ex){
         Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
       }
       return x;
     }
-
     @Override
     public List<Float> consultarCursos(int id, String asig) {
       List<Float> x= new ArrayList<Float>();
@@ -319,4 +318,27 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
         }
         return x;
     }
+
+    @Override
+    public int consultarTotalm(int id, String asig) {
+         int x=0;
+        try{
+            x=daoPro.consultarTotalGrupo(id, asig).size();
+        }catch (PersistenceException ex){
+        Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        return x;
+    }
+
+    @Override
+    public int consultarMoni(String asig) {
+        int x=0;
+        try{
+            x=daoPro.consultarMonitorias(asig).size();
+        }catch (PersistenceException ex){
+        Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        return x;
+    }
+    
 }
