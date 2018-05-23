@@ -19,6 +19,8 @@ import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Grupo;
 import edu.eci.pdsw.entidades.Estudiante;
 import edu.eci.pdsw.entidades.Tema;
+import edu.eci.pdsw.logica.servicios.ExcepcionServiciosMonitoria;
+import edu.eci.pdsw.logica.servicios.impl.serviciosMonitoriaimpl;
 
 import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import edu.eci.pdsw.logica.servicios.serviciosMonitoriaFactory;
@@ -26,8 +28,13 @@ import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+//import org.apache.ibatis.exceptions.PersistenceException;
+import org.postgresql.util.PSQLException;
+import javax.persistence.PersistenceException;
 import org.primefaces.PrimeFaces;
 import static org.primefaces.component.contextmenu.ContextMenu.PropertyKeys.event;
 import static org.primefaces.component.effect.Effect.PropertyKeys.event;
@@ -81,6 +88,8 @@ public class AdministradorBean implements Serializable {
     private String name;
     private String idasignatura;
     private String idtema;
+    
+    private String message="";
 
     public AdministradorBean(){
         this.monitor = monitor;
@@ -111,19 +120,42 @@ public class AdministradorBean implements Serializable {
         this.idasignatura=idasignatura;
         this.numero=numero;
     }
-
+    
     public String getIdtema() {
         return idtema;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
     public void setIdtema(String idtema) {
         this.idtema = idtema;
     }
     
     public void registrarSemestre(){
-        moni.agregarSemestre(new Semestre(periodo,inicio,fin));
+        
+        try {
+            moni.agregarSemestre(new Semestre(periodo,inicio,fin));
+        } catch (ExcepcionServiciosMonitoria ex) {
+            this.message="semestre existente";
+            Logger.getLogger(AdministradorBean.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PSQLException ex){
+            this.message="semestre existente";
+             Logger.getLogger(AdministradorBean.class.getName()).log(Level.SEVERE, null, ex);
+        }   catch (javax.persistence.PersistenceException ex){
+            //facesError("Wrong password");
+            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
-    
+    private void facesError(String message) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, message, null));
+    }
     public void registrarAsignatura(){
 
         moni.agregarAsignatura(new Asignatura(idasignatura,nombre));

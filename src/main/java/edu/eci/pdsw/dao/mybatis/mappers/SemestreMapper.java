@@ -15,14 +15,16 @@ import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.Asignatura;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import edu.eci.pdsw.entidades.Monitoria;
+import javax.persistence.PersistenceException;
 import org.apache.ibatis.annotations.Param;
+import org.postgresql.util.PSQLException;
 /**
  *
  * @author MonitoriasSAS
  */
 public interface SemestreMapper{
     Semestre Consultarsemestre(@Param("id")String id);
-    void agregarSemestre(@Param("sem") Semestre semestre);    
+    void agregarSemestre(@Param("sem") Semestre semestre) throws PersistenceException,PSQLException;    
     void agregarGrupo(@Param("gru") Grupo grupo);
     void agregarProfesor(@Param("pro")Profesor profesor);
     void agregarFranja(@Param("fra") FranjaHorario franja);

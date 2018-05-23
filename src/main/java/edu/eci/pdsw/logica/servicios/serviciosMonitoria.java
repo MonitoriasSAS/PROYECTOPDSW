@@ -16,7 +16,9 @@ import edu.eci.pdsw.entidades.Monitor;
 import edu.eci.pdsw.entidades.FranjaHorario;
 import java.util.Date;
 import java.util.List;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.annotations.Param;
+import org.postgresql.util.PSQLException;
 
 /**
  *
@@ -37,13 +39,13 @@ public interface serviciosMonitoria {
      */
     public abstract Monitoria consulatarMonitoria(int id) throws ExcepcionServiciosMonitoria;
     
-    public abstract void agregarSemestre(Semestre semestre);
+    public abstract void agregarSemestre(Semestre semestre) throws ExcepcionServiciosMonitoria,PSQLException,PersistenceException;
     
     public abstract void agregarGrupo(Grupo grupo);
     
     public void agregarProfesor(Profesor profesor);
     
-    public abstract Semestre getSemestre(String i);
+    public abstract Semestre getSemestre(String i) ;
      
     public abstract void consultarInfoSemestre();
     

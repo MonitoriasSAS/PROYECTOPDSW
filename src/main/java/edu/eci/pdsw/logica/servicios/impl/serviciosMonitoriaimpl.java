@@ -26,6 +26,7 @@ import edu.eci.pdsw.logica.servicios.serviciosMonitoria;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.PersistenceException;
+import org.postgresql.util.PSQLException;
 
 /**
  *
@@ -65,12 +66,9 @@ public class serviciosMonitoriaimpl implements serviciosMonitoria {
     }
 
     @Override
-    public void agregarSemestre(Semestre semestre) {
-        try{
+    public void agregarSemestre(Semestre semestre)  throws ExcepcionServiciosMonitoria,PSQLException,PersistenceException{
             daoSemestre.agregarSemestre(semestre);
-        } catch (PersistenceException ex){
-            Logger.getLogger(serviciosMonitoriaimpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     @Override
